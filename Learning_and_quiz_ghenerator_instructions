@@ -96,18 +96,22 @@ learning or quiz tool.
 - Per-section notes (localStorage).
 - Progress indicator ("Section X of Y").
 - Next/Previous buttons.
+- Scroll-to-top on nav click (`.main` container scroll).
 
 **Quiz Mode features:**
 - Match real exam question count (e.g., 65 questions per iteration for AIF-C01).
 - Divide each iteration into 5 rounds (e.g., 13 questions per round to total 65).
 - Allow multiple full iterations (e.g., 5 iterations of 5 rounds each).
-- Use seeded deterministic shuffling so each round gets a fresh random
-  selection from the question pool.
+- Use seeded deterministic shuffling (LCG: `seed * 1103515245 + 12345`) once
+  per iteration, then divide into contiguous round slices with wrap-around
+  (minimizes question repetition vs per-round re-shuffle).
 - Question counter and score tracker.
 - Immediate feedback with correct answer and explanation.
 - Mix of multiple choice, true/false, multi-select ("Select TWO").
 - Retake round option.
 - Final results per iteration with domain/module-level breakdown.
+- DOMAIN_ALIASES to map service-level domains (e.g. "Amazon SageMaker") to
+  official exam domains for accurate breakdown.
 - Identify weak domains where score < 70%.
 - Overall summary across all iterations.
 
@@ -120,10 +124,23 @@ learning or quiz tool.
 
 **Technical:**
 - localStorage for all progress, notes, quiz answers.
+  WARNING: iOS Safari blocks localStorage on file:// — serve via HTTP.
 - No external libraries or CDN.
 - All CSS and JavaScript embedded.
 - Works in all modern browsers.
 - Single file that opens directly in browser.
+
+### Known bugs & fixes (document for future)
+1. **Apostrophe in string** — if HTML content contains `'s` or smart quotes
+   inside JS strings delimited by single quotes, the entire script breaks.
+   Use template literals or escape properly.
+2. **Multi-select submitted check** — use `correct !== undefined` not
+   `!== undefined` to distinguish mid-selection from submitted state.
+3. **Nav click closure bug** — `a.onclick = () => showSection(idx)` captures
+   `idx` by reference, all nav items point to last section. Fix with IIFE:
+   `a.onclick = ((i) => () => showSection(i))(idx)`.
+4. **Scroll on nav click** — add `document.querySelector('.main').scrollTop = 0`
+   after swapping content.
 
 ### Source material handling
 - **Exam questions**: preserve exact wording, options (A/B/C/D), correct
@@ -149,3 +166,52 @@ learning or quiz tool.
 
 ---
 
+## PART 3: AWS AIF-C01 Tool — Implementation Reference
+
+### File location
+`~/Documents/AWS_Learning/AWS_AIF_C01_Learning_Tool.html`
+
+### Specs
+- **95 questions**: 84 MCQ, 4 multi-select, 7 true/false
+- **Difficulty**: 22 Easy, 73 Medium
+- **Size**: 153 KB, 1114 lines
+- **5 iterations × 5 rounds × 13 questions** = 65 per iteration
+- **Pass score**: 70%
+- **Header badge**: shows "65 Q" (exam format count)
+
+### Learning Mode sections (14 total across 5 domains)
+| Domain | Sections |
+|--------|----------|
+| AI/ML Fundamentals | AI/ML Basics, ML Evaluation, Overfitting/Drift, SageMaker, AI Services |
+| Generative AI | GenAI & FMs, Prompt Engineering, Model Training |
+| Foundation Models | Bedrock, Optimizing Inference |
+| Responsible AI | Principles, Bias Detection |
+| Security & Governance | Threats/Protections, Governance |
+
+### DOMAIN_ALIASES (for results breakdown)
+Questions use service-level domain names. Map to official exam domains:
+- `AWS Managed AI Services`, `Amazon SageMaker`, `Bedrock & Generative AI`
+  → `Applications of Foundation Models`
+- `Prompt Engineering` → `Fundamentals of Generative AI`
+- `AI Challenges & Responsibilities` → `Guidelines for Responsible AI`
+- `AWS Security Services` → `Security, Compliance, and Governance for AI`
+
+### Question sources
+1. masteryexamprep.com (original 60 questions — URLs now 404)
+2. Ditectrev/AIF-C01 GitHub repo (~35 additional questions)
+3. techexamlexicon.com, study4exam.com (supplementary)
+
+### Key decisions
+- Shuffle once per iteration (LCG PRNG), contiguous round slices + wrap-around
+- No comma separation for "Select TWO" multi-select in UI
+- Domain aliases to normalize non-standard domain names in results
+- Pass score 70% (exam standard)
+
+### Mobile access
+- iOS Safari blocks localStorage on file:// — must serve via HTTP
+- `python3 -m http.server 8000` from `~/Documents/AWS_Learning/`
+- Mac IP: 192.168.86.156
+
+### GitHub
+- Remote: https://github.com/mishaisha/aws_learning.git
+- Branch: main
