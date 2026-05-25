@@ -192,21 +192,413 @@ const DOMAINS = [
   {id:'domain4',name:'Guidelines for Responsible AI',short:'Responsible AI',weight:'14%'},
   {id:'domain5',name:'Security, Compliance, and Governance for AI',short:'Security & Governance',weight:'14%'}
 ];
+const DOMAIN_ALIASES = {
+  'AWS Managed AI Services':'Applications of Foundation Models',
+  'Amazon SageMaker':'Applications of Foundation Models',
+  'Bedrock & Generative AI':'Applications of Foundation Models',
+  'Prompt Engineering':'Fundamentals of Generative AI',
+  'AI Challenges & Responsibilities':'Guidelines for Responsible AI',
+  'AWS Security Services':'Security, Compliance, and Governance for AI'
+};
 const CONTENT = [
-{id:'d1-intro',domain:0,title:'AI & ML Fundamentals',content:`<div class="domain-card"><h3>What is Artificial Intelligence (AI)?</h3><p>AI is the simulation of human intelligence by machines. It encompasses machine learning, natural language processing, computer vision, and robotics. Machine Learning (ML) is a subset of AI that enables systems to learn and improve from experience without being explicitly programmed.</p><h3>Supervised vs Unsupervised Learning</h3><p><strong>Supervised Learning:</strong> Trains on labeled data where the correct output is known. Used for classification and regression tasks.</p><p><strong>Unsupervised Learning:</strong> Discovers patterns in unlabeled data. Used for clustering and dimensionality reduction.</p><p><strong>Reinforcement Learning:</strong> Agents learn by interacting with an environment and receiving rewards or penalties.</p></div>`},
-{id:'d1-eval',domain:0,title:'ML Evaluation Metrics',content:`<div class="domain-card"><h3>Key Evaluation Metrics</h3><ul><li><strong>Accuracy:</strong> (TP+TN)/(TP+TN+FP+FN) - overall correctness</li><li><strong>Precision:</strong> TP/(TP+FP) - minimizes false positives</li><li><strong>Recall (Sensitivity):</strong> TP/(TP+FN) - minimizes false negatives. Prioritize when missing a positive case has serious consequences (e.g., medical diagnosis).</li><li><strong>F1 Score:</strong> Harmonic mean of precision and recall</li><li><strong>Specificity:</strong> TN/(TN+FP) - true negative rate</li><li><strong>ROUGE:</strong> N-gram overlap between generated and reference summaries. Standard for summarization.</li><li><strong>BLEU:</strong> Precision of n-gram overlap. Standard for machine translation.</li><li><strong>Perplexity:</strong> Measures how well a language model predicts text. A training metric, not a quality metric.</li></ul></div>`},
-{id:'d1-overfitting',domain:0,title:'Overfitting, Underfitting & Data Drift',content:`<div class="domain-card"><h3>Overfitting</h3><p>Model performs well on training data but poorly on new data. The model memorizes noise rather than generalizable patterns. <strong>Signature:</strong> High training accuracy (e.g., 95%) with significantly lower test accuracy (e.g., 58%).</p><h3>Underfitting</h3><p>Model performs poorly on both training and test data. The model is too simple to capture patterns.</p><h3>Data Drift (Covariate Shift)</h3><p>Statistical properties of production input data change over time, causing model degradation. Amazon SageMaker Model Monitor detects data drift.</p><h3>Class Imbalance</h3><p>When one class dominates (e.g., 98% legitimate, 2% fraud). <strong>SMOTE</strong> (Synthetic Minority Oversampling Technique) generates synthetic examples of the minority class to balance datasets.</p></div>`},
-{id:'d1-sagemaker',domain:0,title:'Amazon SageMaker Deep Dive',content:`<div class="domain-card"><h3>Amazon SageMaker</h3><p>Fully managed service to build, train, and deploy ML models at scale.</p><div class="key-service"><h4>SageMaker Model Monitor</h4><p>Monitors deployed models for data quality, model quality degradation, bias drift, and feature attribution drift. Generates alerts when metrics deviate from baselines.</p></div><div class="key-service"><h4>SageMaker Clarify</h4><p>Detects and measures bias (DPP, Disparate Impact) across demographic groups. Provides SHAP-based feature importance explanations.</p></div><div class="key-service"><h4>SageMaker Automatic Model Tuning (HPO)</h4><p>Automatically searches for best hyperparameters using Bayesian optimization, random search, or grid search.</p></div><div class="key-service"><h4>SageMaker Model Cards</h4><p>Standardized governance documentation for intended use, limitations, training data, evaluation metrics, and ethical considerations.</p></div><div class="key-service"><h4>SageMaker Ground Truth</h4><p>Data labeling service for creating training datasets.</p></div><div class="key-service"><h4>SageMaker Batch Transform</h4><p>Cost-effective inference for large static datasets in S3. Provisions compute, processes data, saves results, terminates.</p></div><div class="key-service"><h4>SageMaker Network Isolation</h4><p>Training containers with no outbound network access. Can only read/write to S3 through VPC endpoints.</p></div></div>`},
-{id:'d1-aws-ai',domain:0,title:'AWS AI Services Reference',content:`<div class="domain-card"><h3>AWS AI Services</h3><div class="key-service"><h4>Amazon Rekognition</h4><p>Image/video analysis. Content moderation (detects explicit/suggestive/violent content). Custom Labels for training custom classifiers without ML expertise.</p></div><div class="key-service"><h4>Amazon Transcribe</h4><p>Speech-to-text. Speaker diarization identifies multiple speakers. Transcribe Medical optimized for medical terminology.</p></div><div class="key-service"><h4>Amazon Comprehend</h4><p>NLP: sentiment, entities, key phrases, language detection. Comprehend Medical analyzes medical text.</p></div><div class="key-service"><h4>Amazon Textract</h4><p>Extracts text, forms, tables, key-value pairs from scanned documents. Handles varying layouts without templates.</p></div><div class="key-service"><h4>Amazon Personalize</h4><p>Real-time recommendation engine using same tech as Amazon.com. Learns from browsing, purchase, and rating history.</p></div><div class="key-service"><h4>Amazon Polly</h4><p>Text-to-speech. Amazon Translate: Language translation. Amazon Lex: Conversational chatbots. Amazon Forecast: Time-series forecasting.</p></div></div>`},
-{id:'d2-intro',domain:1,title:'Generative AI & Foundation Models',content:`<div class="domain-card"><h3>Generative AI</h3><p>AI systems that create new content (text, images, audio, video, code) based on patterns learned from training data. Unlike traditional ML that predicts or classifies, GenAI generates novel outputs.</p><h3>Foundation Models</h3><p>Large-scale pre-trained models trained on broad data using <strong>self-supervised learning</strong> (e.g., next-token prediction). No manual labeling required for pre-training. Can be adapted to many downstream tasks through prompting or fine-tuning.</p><h3>Large Language Models (LLMs)</h3><p>Stateless - they don't inherently remember previous turns. For multi-turn conversations, include full conversation history in each API request.</p><h3>Hallucination</h3><p>Fluent, confident responses containing fabricated or factually incorrect information. A fundamental limitation of generative models. Mitigated with RAG, human-in-the-loop, Guardrails, and logging.</p></div>`},
-{id:'d2-prompt',domain:1,title:'Prompt Engineering & Parameters',content:`<div class="domain-card"><h3>Prompt Engineering Techniques</h3><ul><li><strong>Zero-shot:</strong> Task description without examples</li><li><strong>Few-shot:</strong> Provide examples in the prompt</li><li><strong>Chain-of-Thought (CoT):</strong> Step-by-step reasoning trace</li><li><strong>System Prompts:</strong> Define persona, tone, constraints for every interaction</li></ul><h3>Key Parameters</h3><ul><li><strong>Temperature (0-1):</strong> Controls randomness. Decrease toward 0 for deterministic outputs. Increase for more creativity.</li><li><strong>Top-P:</strong> Nucleus sampling - cumulative probability threshold for token selection</li><li><strong>Top-K:</strong> Consider only K most likely tokens at each step</li><li><strong>Context Window:</strong> Max tokens (input+output) per request. Critical for long document processing (e.g., 200K tokens for 500-page docs).</li></ul></div>`},
-{id:'d2-training',domain:1,title:'Model Training Approaches',content:`<div class="domain-card"><h3>Training Adaptation Methods</h3><div class="key-service"><h4>Continued Pre-training</h4><p>Extends pre-training on domain-specific unlabeled data. Teaches broad domain knowledge (vocabulary, concepts) without requiring labeled data.</p></div><div class="key-service"><h4>Fine-tuning</h4><p>Trains on labeled prompt-completion pairs for specific task behavior. Requires labeled data. Custom Bedrock models need Provisioned Throughput for inference.</p></div><div class="key-service"><h4>Model Distillation</h4><p>Transfers behavior from large "teacher" model to smaller "student" model for lower latency and cost while maintaining quality.</p></div><div class="key-service"><h4>RAG (Retrieval Augmented Generation)</h4><p>Retrieves documents at inference time for context. Does NOT modify model weights. Addresses training cutoff limitations without expensive retraining.</p></div></div>`},
-{id:'d3-bedrock',domain:2,title:'Amazon Bedrock',content:`<div class="domain-card"><h3>Amazon Bedrock</h3><p>Fully managed service providing foundation models from Amazon and third-party providers (Anthropic, AI21, Meta, Cohere, Stability AI) through a single API.</p><div class="key-service"><h4>Knowledge Bases</h4><p>Implements RAG: ingests documents, generates embeddings, stores in vector database (Amazon OpenSearch Service with k-NN), retrieves relevant context. Best for grounding responses in enterprise data.</p></div><div class="key-service"><h4>Agents</h4><p>Multi-step orchestration using ReAct framework. Breaks down tasks, invokes Lambda functions, queries Knowledge Bases. Enables Text-to-SQL via Lambda-connected databases.</p></div><div class="key-service"><h4>Guardrails</h4><p>Content filters (hate, violence, sexual), Denied topics, Sensitive information filters (PII redaction), Word filters. Combined with system prompts for behavioral controls.</p></div><div class="key-service"><h4>Provisioned Throughput</h4><p>Required for custom fine-tuned models. 1-month or 6-month commitment. On-demand pricing is not available for custom models.</p></div></div>`},
-{id:'d3-inference',domain:2,title:'Optimizing Inference',content:`<div class="domain-card"><h3>Inference Optimization</h3><div class="key-service"><h4>AWS Inferentia2 (Inf2 Instances)</h4><p>Custom-designed by AWS for energy-efficient ML inference. Best performance per watt compared to GPUs (P5/G5).</p></div><div class="key-service"><h4>Model Distillation</h4><p>Creates smaller, faster student models from larger teacher models for lower latency and cost.</p></div><div class="key-service"><h4>Provisioned Throughput</h4><p>Reserved capacity for consistent performance with custom Bedrock models.</p></div></div>`},
-{id:'d4-responsible',domain:3,title:'Responsible AI Principles',content:`<div class="domain-card"><h3>Six Pillars of Responsible AI</h3><ol><li><strong>Fairness:</strong> Equitable treatment across demographic groups. Detect bias using SageMaker Clarify (DPP, Disparate Impact).</li><li><strong>Explainability:</strong> Understandable reasons for decisions. Critical in regulated industries (GDPR, Equal Credit Opportunity Act).</li><li><strong>Privacy:</strong> Protect personal data. Use AWS KMS encryption, access controls, PII redaction with Bedrock Guardrails.</li><li><strong>Robustness:</strong> Reliable performance under adverse or unexpected conditions.</li><li><strong>Transparency:</strong> Document intended use, limitations, training data provenance via SageMaker Model Cards.</li><li><strong>Accountability:</strong> Clear ownership, human oversight for high-impact decisions.</li></ol></div>`},
-{id:'d4-bias',domain:3,title:'Bias Detection & Mitigation',content:`<div class="domain-card"><h3>Bias Mitigation</h3><ul><li><strong>Data Augmentation:</strong> Generate synthetic examples for underrepresented groups at the source (before training).</li><li><strong>Diverse Training Data:</strong> Ensure representative datasets across demographic groups.</li><li><strong>SageMaker Clarify:</strong> Systematic bias detection with Difference in Positive Proportions (DPP) and Disparate Impact (DI) metrics.</li><li><strong>Regular Bias Testing:</strong> Fairness audits across protected attributes.</li><li><strong>SMOTE:</strong> Synthetic Minority Oversampling for class imbalance.</li></ul><p><strong>Remember:</strong> Post-generation filtering treats symptoms, not causes. Fix bias at its root during data preparation and training.</p></div>`},
-{id:'d5-security',domain:4,title:'AI Security Threats & Protections',content:`<div class="domain-card"><h3>AI Security Threats</h3><div class="key-service"><h4>Prompt Injection</h4><p>Embedding malicious instructions in user input ("Ignore all previous instructions and...") to override system prompt. Mitigated with Guardrails and input validation.</p></div><div class="key-service"><h4>Data Poisoning</h4><p>Corrupting training data to introduce backdoors or degrade model performance.</p></div><div class="key-service"><h4>Model Inversion</h4><p>Reconstructing training data from model outputs - a privacy risk.</p></div><div class="key-service"><h4>Adversarial Examples</h4><p>Imperceptible perturbations to inputs that cause misclassification, primarily in vision models.</p></div><h3>Security Services</h3><ul><li><strong>AWS KMS:</strong> Customer-managed keys for encrypting data and model weights</li><li><strong>AWS Shield:</strong> DDoS protection</li><li><strong>SageMaker Network Isolation:</strong> No outbound network access during training</li><li><strong>IAM:</strong> Least privilege access control</li><li><strong>AWS CloudTrail:</strong> API activity logging for audit</li></ul></div>`},
-{id:'d5-gov',domain:4,title:'Governance & Compliance',content:`<div class="domain-card"><h3>AI Governance</h3><div class="key-service"><h4>SageMaker Model Cards</h4><p>Standardized documentation: intended use, out-of-scope uses, limitations, training data provenance, evaluation metrics, ethical considerations.</p></div><div class="key-service"><h4>Data Residency</h4><p>EU patient data must be processed in the EU (eu-central-1). Multi-Region deployment for availability and compliance.</p></div><h3>Best Practices for High-Impact Decisions</h3><ul><li>GenAI should augment, not replace, human staff for claim approvals/denials</li><li>Keep human review for final decisions when errors are costly</li><li>Ground outputs in enterprise knowledge (RAG with citations)</li><li>Apply safety controls (Guardrails) and logging/auditing</li><li>Use least-privilege IAM and disable shared credentials</li></ul></div>`}
+{id:'d1-intro',domain:0,title:'AI & ML Fundamentals',content:`<div class="domain-card">
+<h3>What is Artificial Intelligence (AI)?</h3>
+<p>AI is the simulation of human intelligence by machines. It encompasses machine learning, natural language processing, computer vision, and robotics. <strong>Key exam point:</strong> AI is the broadest category — ML is a subset of AI, Deep Learning is a subset of ML, and Generative AI is a subset of Deep Learning.</p>
+
+<h3>The AI Hierarchy (Exam Critical)</h3>
+<p>Understand this containment hierarchy for the exam: <strong>AI > Machine Learning > Deep Learning > Generative AI</strong>. The exam tests whether you can identify which layer a given technique belongs to.</p>
+<ul>
+<li><strong>Artificial Intelligence (AI):</strong> Broad field of machines simulating human intelligence</li>
+<li><strong>Machine Learning (ML):</strong> Subset of AI where systems learn from data without explicit programming</li>
+<li><strong>Deep Learning:</strong> Subset of ML using neural networks with multiple hidden layers</li>
+<li><strong>Generative AI:</strong> Subset of Deep Learning that creates new content (text, images, code)</li>
+</ul>
+
+<h3>Supervised vs Unsupervised vs Reinforcement Learning</h3>
+<p><strong>Supervised Learning:</strong> Trains on labeled data where the correct output is known. Used for classification (spam detection, disease diagnosis) and regression (price prediction, demand forecasting). <em>Exam trap: If the question says "labeled data" or "known correct answers", it's supervised learning.</em></p>
+<p><strong>Unsupervised Learning:</strong> Discovers patterns in unlabeled data. Used for clustering (customer segmentation) and dimensionality reduction. <em>Exam trap: If the question says "no predefined labels" or "discover patterns", it's unsupervised learning.</em></p>
+<p><strong>Reinforcement Learning:</strong> Agents learn by interacting with an environment and receiving rewards or penalties. Used for robotics, game playing, and autonomous systems. Less commonly tested on AIF-C01.</p>
+
+<h3>Training vs Inference</h3>
+<p><strong>Training:</strong> The process of teaching a model using data. Computationally intensive, often uses GPUs, runs for hours or days. <strong>Inference:</strong> Using a trained model to make predictions on new data. Less computationally intensive, needs low latency for real-time applications.</p>
+
+<h3>Key Exam Distinctions</h3>
+<ul>
+<li><strong>Classification vs Regression:</strong> Classification predicts categories (spam/not spam). Regression predicts continuous values (price: $49.99).</li>
+<li><strong>Bias vs Variance:</strong> Bias = error from wrong assumptions (underfitting). Variance = error from sensitivity to training data (overfitting). Trade-off between the two.</li>
+<li><strong>Parametric vs Non-parametric:</strong> Parametric models assume a fixed functional form (linear regression). Non-parametric models (k-NN) have no fixed structure.</li>
+</ul>
+</div>`},
+{id:'d1-eval',domain:0,title:'ML Evaluation Metrics',content:`<div class="domain-card">
+<h3>Confusion Matrix Fundamentals</h3>
+<p>A confusion matrix has four outcomes: <strong>True Positive (TP)</strong> — correctly predicted positive. <strong>True Negative (TN)</strong> — correctly predicted negative. <strong>False Positive (FP)</strong> — incorrectly predicted positive (Type I error). <strong>False Negative (FN)</strong> — incorrectly predicted negative (Type II error).</p>
+
+<h3>Key Evaluation Metrics</h3>
+<div class="key-service"><h4>Accuracy</h4><p>(TP + TN) / (TP + TN + FP + FN) — Overall correctness. <strong>Trap:</strong> Misleading when classes are imbalanced (98% accuracy on 98% legitimate / 2% fraud is meaningless).</p></div>
+<div class="key-service"><h4>Precision</h4><p>TP / (TP + FP) — "Of all items predicted as positive, how many were actually positive?" <strong>Use when:</strong> False positives are costly (spam filter — legitimate email should not be flagged). Minimizes false positives.</p></div>
+<div class="key-service"><h4>Recall (Sensitivity)</h4><p>TP / (TP + FN) — "Of all actual positives, how many did we catch?" <strong>Use when:</strong> False negatives are costly (medical diagnosis — missing a disease is worse than a false alarm). Minimizes false negatives.</p></div>
+<div class="key-service"><h4>F1 Score</h4><p>2 × (Precision × Recall) / (Precision + Recall) — Harmonic mean of precision and recall. <strong>Use when:</strong> You need a balanced metric between precision and recall, especially with imbalanced classes.</p></div>
+<div class="key-service"><h4>Specificity</h4><p>TN / (TN + FP) — "Of all actual negatives, how many were correctly identified?" True negative rate. Less commonly the primary metric but appears in exam questions about balanced evaluation.</p></div>
+
+<h3>GenAI Evaluation Metrics (Heavily Tested)</h3>
+<div class="key-service"><h4>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h4><p>Measures n-gram overlap between generated summaries and human-written reference summaries. <strong>Standard for:</strong> Summarization tasks. <strong>Remember:</strong> ROUGE = Recall = Summarization. Focuses on recall of important content.</p></div>
+<div class="key-service"><h4>BLEU (Bilingual Evaluation Understudy)</h4><p>Measures precision of n-gram overlap between generated text and reference. <strong>Standard for:</strong> Machine translation. <strong>Remember:</strong> BLEU = Precision = Translation.</p></div>
+<div class="key-service"><h4>Perplexity</h4><p>Measures how well a language model predicts a text sample. Lower perplexity = better prediction. <strong>This is a training metric, not a quality metric.</strong> Not suited for evaluating summary quality or factual accuracy.</p></div>
+
+<h3>Exam Traps to Watch</h3>
+<ul>
+<li>If the question involves <strong>summarization</strong>, the answer is almost always <strong>ROUGE</strong></li>
+<li>If the question involves <strong>translation</strong>, the answer is almost always <strong>BLEU</strong></li>
+<li><strong>Perplexity</strong> is a training metric, not for evaluating output quality</li>
+<li>If a model needs to <strong>minimize false negatives</strong> (medical diagnosis, fraud detection), prioritize <strong>Recall</strong></li>
+<li>If a model needs to <strong>minimize false positives</strong> (spam filter, content moderation), prioritize <strong>Precision</strong></li>
+</ul>
+</div>`},
+{id:'d1-overfitting',domain:0,title:'Overfitting, Underfitting & Data Drift',content:`<div class="domain-card">
+<h3>Overfitting</h3>
+<p>The model performs exceptionally well on training data but poorly on new/unseen data. The model has memorized noise and specific patterns in the training set rather than learning generalizable features.</p>
+<p><strong>Signature:</strong> High training accuracy (e.g., 95%) with significantly lower test/validation accuracy (e.g., 58%). The gap between training and test performance is the key indicator.</p>
+<p><strong>Causes:</strong> Model too complex (too many parameters), insufficient training data, training for too many epochs, data leakage.</p>
+<p><strong>Solutions:</strong> Regularization (L1/L2), dropout, early stopping, cross-validation, reduce model complexity, increase training data, data augmentation.</p>
+
+<h3>Underfitting</h3>
+<p>The model performs poorly on both training AND test data. The model is too simple to capture the underlying patterns in the data.</p>
+<p><strong>Signature:</strong> Low accuracy on both training and test sets. Unlike overfitting, there is no large gap between training and test performance.</p>
+<p><strong>Causes:</strong> Model too simple (not enough parameters), insufficient training time (too few epochs), wrong algorithm choice.</p>
+<p><strong>Solutions:</strong> Increase model complexity, train for more epochs, add more features, use a more sophisticated algorithm, reduce regularization.</p>
+
+<h3>Data Drift (Covariate Shift)</h3>
+<p>The statistical properties of production input data change over time, causing model performance to degrade. The model learned patterns from one data distribution but is now receiving data from a different distribution.</p>
+<p><strong>Example:</strong> A fraud detection model trained on pre-pandemic transaction patterns performs poorly after pandemic as spending behavior shifted dramatically.</p>
+<p><strong>AWS Tool:</strong> Amazon SageMaker Model Monitor detects data drift and model quality degradation, alerting when metrics deviate from baselines.</p>
+<p><strong>Distinction:</strong> Overfitting = memorizing training data vs Drift = training data distribution no longer matches production.</p>
+
+<h3>Class Imbalance</h3>
+<p>When one class heavily outnumbers another (e.g., 98% legitimate transactions, 2% fraudulent). The model can achieve 98% accuracy by simply predicting the majority class every time — a useless model despite high accuracy.</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>SMOTE (Synthetic Minority Oversampling Technique):</strong> Generates synthetic examples of the minority class by interpolating between existing minority samples. <em>This is the most tested technique on the exam.</em></li>
+<li><strong>Data Augmentation:</strong> Creating modified copies of minority class examples</li>
+<li><strong>Class Weights:</strong> Assigning higher weight to minority class errors during training</li>
+<li><strong>Undersampling:</strong> Reducing majority class samples (less common, loses data)</li>
+</ul>
+
+<h3>Key Exam Distinctions</h3>
+<ul>
+<li>Overfitting = high training accuracy + low test accuracy (memorization)</li>
+<li>Underfitting = low training accuracy + low test accuracy (too simple)</li>
+<li>Data Drift = model was fine, input data changed over time</li>
+<li>Class Imbalance = unequal class distribution, accuracy is misleading</li>
+<li>Accuracy is NOT the right metric when classes are imbalanced — use Precision, Recall, F1 instead</li>
+</ul>
+</div>`},
+{id:'d1-sagemaker',domain:0,title:'Amazon SageMaker Deep Dive',content:`<div class="domain-card">
+<h3>Amazon SageMaker — Overview</h3>
+<p>Fully managed service to <strong>build, train, and deploy ML models at scale</strong>. SageMaker covers the entire ML lifecycle from data labeling to production monitoring. <em>Exam tip: SageMaker is the answer when the question asks about the FULL ML workflow or a "platform" for ML.</em></p>
+
+<h3>SageMaker Components (Exam-Critical)</h3>
+<div class="key-service"><h4>SageMaker Model Monitor</h4><p>Continuously monitors deployed models for <strong>data quality issues, model quality degradation, bias drift, and feature attribution drift</strong>. Generates alerts when metrics deviate from baseline thresholds. <em>Exam: "monitor model in production for drift/quality" = Model Monitor.</em></p></div>
+<div class="key-service"><h4>SageMaker Clarify</h4><p>Detects and measures <strong>bias</strong> using Difference in Positive Proportions (DPP) and Disparate Impact (DI) metrics. Provides <strong>SHAP-based feature importance</strong> explanations for model predictions. <em>Exam: "detect bias in model" or "explain predictions" = SageMaker Clarify.</em></p></div>
+<div class="key-service"><h4>SageMaker Automatic Model Tuning (HPO)</h4><p>Automatically searches for best hyperparameters using <strong>Bayesian optimization, random search, or grid search</strong>. Reduces manual experimentation. <em>Exam: "automatically find best hyperparameters" = SageMaker Automatic Model Tuning.</em></p></div>
+<div class="key-service"><h4>SageMaker Model Cards</h4><p>Standardized governance documentation template capturing <strong>intended use, out-of-scope uses, limitations, training data provenance, evaluation metrics, ethical considerations</strong>. <em>Exam: "document model for compliance/governance" = SageMaker Model Cards.</em></p></div>
+<div class="key-service"><h4>SageMaker Ground Truth</h4><p>Data labeling service for creating training datasets. Uses human annotators and optional ML-assisted labeling to reduce costs.</p></div>
+<div class="key-service"><h4>SageMaker Batch Transform</h4><p>Cost-effective inference for large static datasets in S3 when results are not needed in real time. Provisions compute, processes the full dataset, saves results back to S3, then terminates. <em>Exam: "process 50K records overnight" = Batch Transform (not real-time endpoint).</em></p></div>
+<div class="key-service"><h4>SageMaker Network Isolation</h4><p>Training containers with <strong>no outbound network access</strong>. Can only read/write to S3 through VPC endpoints. <em>Exam: "sensitive data must have no internet access" = network isolation mode.</em></p></div>
+<div class="key-service"><h4>SageMaker Feature Store</h4><p>Centralized feature repository for storing, sharing, and reusing ML features across teams. Ensures consistency between training and inference.</p></div>
+<div class="key-service"><h4>SageMaker Experiments</h4><p>Tracks and compares training runs, hyperparameters, and metrics. Used during development, not for production monitoring.</p></div>
+<div class="key-service"><h4>SageMaker Model Registry</h4><p>Catalogs and versions trained models for deployment. Manages model versions, associates metadata, controls deployment workflow.</p></div>
+<div class="key-service"><h4>SageMaker Pipelines</h4><p>Automates end-to-end ML workflows (CI/CD for ML). Orchestrates data preparation, training, evaluation, and deployment steps.</p></div>
+<div class="key-service"><h4>DeepAR (Built-in Algorithm)</h4><p>Probabilistic time-series forecasting using recurrent neural networks. <em>Exam: "forecast electricity demand / time-series prediction" = DeepAR.</em></p></div>
+
+<h3>Inference Types (Know the Differences)</h3>
+<ul>
+<li><strong>Real-time:</strong> Always-on endpoints, low latency (milliseconds), for interactive applications (chatbots, fraud detection). Most expensive.</li>
+<li><strong>Serverless:</strong> Auto-scaling, pay per invocation, cold starts. Good for variable traffic.</li>
+<li><strong>Asynchronous:</strong> For large payloads, queues requests. Good for single large file processing.</li>
+<li><strong>Batch Transform:</strong> For bulk processing static S3 datasets. Most cost-effective for non-real-time batch jobs.</li>
+</ul>
+
+<h3>Key Exam Trap</h3>
+<p>If the question asks about <strong>full ML platform</strong> = SageMaker. If the question asks about a <strong>specific managed AI service</strong> (vision, text, speech) = Rekognition, Comprehend, Transcribe, etc. Don't choose SageMaker when a simpler managed AI service fits the use case.</p>
+</div>`},
+{id:'d1-aws-ai',domain:0,title:'AWS AI Services Reference',content:`<div class="domain-card">
+<h3>Purpose-Built AWS AI Services</h3>
+<p>These are <strong>managed AI services</strong> that require NO ML expertise — just call the API. The exam frequently tests whether you choose a managed AI service vs SageMaker vs Bedrock.</p>
+
+<h3>Vision Services</h3>
+<div class="key-service"><h4>Amazon Rekognition</h4><p><strong>Use case:</strong> Image and video analysis. <strong>Capabilities:</strong> Object/face/scene detection, content moderation (explicit/suggestive/violent content), celebrity recognition, text in images. <strong>Custom Labels:</strong> Train custom image classifiers by uploading labeled images through a point-and-click console — no ML expertise required. <em>Exam: "image moderation", "identify objects in images", "plant species from photos".</em></p></div>
+
+<h3>Speech & Audio Services</h3>
+<div class="key-service"><h4>Amazon Transcribe</h4><p><strong>Use case:</strong> Speech-to-text. <strong>Capabilities:</strong> Speaker diarization (identifies multiple speakers), custom vocabulary for domain-specific terms, vocabulary filtering for compliance. <strong>Transcribe Medical:</strong> Optimized for medical terminology and clinical conversations. <em>Exam: "convert audio to text", "call center recording transcription", "clinical notes from patient consultations".</em></p></div>
+<div class="key-service"><h4>Amazon Polly</h4><p><strong>Use case:</strong> Text-to-speech. Converts text into lifelike speech. Multiple voices and languages. <em>Exam: "convert text to speech" = Polly (opposite of Transcribe).</em></p></div>
+
+<h3>Natural Language Processing (NLP)</h3>
+<div class="key-service"><h4>Amazon Comprehend</h4><p><strong>Use case:</strong> Text analysis. <strong>Capabilities:</strong> Sentiment analysis (positive/negative/neutral/mixed), entity recognition (people, places, organizations), key phrase extraction, language detection. <strong>Comprehend Medical:</strong> Extracts medical entities from unstructured clinical text. <em>Exam: "analyze text for sentiment", "detect frustration in call transcripts", "extract entities from documents".</em></p></div>
+<div class="key-service"><h4>Amazon Translate</h4><p><strong>Use case:</strong> Language translation. Translates text between languages. Can be combined with Transcribe for multilingual subtitle generation. <em>Exam: "translate text", "multilingual subtitles".</em></p></div>
+
+<h3>Document Processing</h3>
+<div class="key-service"><h4>Amazon Textract</h4><p><strong>Use case:</strong> Extract text, forms, tables, and key-value pairs from scanned documents. Handles varying layouts WITHOUT templates. <em>Exam: "extract data from scanned invoices", "process paper forms", "document digitization". Different from Comprehend: Textract extracts text FROM images, Comprehend analyzes text THAT'S ALREADY EXTRACTED.</em></p></div>
+
+<h3>Recommendation & Personalization</h3>
+<div class="key-service"><h4>Amazon Personalize</h4><p><strong>Use case:</strong> Real-time recommendation engine. Uses same technology as Amazon.com. Learns from browsing, purchase, and rating history. <em>Exam: "personalized recommendations", "product recommendations based on user history".</em></p></div>
+
+<h3>Search & Knowledge</h3>
+<div class="key-service"><h4>Amazon Kendra</h4><p><strong>Use case:</strong> Intelligent enterprise search. Finds answers across documents, websites, and databases using NLP. <em>Exam: "enterprise search", "Q&A over company documents" — but for Bedrock-based Q&A, use Knowledge Bases instead.</em></p></div>
+
+<h3>Other Managed Services</h3>
+<div class="key-service"><h4>Amazon Forecast</h4><p><strong>Use case:</strong> Time-series forecasting (demand, revenue, resource planning). Uses ML without requiring ML expertise.</p></div>
+<div class="key-service"><h4>Amazon Lex</h4><p><strong>Use case:</strong> Conversational chatbots and voice assistants. Powers Amazon Alexa.</p></div>
+<div class="key-service"><h4>Amazon Connect</h4><p><strong>Use case:</strong> Cloud-based contact center service. Can integrate with Lex for conversational IVR.</p></div>
+
+<h3>Important Service Distinctions (Exam Critical)</h3>
+<ul>
+<li><strong>Rekognition vs Textract:</strong> Rekognition analyzes images (objects, faces, moderation). Textract extracts text/documents from images.</li>
+<li><strong>Transcribe vs Polly:</strong> Transcribe = speech → text. Polly = text → speech. They are opposites.</li>
+<li><strong>Comprehend vs Textract:</strong> Comprehend analyzes text (NLP). Textract extracts text from documents (OCR). They can work together but serve different purposes.</li>
+<li><strong>Transcribe vs Comprehend for call center:</strong> Transcribe converts audio to text. Comprehend analyzes the text for sentiment. Often used together.</li>
+<li><strong>Personalize vs Kendra:</strong> Personalize recommends items (products, content). Kendra searches/finds answers in documents.</li>
+</ul>
+</div>`},
+{id:'d2-intro',domain:1,title:'Generative AI & Foundation Models',content:`<div class="domain-card">
+<h3>What is Generative AI?</h3>
+<p>AI systems that <strong>create new content</strong> (text, images, audio, video, code) based on patterns learned from training data. Unlike traditional ML which predicts or classifies, GenAI generates novel outputs that did not exist before. <em>Key distinction: Traditional ML predicts "will this customer churn?" (yes/no). GenAI generates "write a marketing email for this customer."</em></p>
+
+<h3>Foundation Models</h3>
+<p>Large-scale pre-trained models trained on massive, diverse datasets using <strong>self-supervised learning</strong> (e.g., next-token prediction for text). <strong>No manual labeling required for pre-training.</strong> Can be adapted to many downstream tasks through prompting or fine-tuning. <em>Exam: Foundation models are characterized by (1) self-supervised learning on broad data and (2) adaptability to many tasks — these are the two correct answers for multi-select questions on this topic.</em></p>
+
+<h3>Key Foundation Model Concepts</h3>
+<div class="key-service"><h4>Self-Supervised Learning</h4><p>The model learns from the data itself without human labels. For text models, this means predicting the next word/token in a sequence. For image models, this means predicting masked portions of images. <em>Exam: Foundation models use self-supervised learning for pre-training, NOT supervised learning.</em></p></div>
+<div class="key-service"><h4>Transformer Architecture</h4><p>The "T" in GPT stands for Transformer — the neural network architecture powering most modern LLMs. Key innovation: <strong>self-attention mechanism</strong> that weighs the importance of different words in the input. <em>Exam: "What architecture powers GPT-4 and Claude?" = Transformer.</em></p></div>
+<div class="key-service"><h4>Tokens</h4><p>Models process text in tokens (not characters or whole words). A token is ~3/4 of a word. "Hello world" ≈ 2 tokens. The context window is measured in tokens.</p></div>
+<div class="key-service"><h4>Context Window</h4><p>Maximum number of tokens (input + output) a model can process in a single request. Critical for long document processing. Models with 200K token context windows can process ~500-page documents in one request. Larger context window ≠ better model quality — it just allows more text at once.</p></div>
+<div class="key-service"><h4>Embeddings</h4><p>Numerical vector representations of text that capture semantic meaning. Used in RAG to find semantically similar documents. Generated by embedding models, stored in vector databases (like OpenSearch k-NN).</p></div>
+
+<h3>Large Language Models (LLMs)</h3>
+<p>LLMs are <strong>stateless</strong> — they don't inherently remember previous turns in a conversation. For multi-turn conversations, the application must include the full conversation history in each API request (the model uses its context window to "see" the history). <em>Exam trap: "How to maintain conversation context?" = Include full history in each request. NOT "increase temperature" or "use a larger model."</em></p>
+
+<h3>Hallucination</h3>
+<p>Fluent, confident responses containing fabricated or factually incorrect information. A <strong>fundamental limitation</strong> of generative models — they predict statistically plausible text, not verified facts. <strong>Mitigations:</strong> RAG (grounding in retrieved documents), human-in-the-loop review, Bedrock Guardrails for content filtering, logging and monitoring, prompt engineering (chain-of-thought, system prompts). <em>Exam: "What is it called when an LLM generates confident but incorrect information?" = Hallucination.</em></p>
+
+<h3>Training Cutoff</h3>
+<p>Models only know information up to their training cutoff date. <strong>To answer questions about recent events:</strong> Use RAG with a Knowledge Base connected to an updated data source. NOT fine-tuning (expensive, slow, doesn't keep pace with news).</p>
+</div>`},
+{id:'d2-prompt',domain:1,title:'Prompt Engineering & Parameters',content:`<div class="domain-card">
+<h3>Prompt Engineering Techniques</h3>
+<div class="key-service"><h4>Zero-shot Prompting</h4><p>Give the model a task description without any examples. "Classify this email as spam or not spam: [email content]". Works for simple tasks but less reliable for complex ones.</p></div>
+<div class="key-service"><h4>Few-shot Prompting</h4><p>Provide examples in the prompt before asking the model to perform the task. "Email 1: [example] → Spam. Email 2: [example] → Not Spam. Email 3: [input] → ?" Improves performance by showing the model the desired output format and reasoning pattern.</p></div>
+<div class="key-service"><h4>Chain-of-Thought (CoT) Prompting</h4><p>Ask the model to show its step-by-step reasoning before giving the final answer. "Let's think step by step: ..." Improves performance on complex reasoning tasks (math, logic, multi-step problems). <em>Exam: CoT is for improving reasoning on complex tasks, not for factual recall.</em></p></div>
+<div class="key-service"><h4>System Prompts</h4><p>Define the model's persona, tone, behavioral constraints, and guidelines for every interaction. Applied once at the start of a session. <em>Exam: "How to enforce a formal tone?" or "How to set behavioral guidelines?" = System prompts.</em></p></div>
+
+<h3>Key Generation Parameters</h3>
+<div class="key-service"><h4>Temperature (0-1 or 0-2)</h4><p>Controls randomness of token selection. <strong>Low temperature (toward 0):</strong> More deterministic, consistent, predictable — model always picks the highest-probability token. <strong>High temperature (toward 1):</strong> More random, creative, diverse outputs. <em>Exam: "More deterministic outputs" = decrease temperature. "More creative/varied outputs" = increase temperature.</em></p></div>
+<div class="key-service"><h4>Top-P (Nucleus Sampling)</h4><p>Considers tokens with cumulative probability up to P. Top-P=0.9 means consider the smallest set of tokens whose combined probability is 90%. Higher Top-P = more diverse outputs. Often used together with temperature.</p></div>
+<div class="key-service"><h4>Top-K</h4><p>Consider only the K most likely tokens at each generation step. Top-K=50 means only the 50 highest-probability tokens are candidates. Higher Top-K = more diversity.</p></div>
+<div class="key-service"><h4>Max Tokens / Max Length</h4><p>Maximum number of tokens the model can generate in a single response. Controls response length. Part of the context window budget (input + output tokens ≤ context window).</p></div>
+
+<h3>Parameter Relationships (Exam Critical)</h3>
+<ul>
+<li>Temperature = 0 → deterministic (always same output for same prompt)</li>
+<li>Temperature = 1 → maximum creativity/randomness</li>
+<li>Top-P = 1 → consider all tokens (no nucleus sampling)</li>
+<li>Top-P = 0.1 → very narrow token selection (deterministic effect)</li>
+<li>Context window must accommodate both prompt AND generated response</li>
+</ul>
+
+<h3>Common Exam Scenarios</h3>
+<ul>
+<li>"Code generation needs consistent outputs" → Decrease temperature</li>
+<li>"Creative writing needs variety" → Increase temperature</li>
+<li>"Model keeps repeating itself" → Increase temperature or Top-P</li>
+<li>"Model is too random/unreliable" → Decrease temperature</li>
+</ul>
+</div>`},
+{id:'d2-training',domain:1,title:'Model Training Approaches',content:`<div class="domain-card">
+<h3>Training Adaptation Methods — Comparison</h3>
+<p>These are different ways to adapt a foundation model to a specific use case. The exam tests when to use each approach.</p>
+
+<div class="key-service"><h4>Continued Pre-training (Domain-Adaptive Pre-training)</h4><p><strong>What it does:</strong> Extends the model's pre-training on large volumes of <strong>unlabeled, domain-specific</strong> text (research papers, legal documents, medical literature). <strong>When to use:</strong> When you need to teach the model broad knowledge about a specialized domain. No labeled data required. <strong>Cost:</strong> High — requires significant compute. <em>Exam: "teach model broad knowledge about a scientific field using unlabeled papers" = Continued pre-training.</em></p></div>
+<div class="key-service"><h4>Fine-tuning (Supervised Fine-tuning)</h4><p><strong>What it does:</strong> Trains the model on <strong>labeled prompt-completion pairs</strong> for a specific task behavior (output format, style, domain-specific responses). <strong>When to use:</strong> When you have labeled data for the exact task you want the model to perform. <strong>Important:</strong> Custom fine-tuned Bedrock models require <strong>Provisioned Throughput</strong> for inference — on-demand pricing is NOT available. <em>Exam: "train model on 10K example conversations with ideal responses" = Fine-tuning.</em></p></div>
+<div class="key-service"><h4>Model Distillation</h4><p><strong>What it does:</strong> Transfers behavior from a large "teacher" model to a smaller "student" model. The teacher generates training data (outputs/probability distributions) used to train the student. <strong>When to use:</strong> When you need lower latency, lower cost, and a smaller model while maintaining similar quality. <strong>Key exam scenario:</strong> "Current model is too slow and expensive, need faster/cheaper but same quality" = Distillation. <em>Exam: model distillation changes the model size/performance profile — RAG, Guardrails, Provisioned Throughput do NOT make the model smaller.</em></p></div>
+<div class="key-service"><h4>RAG (Retrieval Augmented Generation)</h4><p><strong>What it does:</strong> Retrieves relevant documents from a knowledge base at <strong>inference time</strong> and provides them as context in the prompt. <strong>Does NOT modify model weights.</strong> <strong>When to use:</strong> When answers must be grounded in current/private/enterprise knowledge, questions involve recent events (after training cutoff), or you need citations/sources. <em>Exam: "ground responses in enterprise documents", "answer questions after training cutoff", "provide citations" = RAG / Knowledge Bases.</em></p></div>
+
+<h3>RAG vs Fine-tuning — Which to Choose?</h3>
+<ul>
+<li><strong>RAG</strong> = Better for knowledge-intensive tasks, dynamic/updated information, need for citations, no model weights modified</li>
+<li><strong>Fine-tuning</strong> = Better for specific output format/style/tone, task-specific behavior, reducing hallucinations on specific topics, model's base knowledge is insufficient</li>
+<li><strong>They can be combined</strong> — fine-tune for style/format, then use RAG for factual grounding</li>
+<li><strong>RAG addresses training cutoff</strong> — fine-tuning does NOT add new knowledge; RAG retrieves up-to-date information at query time</li>
+</ul>
+
+<h3>Key Exam Distinction</h3>
+<p><strong>RAG does NOT modify model weights.</strong> Continued pre-training and fine-tuning DO modify weights. This is frequently tested. If the question says "without modifying the model" or "without retraining", the answer is RAG.</p>
+</div>`},
+{id:'d3-bedrock',domain:2,title:'Amazon Bedrock',content:`<div class="domain-card">
+<h3>Amazon Bedrock — Overview</h3>
+<p>Fully managed service providing <strong>foundation models</strong> from Amazon (Amazon Nova) and third-party providers (Anthropic Claude, AI21 Labs, Meta Llama, Cohere, Stability AI) through a single API. <em>Exam: Bedrock is the answer when the question involves foundation models, GenAI, or multi-provider model access.</em></p>
+
+<h3>Key Bedrock Features</h3>
+<div class="key-service"><h4>Knowledge Bases</h4><p>Implements <strong>RAG</strong>: ingests documents from S3, generates embeddings, stores in a vector database (Amazon OpenSearch Service with k-NN), and retrieves relevant context at query time. <strong>Best for:</strong> Grounding model responses in enterprise data, answering questions from policy documents, providing citations. <em>Exam: "Q&A over company PDFs" = Knowledge Bases. NOT fine-tuning.</em></p></div>
+<div class="key-service"><h4>Agents</h4><p>Multi-step orchestration using the <strong>ReAct (Reasoning and Acting) framework</strong>. Agents can break down complex tasks, invoke Lambda functions through action groups, query Knowledge Bases, and orchestrate entire workflows. <strong>Text-to-SQL:</strong> Agents connect to relational databases via Lambda, translate natural language to SQL, execute queries, and return results. <em>Exam: "multi-step task automation", "orchestrate multiple steps", "ask questions about database in plain English" = Agents.</em></p></div>
+<div class="key-service"><h4>Guardrails</h4><p>Safety and content controls. Four types:
+<ul>
+<li><strong>Content filters:</strong> Block hate speech, violence, sexual content, harassment (adjustable threshold)</li>
+<li><strong>Denied topics:</strong> Block specific subject areas (e.g., "never discuss competitors")</li>
+<li><strong>Sensitive information filters:</strong> Detect and redact PII (names, SSNs, credit cards, emails, phone numbers) from inputs AND outputs</li>
+<li><strong>Word filters:</strong> Block specific words or phrases</li>
+</ul>
+<em>Exam: "prevent PII in responses" = Sensitive information filters. "Never discuss competitor products" = Denied topics. Combined with system prompts for tone/persona.</em></p></div>
+<div class="key-service"><h4>System Prompts</h4><p>Define model persona, communication style, tone, and behavioral constraints. Applied per-session. Used WITH Guardrails, not instead of. <em>Exam: "formal professional tone" = System prompts. "Never discuss competitors" = Guardrails (denied topics). Both are needed for comprehensive control.</em></p></div>
+<div class="key-service"><h4>Provisioned Throughput</h4><p>Required for <strong>custom fine-tuned models</strong>. Purchased in model units with 1-month or 6-month commitment terms. <strong>On-demand pricing is NOT available for custom models.</strong> <em>Exam: "use fine-tuned model for inference" = Purchase Provisioned Throughput.</em></p></div>
+<div class="key-service"><h4>Model Evaluation</h4><p>Bedrock provides built-in model evaluation tools using automated metrics or human evaluation workflows to assess model performance on specific tasks.</p></div>
+
+<h3>Invocation Logging (CloudTrail)</h3>
+<p>Bedrock integrates with AWS CloudTrail to log API calls and model invocation details (inputs, outputs, metadata) for compliance auditing. <em>Exam: "audit model usage" or "log model inputs/outputs for compliance" = CloudTrail invocation logging.</em></p>
+
+<h3>Encryption</h3>
+<p>Bedrock integrates with <strong>AWS KMS</strong> for customer-managed encryption of fine-tuning data, custom model weights, and output artifacts. <em>Exam: "encrypt fine-tuning data with company's own keys" = AWS KMS.</em></p>
+
+<h3>Foundation Model Providers on Bedrock</h3>
+<ul>
+<li><strong>Amazon:</strong> Amazon Nova models (Micro, Lite, Pro)</li>
+<li><strong>Anthropic:</strong> Claude 3 / 3.5 / 4 series (Haiku, Sonnet, Opus)</li>
+<li><strong>AI21 Labs:</strong> Jurassic-2</li>
+<li><strong>Meta:</strong> Llama 2 / 3</li>
+<li><strong>Cohere:</strong> Command, Embed</li>
+<li><strong>Stability AI:</strong> Stable Diffusion (image generation)</li>
+</ul>
+<em>Exam: "Which FM provider does Bedrock offer?" — any of these. "Which model is built by AWS?" — Amazon Nova / Titan.</em>
+</div>`},
+{id:'d3-inference',domain:2,title:'Optimizing Inference',content:`<div class="domain-card">
+<h3>Inference Optimization Strategies</h3>
+<p>When a foundation model is too slow, expensive, or both, the exam tests which optimization technique to use.</p>
+
+<div class="key-service"><h4>Model Distillation</h4><p>Transfers behavior from a large "teacher" model to a smaller "student" model. <strong>Result:</strong> Lower latency, lower inference cost, smaller model footprint while maintaining similar quality. <strong>When to use:</strong> Strict latency requirements (under 150ms), fixed inference budget, need same quality but faster/cheaper. <em>Exam: "model too slow and expensive, keep same quality with smaller model" = Distillation.</em></p></div>
+<div class="key-service"><h4>AWS Inferentia2 (Inf2 Instances)</h4><p>Custom-designed by AWS for <strong>energy-efficient ML inference</strong>. Best performance per watt compared to GPUs (P5 with NVIDIA H100 or G5 with NVIDIA A10G). <strong>Not for training</strong> — Inferentia is optimized for inference workloads. <em>Exam: "most energy-efficient ML inference chips" = AWS Inferentia2 / Inf2 instances.</em></p></div>
+<div class="key-service"><h4>Provisioned Throughput</h4><p>Reserved capacity for consistent performance with Bedrock models. Required for custom fine-tuned models. 1-month or 6-month commitment. Provides predictable latency and throughput. <em>Not the answer for "make model faster" — it guarantees capacity but doesn't reduce per-request compute.</em></p></div>
+
+<h3>What Does NOT Optimize Inference (Exam Traps)</h3>
+<ul>
+<li><strong>RAG (Knowledge Bases):</strong> Adds retrieval for better grounding but does NOT make the model smaller or faster</li>
+<li><strong>Guardrails:</strong> Adds safety but does NOT reduce model compute meaningfully</li>
+<li><strong>Provisioned Throughput:</strong> Adds capacity guarantees but does NOT reduce per-request cost or model size</li>
+<li><strong>Temperature/Prompt changes:</strong> Affect output style but NOT model size or speed</li>
+</ul>
+
+<h3>Instance Types for ML Workloads</h3>
+<ul>
+<li><strong>Inf2 (Inferentia2):</strong> Most energy-efficient inference — purpose-built for inference</li>
+<li><strong>P5 (NVIDIA H100):</strong> Best for training large models — GPU-optimized for training</li>
+<li><strong>G5 (NVIDIA A10G):</strong> Good for inference and training — general-purpose GPU</li>
+<li><strong>Trn1 (Trainium):</strong> Purpose-built for training — cost-effective training</li>
+<li><strong>C7g (Graviton3):</strong> General compute — NOT specialized for ML</li>
+</ul>
+</div>`},
+{id:'d4-responsible',domain:3,title:'Responsible AI Principles',content:`<div class="domain-card">
+<h3>The Six Pillars of Responsible AI</h3>
+<p>These are the core principles AWS uses for responsible AI. The exam tests your ability to match a scenario to the correct principle.</p>
+
+<ol>
+<li><strong>Fairness:</strong> Equitable treatment across demographic groups. <strong>Tool:</strong> SageMaker Clarify detects bias using DPP (Difference in Positive Proportions) and Disparate Impact (DI) metrics. <em>Exam: "model gives different outcomes for different demographic groups" = Fairness violation.</em></li>
+<li><strong>Explainability:</strong> Ability to provide understandable reasons for AI decisions. <strong>Critical for:</strong> Regulated industries (GDPR, Equal Credit Opportunity Act). <strong>Tool:</strong> SageMaker Clarify provides SHAP-based feature importance. <em>Exam: "customer needs to understand why loan was denied" = Explainability.</em></li>
+<li><strong>Privacy:</strong> Protection of personal data. <strong>Tools:</strong> AWS KMS for encryption, IAM for access control, Bedrock Guardrails sensitive information filters for PII redaction. <em>Exam: "protect customer PII in AI system" = Privacy.</em></li>
+<li><strong>Robustness:</strong> Reliable performance under adverse or unexpected conditions. Models should handle edge cases, noisy inputs, and distribution shifts. <em>Exam: "model performs reliably even with unusual inputs" = Robustness.</em></li>
+<li><strong>Transparency:</strong> Openness about model capabilities, limitations, and intended use. <strong>Tool:</strong> SageMaker Model Cards document intended use, out-of-scope uses, training data provenance, and evaluation metrics. <em>Exam: "document what the model can and cannot do" = Transparency (Model Cards).</em></li>
+<li><strong>Accountability:</strong> Clear ownership and human oversight for AI decisions, especially high-impact ones. Human-in-the-loop for critical decisions. <em>Exam: "who is responsible when AI makes a mistake" = Accountability.</em></li>
+</ol>
+
+<h3>Common Exam Scenario — Claim Approvals</h3>
+<p><strong>Question pattern:</strong> Insurance company wants to use GenAI for claim processing. Claim decisions have legal/financial impact. Which approach is INCORRECT?</p>
+<p><strong>Answer pattern:</strong> "Automatically approve or deny claims end-to-end based only on model output, without human review" is INCORRECT. <strong>Safe pattern:</strong> Use RAG for grounding + Guardrails for safety + human review for final decisions. GenAI should AUGMENT, not REPLACE human decision-makers for high-impact decisions.</p>
+
+<h3>AWS Tools for Responsible AI</h3>
+<ul>
+<li><strong>SageMaker Clarify:</strong> Bias detection and feature importance explanations</li>
+<li><strong>SageMaker Model Cards:</strong> Standardized model governance documentation</li>
+<li><strong>Bedrock Guardrails:</strong> Content safety, PII protection, denied topics</li>
+<li><strong>AWS KMS:</strong> Data encryption at rest and in transit</li>
+<li><strong>AWS CloudTrail:</strong> Audit logging for AI system usage</li>
+</ul>
+</div>`},
+{id:'d4-bias',domain:3,title:'Bias Detection & Mitigation',content:`<div class="domain-card">
+<h3>Types of AI Bias</h3>
+<ul>
+<li><strong>Data Bias:</strong> Training data does not represent the target population fairly. Example: facial recognition trained mostly on light-skinned faces performs poorly on dark-skinned faces.</li>
+<li><strong>Algorithmic Bias:</strong> The algorithm itself produces biased results even with balanced data.</li>
+<li><strong>Measurement Bias:</strong> The wrong features or metrics are used, leading to systematic errors.</li>
+<li><strong>Recall Bias:</strong> The training data collection process itself is biased (e.g., only labeled fraud cases that were caught).</li>
+</ul>
+
+<h3>Bias Detection with SageMaker Clarify</h3>
+<p>SageMaker Clarify computes two key bias metrics tested on the exam:</p>
+<ul>
+<li><strong>Difference in Positive Proportions (DPP):</strong> Difference in the proportion of positive outcomes between advantaged and disadvantaged groups. DPP = 0 means no bias.</li>
+<li><strong>Disparate Impact (DI):</strong> Ratio of positive outcome proportions between groups. DI = 1 means no bias. Values < 0.8 or > 1.25 are considered potentially biased.</li>
+</ul>
+
+<h3>Bias Mitigation Strategies</h3>
+<ul>
+<li><strong>Data Augmentation (BEST — fixes at source):</strong> Generate synthetic examples for underrepresented groups. Fixes bias at its ROOT during data preparation, NOT after the fact. <em>Exam: "address bias at its source" = Data augmentation before training.</em></li>
+<li><strong>Diverse Training Data:</strong> Ensure representative datasets across all demographic groups.</li>
+<li><strong>SMOTE:</strong> Synthetic Minority Oversampling for class imbalance — generates synthetic examples of minority class.</li>
+<li><strong>Regular Bias Testing:</strong> Continuous fairness audits across protected attributes.</li>
+<li><strong>Post-generation filtering:</strong> Screens outputs after generation. <em>Exam trap: This treats symptoms, NOT causes. Fix bias at its root during data preparation.</em></li>
+</ul>
+
+<h3>Key Exam Distinction</h3>
+<p><strong>Data augmentation before training</strong> = Fixes bias at the source (correct approach). <strong>Post-generation filtering</strong> = Treats symptoms only (not the correct approach for fixing root cause). If the question asks "what BEST addresses this problem at its source?", the answer is data augmentation / diverse training data — NOT post-filtering.</p>
+</div>`},
+{id:'d5-security',domain:4,title:'AI Security Threats & Protections',content:`<div class="domain-card">
+<h3>AI Security Threats (Exam Critical)</h3>
+
+<div class="key-service"><h4>Prompt Injection</h4><p><strong>What it is:</strong> Embedding malicious instructions in user input to override the system prompt and hijack the model's behavior. Classic example: "Ignore all previous instructions and..." <strong>Mitigation:</strong> Bedrock Guardrails (content filters, denied topics), input validation, prompt engineering (delimiting user input). <em>Exam: "user input tries to override system prompt" = Prompt injection attack.</em></p></div>
+<div class="key-service"><h4>Data Poisoning</h4><p><strong>What it is:</strong> Corrupting training data to introduce backdoors or degrade model performance. Attacker injects malicious samples into the training dataset. <strong>Mitigation:</strong> Data validation, provenance tracking, secure data pipelines.</p></div>
+<div class="key-service"><h4>Model Inversion</h4><p><strong>What it is:</strong> Reconstructing training data from model outputs — extracting sensitive information that the model was trained on. A privacy risk. <strong>Mitigation:</strong> Differential privacy, limiting output detail, access controls.</p></div>
+<div class="key-service"><h4>Adversarial Examples</h4><p><strong>What it is:</strong> Imperceptible perturbations to inputs that cause misclassification. Primarily affects vision models (e.g., adding slight noise to a "stop sign" image makes the model see a "speed limit" sign). <strong>Mitigation:</strong> Adversarial training, input sanitization.</p></div>
+
+<h3>AWS Security Services for AI</h3>
+<ul>
+<li><strong>AWS KMS (Key Management Service):</strong> Customer-managed encryption keys for encrypting data, model weights, and fine-tuning datasets. <em>Exam: "encrypt data using company's own keys" = AWS KMS.</em></li>
+<li><strong>AWS CloudTrail:</strong> API activity logging for audit — tracks who invoked which model, when, and with what inputs/outputs. <em>Exam: "log Bedrock API calls for compliance auditing" = CloudTrail invocation logging.</em></li>
+<li><strong>IAM (Identity and Access Management):</strong> Least-privilege access control for users and services. <em>Exam: "control who can invoke Bedrock models" = IAM policies.</em></li>
+<li><strong>AWS Shield:</strong> DDoS protection for AWS infrastructure. Less commonly tested for AI-specific scenarios.</li>
+<li><strong>Amazon GuardDuty:</strong> Threat detection service — can detect suspicious API activity patterns.</li>
+</ul>
+
+<h3>SageMaker Network Isolation</h3>
+<p>Training containers with <strong>no outbound network access</strong> enabled. When enabled, containers cannot reach the internet, other AWS services (except through VPC endpoints), or any external endpoints. Only reads/writes to S3 through VPC endpoints. <em>Exam: "training job must not have internet access for sensitive data" = Enable network isolation mode.</em></p>
+
+<h3>Shared Responsibility Model for AI</h3>
+<p>AWS is responsible for <strong>security OF the cloud</strong> (infrastructure, physical security, managed service security). The customer is responsible for <strong>security IN the cloud</strong> (data, IAM configuration, network configuration, model governance, prompt safety). <em>Exam: "who is responsible for encrypting training data?" = The customer (security IN the cloud).</em></p>
+</div>`},
+{id:'d5-gov',domain:4,title:'Governance & Compliance',content:`<div class="domain-card">
+<h3>AI Governance Framework</h3>
+<p>AI governance encompasses the policies, processes, and tools to ensure AI systems are developed and used responsibly, securely, and in compliance with regulations.</p>
+
+<h3>Key Governance Tools</h3>
+<div class="key-service"><h4>SageMaker Model Cards</h4><p><strong>Purpose:</strong> Standardized documentation for each ML model. Captures: intended use cases, out-of-scope uses, limitations, training data provenance, evaluation metrics, ethical considerations, responsible AI practices. <em>Exam: "document model for regulatory compliance", "standardized model governance" = SageMaker Model Cards.</em></p></div>
+<div class="key-service"><h4>Data Residency & Sovereignty</h4><p><strong>Requirement:</strong> EU patient data must be processed in EU Regions (eu-central-1). <strong>Solution:</strong> Deploy active-active in multiple Regions with latency-based routing. Model must be available in the required Region. <em>Exam: "EU data must stay in EU" = Deploy in eu-central-1. Multi-Region deployment also satisfies availability requirements.</em></p></div>
+
+<h3>Best Practices for High-Impact AI Decisions</h3>
+<ul>
+<li>GenAI should <strong>augment, not replace</strong> human staff for decisions with legal/financial impact (claim approvals, loan denials)</li>
+<li>Keep <strong>human review</strong> for final decisions when errors are costly</li>
+<li><strong>Ground outputs</strong> in enterprise knowledge using RAG with citations</li>
+<li>Apply <strong>safety controls</strong> (Guardrails) and <strong>logging/auditing</strong> (CloudTrail)</li>
+<li>Use <strong>least-privilege IAM</strong> and disable shared credentials</li>
+<li><strong>Separate environments</strong> — development, testing, and production should be isolated</li>
+</ul>
+
+<h3>Common Exam Scenario — Multi-Region Deployment</h3>
+<p><strong>Scenario:</strong> Users in Frankfurt and Virginia. EU patient data must stay in EU. Current stack in us-east-1. RTT from Frankfurt to us-east-1 is 210ms vs 35ms to eu-central-1. Model available in both regions. Availability target: tolerate loss of one region.</p>
+<p><strong>Best answer:</strong> Deploy active-active in us-east-1 AND eu-central-1 with latency routing. This satisfies data residency (EU data processed in EU), latency (Frankfurt users get 35ms), and availability (region failure is tolerated).</p>
+
+<h3>Unsafe Practices to Avoid (Exam Traps)</h3>
+<ul>
+<li><strong>Disabling CloudTrail</strong> for a service to reduce logging costs — removes audit trail, violates compliance</li>
+<li>Using <strong>one shared admin IAM user</strong> for all users — removes individual accountability, violates least privilege</li>
+<li>Storing <strong>raw PII</strong> in feature stores or using it directly as model features — redact/anonymize first</li>
+</ul>
+</div>`}
 ];
 
 const ALL_QUESTIONS = [
@@ -269,7 +661,42 @@ const ALL_QUESTIONS = [
 {id:57,domain:"Bedrock & Generative AI",difficulty:"MEDIUM",type:"mcq",question:"A company is using Amazon Bedrock with a third-party foundation model. They need to ensure their API calls and model inputs/outputs are logged for compliance auditing.\n\nWhich AWS feature should they enable?",options:["AWS CloudTrail with Bedrock invocation logging","AWS Config rules for Bedrock","Amazon GuardDuty for Bedrock","AWS Trusted Advisor for Bedrock"],answer:0,explanation:"AWS CloudTrail with Bedrock invocation logging captures API activity and model invocation details (inputs, outputs, metadata) for compliance auditing and governance."},
 {id:58,domain:"AI Challenges & Responsibilities",difficulty:"MEDIUM",type:"msq",question:"A loan company is building a generative AI-based solution to offer new applicants discounts based on specific business criteria. The company wants to build and use an AI model responsibly to minimize bias that could negatively affect some customers.\n\nWhich actions should the company take to meet these requirements? (Select TWO.)",options:["Use diverse and representative training data that includes various demographic groups","Implement regular bias testing and fairness audits on the model outputs","Use ROUGE to ensure the model is 100% accurate","Remove all customer demographic data from the training set","Set model temperature to 0 for all prompts"],answer:[0,1],explanation:"Using diverse training data and implementing regular bias testing/fairness audits are key responsible AI practices. ROUGE is for summarization evaluation, not bias measurement. Removing all demographic data can hide bias rather than fix it."},
 {id:59,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company is building an image classification model to identify defective products on a manufacturing line. The defect rate is very low (0.1%). The model must catch as many defects as possible, even if it means some false alarms.\n\nWhich metric should the team prioritize?",options:["Precision","Recall","Specificity","Accuracy"],answer:1,explanation:"Recall should be prioritized when missing a positive case is more costly than false alarms. High recall minimizes false negatives, which is critical when defects are rare but costly to miss."},
-{id:60,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company wants to train a machine learning model to classify customer emails into categories (complaint, inquiry, feedback, spam). They have 10,000 labeled emails.\n\nWhich type of machine learning is this?",options:["Supervised learning","Unsupervised learning","Reinforcement learning","Semi-supervised learning"],answer:0,explanation:"This is supervised learning because the model is trained on labeled data where the correct output category is known for each email."}
+{id:60,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company wants to train a machine learning model to classify customer emails into categories (complaint, inquiry, feedback, spam). They have 10,000 labeled emails.\n\nWhich type of machine learning is this?",options:["Supervised learning","Unsupervised learning","Reinforcement learning","Semi-supervised learning"],answer:0,explanation:"This is supervised learning because the model is trained on labeled data where the correct output category is known for each email."},
+{id:61,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A retail company wants to group customers by similar buying behavior so marketers can tailor campaigns. The team does not have predefined labels for the groups.\n\nWhich AI or ML approach best fits?",options:["Supervised classification, because every customer already has a known class label","Unsupervised learning, because the goal is to discover patterns without labeled target categories","Text generation, because marketing content will be written later","Reinforcement learning, because customers should receive rewards"],answer:1,explanation:"Customer segmentation without predefined labels is a classic unsupervised learning use case. The model discovers clusters or patterns in the data without requiring labeled target categories."},
+{id:62,domain:"Guidelines for Responsible AI",difficulty:"MEDIUM",type:"mcq",question:"A business team wants a generative AI assistant to draft customer email replies. They are concerned that replies could include inaccurate claims or sensitive customer data.\n\nWhich control set is strongest at the practitioner level?",options:["Allow the model to send all replies automatically because generated text is only a draft","Store every customer record in the prompt so the model has maximum context","Human review for high-risk replies, prompt and output safeguards, data minimization, monitoring, and clear user guidance","Disable all logging so the team cannot see mistakes"],answer:2,explanation:"Responsible AI for customer-facing GenAI requires layered controls: human review of high-risk outputs, prompt and output safeguards to block unsafe content, data minimization to reduce exposure, monitoring for ongoing compliance, and clear user guidance."},
+{id:63,domain:"Applications of Foundation Models",difficulty:"EASY",type:"mcq",question:"A nontechnical business group wants to explore enterprise-ready generative AI capabilities without building and training foundation models from scratch.\n\nWhich general approach best matches the goal?",options:["Build a data center and train a large language model from zero","Use only spreadsheet formulas because generative AI always requires custom training","Store prompts in an unmanaged public document for all employees to edit","Use managed generative AI services that provide access to foundation models and governance controls"],answer:3,explanation:"Managed GenAI services like Amazon Bedrock provide access to foundation models and built-in governance controls without requiring the organization to train models from scratch, making them ideal for nontechnical business adoption."},
+{id:64,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company has petabytes of unlabeled customer data to use for an advertisement campaign. The company wants to classify its customers into tiers to advertise and promote the company's products.\n\nWhich methodology should the company use?",options:["Supervised learning","Unsupervised learning","Reinforcement learning","Reinforcement learning from human feedback (RLHF)"],answer:1,explanation:"With unlabeled data and a goal of discovering natural groupings, unsupervised learning (clustering) is the correct approach. The model identifies patterns and segments without predefined categories."},
+{id:65,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company makes forecasts each quarter to decide how to optimize operations to meet expected demand. The company uses ML models and needs to provide transparency and explainability to stakeholders.\n\nWhat should the AI practitioner include in the report?",options:["Code for model training","Partial dependence plots (PDPs)","Sample data for training","Model convergence tables"],answer:1,explanation:"Partial dependence plots (PDPs) show how features affect model predictions on average, making them a standard tool for model interpretability and explainability. They help stakeholders understand which factors drive decisions."},
+{id:66,domain:"AWS Managed AI Services",difficulty:"MEDIUM",type:"mcq",question:"A company wants to display the total sales for its top-selling products across various retail locations in the past 12 months.\n\nWhich AWS solution should the company use to automate the generation of graphs?",options:["Amazon Q in Amazon EC2","Amazon Q Developer","Amazon Q in Amazon QuickSight","Amazon Q in AWS Chatbot"],answer:2,explanation:"Amazon Q in Amazon QuickSight enables natural language querying of business data and automated graph generation. QuickSight is AWS's business intelligence service for creating visualizations and dashboards."},
+{id:67,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"Which feature of Amazon OpenSearch Service gives companies the ability to build vector database applications for RAG?",options:["Integration with Amazon S3 for object storage","Support for geospatial indexing and queries","Scalable index management and k-NN nearest neighbor search capability","Ability to perform real-time analysis on streaming data"],answer:2,explanation:"Amazon OpenSearch Service supports k-NN (k-Nearest Neighbors) vector search, making it ideal for storing and querying vector embeddings in RAG architectures. It efficiently finds semantically similar documents through approximate nearest neighbor search."},
+{id:68,domain:"AI Challenges & Responsibilities",difficulty:"MEDIUM",type:"mcq",question:"Which option is a use case for generative AI models?",options:["Improving network security by using intrusion detection systems","Creating photorealistic images from text descriptions for digital marketing","Enhancing database performance by using optimized indexing","Analyzing financial data to forecast stock market trends"],answer:1,explanation:"Generative AI creates new content such as images, text, audio, or video. Creating photorealistic images from text descriptions is a classic generative AI use case, while the other options are traditional ML or rule-based tasks."},
+{id:69,domain:"Amazon SageMaker",difficulty:"MEDIUM",type:"mcq",question:"A company is building a solution to generate images for protective eyewear. The solution must have high accuracy and must minimize the risk of incorrect annotations.\n\nWhich solution meets these requirements?",options:["Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus","Data augmentation by using an Amazon Bedrock knowledge base","Image recognition by using Amazon Rekognition","Data summarization by using Amazon QuickSight"],answer:0,explanation:"Amazon SageMaker Ground Truth Plus provides human-in-the-loop validation with expert reviewers to ensure high annotation accuracy. This is critical when incorrect annotations could lead to defective products or safety issues."},
+{id:70,domain:"Security, Compliance, and Governance for AI",difficulty:"MEDIUM",type:"mcq",question:"A security company is using Amazon Bedrock to run foundation models. The company needs to identify unauthorized access attempts to set appropriate IAM policies.\n\nWhich AWS service should the company use?",options:["AWS Audit Manager","AWS CloudTrail","Amazon Fraud Detector","AWS Trusted Advisor"],answer:1,explanation:"AWS CloudTrail records all API activity including Amazon Bedrock invocations, capturing who made the request, from which IP address, and whether it succeeded or failed. This enables identifying unauthorized access attempts."},
+{id:71,domain:"AWS Managed AI Services",difficulty:"EASY",type:"mcq",question:"A company manually reviews all submitted resumes in PDF format. As the company grows, it needs an automated system to convert PDF resumes into plain text for processing.\n\nWhich AWS service meets this requirement?",options:["Amazon Textract","Amazon Personalize","Amazon Lex","Amazon Transcribe"],answer:0,explanation:"Amazon Textract uses ML to extract text from scanned documents and PDFs, converting them into machine-readable text. It handles varied layouts without requiring templates."},
+{id:72,domain:"Amazon SageMaker",difficulty:"MEDIUM",type:"mcq",question:"A digital devices company wants to predict customer demand for memory hardware. The company has no coding experience or knowledge of ML algorithms.\n\nWhich solution meets these requirements?",options:["Store data in Amazon S3 and use SageMaker built-in algorithms","Import data into SageMaker Data Wrangler and use SageMaker built-in algorithms","Use Amazon Personalize Trending-Now recipe","Import data into SageMaker Canvas and build models by selecting values"],answer:3,explanation:"Amazon SageMaker Canvas is a no-code visual interface for ML. Users can import data, build models, and generate predictions without writing any code, making it ideal for users without ML expertise."},
+{id:73,domain:"AI Challenges & Responsibilities",difficulty:"MEDIUM",type:"mcq",question:"A company needs to build its own LLM based on private data. The company is concerned about the environmental effect of the training process.\n\nWhich EC2 instance type has the LEAST environmental effect when training LLMs?",options:["Amazon EC2 C series","Amazon EC2 G series","Amazon EC2 P series","Amazon EC2 Trn series"],answer:3,explanation:"Amazon EC2 Trn instances use AWS Trainium chips, purpose-built for ML training with superior performance per watt compared to GPU-based instances. They are designed specifically to reduce the energy consumption and carbon footprint of ML training."},
+{id:74,domain:"Security, Compliance, and Governance for AI",difficulty:"MEDIUM",type:"mcq",question:"A financial institution is using Amazon Bedrock in a VPC. To meet regulatory compliance, the VPC cannot access any internet traffic.\n\nWhich AWS service or feature meets this requirement?",options:["AWS PrivateLink","Amazon Macie","Amazon CloudFront","Internet gateway"],answer:0,explanation:"AWS PrivateLink enables private connectivity between VPCs and AWS services without traversing the internet. For Amazon Bedrock, PrivateLink allows API calls from a VPC without public internet access, meeting compliance requirements for isolated networks."},
+{id:75,domain:"AI/ML Fundamentals",difficulty:"EASY",type:"mcq",question:"A company wants to adapt pre-trained models to create new models for related tasks, avoiding the need to train from scratch.\n\nWhich ML strategy meets these requirements?",options:["Increase the number of epochs","Use transfer learning","Decrease the number of epochs","Use unsupervised learning"],answer:1,explanation:"Transfer learning takes a pre-trained model and adapts it to a new but related task by fine-tuning with a smaller dataset. This saves time, compute resources, and training data compared to training from scratch."},
+{id:76,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company wants to use AI to protect its application from threats by checking if an IP address is from a suspicious source.\n\nWhich solution meets these requirements?",options:["Build a speech recognition system","Create a natural language processing named entity recognition system","Develop an anomaly detection system","Create a fraud forecasting system"],answer:2,explanation:"Anomaly detection identifies patterns that deviate from normal behavior, such as suspicious IP addresses attempting access. It is the correct ML approach for security threat detection based on identifying outliers."},
+{id:77,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A law firm wants to build an AI application using LLMs to read legal documents and extract key points.\n\nWhich solution meets these requirements?",options:["Build an automatic named entity recognition system","Create a recommendation engine","Develop a summarization chatbot","Develop a multi-language translation system"],answer:2,explanation:"A summarization chatbot using LLMs can read legal documents and extract key points by generating concise summaries. This is the most direct application for understanding and condensing document content."},
+{id:78,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company wants to classify human genes into 20 categories based on gene characteristics and needs an ML algorithm that can document how its inner mechanism affects the output.\n\nWhich ML algorithm meets these requirements?",options:["Decision trees","Linear regression","Logistic regression","Neural networks"],answer:0,explanation:"Decision trees provide inherent explainability through their tree structure where each split and decision path is visible and interpretable. They can be easily documented to show how input features influence classification decisions."},
+{id:79,domain:"Prompt Engineering",difficulty:"MEDIUM",type:"mcq",question:"A company is using a pre-trained LLM to build a chatbot for product recommendations. The company needs the LLM outputs to be short and written in a specific language.\n\nWhich solution will align the LLM response quality with the company's expectations?",options:["Adjust the prompt","Choose an LLM of a different size","Increase the temperature","Increase the Top K value"],answer:0,explanation:"Prompt engineering is the most direct and cost-effective way to control LLM output characteristics. The prompt can specify response length, language, tone, and format without changing models or incurring additional costs."},
+{id:80,domain:"Amazon SageMaker",difficulty:"MEDIUM",type:"mcq",question:"A company uses Amazon SageMaker for its ML pipeline. It has large input data sizes up to 1 GB and processing times up to 1 hour, with near real-time latency needs.\n\nWhich SageMaker inference option meets these requirements?",options:["Real-time inference","Serverless inference","Asynchronous inference","Batch transform"],answer:2,explanation:"Asynchronous inference is designed for large payloads (up to 1 GB) and long processing times (up to 1 hour) while still providing near real-time results. Real-time inference has strict timeout limits, serverless has payload limits, and batch transform is for offline processing."},
+{id:81,domain:"Bedrock & Generative AI",difficulty:"EASY",type:"mcq",question:"A company wants to use language models for inference on edge devices with the lowest possible latency.\n\nWhich solution meets these requirements?",options:["Deploy optimized small language models (SLMs) on edge devices","Deploy optimized large language models (LLMs) on edge devices","Incorporate a centralized SLM API for asynchronous communication","Incorporate a centralized LLM API for asynchronous communication"],answer:0,explanation:"Small language models (SLMs) are optimized for on-device deployment with lower latency, smaller memory footprint, and no network dependency. LLMs are too large for most edge devices and would introduce network latency."},
+{id:82,domain:"Amazon SageMaker",difficulty:"MEDIUM",type:"mcq",question:"A company wants to share and manage variables for ML model development across multiple teams using Amazon SageMaker.\n\nWhich SageMaker feature meets these requirements?",options:["Amazon SageMaker Feature Store","Amazon SageMaker Data Wrangler","Amazon SageMaker Clarify","Amazon SageMaker Model Cards"],answer:0,explanation:"Amazon SageMaker Feature Store is a centralized repository for storing, discovering, and sharing ML features across teams. It enables feature reuse, consistency, and governance for ML development workflows."},
+{id:83,domain:"AI Challenges & Responsibilities",difficulty:"MEDIUM",type:"mcq",question:"Which metric measures the runtime efficiency of operating AI models?",options:["Customer satisfaction score (CSAT)","Training time for each epoch","Average response time","Number of training instances"],answer:2,explanation:"Average response time measures how quickly a deployed AI model returns inference results. It is a key operational metric for runtime efficiency and affects user experience in production systems."},
+{id:84,domain:"AWS Managed AI Services",difficulty:"MEDIUM",type:"mcq",question:"A company is building a contact center application and wants to extract key information from audio of customer calls.\n\nWhich solution meets these requirements?",options:["Build a conversational chatbot using Amazon Lex","Transcribe call recordings using Amazon Transcribe","Extract information from call recordings using Amazon SageMaker Model Monitor","Create classification labels using Amazon Comprehend"],answer:1,explanation:"Amazon Transcribe converts audio to text using automatic speech recognition. Once call recordings are transcribed, the text can be further analyzed using services like Amazon Comprehend for insights and entity extraction."},
+{id:85,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"An AI practitioner wants to use a foundation model to design a search application that handles queries with text and images.\n\nWhich type of FM should they use?",options:["Multi-modal embedding model","Text embedding model","Multi-modal generation model","Image generation model"],answer:0,explanation:"A multi-modal embedding model can encode both text and images into the same vector space, enabling search across modalities. For example, searching with text to find relevant images or with an image to find similar images."},
+{id:86,domain:"Bedrock & Generative AI",difficulty:"MEDIUM",type:"mcq",question:"A company uses a foundation model from Amazon Bedrock for an AI search tool and wants to fine-tune the model using company data.\n\nWhich strategy will successfully fine-tune the model?",options:["Provide labeled data with the prompt field and the completion field","Prepare the training dataset by creating a .txt file with multiple lines in .csv format","Purchase Provisioned Throughput for Amazon Bedrock","Train the model on journals and textbooks"],answer:0,explanation:"Fine-tuning in Amazon Bedrock requires labeled prompt-completion pairs that demonstrate the desired input-output behavior. The model learns from these examples to improve accuracy on the specific task."},
+{id:87,domain:"Security, Compliance, and Governance for AI",difficulty:"MEDIUM",type:"mcq",question:"How can companies use large language models securely on Amazon Bedrock?",options:["Design clear and specific prompts. Configure IAM roles and policies using least privilege access","Enable AWS Audit Manager for automatic model evaluation jobs","Enable Amazon Bedrock automatic model evaluation jobs","Use Amazon CloudWatch Logs to make models explainable and to monitor for bias"],answer:0,explanation:"Secure LLM usage on Bedrock requires both input controls (clear prompts that reduce prompt injection risk) and access controls (IAM least privilege). Together they prevent unauthorized access and manipulation."},
+{id:88,domain:"Guidelines for Responsible AI",difficulty:"MEDIUM",type:"msq",question:"A company is building a generative AI-based solution to offer applicants discounts based on business criteria. The company wants to use the AI model responsibly to minimize bias.\n\nWhich actions should the company take? (Select TWO.)",options:["Use diverse and representative training data that includes various demographic groups","Set model temperature to 0 for all prompts to ensure consistency","Implement regular bias testing and fairness audits on model outputs","Remove all customer demographic data from the training set to prevent bias","Use ROUGE score to measure model accuracy"],answer:[0,2],explanation:"Using diverse training data helps ensure the model learns from a representative population. Regular bias testing and fairness audits detect disparities that may emerge over time. Removing all demographic data can hide bias rather than fix it. ROUGE evaluates summarization, not fairness."},
+{id:89,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"mcq",question:"A company is training a foundation model and wants to increase accuracy up to a specific acceptance level.\n\nWhich solution will meet these requirements?",options:["Decrease the batch size","Increase the epochs","Decrease the epochs","Increase the temperature parameter"],answer:1,explanation:"Increasing the number of training epochs allows the model more opportunities to learn from the data, which typically improves accuracy up to a point. More epochs reduce underfitting but must be balanced against overfitting."},
+{id:90,domain:"AI Challenges & Responsibilities",difficulty:"MEDIUM",type:"mcq",question:"A company is building an LLM question-answering chatbot for a call center. The company wants to decrease the number of actions employees need to take to respond to customers.\n\nWhich business objective should the company use to evaluate the chatbot's effect?",options:["Website engagement rate","Average call duration","Corporate social responsibility","Regulatory compliance"],answer:1,explanation:"Average call duration is a direct, measurable business metric that reflects how efficiently call center agents resolve customer issues. A successful chatbot should reduce call duration by automating information retrieval and responses."},
+{id:91,domain:"AWS Managed AI Services",difficulty:"MEDIUM",type:"msq",question:"An ecommerce company wants to determine customer sentiments based on written product reviews.\n\nWhich AWS services meet these requirements? (Select TWO.)",options:["Amazon Lex","Amazon Comprehend","Amazon Polly","Amazon Bedrock","Amazon Rekognition"],answer:[1,3],explanation:"Amazon Comprehend provides sentiment analysis (positive, negative, neutral, mixed) for text. Amazon Bedrock can also perform sentiment analysis using foundation models with appropriate prompts. Lex is for conversational bots, Polly is text-to-speech, Rekognition is for images."},
+{id:92,domain:"Security, Compliance, and Governance for AI",difficulty:"MEDIUM",type:"mcq",question:"An AI company periodically evaluates its systems with independent software vendors (ISVs) and needs email notifications when compliance reports become available.\n\nWhich AWS service should the company use?",options:["AWS Audit Manager","AWS Artifact","AWS Trusted Advisor","AWS Data Exchange"],answer:1,explanation:"AWS Artifact provides on-demand access to AWS compliance reports and agreements. It enables downloading SOC, PCI, and ISO reports, and can send notifications when new reports or updates become available."},
+{id:93,domain:"Prompt Engineering",difficulty:"MEDIUM",type:"mcq",question:"A company wants to use pre-trained generative AI to generate marketing content. The output must align with the company's brand voice and messaging requirements.\n\nWhich solution meets these requirements?",options:["Optimize the model's architecture and hyperparameters","Increase the model's complexity by adding more layers","Create effective prompts that provide clear instructions and context","Select a large diverse dataset to pre-train a new generative model"],answer:2,explanation:"Prompt engineering is the most practical approach for aligning GenAI output with brand requirements. Detailed prompts with instructions about tone, style, vocabulary, and messaging constraints guide the model without expensive retraining."},
+{id:94,domain:"Fundamentals of Generative AI",difficulty:"MEDIUM",type:"mcq",question:"A company is building a customer service chatbot. The company wants the chatbot to improve responses by learning from past interactions and online resources.\n\nWhich AI learning strategy provides this self-improvement capability?",options:["Supervised learning with a manually curated dataset","Reinforcement learning with rewards for positive customer feedback","Unsupervised learning to find clusters of similar inquiries","Supervised learning with a continuously updated FAQ database"],answer:1,explanation:"Reinforcement learning enables the chatbot to improve over time by learning from feedback signals. Positive customer feedback serves as rewards that reinforce good responses, allowing the model to self-improve through interaction experience."},
+{id:95,domain:"AI/ML Fundamentals",difficulty:"MEDIUM",type:"truefalse",question:"A model that achieves 95% accuracy on training data but only 58% on test data is underfitting.",options:["True","False"],answer:1,explanation:"This is overfitting, not underfitting. The large gap between high training performance and poor test performance indicates the model has memorized training patterns rather than learning generalizable features. Overfitting is characterized by high training accuracy with significantly lower validation/test accuracy."}
 ];
 
 const ROUNDS = 5;
@@ -303,7 +730,7 @@ function buildNav() {
       const a = document.createElement('a');
       a.textContent = c.title;
       a.dataset.index = idx;
-      a.onclick = () => showSection(idx);
+      a.onclick = ((i) => () => showSection(i))(idx);
       li.appendChild(a);
       nav.appendChild(li);
       idx++;
@@ -315,6 +742,7 @@ function showSection(idx) {
   const c = CONTENT[idx];
   const area = document.getElementById('learnContent');
   area.innerHTML = '<h2>' + c.title + '</h2>' + c.content;
+  document.querySelector('.main').scrollTop = 0;
   document.querySelectorAll('.nav-list a').forEach((a, i) => a.classList.toggle('active', i === idx));
   const total = CONTENT.length;
   document.getElementById('progressText').textContent = 'Section ' + (idx + 1) + ' of ' + total;
@@ -590,9 +1018,10 @@ function showIterationResults() {
   }
   ALL_QUESTIONS.forEach(q => {
     if (allAnswered[q.id] !== undefined) {
-      if (!domainScores[q.domain]) domainScores[q.domain] = {correct:0,total:0};
-      domainScores[q.domain].total++;
-      if (allAnswered[q.id].correct) domainScores[q.domain].correct++;
+      const d = DOMAIN_ALIASES[q.domain] || q.domain;
+      if (!domainScores[d]) domainScores[d] = {correct:0,total:0};
+      domainScores[d].total++;
+      if (allAnswered[q.id].correct) domainScores[d].correct++;
     }
   });
   const pct = total > 0 ? Math.round(correct / total * 100) : 0;
