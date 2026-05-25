@@ -424,8 +424,11 @@ function renderQuiz(questions, round, saved) {
     '<div class="stat"><div class="num">' + (currentIteration + 1) + '/' + ITERATIONS + '</div><div class="label">Iteration</div></div>' +
     '<div class="stat"><div class="num">' + (round + 1) + '/' + ROUNDS + '</div><div class="label">Round</div></div>' +
     '<div class="stat"><div class="num">' + answeredCount + '/' + questions.length + '</div><div class="label">Answered</div></div>' +
-    '<div class="stat"><div class="num">' + (ROUNDS * QUESTIONS_PER_ROUND) + '</div><div class="label">Per Iteration</div></div>' +
     '<div class="quiz-progress"><div class="fill" style="width:' + (answeredCount / questions.length * 100) + '%"></div></div></div>';
+  if (saved.complete && saved.submitted) {
+    const res = getRoundResults(currentIteration, round);
+    html += renderResultSummary(res);
+  }
   questions.forEach((q, qi) => {
     const isMulti = Array.isArray(q.answer);
     const isCorrect = answeredQuestions[q.id] && answeredQuestions[q.id].correct;
@@ -474,10 +477,6 @@ function renderQuiz(questions, round, saved) {
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="quiz-action-btn primary" id="submitBtn" onclick="submitRound(' + round + ')" ' + (!allAnswered ? 'disabled' : '') + '>Submit Round</button></div>';
   } else {
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="quiz-action-btn warning" onclick="retakeRound(' + round + ')">Retake This Round</button></div>';
-  }
-  if (saved.complete && saved.submitted) {
-    const res = getRoundResults(currentIteration, round);
-    html += renderResultSummary(res);
   }
   area.innerHTML = html;
 }
