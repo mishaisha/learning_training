@@ -98,11 +98,14 @@ learning or quiz tool.
 - Next/Previous buttons.
 
 **Quiz Mode features:**
-- Divide all questions into rounds (e.g., 5 rounds of 10 questions).
+- Match real exam question count (e.g., 65 questions per iteration for AIF-C01).
+- Divide each iteration into 5 rounds (e.g., 13 questions per round to total 65).
 - Allow multiple full iterations (e.g., 5 iterations of 5 rounds each).
+- Use seeded deterministic shuffling so each round gets a fresh random
+  selection from the question pool.
 - Question counter and score tracker.
 - Immediate feedback with correct answer and explanation.
-- Mix of multiple choice, true/false, multi-select.
+- Mix of multiple choice, true/false, multi-select ("Select TWO").
 - Retake round option.
 - Final results per iteration with domain/module-level breakdown.
 - Identify weak domains where score < 70%.
@@ -145,3 +148,4 @@ learning or quiz tool.
 - Provide the file path to the user.
 
 ---
+
