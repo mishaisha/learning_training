@@ -11,7 +11,7 @@ iOS blocks `localStorage` on `file://` URLs. To use on iPhone:
 ```
 python3 -m http.server 8000
 ```
-Then open `http://192.168.86.156:8000/AWS_AIF_C01_Learning_Tool.html` in Chrome.
+Then open `http://<ip_address>:8000/AWS_AIF_C01_Learning_Tool.html` in Chrome.
 
 ## Features
 - **Learning Mode**: 5 domains, 14 subtopics with detailed explanations
