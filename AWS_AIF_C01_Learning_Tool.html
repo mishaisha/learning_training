@@ -400,14 +400,21 @@ function startRound(round) {
   renderQuiz(questions, round, saved);
 }
 function getQuestionsForRound(seed) {
+  const iterSeed = Math.floor(seed / ROUNDS);
+  const roundIdx = seed % ROUNDS;
   const shuffled = [...ALL_QUESTIONS];
-  let s = seed * 7 + 13;
+  let s = iterSeed * 7 + 13;
   for (let i = shuffled.length - 1; i > 0; i--) {
     s = (s * 1103515245 + 12345) & 0x7fffffff;
     const j = s % (i + 1);
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  return shuffled.slice(0, QUESTIONS_PER_ROUND);
+  const start = roundIdx * QUESTIONS_PER_ROUND;
+  const result = [];
+  for (let i = 0; i < QUESTIONS_PER_ROUND; i++) {
+    result.push(shuffled[(start + i) % shuffled.length]);
+  }
+  return result;
 }
 function renderQuiz(questions, round, saved) {
   const area = document.getElementById('quizArea');
@@ -423,7 +430,7 @@ function renderQuiz(questions, round, saved) {
     const isMulti = Array.isArray(q.answer);
     const isCorrect = answeredQuestions[q.id] && answeredQuestions[q.id].correct;
     const selected = answeredQuestions[q.id] ? answeredQuestions[q.id].selected : null;
-    const submitted = answeredQuestions[q.id] !== undefined;
+    const submitted = answeredQuestions[q.id] && answeredQuestions[q.id].correct !== undefined;
     const optLabels = 'ABCDEFGH';
     let diffClass = 'medium';
     if (q.difficulty === 'EASY') diffClass = 'easy';
@@ -475,12 +482,19 @@ function renderQuiz(questions, round, saved) {
   area.innerHTML = html;
 }
 function selectOption(qId, optIdx, isMulti) {
-  if (answeredQuestions[qId] !== undefined) return;
+  if (answeredQuestions[qId] && answeredQuestions[qId].correct !== undefined) return;
+  console.log('selectOption called', {qId, optIdx, isMulti, before: answeredQuestions[qId] ? JSON.parse(JSON.stringify(answeredQuestions[qId])) : null});
   if (isMulti) {
     if (!answeredQuestions[qId]) answeredQuestions[qId] = {selected:[]};
     const arr = answeredQuestions[qId].selected;
     const idx = arr.indexOf(optIdx);
     if (idx > -1) arr.splice(idx, 1); else arr.push(optIdx);
+    console.log('multi-select after:', JSON.parse(JSON.stringify(answeredQuestions[qId])));
+    document.querySelectorAll('#opts-' + qId + ' .option').forEach((o, i) => {
+      const sel = answeredQuestions[qId].selected;
+      o.classList.toggle('selected', sel.indexOf(i) > -1);
+      o.querySelector('input').checked = sel.indexOf(i) > -1;
+    });
   } else {
     answeredQuestions[qId] = {selected: optIdx};
     document.querySelectorAll('#opts-' + qId + ' .option').forEach((o, i) => {
@@ -501,6 +515,7 @@ function selectOption(qId, optIdx, isMulti) {
   if (pf) pf.style.width = progress + '%';
 }
 function submitRound(round) {
+  console.log('submitRound called', {round, currentIteration, answeredQuestions: JSON.parse(JSON.stringify(answeredQuestions))});
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
   const saved = JSON.parse(localStorage.getItem(key) || '{}');
   const questions = getQuestionsForRound(currentIteration * ROUNDS + round);
