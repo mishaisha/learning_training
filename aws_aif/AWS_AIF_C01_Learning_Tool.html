@@ -249,14 +249,43 @@ const CONTENT = [
 </div>`},
 {id:'d1-eval',domain:0,title:'ML Evaluation Metrics',content:`<div class="domain-card">
 <h3>Confusion Matrix Fundamentals</h3>
-<p>A confusion matrix has four outcomes: <strong>True Positive (TP)</strong> — correctly predicted positive. <strong>True Negative (TN)</strong> — correctly predicted negative. <strong>False Positive (FP)</strong> — incorrectly predicted positive (Type I error). <strong>False Negative (FN)</strong> — incorrectly predicted negative (Type II error).</p>
+<p>A confusion matrix has four outcomes: <strong>True Positive (TP)</strong> — correctly predicted positive. <strong>True Negative (TN)</strong> — correctly predicted negative. <strong>False Positive (FP)</strong> — incorrectly predicted positive (Type I error, false alarm). <strong>False Negative (FN)</strong> — incorrectly predicted negative (Type II error, a miss).</p>
 
 <h3>Key Evaluation Metrics</h3>
-<div class="key-service"><h4>Accuracy</h4><p>(TP + TN) / (TP + TN + FP + FN) — Overall correctness. <strong>Trap:</strong> Misleading when classes are imbalanced (98% accuracy on 98% legitimate / 2% fraud is meaningless).</p></div>
-<div class="key-service"><h4>Precision</h4><p>TP / (TP + FP) — "Of all items predicted as positive, how many were actually positive?" <strong>Use when:</strong> False positives are costly (spam filter — legitimate email should not be flagged). Minimizes false positives.</p></div>
-<div class="key-service"><h4>Recall (Sensitivity)</h4><p>TP / (TP + FN) — "Of all actual positives, how many did we catch?" <strong>Use when:</strong> False negatives are costly (medical diagnosis — missing a disease is worse than a false alarm). Minimizes false negatives.</p></div>
-<div class="key-service"><h4>F1 Score</h4><p>2 × (Precision × Recall) / (Precision + Recall) — Harmonic mean of precision and recall. <strong>Use when:</strong> You need a balanced metric between precision and recall, especially with imbalanced classes.</p></div>
-<div class="key-service"><h4>Specificity</h4><p>TN / (TN + FP) — "Of all actual negatives, how many were correctly identified?" True negative rate. Less commonly the primary metric but appears in exam questions about balanced evaluation.</p></div>
+<div class="key-service"><h4>Accuracy</h4><p>(TP + TN) / (TP + TN + FP + FN) — Overall correctness. <strong>Trap:</strong> Misleading when classes are imbalanced (98% accuracy on 98% legitimate / 2% fraud is meaningless — model can just predict "legitimate" for everything and get 98%). <strong>Mnemonic:</strong> Accuracy = "All correct divided by ALL".</p></div>
+<div class="key-service"><h4>Precision</h4><p>TP / (TP + FP) — "Of all items I <strong>predicted</strong> as positive, how many were actually positive?" <strong>Use when:</strong> False positives are costly (spam filter — legitimate email should not be flagged). Minimizes false positives. <strong>Mnemonic:</strong> Precision = "Picky" — it cares about the quality of positive predictions. High precision = few false alarms.  Precision is about being <strong>precise in your positive claims</strong>.</p></div>
+<div class="key-service"><h4>Recall (Sensitivity)</h4><p>TP / (TP + FN) — "Of all <strong>actual</strong> positives, how many did I catch?" <strong>Use when:</strong> False negatives are costly (medical diagnosis — missing a disease is worse than a false alarm). Minimizes false negatives. <strong>Mnemonic:</strong> Recall = "Catch all" — it cares about not missing any positives. High recall = few misses. Recall is about <strong>retrieving all the relevant items</strong>.</p></div>
+<div class="key-service"><h4>F1 Score</h4><p>2 × (Precision × Recall) / (Precision + Recall) — Harmonic mean of precision and recall. <strong>Use when:</strong> You need a balanced metric between precision and recall, especially with imbalanced classes. <strong>Mnemonic:</strong> F1 = "Balanced" — when you care about both false positives AND false negatives equally.</p></div>
+<div class="key-service"><h4>Specificity</h4><p>TN / (TN + FP) — "Of all actual negatives, how many were correctly identified?" True negative rate. The opposite of Recall — recall cares about positives, specificity cares about negatives. <strong>Mnemonic:</strong> Specificity = "Specific about negatives" — measures how well you identify negative cases.</p></div>
+
+<h3>Quick Decision Guide — Which Metric?</h3>
+<table>
+<tr><th>Scenario</th><th>Costly Error</th><th>Metric to Prioritize</th><th>Why</th></tr>
+<tr><td>Medical diagnosis — missing cancer is worse than false alarm</td><td><strong>False Negative</strong> (missed the disease)</td><td><strong>Recall</strong> (Sensitivity)</td><td>Recall minimizes FN — catch as many sick people as possible</td></tr>
+<tr><td>Defect detection on assembly line — letting defective product through costs money</td><td><strong>False Negative</strong> (missed the defect)</td><td><strong>Recall</strong></td><td>Same as medical — missing a defect is worse than false alarm</td></tr>
+<tr><td>Spam filter — marking legitimate email as spam is terrible</td><td><strong>False Positive</strong> (flagged good email)</td><td><strong>Precision</strong></td><td>Precision minimizes FP — be picky about what you call spam</td></tr>
+<tr><td>Content moderation — blocking appropriate content harms user experience</td><td><strong>False Positive</strong> (blocked good content)</td><td><strong>Precision</strong></td><td>Precision ensures flagged content is actually bad</td></tr>
+<tr><td>Balanced class dataset, both error types equally costly</td><td>Both FP and FN</td><td><strong>Accuracy</strong> or <strong>F1</strong></td><td>Accuracy if balanced, F1 if imbalanced</td></tr>
+<tr><td>Imbalanced dataset (e.g., 99% legit, 1% fraud)</td><td>FP or FN</td><td><strong>Precision, Recall, or F1</strong></td><td>Accuracy is misleading — a "predict all legit" model gets 99% accuracy but catches zero fraud</td></tr>
+</table>
+
+<h3>Easy Mnemonics</h3>
+<ul>
+<li><strong>Recall = "CATCH all"</strong> → R like "retrieve", "round up", "recover". Recall minimizes misses.</li>
+<li><strong>Precision = "PICKY"</strong> → P like "precise", "pure". Precision minimizes false alarms.</li>
+<li><strong>Accuracy = "ALL correct / ALL total"</strong> → Simple ratio. Useless when one class is rare.</li>
+<li><strong>Specificity = "Saying no correctly"</strong> → How good is the model at identifying negatives.</li>
+</ul>
+
+<h3>How to Never Get Confused on Exam Day</h3>
+<p>Ask yourself: <strong>"What is the cost of being wrong?"</strong></p>
+<ul>
+<li>If missing a positive is expensive → <strong>Recall</strong> (catch every positive, accept some false alarms)</li>
+<li>If a false alarm is expensive → <strong>Precision</strong> (only flag something when you're very sure)</li>
+<li>If both are equally important → <strong>F1 Score</strong> (balance between Recall and Precision)</li>
+<li>If classes are balanced and nothing special → <strong>Accuracy</strong></li>
+</ul>
+<p><em>Practice on the example above: Defect rate 0.1% = heavily imbalanced. "Catch as many defects as possible even if false alarms" = missing a defect (FN) is costly → Maximize Recall. That's why B is correct and Accuracy (D) would be misleading high even if model catches nothing.</em></p>
 
 <h3>GenAI Evaluation Metrics (Heavily Tested)</h3>
 <div class="key-service"><h4>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h4><p>Measures n-gram overlap between generated summaries and human-written reference summaries. <strong>Standard for:</strong> Summarization tasks. <strong>Remember:</strong> ROUGE = Recall = Summarization. Focuses on recall of important content.</p></div>
