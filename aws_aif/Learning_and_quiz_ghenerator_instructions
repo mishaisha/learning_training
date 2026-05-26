@@ -169,24 +169,24 @@ learning or quiz tool.
 ## PART 3: AWS AIF-C01 Tool — Implementation Reference
 
 ### File location
-`~/Documents/AWS_Learning/AWS_AIF_C01_Learning_Tool.html`
+`~/Documents/AWS_Learning/aws_aif/AWS_AIF_C01_Learning_Tool.html`
 
 ### Specs
-- **95 questions**: 84 MCQ, 4 multi-select, 7 true/false
-- **Difficulty**: 22 Easy, 73 Medium
-- **Size**: 153 KB, 1114 lines
+- **131 questions**: 113 MCQ, 10 multi-select, 8 true/false
+- **Difficulty**: 39 Easy, 87 Medium, 5 Hard
+- **Size**: 193 KB, 1207 lines
 - **5 iterations × 5 rounds × 13 questions** = 65 per iteration
 - **Pass score**: 70%
 - **Header badge**: shows "65 Q" (exam format count)
 
-### Learning Mode sections (14 total across 5 domains)
+### Learning Mode sections (15 total across 5 domains)
 | Domain | Sections |
 |--------|----------|
-| AI/ML Fundamentals | AI/ML Basics, ML Evaluation, Overfitting/Drift, SageMaker, AI Services |
-| Generative AI | GenAI & FMs, Prompt Engineering, Model Training |
-| Foundation Models | Bedrock, Optimizing Inference |
-| Responsible AI | Principles, Bias Detection |
-| Security & Governance | Threats/Protections, Governance |
+| AI/ML Fundamentals (20%) | AI/ML Basics, ML Evaluation Metrics, Overfitting/Drift, SageMaker & MLOps, AWS AI Services |
+| Generative AI (24%) | GenAI & FMs, Prompt Engineering, Multimodal, Cost Concepts, RLHF & DPO |
+| Foundation Models (28%) | Bedrock, Agents & Knowledge Bases, Guardrails, Optimizing Inference |
+| Responsible AI (14%) | Principles, Bias Detection & Mitigation |
+| Security & Governance (14%) | Threats/Protections, Governance |
 
 ### DOMAIN_ALIASES (for results breakdown)
 Questions use service-level domain names. Map to official exam domains:
@@ -200,16 +200,21 @@ Questions use service-level domain names. Map to official exam domains:
 1. masteryexamprep.com (original 60 questions — URLs now 404)
 2. Ditectrev/AIF-C01 GitHub repo (~35 additional questions)
 3. techexamlexicon.com, study4exam.com (supplementary)
+4. open-exam-prep.com (8 questions — SageMaker, RAG, Bedrock, FM concepts)
+5. javainuse.com (41 questions reviewed, 0 added — already covered by existing)
+6. devpath.com (22 questions — ML lifecycle, GenAI, prompt eng, responsible AI, security)
+7. free-braindumps.com (blocked/taken down during scrape)
 
 ### Key decisions
 - Shuffle once per iteration (LCG PRNG), contiguous round slices + wrap-around
 - No comma separation for "Select TWO" multi-select in UI
 - Domain aliases to normalize non-standard domain names in results
 - Pass score 70% (exam standard)
+- Clean up scraped/ temp files after adding questions (don't commit to git)
 
 ### Mobile access
 - iOS Safari blocks localStorage on file:// — must serve via HTTP
-- `python3 -m http.server 8000` from `~/Documents/AWS_Learning/`
+- `python3 -m http.server 8000` from `~/Documents/AWS_Learning/aws_aif/`
 - Mac IP: 192.168.86.156
 
 ### GitHub
