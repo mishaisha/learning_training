@@ -175,7 +175,7 @@ learning or quiz tool.
 - **378 questions**: 356 MCQ, 14 multi-select, 8 true/false (as of Round 2)
 - **Difficulty**: 96 Easy, 272 Medium, 10 Hard
 - **Size**: ~253 KB, ~1593 lines
-- **5 iterations × 5 rounds × 13 questions** = 65 per iteration
+- **6 iterations × 5 rounds × 15 questions** = 75 per iteration (covers all 378 questions at least once)
 - **Pass score**: 70%
 - **Header badge**: shows "378 Q" (total question count)
 - **Question types**: "mcq" (single-select), "msq" (multi-select), "order" (ordering/HOTSPOT with up/down reorder arrows)
@@ -239,6 +239,7 @@ Questions use service-level domain names. Map to official exam domains:
 
 ### Key decisions
 - Shuffle once per iteration (LCG PRNG), contiguous round slices + wrap-around
+- Iterations: 6 (covers all 378 Qs ≥1x); QuestionsPerRound: 15 (75/iteration, 450 total slots)
 - No comma separation for "Select TWO" multi-select in UI
 - Domain aliases to normalize non-standard domain names in results
 - Pass score 70% (exam standard)
