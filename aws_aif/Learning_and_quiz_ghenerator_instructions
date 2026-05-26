@@ -177,7 +177,9 @@ learning or quiz tool.
 - **Size**: ~220 KB, ~1230 lines
 - **5 iterations × 5 rounds × 13 questions** = 65 per iteration
 - **Pass score**: 70%
-- **Header badge**: shows "65 Q" (exam format count)
+- **Header badge**: shows "153 Q" (total question count)
+- **Question types**: "mcq" (single-select), "msq" (multi-select), "order" (ordering/HOTSPOT with up/down reorder arrows)
+- **Review Wrong Answers**: Button in iteration results shows all wrong Qs with user answer, correct answer, and detailed "why wrong" explanation
 
 ### Learning Mode sections (15 total across 5 domains)
 | Domain | Sections |
