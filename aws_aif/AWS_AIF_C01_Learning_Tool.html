@@ -1065,7 +1065,7 @@ const ALL_QUESTIONS = [
 
 const ROUNDS = 5;
 const QUESTIONS_PER_ROUND = 13;
-const ITERATIONS = 5;
+const ITERATIONS = 6;
 const PASS_SCORE = 70;
 
 let currentMode = 'learn';
@@ -1547,7 +1547,7 @@ function retakeIteration(iter) {
 function startNextIteration() {
   if (currentIteration < ITERATIONS - 1) { startIteration(currentIteration + 1); return; }
   const area = document.getElementById('quizArea');
-  let html = '<div class="results-card"><h2>All 5 Iterations Complete!</h2><div class="sub">You have completed 5 iterations of 5 rounds each (' + (ROUNDS * QUESTIONS_PER_ROUND * ITERATIONS) + ' questions total).</div>';
+  let html = '<div class="results-card"><h2>All 6 Iterations Complete!</h2><div class="sub">You have completed 6 iterations of 5 rounds each (' + (ROUNDS * QUESTIONS_PER_ROUND * ITERATIONS) + ' questions total).</div>';
   let grandTotal = 0, grandCorrect = 0;
   html += '<div style="margin:20px 0;text-align:left"><h4>Progress Summary</h4>';
   for (let i = 0; i < ITERATIONS; i++) {
