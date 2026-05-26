@@ -172,9 +172,9 @@ learning or quiz tool.
 `~/Documents/AWS_Learning/aws_aif/AWS_AIF_C01_Learning_Tool.html`
 
 ### Specs
-- **131 questions**: 113 MCQ, 10 multi-select, 8 true/false
-- **Difficulty**: 39 Easy, 87 Medium, 5 Hard
-- **Size**: 193 KB, 1207 lines
+- **153 questions**: 133 MCQ, 12 multi-select, 8 true/false
+- **Difficulty**: 47 Easy, 101 Medium, 5 Hard
+- **Size**: ~220 KB, ~1230 lines
 - **5 iterations × 5 rounds × 13 questions** = 65 per iteration
 - **Pass score**: 70%
 - **Header badge**: shows "65 Q" (exam format count)
@@ -203,7 +203,7 @@ Questions use service-level domain names. Map to official exam domains:
 4. open-exam-prep.com (8 questions — SageMaker, RAG, Bedrock, FM concepts)
 5. javainuse.com (41 questions reviewed, 0 added — already covered by existing)
 6. devpath.com (22 questions — ML lifecycle, GenAI, prompt eng, responsible AI, security)
-7. free-braindumps.com (blocked/taken down during scrape)
+7. free-braindumps.com (56 questions extracted from pages 1-8 of 43; 22 unique added — PDPs, Amazon Q, SageMaker Serverless, Bedrock pricing, GenAI Security Scoping Matrix, Guardrails, GAN, plagiarism, model evaluation)
 
 ### Key decisions
 - Shuffle once per iteration (LCG PRNG), contiguous round slices + wrap-around
