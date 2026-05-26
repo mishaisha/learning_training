@@ -246,6 +246,22 @@ Questions use service-level domain names. Map to official exam domains:
 - Clean up scraped/ temp files after adding questions (don't commit to git)
 - Udemy text parsing: use `?`-presence heuristic (robust across all 3 files); extract correct answers from explanations, not from answer markers (marker order inconsistent between tests)
 
+### Adding new questions (process for future rounds)
+1. **Sources**: User may provide new Udemy .txt files (Desktop/), URLs to web practice tests, or inline pasted content
+2. **Parse strategy** (for Udemy .txt):
+   - Encoding: Latin-1 (`encoding='latin-1'`), NOT UTF-8
+   - Split on blank lines + digit pattern to isolate questions
+   - Use `?` heuristic: last `?`-containing line marks end of question text; rest are options
+   - Extract correct answers from `Correct options:` / `Correct option:` in explanation block
+   - Normalize unicode for dedup matching
+3. **Deduplication**:
+   - Compare normalized question text against existing `ALL_QUESTIONS` array
+   - Check both existing (IDs 1–185) and previously added Udemy questions (IDs 186–378)
+   - Also check for internal duplicates within new pool
+   - Use fuzzy similarity check (85%+ threshold) to flag near-duplicates for manual review
+4. **Insertion**: Add new questions at end of `ALL_QUESTIONS` array with sequential IDs. Update badge count in header.
+5. **Commit**: Update both the HTML tool AND this instructions file. Then `git add`, `commit`, `push`.
+
 ### Mobile access
 - iOS Safari blocks localStorage on file:// — must serve via HTTP
 - `python3 -m http.server 8000` from `~/Documents/AWS_Learning/aws_aif/`
