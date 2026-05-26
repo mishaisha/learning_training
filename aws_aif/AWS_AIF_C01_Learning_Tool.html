@@ -328,13 +328,15 @@ const CONTENT = [
 <div class="key-service"><h4>SageMaker Pipelines</h4><p>Automates end-to-end ML workflows (CI/CD for ML). Orchestrates data preparation, training, evaluation, and deployment steps.</p></div>
 <div class="key-service"><h4>DeepAR (Built-in Algorithm)</h4><p>Probabilistic time-series forecasting using recurrent neural networks. <em>Exam: "forecast electricity demand / time-series prediction" = DeepAR.</em></p></div>
 
-<h3>Inference Types (Know the Differences)</h3>
-<ul>
-<li><strong>Real-time:</strong> Always-on endpoints, low latency (milliseconds), for interactive applications (chatbots, fraud detection). Most expensive.</li>
-<li><strong>Serverless:</strong> Auto-scaling, pay per invocation, cold starts. Good for variable traffic.</li>
-<li><strong>Asynchronous:</strong> For large payloads, queues requests. Good for single large file processing.</li>
-<li><strong>Batch Transform:</strong> For bulk processing static S3 datasets. Most cost-effective for non-real-time batch jobs.</li>
-</ul>
+<h3>Inference Types — SageMaker (Know the Differences)</h3>
+<table>
+<tr><th>Type</th><th>Payload Limit</th><th>Latency</th><th>Traffic Pattern</th><th>Cost Model</th><th>Best For</th></tr>
+<tr><td><strong>Real-time</strong></td><td>~6 MB (40 MB with response streaming)</td><td>~50–500 ms</td><td>Always-on, steady or variable</td><td>Pay per hour (instance uptime)</td><td>Interactive apps: chatbots, fraud detection, live recommendations</td></tr>
+<tr><td><strong>Serverless</strong></td><td>~6 MB</td><td>~50–500 ms + <strong>cold start 2–5 s</strong></td><td>Intermittent / spiky</td><td>Pay per invocation + compute duration (GB-s)</td><td>Variable/unpredictable traffic, dev/test, periodic inference</td></tr>
+<tr><td><strong>Asynchronous</strong></td><td><strong>Up to 1 GB</strong></td><td>~seconds to minutes</td><td>Queue-based (S3 input/output)</td><td>Pay per instance uptime (can scale to zero)</td><td>Single large file processing (e.g., video analysis, large PDFs)</td></tr>
+<tr><td><strong>Batch Transform</strong></td><td>No limit (reads from S3)</td><td>~minutes to hours</td><td>Static dataset in S3</td><td>Pay per instance uptime (shuts down when done)</td><td>Bulk processing: "process 50K records overnight"</td></tr>
+</table>
+<p><em>Exam tip: Payload size > 6 MB? Use Async Inference. Need sub-second response? Real-time or Serverless (be aware of cold start). Process 100K files in S3 overnight? Batch Transform. Variable traffic with unpredictable bursts? Serverless. Always-on production? Real-time endpoint.</em></p>
 
 <h3>Key Exam Trap</h3>
 <p>If the question asks about <strong>full ML platform</strong> = SageMaker. If the question asks about a <strong>specific managed AI service</strong> (vision, text, speech) = Rekognition, Comprehend, Transcribe, etc. Don't choose SageMaker when a simpler managed AI service fits the use case.</p>
@@ -403,13 +405,17 @@ const CONTENT = [
 <h3>Multimodal Models</h3>
 <p>Models that process and generate multiple data types (text, images, audio, video) within a single model. <strong>Key exam point:</strong> Multimodal models CAN accept image input alongside text (e.g., show Claude a diagram and ask about it). Text-only LLMs CANNOT process images. <em>Exam: "model must analyze a chart/image and answer questions" = Multimodal model (Claude, Amazon Nova Pro/Lite). NOT a text-only LLM. "Model must generate images from text" = Diffusion model (Stability AI SD3, Amazon Nova Canvas).</em></p>
 
-<h3>GenAI Cost Concepts — Token-Based Pricing</h3>
+<h3>GenAI Cost Concepts — Token-Based Pricing & Inference Types</h3>
 <p>Bedrock pricing is based on <strong>token count</strong> — you pay for both input tokens (your prompt) and output tokens (model's response). <strong>Input tokens</strong> are typically 3-5x cheaper than output tokens. A large prompt (e.g., including full document + RAG context) increases cost even before the model generates anything. <em>Exam: "What drives Bedrock inference cost?" = Token count (input + output). "Large prompts with RAG context" increase input token costs.</em></p>
-<ul>
-<li><strong>On-Demand:</strong> Pay per token — best for variable/unknown workloads</li>
-<li><strong>Provisioned Throughput:</strong> Reserved capacity in model units — 1-month or 6-month commitments. Required for custom fine-tuned models</li>
-<li><strong>Batch Inference:</strong> Asynchronous processing of large volumes — lower cost per token than on-demand. Best for non-real-time workloads (document processing at scale)</li>
-</ul>
+
+<h4>Bedrock Inference Types</h4>
+<table>
+<tr><th>Type</th><th>Payload</th><th>Latency</th><th>Commitment</th><th>Custom Models</th><th>Best For</th></tr>
+<tr><td><strong>On-Demand</strong></td><td>Based on model context window (~2K–200K tokens)</td><td>Standard (varies by model size)</td><td>None — pay per token</td><td>No (base models only)</td><td>Variable workloads, prototyping, low-volume production</td></tr>
+<tr><td><strong>Provisioned Throughput</strong></td><td>Same as On-Demand (per model)</td><td>~predictable (reserved capacity)</td><td>1-month or 6-month commitment (Model Units)</td><td><strong>Required</strong> for fine-tuned models</td><td>Steady-state production, latency-sensitive apps, fine-tuned model inference</td></tr>
+<tr><td><strong>Batch Inference</strong></td><td>Large volumes (S3 input)</td><td>~minutes to hours (async)</td><td>None — pay per token (discounted)</td><td>Yes (base + fine-tuned with PT)</td><td>Non-real-time: document processing at scale, bulk data analysis</td></tr>
+</table>
+<p><em>Exam tip: Fine-tuned Bedrock model → must use Provisioned Throughput (on-demand NOT available). Need lower cost for large async workloads? Batch Inference (per-token discount vs on-demand). Steady production traffic? Provisioned Throughput for predictable cost. Prototyping? On-Demand.</em></p>
 
 <h3>Amazon Q Developer vs Amazon Bedrock (Exam Distinction)</h3>
 <p>Both are AWS GenAI services but serve different purposes. The exam tests which to use for a given scenario:</p>
