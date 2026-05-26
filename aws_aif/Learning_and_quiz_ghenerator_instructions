@@ -172,12 +172,12 @@ learning or quiz tool.
 `~/Documents/AWS_Learning/aws_aif/AWS_AIF_C01_Learning_Tool.html`
 
 ### Specs
-- **153 questions**: 133 MCQ, 12 multi-select, 8 true/false
-- **Difficulty**: 47 Easy, 101 Medium, 5 Hard
-- **Size**: ~220 KB, ~1230 lines
+- **378 questions**: 356 MCQ, 14 multi-select, 8 true/false (as of Round 2)
+- **Difficulty**: 96 Easy, 272 Medium, 10 Hard
+- **Size**: ~253 KB, ~1593 lines
 - **5 iterations × 5 rounds × 13 questions** = 65 per iteration
 - **Pass score**: 70%
-- **Header badge**: shows "153 Q" (total question count)
+- **Header badge**: shows "378 Q" (total question count)
 - **Question types**: "mcq" (single-select), "msq" (multi-select), "order" (ordering/HOTSPOT with up/down reorder arrows)
 - **Review Wrong Answers**: Button in iteration results shows all wrong Qs with user answer, correct answer, and detailed "why wrong" explanation
 
@@ -206,6 +206,36 @@ Questions use service-level domain names. Map to official exam domains:
 5. javainuse.com (41 questions reviewed, 0 added — already covered by existing)
 6. devpath.com (22 questions — ML lifecycle, GenAI, prompt eng, responsible AI, security)
 7. free-braindumps.com (56 questions extracted from pages 1-8 of 43; 22 unique added — PDPs, Amazon Q, SageMaker Serverless, Bedrock pricing, GenAI Security Scoping Matrix, Guardrails, GAN, plagiarism, model evaluation)
+8. Udemy practice tests (Test2.txt, test3.txt, test4.txt — 65 Qs each, 193 unique added after dedup; see Parsing section below)
+
+### Udemy text file parsing (Test2.txt / test3.txt / test4.txt)
+- **Location**: `~/Desktop/Test2.txt`, `~/Desktop/test3.txt`, `~/Desktop/test4.txt`
+- **Encoding**: Latin-1/CP1252 (`encoding='latin-1'`); must NOT use UTF-8
+- **Format**: Each test file = 65 questions, ~185KB each. Question text first, then options (A/B/C/D), then explanation section with correct answer(s).
+- **Parse strategy**:
+  1. Split each file on blank lines + digit pattern to isolate individual questions
+  2. Split Q&A block from explanation block using double-newlines between them
+  3. **`?` heuristic**: Last line containing `?` in the Q&A block marks the end of question text. Everything after that line = options (trimmed, non-empty lines)
+  4. **Answer extraction**: Parse explanation block for `Correct options:` / `Correct option:` text; extract the letter(s) after the colon. Map letter→index (A→0, B→1, etc.)
+  5. **Multi-select**: When multiple letters found (e.g., "Correct options: A, C"), store as array of indices
+  6. Normalize unicode for dedup matching (strip diacritics, smart quotes→ASCII)
+- **Post-processing fixes**:
+  - Some question's `Correct options:` line lists letters in wrong order or missing — manually fixed: Test2 Q26→[0,4], Test2 Q44→[0,2], Test3 Q32→[0,2], Test4 Q3→0
+  - Latin-1 decode artifacts: replace `\u00d5`→`'`, `\u00ca`→empty, smart quotes→ASCII quotes
+- **Deduplication**:
+  - Compare normalized question text against existing ALL_QUESTIONS array (IDs 1-185)
+  - Remove any that fuzzy-match (lowercase, strip punctuation/whitespace)
+  - Also detect internal duplicates within the 195 candidate pool: removed Test3 Q13 (dup of Test2 Q6), Test3 Q42 (dup of Test3 Q10)
+- **Result**: 193 new questions inserted as IDs 186-378; badge updated 185→378
+
+### Domain breakdown (IDs 1-378)
+| Domain | Count |
+|--------|-------|
+| Applications of Foundation Models | 55 |
+| Fundamentals of AI and ML | 49 |
+| Fundamentals of Generative AI | 39 |
+| Guidelines for Responsible AI | 28 |
+| Security, Compliance, and Governance for AI Solutions | 19 |
 
 ### Key decisions
 - Shuffle once per iteration (LCG PRNG), contiguous round slices + wrap-around
@@ -213,6 +243,7 @@ Questions use service-level domain names. Map to official exam domains:
 - Domain aliases to normalize non-standard domain names in results
 - Pass score 70% (exam standard)
 - Clean up scraped/ temp files after adding questions (don't commit to git)
+- Udemy text parsing: use `?`-presence heuristic (robust across all 3 files); extract correct answers from explanations, not from answer markers (marker order inconsistent between tests)
 
 ### Mobile access
 - iOS Safari blocks localStorage on file:// — must serve via HTTP
