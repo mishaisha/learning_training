@@ -258,112 +258,6 @@ const CONTENT = [
 <div class="key-service"><h4>F1 Score</h4><p>2 × (Precision × Recall) / (Precision + Recall) — Harmonic mean of precision and recall. <strong>Use when:</strong> You need a balanced metric between precision and recall, especially with imbalanced classes. <strong>Mnemonic:</strong> F1 = "Balanced" — when you care about both false positives AND false negatives equally.</p></div>
 <div class="key-service"><h4>Specificity</h4><p>TN / (TN + FP) — "Of all actual negatives, how many were correctly identified?" True negative rate. The opposite of Recall — recall cares about positives, specificity cares about negatives. <strong>Mnemonic:</strong> Specificity = "Specific about negatives" — measures how well you identify negative cases.</p></div>
 
-<h3>Quick Decision Guide — Which Metric?</h3>
-<table>
-<tr><th>Scenario</th><th>Costly Error</th><th>Metric to Prioritize</th><th>Why</th></tr>
-<tr><td>Medical diagnosis — missing cancer is worse than false alarm</td><td><strong>False Negative</strong> (missed the disease)</td><td><strong>Recall</strong> (Sensitivity)</td><td>Recall minimizes FN — catch as many sick people as possible</td></tr>
-<tr><td>Defect detection on assembly line — letting defective product through costs money</td><td><strong>False Negative</strong> (missed the defect)</td><td><strong>Recall</strong></td><td>Same as medical — missing a defect is worse than false alarm</td></tr>
-<tr><td>Spam filter — marking legitimate email as spam is terrible</td><td><strong>False Positive</strong> (flagged good email)</td><td><strong>Precision</strong></td><td>Precision minimizes FP — be picky about what you call spam</td></tr>
-<tr><td>Content moderation — blocking appropriate content harms user experience</td><td><strong>False Positive</strong> (blocked good content)</td><td><strong>Precision</strong></td><td>Precision ensures flagged content is actually bad</td></tr>
-<tr><td>Balanced class dataset, both error types equally costly</td><td>Both FP and FN</td><td><strong>Accuracy</strong> or <strong>F1</strong></td><td>Accuracy if balanced, F1 if imbalanced</td></tr>
-<tr><td>Imbalanced dataset (e.g., 99% legit, 1% fraud)</td><td>FP or FN</td><td><strong>Precision, Recall, or F1</strong></td><td>Accuracy is misleading — a "predict all legit" model gets 99% accuracy but catches zero fraud</td></tr>
-</table>
-
-<h3>Easy Mnemonics</h3>
-<ul>
-<li><strong>Recall = "CATCH all"</strong> → R like "retrieve", "round up", "recover". Recall minimizes misses.</li>
-<li><strong>Precision = "PICKY"</strong> → P like "precise", "pure". Precision minimizes false alarms.</li>
-<li><strong>Accuracy = "ALL correct / ALL total"</strong> → Simple ratio. Useless when one class is rare.</li>
-<li><strong>Specificity = "Saying no correctly"</strong> → How good is the model at identifying negatives.</li>
-</ul>
-
-<h3>How to Never Get Confused on Exam Day</h3>
-<p>Ask yourself: <strong>"What is the cost of being wrong?"</strong></p>
-<ul>
-<li>If missing a positive is expensive → <strong>Recall</strong> (catch every positive, accept some false alarms)</li>
-<li>If a false alarm is expensive → <strong>Precision</strong> (only flag something when you're very sure)</li>
-<li>If both are equally important → <strong>F1 Score</strong> (balance between Recall and Precision)</li>
-<li>If classes are balanced and nothing special → <strong>Accuracy</strong></li>
-</ul>
-<p><em>Practice on the example above: Defect rate 0.1% = heavily imbalanced. "Catch as many defects as possible even if false alarms" = missing a defect (FN) is costly → Maximize Recall. That's why B is correct and Accuracy (D) would be misleading high even if model catches nothing.</em></p>
-
-<div class="improve-section" style="border-color:var(--accent2);background:#e8f0fe">
-<h4 style="color:var(--accent2);font-size:1.1rem">🔥 SPECIAL NOTE: Precision vs Recall — MY DECISION FRAMEWORK</h4>
-<p><strong>The ONE RULE that solves 95% of these questions:</strong></p>
-<p style="font-size:1.05rem;font-weight:600;margin:8px 0">"What's the WORST thing that can happen?"</p>
-<table style="width:100%;margin:12px 0;background:#fff;border-radius:8px;overflow:hidden">
-<tr style="background:var(--primary);color:#fff">
-<th style="padding:10px;text-align:left">If WORST =</th>
-<th style="padding:10px;text-align:left">Metric</th>
-<th style="padding:10px;text-align:left">Motto</th>
-</tr>
-<tr>
-<td style="padding:10px;border-bottom:1px solid var(--border)"><strong>MISSING SOMETHING</strong> (False Negative = FN)</td>
-<td style="padding:10px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td>
-<td style="padding:10px;border-bottom:1px solid var(--border)">"Don't MISS anything important"<br>"I'd rather have 100 false alarms than miss 1 real case"</td>
-</tr>
-<tr>
-<td style="padding:10px;border-bottom:1px solid var(--border)"><strong>FALSE ALARM</strong> (False Positive = FP)</td>
-<td style="padding:10px;border-bottom:1px solid var(--border);font-weight:700;color:var(--success)">Precision</td>
-<td style="padding:10px;border-bottom:1px solid var(--border)">"Don't CRY WOLF"<br>"I'd rather miss 1 real case than have 1 false alarm"</td>
-</tr>
-</table>
-<h4 style="margin-top:16px;margin-bottom:8px">📋 EXAM DECISION TABLE — MEMORIZE THIS</h4>
-<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
-<tr style="background:#f0f4ff">
-<th style="padding:8px;text-align:left">Scenario</th>
-<th style="padding:8px;text-align:left">Worst Error</th>
-<th style="padding:8px;text-align:left">Metric</th>
-</tr>
-<tr>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Medical diagnosis</td>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Missing cancer (FN)</td>
-<td style="padding:8px;border-bottom:1px solid var(--border);font-weight:600">Recall</td>
-</tr>
-<tr>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Fraud detection</td>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Letting fraud slip (FN)</td>
-<td style="padding:8px;border-bottom:1px solid var(--border);font-weight:600">Recall</td>
-</tr>
-<tr>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Defect detection</td>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Letting defect ship (FN)</td>
-<td style="padding:8px;border-bottom:1px solid var(--border);font-weight:600">Recall</td>
-</tr>
-<tr>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Spam filter</td>
-<td style="padding:8px;border-bottom:1px solid var(--border)">Legit email flagged (FP)</td>
-<td style="padding:8px;border-bottom:1px solid var(--border);font-weight:600">Precision</td>
-</tr>
-<tr>
-<td style="padding:8px">Content moderation</td>
-<td style="padding:8px">Block good content (FP)</td>
-<td style="padding:8px;font-weight:600">Precision</td>
-</tr>
-</table>
-<h4 style="margin-top:16px;margin-bottom:8px">📝 DEFINITIONS FOR DIRECT QUESTIONS</h4>
-<ul style="margin:0;padding-left:20px">
-<li><strong>Recall</strong> = % of <strong>actual</strong> positives correctly identified → "Did we CATCH all the bad guys?"</li>
-<li><strong>Precision</strong> = % of <strong>predicted</strong> positives that were actually positive → "When we raise an alarm, are we RIGHT?"</li>
-</ul>
-<p style="margin-top:12px;padding:10px;background:#fff8e1;border-radius:6px;border-left:4px solid var(--warning)"><strong>Exam Trick:</strong> If question says "actual positives" → Recall. If it says "predicted positives" → Precision.</p>
-
-<h4 style="margin-top:16px;margin-bottom:8px">📌 PRECISION VS RECALL — 7-ROW CHEAT SHEET (MEMORIZE THIS)</h4>
-<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
-<tr style="background:var(--primary);color:#fff">
-<th style="padding:8px;text-align:left">If question says...</th>
-<th style="padding:8px;text-align:left">Answer</th>
-</tr>
-<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Medical / cancer / "missing disease is worse"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--accent2)">Recall</td></tr>
-<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Fraud / "let fraud slip through"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--accent2)">Recall</td></tr>
-<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Defect detection / "catch all defects"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--accent2)">Recall</td></tr>
-<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Spam / "false positives are bad / flagging legit email"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--success)">Precision</td></tr>
-<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Content moderation / "don't block good content"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--success)">Precision</td></tr>
-<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Court / "convict innocent is worse"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--success)">Precision</td></tr>
-<tr><td style="padding:6px">Definition: "actual positives" / "predicted positives"</td><td style="padding:6px;font-weight:600">P→P (Predicted→Precision), Actual→Recall</td></tr>
-</table>
-</div>
-
 <h3>GenAI Evaluation Metrics (Heavily Tested)</h3>
 <div class="key-service"><h4>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</h4><p>Measures n-gram overlap between generated summaries and human-written reference summaries. <strong>Standard for:</strong> Summarization tasks. <strong>Remember:</strong> ROUGE = Recall = Summarization. Focuses on recall of important content.</p></div>
 <div class="key-service"><h4>BLEU (Bilingual Evaluation Understudy)</h4><p>Measures precision of n-gram overlap between generated text and reference. <strong>Standard for:</strong> Machine translation. <strong>Remember:</strong> BLEU = Precision = Translation.</p></div>
@@ -377,6 +271,110 @@ const CONTENT = [
 <li>If a model needs to <strong>minimize false negatives</strong> (medical diagnosis, fraud detection), prioritize <strong>Recall</strong></li>
 <li>If a model needs to <strong>minimize false positives</strong> (spam filter, content moderation), prioritize <strong>Precision</strong></li>
 </ul>
+</div>`},
+{id:'d1-precision-recall',domain:0,title:'Precision & Recall - Complete Guide',content:`<div class="domain-card">
+<h3>TWO WORDS. TWO MEANINGS. THAT'S IT.</h3>
+<div class="key-service" style="border-left-color:var(--accent2)">
+<h4>RECALL = "Did we CATCH ALL the bad things?"</h4>
+<p><strong>Minimizes MISSES (False Negatives).</strong> Use when missing something is TERRIBLE but false alarms are acceptable.</p>
+<p><strong>Motto:</strong> "I'd rather have 100 false alarms than miss 1 real case."</p>
+</div>
+<div class="key-service" style="border-left-color:var(--success)">
+<h4>PRECISION = "When we raise an alarm, are we RIGHT?"</h4>
+<p><strong>Minimizes FALSE ALARMS (False Positives).</strong> Use when a false alarm is TERRIBLE but missing something is acceptable.</p>
+<p><strong>Motto:</strong> "I'd rather miss 1 real case than raise 1 false alarm."</p>
+</div>
+<h3>THE ONE QUESTION THAT SOLVES ALL SCENARIOS</h3>
+<p style="font-size:1.1rem;font-weight:600;color:var(--accent2);text-align:center;padding:12px;background:#f0f4ff;border-radius:8px">What's the WORST thing that can happen?</p>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden;margin:12px 0">
+<tr style="background:var(--primary);color:#fff"><th style="padding:8px;text-align:left">If WORST is...</th><th style="padding:8px;text-align:left">Called</th><th style="padding:8px;text-align:left">Metric</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">We MISSED something important</td><td style="padding:8px;border-bottom:1px solid var(--border)">False Negative (FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">RECALL</td></tr>
+<tr><td style="padding:8px">We raised a FALSE ALARM</td><td style="padding:8px">False Positive (FP)</td><td style="padding:8px;font-weight:700;color:var(--success)">PRECISION</td></tr>
+</table>
+<h3>THE YES/NO TEST — HOW TO CLASSIFY ANY ERROR</h3>
+<div class="key-service" style="border-left-color:var(--accent)">
+<p><strong>Ask: "What did the model say? What was the truth?"</strong></p>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden;margin:8px 0">
+<tr style="background:var(--primary);color:#fff"><th style="padding:8px">Model said...</th><th style="padding:8px">Truth was...</th><th style="padding:8px">Error Type</th><th style="padding:8px">Metric</th><th style="padding:8px">Plain English</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border);text-align:center"><b>NO</b> (didn't flag/detect)</td><td style="padding:8px;border-bottom:1px solid var(--border);text-align:center"><b>YES</b> (it WAS there)</td><td style="padding:8px;border-bottom:1px solid var(--border);color:var(--accent2);font-weight:700">FN (False Negative)</td><td style="padding:8px;border-bottom:1px solid var(--border);color:var(--accent2);font-weight:700">RECALL</td><td style="padding:8px;border-bottom:1px solid var(--border);font-size:.85rem">Model <b>MISSED</b> it. Said NO when should say YES.</td></tr>
+<tr><td style="padding:8px;text-align:center"><b>YES</b> (flagged/detected/acted)</td><td style="padding:8px;text-align:center"><b>NO</b> (it WASN'T there)</td><td style="padding:8px;color:var(--success);font-weight:700">FP (False Positive)</td><td style="padding:8px;color:var(--success);font-weight:700">PRECISION</td><td style="padding:8px;font-size:.85rem">Model <b>CRIED WOLF</b>. Said YES when should say NO.</td></tr>
+</table>
+<p><strong>How to apply:</strong> Read the scenario. Identify what the model is trying to detect (the "positive" class). Figure out if the model said YES or NO when it was wrong — that tells you FP vs FN, which tells you Precision vs Recall.</p>
+</div>
+<h3>7 EXAM SCENARIOS - MATCH AND ANSWER</h3>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
+<tr style="background:#f0f4ff"><th style="padding:8px;text-align:left">Scenario</th><th style="padding:8px;text-align:left">Worst Error</th><th style="padding:8px;text-align:left">Metric</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">Medical / Cancer diagnosis</td><td style="padding:8px;border-bottom:1px solid var(--border)">Missing disease (FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">Fraud detection</td><td style="padding:8px;border-bottom:1px solid var(--border)">Fraud slips through (FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">Defect detection / Quality control</td><td style="padding:8px;border-bottom:1px solid var(--border)">Defect ships to customer (FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">Self-driving pedestrian detection</td><td style="padding:8px;border-bottom:1px solid var(--border)">Hit pedestrian (FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">Spam filter</td><td style="padding:8px;border-bottom:1px solid var(--border)">Legit email flagged (FP)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--success)">Precision</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">Content moderation</td><td style="padding:8px;border-bottom:1px solid var(--border)">Good content blocked (FP)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--success)">Precision</td></tr>
+<tr><td style="padding:8px">Court / Conviction system</td><td style="padding:8px">Innocent convicted (FP)</td><td style="padding:8px;font-weight:700;color:var(--success)">Precision</td></tr>
+</table>
+<h3>TRAP PATTERN 1: "Rather X THAN Y"</h3>
+<div class="key-service" style="border-left-color:var(--warning)">
+<p><strong>The thing AFTER "than" is the WORST error.</strong></p>
+<ul style="margin:4px 0 0;padding-left:20px">
+<li>"Rather have 100 false alarms THAN miss 1 cancer" &rarr; After "than" = MISS cancer (FN) &rarr; <strong>Recall</strong></li>
+<li>"Rather reject 100 qualified THAN admit 1 unqualified" &rarr; After "than" = ADMIT UNQUALIFIED (FP) &rarr; <strong>Precision</strong></li>
+<li>"Rather let 100 guilty free THAN convict 1 innocent" &rarr; After "than" = CONVICT INNOCENT (FP) &rarr; <strong>Precision</strong></li>
+<li>"Rather inconvenience 100 customers THAN let 1 fraud slip" &rarr; After "than" = FRAUD SLIPS (FN) &rarr; <strong>Recall</strong></li>
+</ul>
+</div>
+<h3>TRAP PATTERN 2: Definitions - Use P&rarr;P Rule</h3>
+<div class="key-service" style="border-left-color:var(--warning)">
+<p><strong>P</strong>redicted &rarr; <strong>P</strong>recision (P&rarr;P). <strong>R</strong>eal &rarr; <strong>R</strong>ecall (R&rarr;R).</p>
+<ul style="margin:4px 0 0;padding-left:20px">
+<li>"Of ALL emails <strong>flagged</strong> as spam..." = Predicted &rarr; <strong>Precision</strong></li>
+<li>"Of ALL items <strong>predicted</strong> as fraudulent..." = Predicted &rarr; <strong>Precision</strong></li>
+<li>"Of ALL <strong>actual</strong> cancer cases..." = Real &rarr; <strong>Recall</strong></li>
+<li>"Of ALL patients who <strong>actually</strong> have the disease..." = Real &rarr; <strong>Recall</strong></li>
+</ul>
+<p style="margin-top:6px;padding:8px;background:#fff8e1;border-radius:4px;border-left:4px solid var(--warning)"><strong>Tip:</strong> "Flagged" = Predicted = P &rarr; Precision. "Actual" = Real = R &rarr; Recall.</p>
+</div>
+<h3>KEYWORDS - SCAN THE QUESTION</h3>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
+<tr style="background:var(--primary);color:#fff"><th style="padding:8px;text-align:left">If question contains...</th><th style="padding:8px;text-align:left">Answer</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">"catch", "miss", "never let through", "every single"</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">"false alarm", "falsely accuse", "wrongly flag"</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--success)">Precision</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">"rather X than Y"</td><td style="padding:8px;border-bottom:1px solid var(--border)">After "than" = worst &rarr; match accordingly</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border)">"predicted", "flagged", "identified as"</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--success)">P&rarr;P = Precision</td></tr>
+<tr><td style="padding:8px">"actual", "real", "truly have"</td><td style="padding:8px;font-weight:700;color:var(--accent2)">R&rarr;R = Recall</td></tr>
+</table>
+<h3>FORMULAS (if asked directly)</h3>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
+<tr style="background:#f0f4ff"><th style="padding:8px;text-align:left">Metric</th><th style="padding:8px;text-align:left">Formula</th><th style="padding:8px;text-align:left">Plain English</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">Recall</td><td style="padding:8px;border-bottom:1px solid var(--border)">TP / (TP + FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-size:.85rem">Of all actual positives, how many caught?</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--success)">Precision</td><td style="padding:8px;border-bottom:1px solid var(--border)">TP / (TP + FP)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-size:.85rem">Of all predicted positives, how many right?</td></tr>
+<tr><td style="padding:8px">Accuracy</td><td style="padding:8px">(TP+TN) / (TP+TN+FP+FN)</td><td style="padding:8px;font-size:.85rem">Useless for imbalanced data - exam trap!</td></tr>
+</table>
+<h3>MNEMONICS</h3>
+<ul>
+<li><strong>Recall = "CATCH ALL"</strong> &mdash; R like "retrieve", "round up". Catch every positive.</li>
+<li><strong>Precision = "BE PICKY"</strong> &mdash; P like "precise", "pure". Only say YES when sure.</li>
+<li><strong>Accuracy</strong> = Useless for rare classes (98% legit, model predicts "legit" every time = 98% accuracy but catches 0% fraud).</li>
+<li><strong>F1 Score</strong> = Balance between Precision and Recall. Use when both FP and FN matter.</li>
+</ul>
+<h3>Quick Decision Guide — Which Metric?</h3>
+<table>
+<tr><th>Scenario</th><th>Costly Error</th><th>Metric to Prioritize</th><th>Why</th></tr>
+<tr><td>Medical diagnosis — missing cancer is worse than false alarm</td><td><strong>False Negative</strong> (missed the disease)</td><td><strong>Recall</strong> (Sensitivity)</td><td>Recall minimizes FN — catch as many sick people as possible</td></tr>
+<tr><td>Defect detection on assembly line — letting defective product through costs money</td><td><strong>False Negative</strong> (missed the defect)</td><td><strong>Recall</strong></td><td>Same as medical — missing a defect is worse than false alarm</td></tr>
+<tr><td>Spam filter — marking legitimate email as spam is terrible</td><td><strong>False Positive</strong> (flagged good email)</td><td><strong>Precision</strong></td><td>Precision minimizes FP — be picky about what you call spam</td></tr>
+<tr><td>Content moderation — blocking appropriate content harms user experience</td><td><strong>False Positive</strong> (blocked good content)</td><td><strong>Precision</strong></td><td>Precision ensures flagged content is actually bad</td></tr>
+<tr><td>Balanced class dataset, both error types equally costly</td><td>Both FP and FN</td><td><strong>Accuracy</strong> or <strong>F1</strong></td><td>Accuracy if balanced, F1 if imbalanced</td></tr>
+<tr><td>Imbalanced dataset (e.g., 99% legit, 1% fraud)</td><td>FP or FN</td><td><strong>Precision, Recall, or F1</strong></td><td>Accuracy is misleading — a "predict all legit" model gets 99% accuracy but catches zero fraud</td></tr>
+</table>
+<h3>How to Never Get Confused on Exam Day</h3>
+<p>Ask yourself: <strong>"What is the cost of being wrong?"</strong></p>
+<ul>
+<li>If missing a positive is expensive → <strong>Recall</strong> (catch every positive, accept some false alarms)</li>
+<li>If a false alarm is expensive → <strong>Precision</strong> (only flag something when you're very sure)</li>
+<li>If both are equally important → <strong>F1 Score</strong> (balance between Recall and Precision)</li>
+<li>If classes are balanced and nothing special → <strong>Accuracy</strong></li>
+</ul>
+<p><em>Practice: Defect rate 0.1% = heavily imbalanced. "Catch as many defects as possible even if false alarms" = missing a defect (FN) is costly → Maximize Recall. Accuracy would be misleading high even if model catches nothing.</em></p>
 </div>`},
 {id:'d1-overfitting',domain:0,title:'Overfitting, Underfitting & Data Drift',content:`<div class="domain-card">
 <h3>Overfitting</h3>

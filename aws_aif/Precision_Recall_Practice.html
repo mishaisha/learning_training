@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision vs Recall - Targeted Practice</title>
+<style>
+:root{--primary:#232F3E;--accent:#FF9900;--accent2:#146EB4;--bg:#f5f7fa;--card:#fff;--text:#1a1a2e;--text2:#555;--border:#e0e4ea;--success:#2ecc71;--error:#e74c3c;--warning:#f39c12}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--primary);color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+header h1{font-size:1.1rem;font-weight:600}
+header h1 span{color:var(--accent)}
+.container{max-width:900px;margin:0 auto;padding:16px 24px}
+.cheat-sheet{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:.9rem}
+.cheat-sheet h2{font-size:1.1rem;color:var(--primary);margin-bottom:10px;border-bottom:2px solid var(--accent);padding-bottom:6px}
+.cheat-sheet table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.85rem}
+.cheat-sheet th{padding:6px 8px;text-align:left;background:#f0f4ff;font-weight:600}
+.cheat-sheet td{padding:5px 8px;border-bottom:1px solid var(--border)}
+.cheat-sheet .recall{color:var(--accent2);font-weight:700}
+.cheat-sheet .precision{color:var(--success);font-weight:700}
+.cheat-sheet .tip{background:#fff8e1;border-left:4px solid var(--warning);padding:8px 12px;border-radius:4px;margin:8px 0;font-size:.85rem}
+.mode-toggle{display:flex;gap:8px;margin-bottom:16px}
+.mode-btn{padding:10px 24px;border:none;border-radius:8px;cursor:pointer;font-size:.9rem;font-weight:600;transition:.2s;background:var(--border);color:var(--text)}
+.mode-btn.active{background:var(--accent2);color:#fff}
+.quiz-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;background:var(--card);border-radius:10px;padding:16px 20px;border:1px solid var(--border)}
+.quiz-header .stat{text-align:center}
+.quiz-header .stat .num{font-size:1.4rem;font-weight:700;color:var(--accent2)}
+.quiz-header .stat .label{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:.3px}
+.quiz-progress{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.quiz-progress .fill{height:100%;background:var(--accent2);border-radius:4px;transition:width .4s}
+.question-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.question-card .q-domain{display:inline-block;background:#e8f0fe;color:var(--accent2);padding:2px 12px;border-radius:12px;font-size:.75rem;font-weight:500;margin-bottom:6px}
+.question-card .q-num{font-size:.78rem;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
+.question-card .q-difficulty{display:inline-block;font-size:.7rem;padding:1px 8px;border-radius:8px;margin-left:6px;font-weight:500}
+.q-difficulty.easy{background:#e8f8f0;color:var(--success)}
+.q-difficulty.medium{background:#fff8e1;color:var(--warning)}
+.q-difficulty.hard{background:#fde8e8;color:var(--error)}
+.question-card .q-text{font-size:.95rem;font-weight:500;margin:10px 0 14px;line-height:1.5}
+.options{display:flex;flex-direction:column;gap:6px}
+.option{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:.12s;background:#fafbfc;font-size:.9rem}
+.option:hover{border-color:var(--accent2);background:#f0f4ff}
+.option.selected{border-color:var(--accent2);background:#e8f0fe}
+.option.correct{border-color:var(--success);background:#e8f8f0!important}
+.option.wrong{border-color:var(--error);background:#fde8e8!important}
+.option.disabled{cursor:default;opacity:.85}
+.option input[type="radio"]{margin-top:3px;accent-color:var(--accent2);flex-shrink:0}
+.option .opt-label{font-weight:600;color:var(--text2);min-width:20px}
+.feedback{margin-top:12px;padding:12px 16px;border-radius:8px;font-size:.88rem;display:none;line-height:1.5}
+.feedback.show{display:block}
+.feedback.correct{background:#e8f8f0;border:1px solid var(--success);color:#1a7a4a}
+.feedback.wrong{background:#fde8e8;border:1px solid var(--error);color:#a33}
+.feedback .ans{font-weight:700;margin-bottom:4px}
+.feedback .expl{color:var(--text2);font-size:.82rem}
+.feedback .expl strong{color:var(--text)}
+.q-action{padding:10px 24px;border:none;border-radius:8px;cursor:pointer;font-size:.9rem;font-weight:600;transition:.2s;margin-top:8px}
+.q-action.primary{background:var(--accent2);color:#fff}
+.q-action.primary:hover{background:#0f5a99}
+.q-action.primary:disabled{opacity:.4;cursor:not-allowed}
+.q-action.success{background:var(--success);color:#fff}
+.q-action.warning{background:var(--accent);color:#fff}
+.q-action.danger{background:var(--error);color:#fff}
+.results-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center}
+.results-card h2{font-size:1.4rem;margin-bottom:8px;color:var(--primary)}
+.results-card .big-score{font-size:3rem;font-weight:700;color:var(--accent2);margin:8px 0}
+.big-score.pass{color:var(--success)}
+.big-score.fail{color:var(--error)}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:12px 0;text-align:left}
+.review-card h3{font-size:1rem;color:var(--primary);margin-bottom:6px}
+.review-card .rev-q-text{font-size:.9rem;font-weight:500;margin:6px 0 10px}
+.review-card .rev-user-ans{background:#fde8e8;border-left:3px solid var(--error);padding:8px 12px;margin:4px 0;border-radius:0 6px 6px 0;font-size:.85rem}
+.review-card .rev-correct-ans{background:#e8f8f0;border-left:3px solid var(--success);padding:8px 12px;margin:4px 0;border-radius:0 6px 6px 0;font-size:.85rem}
+.review-card .rev-expl{background:#f0f4ff;border-left:3px solid var(--accent2);padding:8px 14px;margin:8px 0;border-radius:0 6px 6px 0;font-size:.85rem;line-height:1.5;color:var(--text2)}
+@media(max-width:600px){
+  .container{padding:12px}
+  header h1{font-size:.95rem}
+  .question-card{padding:14px 16px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Precision <span>vs</span> Recall <span class="badge" style="font-size:.7rem;background:var(--accent);color:var(--primary);padding:2px 10px;border-radius:12px;font-weight:600">25 Q</span></h1>
+  <div class="mode-toggle" style="gap:0;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.2)">
+    <button class="mode-btn active" onclick="switchMode('ref')" id="refBtn" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);padding:8px 18px">Cheat Sheet</button>
+    <button class="mode-btn" onclick="switchMode('quiz')" id="quizBtn" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);padding:8px 18px">Quiz</button>
+  </div>
+</header>
+<div class="container">
+<div id="refContent">
+<div class="cheat-sheet">
+<h2> PRECISION VS RECALL — QUICK REFERENCE</h2>
+<table>
+<tr><th>If WORST thing is...</th><th>Called</th><th>Metric</th><th>Motto</th></tr>
+<tr><td>We MISSED something important</td><td>False Negative (FN)</td><td class="recall">RECALL</td><td>"I'd rather have 100 false alarms than miss 1 real case"</td></tr>
+<tr><td>We raised a FALSE ALARM</td><td>False Positive (FP)</td><td class="precision">PRECISION</td><td>"I'd rather miss 1 real case than raise 1 false alarm"</td></tr>
+</table>
+<h3>EXAM SCENARIOS</h3>
+<table>
+<tr><th>Scenario</th><th>Worst Error</th><th>Metric</th></tr>
+<tr><td>Medical / Cancer diagnosis</td><td>Missing disease (FN)</td><td class="recall">Recall</td></tr>
+<tr><td>Fraud detection</td><td>Fraud slips through (FN)</td><td class="recall">Recall</td></tr>
+<tr><td>Defect detection / Quality control</td><td>Defect ships to customer (FN)</td><td class="recall">Recall</td></tr>
+<tr><td>Self-driving / Pedestrian detection</td><td>Hit pedestrian (FN)</td><td class="recall">Recall</td></tr>
+<tr><td>Spam filter</td><td>Legit email flagged (FP)</td><td class="precision">Precision</td></tr>
+<tr><td>Content moderation</td><td>Good content blocked (FP)</td><td class="precision">Precision</td></tr>
+<tr><td>Court / Conviction system</td><td>Innocent convicted (FP)</td><td class="precision">Precision</td></tr>
+</table>
+<div class="tip"><strong>HOW TO CLASSIFY — THE YES/NO TEST:</strong><br>
+The model's job is to detect something (the "positive" class). When it makes a mistake:<br>
+<b>Model said NO — truth was YES → FN (False Negative) → RECALL</b><br>
+<b>Model said YES — truth was NO → FP (False Positive) → PRECISION</b><br>
+<span style="font-size:.8rem">Examples: "Legit email FLAGGED as spam" → model said YES (spam) but truth was NO → FP → Precision. "Missed cancer diagnosis" → model said NO (healthy) but truth was YES → FN → Recall.</span></div>
+<div class="tip"><strong>Step-by-step:</strong><br>
+1. What's the model trying to detect? (That's the <b>YES/positive</b> class)<br>
+2. Did the model say <b>YES or NO</b> when it was wrong?<br>
+3. <b>YES when should be NO</b> = FP → Precision. <b>NO when should be YES</b> = FN → Recall.</div>
+<div class="tip"><strong>"Rather X THAN Y" trap:</strong> The thing AFTER "than" is the WORST error.<br>
+<span style="color:var(--accent2)">"Rather have 100 false alarms THAN miss 1 cancer"</span> → after "than" = MISS → Recall<br>
+<span style="color:var(--success)">"Rather reject 100 qualified THAN admit 1 unqualified"</span> → after "than" = ADMIT UNQUALIFIED (FP) → Precision</div>
+<div class="tip"><strong>Definition P→P rule:</strong> <b>P</b>redicted → <b>P</b>recision. <b>R</b>eal → <b>R</b>ecall.<br>
+"Of all emails <b>flagged</b> as spam..." = Predicted = P → <b>Precision</b><br>
+"Of all <b>actual</b> cancer cases..." = Real = R → <b>Recall</b></div>
+<div class="tip"><strong>Keywords:</strong> "catch/miss/never let through" → <b style="color:var(--accent2)">Recall</b>. "false alarm/falsely accuse/wrongly flag" → <b style="color:var(--success)">Precision</b>.</div>
+<div class="tip"><strong>Mnemonic:</strong> Recall = <b>CATCH ALL</b>. Precision = <b>BE PICKY</b>. Accuracy = useless for imbalanced data.</div>
+</div>
+</div>
+<div id="quizContent" style="display:none">
+<div id="roundSelector"></div>
+<div id="quizArea"></div>
+</div>
+</div>
+<script>
+const QUESTIONS = [
+{id:1,domain:"Medical Diagnosis",difficulty:"MEDIUM",type:"mcq",target:"has the condition",question:"A data science team is evaluating a classification model. The model must minimize false negatives because missing a positive case has serious medical consequences.\n\nWhich evaluation metric should the team prioritize?",options:["Precision","Recall","Specificity","F1 score"],answer:1,explanation:"Recall (also called sensitivity) measures the proportion of actual positives correctly identified. Maximizing recall minimizes false negatives, which is critical when missing a positive case is more costly than a false alarm."},
+{id:2,domain:"Defect Detection",difficulty:"MEDIUM",type:"mcq",target:"defective",question:"A company is building an image classification model to identify defective products on a manufacturing line. The defect rate is very low (0.1%). The model must catch as many defects as possible, even if it means some false alarms.\n\nWhich metric should the team prioritize?",options:["Precision","Recall","Specificity","Accuracy"],answer:1,explanation:"Recall should be prioritized when missing a positive case is more costly than false alarms. High recall minimizes false negatives, which is critical when defects are rare but costly to miss."},
+{id:3,domain:"Definition",difficulty:"EASY",type:"mcq",target:"",question:"Which metric measures the percentage of actual positive cases that a model correctly identifies?",options:["Precision","Recall","Accuracy","F1 Score"],answer:1,explanation:"Keyword: 'ACTUAL positive cases' → Real/Actual cases → R→R: Real → Recall.<br><br>Recall asks: 'Of all the REAL positive cases, how many did we catch?'<br>Precision asks: 'Of all the cases we PREDICTED as positive, how many were actually positive?'<br><br>Since this question says 'actual positive cases' (not 'predicted positive'), the answer is Recall.<br>Formula: TP / (TP + FN)."},
+{id:4,domain:"Fraud Detection",difficulty:"MEDIUM",type:"mcq",target:"fraudulent",question:"A credit card company builds a fraud detection model. Company policy: 'We freeze suspicious transactions even if it inconveniences customers. The cost of missing real fraud is too high.'\n\nWhich metric should be prioritized?",options:["Precision","Recall","Specificity","Accuracy"],answer:1,explanation:"Missing a fraud transaction (FN) is the worst error. The company would rather inconvenience customers with false alarms than let fraud through. Recall minimizes false negatives."},
+{id:5,domain:"Spam Filter",difficulty:"MEDIUM",type:"mcq",target:"spam",question:"A company builds an email spam filter. The worst error is when a legitimate customer email gets flagged as spam, causing the user to miss important communication.\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"Flagging a legitimate email as spam is a False Positive (FP). Precision minimizes false positives, ensuring that what we flag as spam is actually spam."},
+{id:6,domain:"Content Moderation",difficulty:"MEDIUM",type:"mcq",target:"violating policy",question:"A social media platform builds an AI content moderation system. The worst-case scenario is that legitimate user content gets removed by mistake, angering users and risking censorship claims.\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Specificity"],answer:0,explanation:"Removing good content is a False Positive (FP). Precision should be prioritized to minimize false positives and ensure flagged content is actually violating policy."},
+{id:7,domain:"Medical Diagnosis",difficulty:"MEDIUM",type:"mcq",target:"has the disease",question:"A diagnostic test for a rare disease. Doctors say: 'The worst thing is telling someone they are healthy when they actually have the disease. They will not get treatment and could die. Telling a healthy person to get follow-up tests is manageable.'\n\nWhich metric should the test maximize?",options:["Precision","Recall","F1 Score","Specificity"],answer:1,explanation:"Missing the disease (telling a sick person they are healthy) is a False Negative (FN). The doctors explicitly say this is the worst error. Recall minimizes FN."},
+{id:8,domain:"College Admissions",difficulty:"MEDIUM",type:"mcq",target:"qualified",question:"An elite university uses AI for admissions screening. Policy: 'We would rather reject 10 qualified students than admit 1 unqualified student who will fail out and damage our reputation.'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"Admitting an unqualified student is a False Positive (FP) - the model predicted 'qualified' (positive) but was wrong. The university explicitly says admitting unqualified is worse than rejecting qualified. Precision minimizes FP."},
+{id:9,domain:"Self-Driving",difficulty:"MEDIUM",type:"mcq",target:"a pedestrian",question:"A self-driving car's pedestrian detection system. The worst outcome is hitting a pedestrian. False alarms (braking for a paper bag or shadow) are acceptable.\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:1,explanation:"Hitting a pedestrian means the system FAILED to detect a pedestrian = False Negative (FN). Recall minimizes FN. False alarms like braking for a paper bag are far preferable to missing a real person."},
+{id:10,domain:"Airport Security",difficulty:"MEDIUM",type:"mcq",target:"a threat",question:"Airport security screening: 'We would rather scan and check 100 innocent passengers than let 1 weapon through security. Inconveniencing travelers is acceptable but missing a threat is NOT.'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Specificity"],answer:1,explanation:"A weapon getting through is the model missing a positive (FN). The airport explicitly says missing a threat is worse than false alarms. Recall minimizes FN."},
+{id:11,domain:"Court System",difficulty:"HARD",type:"mcq",target:"guilty",question:"A criminal justice AI makes recommendations about pretrial detention. The principle: 'We would rather let 100 guilty people go free than convict 1 innocent person.'\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"Wrongly detaining an innocent person is a False Positive (FP) - predicting 'guilty/dangerous' (positive) for someone who is actually innocent. The principle says FP is worse. Precision minimizes FP."},
+{id:12,domain:"Definition",difficulty:"EASY",type:"mcq",target:"",question:"Of all transactions that the model FLAGGED as fraudulent, what percentage were actually fraudulent?\n\nThis describes which metric?",options:["Recall","Precision","Accuracy","F1 Score"],answer:1,explanation:"<b>Step 1:</b> Find the keyword — 'FLAGGED as fraudulent' = what the model <b>Predicted</b>.<br><br><b>Step 2:</b> Apply P→P / R→R:<br><b>P</b>redicted → <b>P</b>recision. So this describes <b>Precision</b>.<br><br><b>Why not Recall?</b> Recall asks: 'Of all <b>actual</b> fraudulent transactions, how many did we flag?' This question asks about flagged (predicted) transactions, not actual ones.<br><br><b>Precision formula:</b> TP / (TP + FP) — of all predicted positives, how many were actually positive."},
+{id:13,domain:"Definition",difficulty:"EASY",type:"mcq",target:"",question:"Of all patients who ACTUALLY have the disease, how many did the model correctly identify?\n\nThis describes which metric?",options:["Precision","Recall","Accuracy","Specificity"],answer:1,explanation:"<b>Step 1:</b> Find the keyword — 'ACTUALLY have the disease' = <b>Real/Actual cases</b>.<br><br><b>Step 2:</b> Apply P→P / R→R:<br><b>R</b>eal → <b>R</b>ecall. So this describes <b>Recall</b>.<br><br><b>Why not Precision?</b> Precision asks: 'Of patients the model <b>predicted</b> had the disease, how many actually did?' This question says 'ACTUALLY have' (real positives), not 'predicted as positive'.<br><br><b>Recall formula:</b> TP / (TP + FN) — of all actual positives, how many did we catch?"},
+{id:14,domain:"Fire Alarm",difficulty:"EASY",type:"mcq",target:"a fire",question:"A building fire alarm system: 'We want every real fire to trigger the alarm, even if it means occasional false alarms from burnt toast.'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Specificity"],answer:1,explanation:"Missing a real fire is a False Negative (FN). The system says false alarms from burnt toast are acceptable. Recall minimizes FN."},
+{id:15,domain:"Search Autocomplete",difficulty:"MEDIUM",type:"mcq",target:"appropriate",question:"A search engine autocomplete feature: 'Suggesting an offensive or inappropriate term is a PR disaster. We would rather miss suggesting some valid terms than ever suggest something inappropriate.'\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"Suggesting an offensive term is a False Positive (FP). The company explicitly says a false alarm (suggesting something bad) is worse than missing valid suggestions. Precision minimizes FP."},
+{id:16,domain:"Drug Testing",difficulty:"MEDIUM",type:"mcq",target:"doping",question:"A drug testing system for professional athletes: 'We must never falsely accuse an athlete of doping - it ruins careers. We would rather let some dopers slip through than accuse one innocent athlete.'\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"Falsely accusing an athlete is a False Positive (FP). The system says false accusations (FP) are worse than missing dopers (FN). Precision minimizes FP."},
+{id:17,domain:"Hate Speech Detection",difficulty:"MEDIUM",type:"mcq",target:"hate speech",question:"A social media hate speech detector: 'We must catch ALL hate speech. If some normal posts get flagged for manual review, users can appeal. But we absolutely cannot let hate speech remain visible.'\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:1,explanation:"Letting hate speech remain visible is a False Negative (FN) - the system MISSED detecting it. The policy says catching every instance is critical. Recall minimizes FN."},
+{id:18,domain:"Medical Trial",difficulty:"HARD",type:"mcq",target:"has the condition",question:"A medical trial enrollment AI: 'We must be certain that enrolled patients actually have the condition. Including a wrong patient would invalidate the entire trial. We would rather miss some eligible patients than enroll the wrong one.'\n\nWhich metric should be prioritized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"Enrolling a wrong patient is a False Positive (FP) - model predicts 'has condition' (positive) but the patient does not. The trial says FP is worse than missing eligible patients. Precision minimizes FP."},
+{id:19,domain:"Definition",difficulty:"MEDIUM",type:"mcq",target:"",question:"A model predicts which customers will churn. The marketing team asks: 'Of all customers our model PREDICTED would churn, what percentage actually did churn?'\n\nWhich metric are they asking about?",options:["Recall","Precision","Accuracy","F1 Score"],answer:1,explanation:"<b>Step 1:</b> Find the keyword — 'PREDICTED would churn' = what the model <b>Predicted</b>.<br><br><b>Step 2:</b> Apply P→P / R→R:<br><b>P</b>redicted → <b>P</b>recision. So this describes <b>Precision</b>.<br><br><b>Why not Recall?</b> Recall asks: 'Of customers who <b>actually</b> churned, how many did we predict?' This question asks about predicted-churn customers, not actual churners.<br><br><b>Precision formula:</b> TP / (TP + FP) — of all predicted churners, how many actually churned."},
+{id:20,domain:"Music Recommendation",difficulty:"MEDIUM",type:"mcq",target:"a good match",question:"A music recommendation AI: 'We would rather recommend songs the user does not like (annoying) than miss recommending a song they would LOVE (lost engagement opportunity).'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:1,explanation:"Missing a song the user would love is a False Negative (FN). The system says missing a good recommendation is worse than making a bad one. Recall minimizes FN."},
+{id:21,domain:"Job Screening",difficulty:"HARD",type:"mcq",target:"qualified",question:"A company's AI screening tool for job applicants. CEO: 'The absolute worst thing is that a truly qualified candidate gets rejected by our system and we miss out on a great hire. Interviewing some unqualified candidates is an acceptable cost of doing business.'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:1,explanation:"Rejecting a qualified candidate is the model failing to detect a positive case = False Negative (FN). The CEO says this is the worst error. Recall minimizes FN."},
+{id:23,domain:"Healthcare",difficulty:"MEDIUM",type:"mcq",target:"",question:"A healthcare company develops an ML model to classify medical conditions. The team needs performance metrics for evaluating a classification system, particularly for critical diagnoses.\n\nWhich metrics should they use?",options:["Bias and Variance","Throughput, Latency and Uptime","Precision, Recall and F1-Score","Mean Absolute Error (MAE) and R-squared"],answer:2,explanation:"For classification systems in healthcare, Precision, Recall, and F1-Score are the appropriate metrics. Bias/Variance relate to model fitting. Throughput/Latency are operational. MAE/R-squared are for regression."},
+{id:24,domain:"False Positive Scenario",difficulty:"MEDIUM",type:"mcq",target:"in critical condition",question:"A hospital ICU monitoring AI alerts staff when a patient's vitals suggest deterioration. Which error is worse?\n\nScenario A: 'We would rather have 100 false alarms than miss 1 patient in critical condition.'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Specificity"],answer:1,explanation:"After 'than' = 'miss 1 patient in critical condition' = False Negative (FN). The hospital says FN is worse. Recall minimizes false negatives."},
+{id:25,domain:"False Positive Scenario",difficulty:"MEDIUM",type:"mcq",target:"will default",question:"A bank loan approval AI: 'We would rather reject 100 qualified applicants than approve 1 applicant who will default and lose the bank money.'\n\nWhich metric should be maximized?",options:["Precision","Recall","F1 Score","Accuracy"],answer:0,explanation:"After 'than' = 'approve 1 applicant who will default' = False Positive (FP) - approving someone the model should not have. The bank says FP is worse. Precision minimizes false positives."}
+];
+const ROUNDS = 5;
+const QUESTIONS_PER_ROUND = 5;
+const PASS_SCORE = 70;
+let currentRound = 0;
+let answeredQuestions = {};
+function shuffle(arr, seed) {
+  const a = [...arr];
+  let s = seed * 7 + 13;
+  for (let i = a.length - 1; i > 0; i--) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const j = s % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function getQuestionsForRound(round) {
+  const shuffled = shuffle(QUESTIONS, round);
+  const qs = [];
+  for (let i = 0; i < QUESTIONS_PER_ROUND; i++) {
+    qs.push(shuffled[i % shuffled.length]);
+  }
+  return qs;
+}
+function switchMode(mode) {
+  document.getElementById('refBtn').classList.toggle('active', mode === 'ref');
+  document.getElementById('quizBtn').classList.toggle('active', mode === 'quiz');
+  document.getElementById('refContent').style.display = mode === 'ref' ? '' : 'none';
+  document.getElementById('quizContent').style.display = mode === 'quiz' ? '' : 'none';
+  if (mode === 'quiz') initQuiz();
+}
+function initQuiz() {
+  currentRound = 0;
+  answeredQuestions = {};
+  buildRoundSelector();
+  startRound(0);
+}
+function buildRoundSelector() {
+  const c = document.getElementById('roundSelector');
+  c.innerHTML = '<div style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span style="font-size:.85rem;color:var(--text2);font-weight:500">Round:</span>';
+  for (let i = 0; i < ROUNDS; i++) {
+    const b = document.createElement('button');
+    b.className = 'round-btn';
+    b.style.cssText = 'padding:8px 18px;border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:.85rem;background:var(--card);font-weight:500' + (i === currentRound ? ';border-color:var(--accent2);background:var(--accent2);color:#fff' : '');
+    b.textContent = 'Round ' + (i + 1);
+    b.onclick = () => { currentRound = i; answeredQuestions = {}; buildRoundSelector(); startRound(i); };
+    const key = 'pr_round_' + i;
+    const saved = JSON.parse(localStorage.getItem(key) || '{}');
+    if (saved.complete && saved.submitted) {
+      b.style.cssText = 'padding:8px 18px;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:500;border:2px solid var(--success);background:#e8f8f0;color:var(--success)';
+      if (i === currentRound) b.style.cssText += ';border-color:var(--accent2);background:var(--accent2);color:#fff';
+    }
+    c.appendChild(b);
+  }
+  const resetDiv = document.createElement('div');
+  resetDiv.style.cssText = 'margin-bottom:12px';
+  resetDiv.innerHTML = '<button class="q-action danger" style="padding:4px 14px;font-size:.8rem" onclick="resetAll()">Reset Progress</button>';
+  c.appendChild(resetDiv);
+}
+function startRound(round) {
+  const questions = getQuestionsForRound(round);
+  const key = 'pr_round_' + round;
+  const saved = JSON.parse(localStorage.getItem(key) || '{}');
+  if (!saved.answers) saved.answers = {};
+  answeredQuestions = saved.answers || {};
+  renderQuiz(questions, round, saved);
+}
+function renderQuiz(questions, round, saved) {
+  const area = document.getElementById('quizArea');
+  const allAnswered = questions.every(q => answeredQuestions[q.id] !== undefined);
+  const answeredCount = Object.keys(answeredQuestions).length;
+  let html = '<div class="quiz-header">' +
+    '<div class="stat"><div class="num">' + (round + 1) + '/' + ROUNDS + '</div><div class="label">Round</div></div>' +
+    '<div class="stat"><div class="num">' + answeredCount + '/' + questions.length + '</div><div class="label">Answered</div></div>' +
+    '<div class="quiz-progress"><div class="fill" style="width:' + (answeredCount / questions.length * 100) + '%"></div></div></div>';
+  if (saved.complete && saved.submitted) {
+    const res = getRoundResults(round);
+    if (res) {
+      const pcls = res.pct >= PASS_SCORE ? 'pass' : 'fail';
+      html += '<div class="results-card" style="margin-bottom:16px;padding:16px">' +
+        '<div class="big-score ' + pcls + '">' + res.score + '/' + res.total + ' (' + res.pct + '%)</div>' +
+        '<div class="sub" style="color:var(--text2);font-size:.9rem">' + (res.pct >= PASS_SCORE ? 'PASS' : 'FAIL') + '</div></div>';
+    }
+  }
+  const optLabels = 'ABCDEFGH';
+  questions.forEach((q, qi) => {
+    const selected = answeredQuestions[q.id] ? answeredQuestions[q.id].selected : null;
+    const submitted = answeredQuestions[q.id] && answeredQuestions[q.id].correct !== undefined;
+    const isCorrect = answeredQuestions[q.id] ? answeredQuestions[q.id].correct : false;
+    let diffClass = 'medium';
+    if (q.difficulty === 'EASY') diffClass = 'easy';
+    else if (q.difficulty === 'HARD') diffClass = 'hard';
+    html += '<div class="question-card">' +
+      '<div class="q-domain">' + q.domain + '</div>' +
+      '<div class="q-num">Q' + (qi + 1) + ' <span class="q-difficulty ' + diffClass + '">' + q.difficulty + '</span></div>' +
+      '<div class="q-text">' + q.question.replace(/\n/g, '<br>') + '</div>' +
+      '<div class="options" id="opts-' + q.id + '">';
+    q.options.forEach((opt, oi) => {
+      let cls = 'option';
+      if (submitted) cls += ' disabled';
+      if (submitted) {
+        if (oi === q.answer) cls += ' correct';
+        else if (oi === selected) cls += ' wrong';
+      } else if (oi === selected) {
+        cls += ' selected';
+      }
+      const checked = submitted && selected !== null ? oi === selected : false;
+      html += '<label class="' + cls + '" onclick="' + (submitted ? '' : 'selectOption(' + q.id + ',' + oi + ')') + '">' +
+        '<input type="radio" name="q' + q.id + '" value="' + oi + '" ' + (checked ? 'checked' : '') + ' ' + (submitted ? 'disabled' : '') + '>' +
+        '<span class="opt-label">' + optLabels[oi] + '.</span><span>' + opt + '</span></label>';
+    });
+    html += '</div>';
+    if (submitted) {
+      const ansTxt = optLabels[q.answer] + '. ' + q.options[q.answer];
+      const correctAns = q.options[q.answer];
+      const isRecall = correctAns === 'Recall';
+      const isPrecision = correctAns === 'Precision';
+      html += '<div class="feedback show ' + (isCorrect ? 'correct' : 'wrong') + '">' +
+        '<div class="ans">' + (isCorrect ? 'Correct!' : 'Incorrect') + '</div>' +
+        '<div class="expl"><strong>Correct answer: ' + ansTxt + '</strong><br>' + q.explanation + '</div>';
+      if (!isCorrect && (isRecall || isPrecision) && q.target) {
+        html += '<div class="tip" style="margin-top:8px;font-size:.8rem">' +
+          '<strong>YES/NO Test:</strong> The model made a mistake. Did it say <b>YES</b> or <b>NO</b> when it was wrong?<br>' +
+          (isRecall
+            ? 'Model said <b>NO</b> (didn\'t detect) — truth was <b>YES</b> (it WAS ' + q.target + ')<br>'
+            + '→ Model said NO when it should say <b>YES</b> = <b>FN (False Negative)</b><br>'
+            + '→ FN → minimize with <b>RECALL</b> (CATCH ALL)'
+            : 'Model said <b>YES</b> (flagged/detected/acted) — truth was <b>NO</b> (it WASN\'T ' + q.target + ')<br>'
+            + '→ Model said <b>YES</b> when it should say <b>NO</b> = <b>FP (False Positive)</b><br>'
+            + '→ FP → minimize with <b>PRECISION</b> (BE PICKY)') +
+          '</div>';
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="feedback" id="fb-' + q.id + '"></div>';
+    }
+    html += '</div>';
+  });
+  if (!saved.complete || !saved.submitted) {
+    html += '<button class="q-action primary" id="submitBtn" onclick="submitRound(' + round + ')" ' + (!allAnswered ? 'disabled' : '') + '>Submit Round</button>';
+  } else {
+    html += '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="q-action warning" onclick="retakeRound(' + round + ')">Retake This Round</button>' +
+      '<button class="q-action success" onclick="showWrongAnswers(' + round + ')">Review Wrong</button></div>';
+  }
+  area.innerHTML = html;
+}
+function selectOption(qId, optIdx) {
+  if (answeredQuestions[qId] && answeredQuestions[qId].correct !== undefined) return;
+  answeredQuestions[qId] = {selected: optIdx};
+  document.querySelectorAll('#opts-' + qId + ' .option').forEach((o, i) => {
+    o.classList.toggle('selected', i === optIdx);
+    o.querySelector('input').checked = i === optIdx;
+  });
+  const key = 'pr_round_' + currentRound;
+  const saved = JSON.parse(localStorage.getItem(key) || '{}');
+  if (!saved.answers) saved.answers = {};
+  saved.answers = answeredQuestions;
+  localStorage.setItem(key, JSON.stringify(saved));
+  const questions = getQuestionsForRound(currentRound);
+  const btn = document.getElementById('submitBtn');
+  if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined);
+  const pct = Object.keys(answeredQuestions).length / questions.length * 100;
+  const pf = document.querySelector('.quiz-progress .fill');
+  if (pf) pf.style.width = pct + '%';
+}
+function submitRound(round) {
+  const key = 'pr_round_' + round;
+  const saved = JSON.parse(localStorage.getItem(key) || '{}');
+  const questions = getQuestionsForRound(round);
+  let correctCount = 0;
+  questions.forEach(q => {
+    const ans = answeredQuestions[q.id];
+    if (!ans) return;
+    ans.correct = ans.selected === q.answer;
+    if (ans.correct) correctCount++;
+  });
+  saved.answers = answeredQuestions;
+  saved.complete = true;
+  saved.submitted = true;
+  saved.score = correctCount;
+  saved.total = questions.length;
+  localStorage.setItem(key, JSON.stringify(saved));
+  buildRoundSelector();
+  renderQuiz(questions, round, saved);
+  updateAllComplete();
+}
+function retakeRound(round) {
+  localStorage.removeItem('pr_round_' + round);
+  answeredQuestions = {};
+  currentRound = round;
+  buildRoundSelector();
+  startRound(round);
+}
+function getRoundResults(round) {
+  const saved = JSON.parse(localStorage.getItem('pr_round_' + round) || '{}');
+  if (!saved.complete) return null;
+  return { score: saved.score, total: saved.total, pct: Math.round(saved.score / saved.total * 100) };
+}
+function showWrongAnswers(round) {
+  const key = 'pr_round_' + round;
+  const saved = JSON.parse(localStorage.getItem(key) || '{}');
+  const questions = getQuestionsForRound(round);
+  const allAnswered = saved.answers || {};
+  const wrong = questions.filter(q => allAnswered[q.id] && !allAnswered[q.id].correct);
+  const area = document.getElementById('quizArea');
+  const optLabels = 'ABCDEFGH';
+  let html = '<div class="results-card" style="margin-bottom:16px"><h2>Wrong Answers Review</h2>' +
+    '<div class="sub" style="color:var(--text2);margin-bottom:12px">' + wrong.length + ' question' + (wrong.length > 1 ? 's' : '') + ' answered incorrectly</div>' +
+    '<button class="q-action primary" onclick="showRoundResults(' + round + ')">Back to Round</button></div>';
+  wrong.forEach((q, wi) => {
+    const ans = allAnswered[q.id];
+    const userSel = ans ? ans.selected : null;
+    const userAns = userSel !== null ? optLabels[userSel] + '. ' + q.options[userSel] : '(none)';
+    const correctAns = optLabels[q.answer] + '. ' + q.options[q.answer];
+    const isRecall = q.options[q.answer] === 'Recall';
+    const isPrecision = q.options[q.answer] === 'Precision';
+    html += '<div class="review-card">' +
+      '<div class="rev-q-text">' + (wi + 1) + '. ' + q.question.replace(/\n/g, '<br>') + '</div>' +
+      '<div class="rev-user-ans"><strong>You selected:</strong> ' + userAns + '</div>' +
+      '<div class="rev-correct-ans"><strong>Correct answer:</strong> ' + correctAns + '</div>' +
+      '<div class="rev-expl"><strong>Why:</strong> ' + q.explanation + '</div>';
+    if ((isRecall || isPrecision) && q.target) {
+      html += '<div class="tip" style="margin-top:8px;font-size:.8rem;border-left-color:var(--accent)">' +
+        '<strong>YES/NO Test:</strong> The model made a mistake. Did it say <b>YES</b> or <b>NO</b> when it was wrong?<br>' +
+        (isRecall
+          ? 'Model said <b>NO</b> (didn\'t detect) — truth was <b>YES</b> (it WAS ' + q.target + ')<br>'
+          + '→ Model said NO when it should say <b>YES</b> = <b>FN (False Negative)</b><br>'
+          + '→ FN → minimize with <b>RECALL</b> (CATCH ALL)'
+          : 'Model said <b>YES</b> (flagged/detected/acted) — truth was <b>NO</b> (it WASN\'T ' + q.target + ')<br>'
+          + '→ Model said <b>YES</b> when it should say <b>NO</b> = <b>FP (False Positive)</b><br>'
+          + '→ FP → minimize with <b>PRECISION</b> (BE PICKY)') +
+        '</div>';
+    }
+    html += '</div>';
+  });
+  html += '<div style="text-align:center;margin-top:16px"><button class="q-action primary" onclick="showRoundResults(' + round + ')">Back to Round</button></div>';
+  area.innerHTML = html;
+}
+function showRoundResults(round) {
+  currentRound = round;
+  answeredQuestions = {};
+  buildRoundSelector();
+  startRound(round);
+}
+function updateAllComplete() {
+  let allDone = true;
+  for (let i = 0; i < ROUNDS; i++) {
+    const s = JSON.parse(localStorage.getItem('pr_round_' + i) || '{}');
+    if (!s.complete) { allDone = false; break; }
+  }
+  if (allDone) {
+    let total = 0, correct = 0;
+    for (let i = 0; i < ROUNDS; i++) {
+      const s = JSON.parse(localStorage.getItem('pr_round_' + i) || '{}');
+      if (s.complete) { total += s.total || 0; correct += s.score || 0; }
+    }
+    const pct = Math.round(correct / total * 100);
+    const pcls = pct >= PASS_SCORE ? 'pass' : 'fail';
+    const area = document.getElementById('quizArea');
+    area.innerHTML = '<div class="results-card"><h2>All 5 Rounds Complete!</h2>' +
+      '<div class="big-score ' + pcls + '">' + correct + '/' + total + ' (' + pct + '%)</div>' +
+      '<div class="sub" style="color:var(--text2)">' + (pct >= PASS_SCORE ? 'PASSED - You have mastered Precision vs Recall!' : 'Keep practicing - review the cheat sheet and retake weak rounds.') + '</div>' +
+      '<div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">' +
+      '<button class="q-action warning" onclick="resetAll()">Reset All & Start Over</button></div></div>';
+  }
+}
+function resetAll() {
+  if (!confirm('Reset all progress? This cannot be undone.')) return;
+  for (let i = 0; i < ROUNDS; i++) localStorage.removeItem('pr_round_' + i);
+  answeredQuestions = {};
+  currentRound = 0;
+  initQuiz();
+}
+</script>
+</body>
+</html>

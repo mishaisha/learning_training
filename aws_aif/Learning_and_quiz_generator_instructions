@@ -141,6 +141,19 @@ learning or quiz tool.
    `a.onclick = ((i) => () => showSection(i))(idx)`.
 4. **Scroll on nav click** — add `document.querySelector('.main').scrollTop = 0`
    after swapping content.
+5. **HTML formatting: bare `&` in body** — bare `&` in HTML body (outside
+   `<script>` tags) must be `&amp;` or the browser's HTML parser may break.
+   Always use `&amp;` in `<title>`, `<h1>`, and all visible HTML text.
+   Inside `<script>` JS strings, `&` is fine.
+6. **Content not rendering (blank content area)** — verify ALL_QUESTIONS and
+   CONTENT arrays are valid JS. Common cause: unescaped `"` inside
+   double-quoted strings. Use `\"` or template literals. To verify:
+   Extract the `<script>` content and run `node --check /tmp/extracted.js`
+   to catch syntax errors before opening in browser.
+7. **Question text contains quotes** — when embedding question text with
+   `"` inside `"question:...",options` double-quoted fields, escape with
+   `\"`, e.g. `question:"... \\"approved\\" ..."`. Run `node --check` to
+   catch unescaped quotes.
 
 ### Source material handling
 - **Exam questions**: preserve exact wording, options (A/B/C/D), correct
