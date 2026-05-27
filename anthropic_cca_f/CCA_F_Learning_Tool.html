@@ -314,7 +314,7 @@ const CONTENT = [
 <div class="key-service"><h4>~/.claude.json (User-Level)</h4>
 <p>Placed in the user's home directory. Configures MCP servers available to all projects for this user. Personal preferences, credentials, and global tools.</p></div>
 <div class="key-service"><h4>Env Var Expansion for Credentials</h4>
-<p>MCP server configs can reference environment variables using <code>${VAR_NAME}</code> syntax. This allows credentials to be stored in environment variables (or .env files) rather than hardcoded in JSON configs. Never commit secrets in .mcp.json.</p></div>
+<p>MCP server configs can reference environment variables using <code>\${VAR_NAME}</code> syntax. This allows credentials to be stored in environment variables (or .env files) rather than hardcoded in JSON configs. Never commit secrets in .mcp.json.</p></div>
 
 <h3>Progressive Tool Availability</h3>
 <p>Not all tools need to be available at all times. Tools can be made available progressively based on the agent's current phase. For example, in a planning phase, only plan-related tools are available; in an execution phase, implementation tools are added.</p>
@@ -365,7 +365,7 @@ const CONTENT = [
 glob: "src/**/*.ts"
 ---
 Always use strict TypeScript mode.
-No `any` types allowed.</pre>
+No <code>any</code> types allowed.</pre>
 <p>Rules are applied automatically when the matching files are read or modified. Glob patterns determine which files the rule applies to.</p>
 
 <h3>@import Syntax</h3>
