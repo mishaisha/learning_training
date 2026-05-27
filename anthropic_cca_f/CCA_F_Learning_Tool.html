@@ -739,7 +739,7 @@ No <code>any</code> types allowed.</pre>
         <div><label style="font-size:.85rem;font-weight:500;color:var(--text2)">Arguments (comma separated)</label>
         <input type="text" id="lab-mcp-args" value="-m, my_mcp_server" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:.9rem"></div>
         <div><label style="font-size:.85rem;font-weight:500;color:var(--text2)">Env Var (key=value)</label>
-        <input type="text" id="lab-mcp-env" value="API_KEY=${API_KEY}" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:.9rem"></div>
+        <input type="text" id="lab-mcp-env" value="API_KEY=\${API_KEY}" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:.9rem"></div>
     </div>
     <button class="quiz-action-btn primary" onclick="labMcpGenerate()">Generate Config</button>
     <button class="quiz-action-btn outline" onclick="labMcpCopy()" style="margin-left:8px">Copy</button>
