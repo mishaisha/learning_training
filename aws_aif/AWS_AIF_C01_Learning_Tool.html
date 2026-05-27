@@ -347,6 +347,21 @@ const CONTENT = [
 <li><strong>Precision</strong> = % of <strong>predicted</strong> positives that were actually positive → "When we raise an alarm, are we RIGHT?"</li>
 </ul>
 <p style="margin-top:12px;padding:10px;background:#fff8e1;border-radius:6px;border-left:4px solid var(--warning)"><strong>Exam Trick:</strong> If question says "actual positives" → Recall. If it says "predicted positives" → Precision.</p>
+
+<h4 style="margin-top:16px;margin-bottom:8px">📌 PRECISION VS RECALL — 7-ROW CHEAT SHEET (MEMORIZE THIS)</h4>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
+<tr style="background:var(--primary);color:#fff">
+<th style="padding:8px;text-align:left">If question says...</th>
+<th style="padding:8px;text-align:left">Answer</th>
+</tr>
+<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Medical / cancer / "missing disease is worse"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Fraud / "let fraud slip through"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Defect detection / "catch all defects"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--accent2)">Recall</td></tr>
+<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Spam / "false positives are bad / flagging legit email"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--success)">Precision</td></tr>
+<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Content moderation / "don't block good content"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--success)">Precision</td></tr>
+<tr><td style="padding:6px;border-bottom:1px solid var(--border)">Court / "convict innocent is worse"</td><td style="padding:6px;border-bottom:1px solid var(--border);font-weight:600;color:var(--success)">Precision</td></tr>
+<tr><td style="padding:6px">Definition: "actual positives" / "predicted positives"</td><td style="padding:6px;font-weight:600">P→P (Predicted→Precision), Actual→Recall</td></tr>
+</table>
 </div>
 
 <h3>GenAI Evaluation Metrics (Heavily Tested)</h3>
