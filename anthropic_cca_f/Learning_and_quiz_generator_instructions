@@ -142,6 +142,10 @@ learning or quiz tool.
 5. **Template literal backticks** — inside backtick template literals, any `
    character terminates the string early. Escape as `\`` or use HTML entity
    `&#96;`. Also escape `${` as `\${` to prevent template expression evaluation.
+6. **Unescaped `${...}` in template literal** — `${VAR_NAME}` or `${API_KEY}`
+   inside backtick strings is evaluated as JS expression. If variable not
+   defined, throws ReferenceError and entire script fails. Fix: escape `$` as
+   `\$` → `\${VAR_NAME}` renders as literal text.
 
 ### Source material handling
 - **Exam questions**: preserve exact wording, options (A/B/C/D), correct
@@ -172,14 +176,15 @@ learning or quiz tool.
 `~/Documents/Claude_CCA_F/CCA_F_Learning_Tool.html`
 
 ### Specs
-- **60 questions**: 53 MCQ, 7 multi-select (Select TWO)
-- **Difficulty**: 15 Easy, 33 Medium, 12 Hard
-- **Size**: ~140 KB, ~1490 lines
-- **4 iterations x 3 rounds x 5 questions** = 60 per iteration (covers all questions)
+- **330 questions**: 300 MCQ, 30 multi-select (Select TWO)
+- **Difficulty**: 63 Easy, 87 Medium, 180 Hard
+- **Size**: ~410 KB, ~1840 lines
+- **4 iterations x 3 rounds x 5 questions** = 60 per full quiz run (random sample from 330)
 - **Pass score**: 72%
-- **Header badge**: shows "60 Q" (total question count)
+- **Header badge**: shows "330 Q" (total question count)
 - **Question types**: "mcq" (single-select), "msq" (multi-select)
 - **Review Wrong Answers**: Button in iteration results shows all wrong Qs with user answer, correct answer, and detailed explanation
+- **Sources**: 60 original (cloudninjas.ca, daronyondem, GovindaPaliwal) + 100 from Neerajkr7/cca-foundations-exam-practice + 170 from vinipx/cca-prep
 
 ### Learning Mode sections (24 total)
 
