@@ -291,6 +291,16 @@ const CONTENT = [
 <tr><td style="padding:8px;border-bottom:1px solid var(--border)">We MISSED something important</td><td style="padding:8px;border-bottom:1px solid var(--border)">False Negative (FN)</td><td style="padding:8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent2)">RECALL</td></tr>
 <tr><td style="padding:8px">We raised a FALSE ALARM</td><td style="padding:8px">False Positive (FP)</td><td style="padding:8px;font-weight:700;color:var(--success)">PRECISION</td></tr>
 </table>
+<h3>THE YES/NO TEST — HOW TO CLASSIFY ANY ERROR</h3>
+<div class="key-service" style="border-left-color:var(--accent)">
+<p><strong>Ask: "What did the model say? What was the truth?"</strong></p>
+<table style="width:100%;background:#fff;border-radius:8px;overflow:hidden;margin:8px 0">
+<tr style="background:var(--primary);color:#fff"><th style="padding:8px">Model said...</th><th style="padding:8px">Truth was...</th><th style="padding:8px">Error Type</th><th style="padding:8px">Metric</th><th style="padding:8px">Plain English</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid var(--border);text-align:center"><b>NO</b> (didn't flag/detect)</td><td style="padding:8px;border-bottom:1px solid var(--border);text-align:center"><b>YES</b> (it WAS there)</td><td style="padding:8px;border-bottom:1px solid var(--border);color:var(--accent2);font-weight:700">FN (False Negative)</td><td style="padding:8px;border-bottom:1px solid var(--border);color:var(--accent2);font-weight:700">RECALL</td><td style="padding:8px;border-bottom:1px solid var(--border);font-size:.85rem">Model <b>MISSED</b> it. Said NO when should say YES.</td></tr>
+<tr><td style="padding:8px;text-align:center"><b>YES</b> (flagged/detected/acted)</td><td style="padding:8px;text-align:center"><b>NO</b> (it WASN'T there)</td><td style="padding:8px;color:var(--success);font-weight:700">FP (False Positive)</td><td style="padding:8px;color:var(--success);font-weight:700">PRECISION</td><td style="padding:8px;font-size:.85rem">Model <b>CRIED WOLF</b>. Said YES when should say NO.</td></tr>
+</table>
+<p><strong>How to apply:</strong> Read the scenario. Identify what the model is trying to detect (the "positive" class). Figure out if the model said YES or NO when it was wrong — that tells you FP vs FN, which tells you Precision vs Recall.</p>
+</div>
 <h3>7 EXAM SCENARIOS - MATCH AND ANSWER</h3>
 <table style="width:100%;background:#fff;border-radius:8px;overflow:hidden">
 <tr style="background:#f0f4ff"><th style="padding:8px;text-align:left">Scenario</th><th style="padding:8px;text-align:left">Worst Error</th><th style="padding:8px;text-align:left">Metric</th></tr>
