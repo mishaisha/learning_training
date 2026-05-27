@@ -106,13 +106,15 @@ header h1 span{color:var(--accent)}
 <tr><td>Content moderation</td><td>Good content blocked (FP)</td><td class="precision">Precision</td></tr>
 <tr><td>Court / Conviction system</td><td>Innocent convicted (FP)</td><td class="precision">Precision</td></tr>
 </table>
-<div class="tip"><strong>HOW TO CLASSIFY THE ERROR:</strong> Ask "What did the model do wrong?"<br>
-<b>Model MISSED something → FN → RECALL.</b> The model FAILED TO DETECT. Something bad happened because the model didn't act. Keywords: <span style="color:var(--accent2)">missed, failed to detect, let through, slipped through, didn't catch, failed to prevent</span>.<br>
-<b>Model CRIED WOLF → FP → PRECISION.</b> The model acted on something that was actually FINE. Something bad happened because the model DID something wrong. Keywords: <span style="color:var(--success)">flagged by mistake, wrongly blocked, falsely accused, incorrectly approved, false alarm</span>.</div>
-<div class="tip"><strong>Step-by-step decision process:</strong><br>
-1. What's the <b>worst outcome</b> described?<br>
-2. Did the model <b>MISS</b> something (FN → Recall) or <b>FALSELY ACT</b> (FP → Precision)?<br>
-3. Verify: "Rather X <b>THAN</b> Y" — what's AFTER "than"? That's the worst error.</div>
+<div class="tip"><strong>HOW TO CLASSIFY — THE YES/NO TEST:</strong><br>
+The model's job is to detect something (the "positive" class). When it makes a mistake:<br>
+<b>Model said NO — truth was YES → FN (False Negative) → RECALL</b><br>
+<b>Model said YES — truth was NO → FP (False Positive) → PRECISION</b><br>
+<span style="font-size:.8rem">Examples: "Legit email FLAGGED as spam" → model said YES (spam) but truth was NO → FP → Precision. "Missed cancer diagnosis" → model said NO (healthy) but truth was YES → FN → Recall.</span></div>
+<div class="tip"><strong>Step-by-step:</strong><br>
+1. What's the model trying to detect? (That's the <b>YES/positive</b> class)<br>
+2. Did the model say <b>YES or NO</b> when it was wrong?<br>
+3. <b>YES when should be NO</b> = FP → Precision. <b>NO when should be YES</b> = FN → Recall.</div>
 <div class="tip"><strong>"Rather X THAN Y" trap:</strong> The thing AFTER "than" is the WORST error.<br>
 <span style="color:var(--accent2)">"Rather have 100 false alarms THAN miss 1 cancer"</span> → after "than" = MISS → Recall<br>
 <span style="color:var(--success)">"Rather reject 100 qualified THAN admit 1 unqualified"</span> → after "than" = ADMIT UNQUALIFIED (FP) → Precision</div>
@@ -276,14 +278,14 @@ function renderQuiz(questions, round, saved) {
         '<div class="expl"><strong>Correct answer: ' + ansTxt + '</strong><br>' + q.explanation + '</div>';
       if (!isCorrect && (isRecall || isPrecision)) {
         html += '<div class="tip" style="margin-top:8px;font-size:.8rem">' +
-          '<strong>How to classify this question:</strong><br>' +
+          '<strong>YES/NO Test:</strong> The model made a mistake. Did it say <b>YES</b> or <b>NO</b> when it was wrong?<br>' +
           (isRecall
-            ? 'Step 1 — worst outcome: something IMPORTANT was <b>MISSED</b>.<br>'
-            + 'Step 2 — the model <b>FAILED TO DETECT</b> it → <b>FN</b> (False Negative).<br>'
-            + 'Step 3 — FN → minimize with <b>RECALL</b> (CATCH ALL).'
-            : 'Step 1 — worst outcome: a <b>FALSE ALARM</b> happened.<br>'
-            + 'Step 2 — the model <b>ACTED ON something that was actually fine</b> → <b>FP</b> (False Positive).<br>'
-            + 'Step 3 — FP → minimize with <b>PRECISION</b> (BE PICKY).') +
+            ? 'Model said <b>NO</b> (didn\'t flag/detect) — truth was <b>YES</b> (it WAS there)<br>'
+            + '→ Model said NO when it should say <b>YES</b> = <b>FN (False Negative)</b><br>'
+            + '→ FN → minimize with <b>RECALL</b> (CATCH ALL)'
+            : 'Model said <b>YES</b> (flagged/detected/acted) — truth was <b>NO</b> (it WASN\'T there)<br>'
+            + '→ Model said YES when it should say <b>NO</b> = <b>FP (False Positive)</b><br>'
+            + '→ FP → minimize with <b>PRECISION</b> (BE PICKY)') +
           '</div>';
       }
       html += '</div>';
@@ -377,14 +379,14 @@ function showWrongAnswers(round) {
       '<div class="rev-expl"><strong>Why:</strong> ' + q.explanation + '</div>';
     if (isRecall || isPrecision) {
       html += '<div class="tip" style="margin-top:8px;font-size:.8rem;border-left-color:var(--accent)">' +
-        '<strong>How to classify this question:</strong><br>' +
+        '<strong>YES/NO Test:</strong> The model made a mistake. Did it say <b>YES</b> or <b>NO</b> when it was wrong?<br>' +
         (isRecall
-          ? 'Step 1 — worst outcome: something IMPORTANT was <b>MISSED</b>.<br>'
-          + 'Step 2 — the model <b>FAILED TO DETECT</b> it → <b>FN</b> (False Negative).<br>'
-          + 'Step 3 — FN → minimize with <b>RECALL</b> (CATCH ALL).'
-          : 'Step 1 — worst outcome: a <b>FALSE ALARM</b> happened.<br>'
-          + 'Step 2 — the model <b>ACTED ON something that was actually fine</b> → <b>FP</b> (False Positive).<br>'
-          + 'Step 3 — FP → minimize with <b>PRECISION</b> (BE PICKY).') +
+          ? 'Model said <b>NO</b> (didn\'t flag/detect) — truth was <b>YES</b> (it WAS there)<br>'
+          + '→ Model said NO when it should say <b>YES</b> = <b>FN (False Negative)</b><br>'
+          + '→ FN → minimize with <b>RECALL</b> (CATCH ALL)'
+          : 'Model said <b>YES</b> (flagged/detected/acted) — truth was <b>NO</b> (it WASN\'T there)<br>'
+           + '→ Model said <b>YES</b> when it should say <b>NO</b> = <b>FP (False Positive)</b><br>'
+          + '→ FP → minimize with <b>PRECISION</b> (BE PICKY)') +
         '</div>';
     }
     html += '</div>';
