@@ -201,7 +201,10 @@ function buildRoundSelector() {
     }
     c.appendChild(b);
   }
-  c.innerHTML += '</div><div style="margin-bottom:12px"><button class="q-action danger" style="padding:4px 14px;font-size:.8rem" onclick="resetAll()">Reset Progress</button></div>';
+  const resetDiv = document.createElement('div');
+  resetDiv.style.cssText = 'margin-bottom:12px';
+  resetDiv.innerHTML = '<button class="q-action danger" style="padding:4px 14px;font-size:.8rem" onclick="resetAll()">Reset Progress</button>';
+  c.appendChild(resetDiv);
 }
 function startRound(round) {
   const questions = getQuestionsForRound(round);
