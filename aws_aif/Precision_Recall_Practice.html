@@ -106,9 +106,16 @@ header h1 span{color:var(--accent)}
 <tr><td>Content moderation</td><td>Good content blocked (FP)</td><td class="precision">Precision</td></tr>
 <tr><td>Court / Conviction system</td><td>Innocent convicted (FP)</td><td class="precision">Precision</td></tr>
 </table>
+<div class="tip"><strong>HOW TO CLASSIFY THE ERROR:</strong> Ask "What did the model do wrong?"<br>
+<b>Model MISSED something → FN → RECALL.</b> The model FAILED TO DETECT. Something bad happened because the model didn't act. Keywords: <span style="color:var(--accent2)">missed, failed to detect, let through, slipped through, didn't catch, failed to prevent</span>.<br>
+<b>Model CRIED WOLF → FP → PRECISION.</b> The model acted on something that was actually FINE. Something bad happened because the model DID something wrong. Keywords: <span style="color:var(--success)">flagged by mistake, wrongly blocked, falsely accused, incorrectly approved, false alarm</span>.</div>
+<div class="tip"><strong>Step-by-step decision process:</strong><br>
+1. What's the <b>worst outcome</b> described?<br>
+2. Did the model <b>MISS</b> something (FN → Recall) or <b>FALSELY ACT</b> (FP → Precision)?<br>
+3. Verify: "Rather X <b>THAN</b> Y" — what's AFTER "than"? That's the worst error.</div>
 <div class="tip"><strong>"Rather X THAN Y" trap:</strong> The thing AFTER "than" is the WORST error.<br>
-<span style="color:var(--accent2)">"Rather have 100 false alarms THAN miss 1 cancer"</span> → MISS = Recall<br>
-<span style="color:var(--success)">"Rather reject 100 qualified THAN admit 1 unqualified"</span> → FALSE ALARM = Precision</div>
+<span style="color:var(--accent2)">"Rather have 100 false alarms THAN miss 1 cancer"</span> → after "than" = MISS → Recall<br>
+<span style="color:var(--success)">"Rather reject 100 qualified THAN admit 1 unqualified"</span> → after "than" = ADMIT UNQUALIFIED (FP) → Precision</div>
 <div class="tip"><strong>Definition P→P rule:</strong> <b>P</b>redicted → <b>P</b>recision. <b>R</b>eal → <b>R</b>ecall.<br>
 "Of all emails <b>flagged</b> as spam..." = Predicted = P → <b>Precision</b><br>
 "Of all <b>actual</b> cancer cases..." = Real = R → <b>Recall</b></div>
@@ -269,10 +276,14 @@ function renderQuiz(questions, round, saved) {
         '<div class="expl"><strong>Correct answer: ' + ansTxt + '</strong><br>' + q.explanation + '</div>';
       if (!isCorrect && (isRecall || isPrecision)) {
         html += '<div class="tip" style="margin-top:8px;font-size:.8rem">' +
-          '<strong>Cheat Sheet:</strong> ' +
+          '<strong>How to classify this question:</strong><br>' +
           (isRecall
-            ? 'Worst = MISSED something important → <b>FN</b> → <b>RECALL</b>. "Rather X THAN Y": after "than" = worst error. Keywords: catch, miss, never let through. Recall = CATCH ALL.'
-            : 'Worst = FALSE ALARM → <b>FP</b> → <b>PRECISION</b>. "Rather X THAN Y": after "than" = worst error. Keywords: false alarm, falsely accuse, wrongly flag. Precision = BE PICKY.') +
+            ? 'Step 1 — worst outcome: something IMPORTANT was <b>MISSED</b>.<br>'
+            + 'Step 2 — the model <b>FAILED TO DETECT</b> it → <b>FN</b> (False Negative).<br>'
+            + 'Step 3 — FN → minimize with <b>RECALL</b> (CATCH ALL).'
+            : 'Step 1 — worst outcome: a <b>FALSE ALARM</b> happened.<br>'
+            + 'Step 2 — the model <b>ACTED ON something that was actually fine</b> → <b>FP</b> (False Positive).<br>'
+            + 'Step 3 — FP → minimize with <b>PRECISION</b> (BE PICKY).') +
           '</div>';
       }
       html += '</div>';
@@ -366,10 +377,14 @@ function showWrongAnswers(round) {
       '<div class="rev-expl"><strong>Why:</strong> ' + q.explanation + '</div>';
     if (isRecall || isPrecision) {
       html += '<div class="tip" style="margin-top:8px;font-size:.8rem;border-left-color:var(--accent)">' +
-        '<strong>Cheat Sheet:</strong> ' +
+        '<strong>How to classify this question:</strong><br>' +
         (isRecall
-          ? 'Worst = MISSED something important → <b>FN</b> → <b>RECALL</b>. "Rather X THAN Y": after "than" = worst error. Keywords: catch, miss, never let through. Recall = CATCH ALL.'
-          : 'Worst = FALSE ALARM → <b>FP</b> → <b>PRECISION</b>. "Rather X THAN Y": after "than" = worst error. Keywords: false alarm, falsely accuse, wrongly flag. Precision = BE PICKY.') +
+          ? 'Step 1 — worst outcome: something IMPORTANT was <b>MISSED</b>.<br>'
+          + 'Step 2 — the model <b>FAILED TO DETECT</b> it → <b>FN</b> (False Negative).<br>'
+          + 'Step 3 — FN → minimize with <b>RECALL</b> (CATCH ALL).'
+          : 'Step 1 — worst outcome: a <b>FALSE ALARM</b> happened.<br>'
+          + 'Step 2 — the model <b>ACTED ON something that was actually fine</b> → <b>FP</b> (False Positive).<br>'
+          + 'Step 3 — FP → minimize with <b>PRECISION</b> (BE PICKY).') +
         '</div>';
     }
     html += '</div>';
