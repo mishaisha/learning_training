@@ -261,9 +261,21 @@ function renderQuiz(questions, round, saved) {
     html += '</div>';
     if (submitted) {
       const ansTxt = optLabels[q.answer] + '. ' + q.options[q.answer];
+      const correctAns = q.options[q.answer];
+      const isRecall = correctAns === 'Recall';
+      const isPrecision = correctAns === 'Precision';
       html += '<div class="feedback show ' + (isCorrect ? 'correct' : 'wrong') + '">' +
         '<div class="ans">' + (isCorrect ? 'Correct!' : 'Incorrect') + '</div>' +
-        '<div class="expl"><strong>Correct answer: ' + ansTxt + '</strong><br>' + q.explanation + '</div></div>';
+        '<div class="expl"><strong>Correct answer: ' + ansTxt + '</strong><br>' + q.explanation + '</div>';
+      if (!isCorrect && (isRecall || isPrecision)) {
+        html += '<div class="tip" style="margin-top:8px;font-size:.8rem">' +
+          '<strong>Cheat Sheet:</strong> ' +
+          (isRecall
+            ? 'Worst = MISSED something important → <b>FN</b> → <b>RECALL</b>. "Rather X THAN Y": after "than" = worst error. Keywords: catch, miss, never let through. Recall = CATCH ALL.'
+            : 'Worst = FALSE ALARM → <b>FP</b> → <b>PRECISION</b>. "Rather X THAN Y": after "than" = worst error. Keywords: false alarm, falsely accuse, wrongly flag. Precision = BE PICKY.') +
+          '</div>';
+      }
+      html += '</div>';
     } else {
       html += '<div class="feedback" id="fb-' + q.id + '"></div>';
     }
@@ -345,11 +357,22 @@ function showWrongAnswers(round) {
     const userSel = ans ? ans.selected : null;
     const userAns = userSel !== null ? optLabels[userSel] + '. ' + q.options[userSel] : '(none)';
     const correctAns = optLabels[q.answer] + '. ' + q.options[q.answer];
+    const isRecall = q.options[q.answer] === 'Recall';
+    const isPrecision = q.options[q.answer] === 'Precision';
     html += '<div class="review-card">' +
       '<div class="rev-q-text">' + (wi + 1) + '. ' + q.question.replace(/\n/g, '<br>') + '</div>' +
       '<div class="rev-user-ans"><strong>You selected:</strong> ' + userAns + '</div>' +
       '<div class="rev-correct-ans"><strong>Correct answer:</strong> ' + correctAns + '</div>' +
-      '<div class="rev-expl"><strong>Why:</strong> ' + q.explanation + '</div></div>';
+      '<div class="rev-expl"><strong>Why:</strong> ' + q.explanation + '</div>';
+    if (isRecall || isPrecision) {
+      html += '<div class="tip" style="margin-top:8px;font-size:.8rem;border-left-color:var(--accent)">' +
+        '<strong>Cheat Sheet:</strong> ' +
+        (isRecall
+          ? 'Worst = MISSED something important → <b>FN</b> → <b>RECALL</b>. "Rather X THAN Y": after "than" = worst error. Keywords: catch, miss, never let through. Recall = CATCH ALL.'
+          : 'Worst = FALSE ALARM → <b>FP</b> → <b>PRECISION</b>. "Rather X THAN Y": after "than" = worst error. Keywords: false alarm, falsely accuse, wrongly flag. Precision = BE PICKY.') +
+        '</div>';
+    }
+    html += '</div>';
   });
   html += '<div style="text-align:center;margin-top:16px"><button class="q-action primary" onclick="showRoundResults(' + round + ')">Back to Round</button></div>';
   area.innerHTML = html;
