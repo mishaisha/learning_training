@@ -3,8 +3,10 @@
 Interactive HTML study tool for **AWS Certified AI Practitioner (AIF-C01)** exam.
 
 ## How to use
-
-Open `AWS_AIF_C01_Learning_Tool.html` in any modern browser.
+1) AWS AIF C01 : [https://mishaisha.github.io/learning_training/aws_aif/AWS_AIF_C01_Learning_Tool.html](https://mishaisha.github.io/learning_training/aws_aif/AWS_AIF_C01_Learning_Tool.html)
+2) Cluade Architect : [https://mishaisha.github.io/learning_training/aws_aif/AWS_AIF_C01_Learning_Tool.html](https://mishaisha.github.io/learning_training/anthropic_cca_f/CCA_F_Learning_Tool.html)
+3) AWS CCP  :
+4) AWS DVA : 
 
 ### iOS / Safari
 iOS blocks `localStorage` on `file://` URLs. To use on iPhone:
