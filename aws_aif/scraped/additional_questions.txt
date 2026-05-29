@@ -1,0 +1,429 @@
+Q#: 1 (source: jwalsh/aif-c01)
+What is the primary difference between AI and Machine Learning?
+A. AI is data-driven while Machine Learning is rule-based
+B. Machine Learning is a subset of AI that focuses on systems that can learn from data
+C. AI requires supervised learning while Machine Learning can be unsupervised
+D. There is no significant difference between AI and Machine Learning
+Answer: B
+Explanation: AI is a broader concept of machines being able to carry out tasks in a way that we would consider "smart". Machine Learning is a specific subset of AI that trains a machine how to learn, focusing on t...
+
+---
+
+Q#: 2 (source: jwalsh/aif-c01)
+Which of the following is an example of unsupervised learning?
+A. Predicting house prices based on historical sales data
+B. Classifying emails as spam or not spam
+C. Clustering customer data to identify market segments
+D. Recognizing handwritten digits in images
+Answer: C
+Explanation: Unsupervised learning involves finding patterns or structures in data without pre-existing labels. Clustering is a common unsupervised learning technique used to group similar data points together, su...
+
+---
+
+Q#: 3 (source: jwalsh/aif-c01)
+Which AWS service is most appropriate for natural language processing tasks?
+A. Amazon Rekognition
+B. Amazon Comprehend
+C. Amazon SageMaker
+D. Amazon Polly
+Answer: B
+Explanation: Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text. It's specifically designed for tasks such as sentiment analysis,...
+
+---
+
+Q#: 4 (source: jwalsh/aif-c01)
+What is the primary purpose of feature engineering in the ML development lifecycle?
+A. To reduce the number of features in the dataset
+B. To create new input features that better represent the underlying problem to predictive models
+C. To normalize all features to the same scale
+D. To remove outliers from the dataset
+Answer: B
+Explanation: Feature engineering is the process of using domain knowledge to extract features from raw data. This process helps to create new input features that can better represent the underlying problem to pred...
+
+---
+
+Q#: 5 (source: jwalsh/aif-c01)
+Which of the following is a key component of MLOps?
+A. Manual data cleansing
+B. One-time model deployment
+C. Continuous integration and continuous delivery (CI/CD) for ML models
+D. Ad-hoc model retraining
+Answer: C
+Explanation: MLOps (Machine Learning Operations) aims to streamline the process of taking machine learning models to production and maintaining them. Continuous integration and continuous delivery (CI/CD) for ML m...
+
+---
+
+Q#: 6 (source: jwalsh/aif-c01)
+What is a key characteristic of foundation models in generative AI?
+A. They are small, task-specific models
+B. They require minimal computational resources
+C. They are trained on large, diverse datasets and can be adapted to a wide range of tasks
+D. They can only be used for text generation tasks
+Answer: A
+Explanation: Foundation models are large AI models trained on vast amounts of unlabeled data. They can be adapted to a wide range of downstream tasks through fine-tuning or prompt engineering, making them versatil...
+
+---
+
+Q#: 7 (source: jwalsh/aif-c01)
+What is prompt engineering in the context of generative AI?
+A. A technique for training AI models
+B. The practice of designing and refining input prompts to get desired outputs from AI models
+C. A method for compressing AI models
+D. A way to visualize AI model outputs
+Answer: A
+Explanation: Prompt engineering is the process of crafting and refining input prompts to elicit specific, desired responses from large language models or other AI systems. It's a crucial skill in effectively using...
+
+---
+
+Q#: 8 (source: jwalsh/aif-c01)
+Which AWS service provides a fully managed environment for building generative AI applications?
+A. Amazon SageMaker
+B. Amazon Comprehend
+C. Amazon Bedrock
+D. AWS Lambda
+Answer: A
+Explanation: Amazon Bedrock is a fully managed service that provides access to foundation models from leading AI companies through a single API. It offers tools and capabilities to build, scale, and deploy generat...
+
+---
+
+Q#: 9 (source: jwalsh/aif-c01)
+What is a potential limitation of generative AI models?
+A. They can only process text data
+B. They require small datasets to function
+C. They may produce hallucinations or false information
+D. They are always 100% accurate
+Answer: A
+Explanation: Generative AI models, especially large language models, can sometimes produce "hallucinations" - plausible-sounding but factually incorrect or nonsensical information. This is a known limitation that ...
+
+---
+
+Q#: 10 (source: jwalsh/aif-c01)
+What is the primary advantage of using AWS generative AI services for building applications?
+A. They are always free to use
+B. They provide accessibility and lower barriers to entry for AI development
+C. They guarantee 100% accuracy in all outputs
+D. They eliminate the need for any programming knowledge
+Answer: A
+Explanation: AWS generative AI services, like Amazon Bedrock, provide accessibility and lower barriers to entry for AI development. They offer pre-trained models and managed infrastructure, allowing developers to ...
+
+---
+
+Q#: 11 (source: jwalsh/aif-c01)
+What is Retrieval Augmented Generation (RAG) in the context of foundation models?
+A. A method for compressing large language models
+B. A technique that combines information retrieval with text generation to produce more accurate and contextually relevant responses
+C. A type of generative adversarial network
+D. A way to visualize the internal workings of a neural network
+Answer: A
+Explanation: Retrieval Augmented Generation (RAG) is a technique that enhances language models by retrieving relevant information from an external knowledge base before generating a response. This allows the model...
+
+---
+
+Q#: 12 (source: jwalsh/aif-c01)
+Which AWS service is suitable for storing embeddings within a vector database for use with foundation models?
+A. Amazon DynamoDB
+B. Amazon S3
+C. Amazon OpenSearch Service
+D. Amazon RDS for MySQL
+Answer: A
+Explanation: Amazon OpenSearch Service supports vector search capabilities, making it suitable for storing and querying embeddings. This can be particularly useful in applications using foundation models, such as ...
+
+---
+
+Q#: 13 (source: jwalsh/aif-c01)
+What is the purpose of the 'temperature' parameter in text generation with foundation models?
+A. To set the maximum length of the generated text
+B. To control the processing speed of the model
+C. To control the randomness and creativity of the generated text
+D. To adjust the model's learning rate
+Answer: A
+Explanation: The 'temperature' parameter in text generation controls the randomness of the model's output. A higher temperature results in more diverse and creative outputs, while a lower temperature makes the out...
+
+---
+
+Q#: 14 (source: jwalsh/aif-c01)
+What is 'few-shot learning' in the context of prompt engineering?
+A. A method for training models on very small datasets
+B. A technique where a small number of examples are provided in the prompt to guide the model's response
+C. A way to reduce the size of the model
+D. A process for rapidly fine-tuning a model
+Answer: B
+Explanation: Few-shot learning in prompt engineering involves providing a small number of examples (typically 2-5) within the prompt to demonstrate the desired task or output format. This technique helps guide the...
+
+---
+
+Q#: 15 (source: jwalsh/aif-c01)
+What is a key consideration when fine-tuning a foundation model for a specific task?
+A. The size of the original pre-training dataset
+B. The quality and relevance of the fine-tuning dataset
+C. The number of parameters in the model
+D. The hardware used for training
+Answer: B
+Explanation: When fine-tuning a foundation model, the quality and relevance of the fine-tuning dataset is crucial. The dataset should be representative of the target task, free from biases, and of high quality. Po...
+
+---
+
+Q#: 16 (source: jwalsh/aif-c01)
+What is a key principle of responsible AI development?
+A. Maximizing model complexity
+B. Prioritizing speed over accuracy
+C. Fairness and non-discrimination in AI system outputs
+D. Keeping AI development processes secret
+Answer: A
+Explanation: Fairness and non-discrimination are crucial principles in responsible AI development. This involves ensuring that AI systems do not perpetuate or amplify biases based on characteristics such as race, ...
+
+---
+
+Q#: 17 (source: jwalsh/aif-c01)
+Which AWS service can help detect and monitor bias in machine learning models?
+A. Amazon Rekognition
+B. Amazon SageMaker Clarify
+C. Amazon Comprehend
+D. AWS CloudTrail
+Answer: A
+Explanation: Amazon SageMaker Clarify provides tools for detecting bias in machine learning models. It can help identify potential biases in training data and model predictions, and provide explanations for model ...
+
+---
+
+Q#: 18 (source: jwalsh/aif-c01)
+What is a key benefit of using explainable AI models?
+A. They always produce more accurate results than black-box models
+B. They require less computational resources
+C. They provide transparency in decision-making processes, building trust with users and stakeholders
+D. They eliminate the need for human oversight
+Answer: A
+Explanation: Explainable AI models provide insights into how they arrive at their decisions or predictions. This transparency helps build trust with users and stakeholders, allows for better auditing and validatio...
+
+---
+
+Q#: 19 (source: jwalsh/aif-c01)
+Which AWS service can help with maintaining regulatory compliance for AI systems?
+A. Amazon SageMaker
+B. Amazon Rekognition
+C. AWS Audit Manager
+D. Amazon Comprehend
+Answer: A
+Explanation: AWS Audit Manager helps continuously audit AWS usage to simplify how you assess risk and compliance with regulations and industry standards. It can be particularly useful for AI systems, helping to en...
+
+---
+
+Q#: 20 (source: jwalsh/aif-c01)
+What is a key aspect of data governance in AI systems?
+A. Collecting as much data as possible without restrictions
+B. Ensuring data quality, privacy, and appropriate usage throughout its lifecycle
+C. Keeping all data indefinitely
+D. Sharing all data publicly to promote transparency
+Answer: A
+Explanation: Data governance in AI systems involves managing the availability, usability, integrity, and security of data. This includes ensuring data quality, protecting privacy, maintaining appropriate access co...
+
+---
+
+Q#: 21 (source: jwalsh/aif-c01)
+What is the primary purpose of Amazon SageMaker?
+A. To provide database services
+B. To build, train, and deploy machine learning models at scale
+C. To manage EC2 instances
+D. To provide content delivery services
+Answer: A
+Explanation: Amazon SageMaker is a fully managed machine learning platform that enables developers and data scientists to quickly and easily build, train, and deploy machine learning models at any scale. It provid...
+
+---
+
+Q#: 22 (source: jwalsh/aif-c01)
+In the context of generative AI, what is a 'token'?
+A. A security credential
+B. A unit of computational power
+C. A unit of text that the model processes, which can be a word, part of a word, or a character
+D. A type of neural network layer
+Answer: A
+Explanation: In generative AI, particularly with large language models, a 'token' is the basic unit of text that the model processes. Depending on the model and tokenization method, a token can represent a word, p...
+
+---
+
+Q#: 23 (source: jwalsh/aif-c01)
+What is the purpose of 'fine-tuning' a foundation model?
+A. To reduce the model's size
+B. To increase the model's general knowledge
+C. To adapt the model to perform well on a specific task or domain
+D. To make the model forget its previous training
+Answer: A
+Explanation: Fine-tuning is the process of further training a pre-trained foundation model on a specific dataset or for a specific task. This allows the model to adapt its general knowledge to perform well on a pa...
+
+---
+
+Q#: 24 (source: jwalsh/aif-c01)
+Which of the following is a key principle of responsible AI?
+A. Maximizing profit
+B. Fairness and non-discrimination
+C. Rapid development at any cost
+D. Keeping AI development processes secret
+Answer: A
+Explanation: Fairness and non-discrimination are crucial principles in responsible AI development. This involves ensuring that AI systems do not perpetuate or amplify biases based on characteristics such as race, ...
+
+---
+
+Q#: 25 (source: jwalsh/aif-c01)
+What AWS service would you use to detect and redact sensitive information in documents?
+A. Amazon Rekognition
+B. Amazon Comprehend
+C. Amazon Macie
+D. Amazon Textract
+Answer: A
+Explanation: Amazon Macie is a data security and data privacy service that uses machine learning and pattern matching to discover and protect sensitive data in AWS. It can automatically detect sensitive data such ...
+
+---
+
+Q#: 26 (source: jwalsh/aif-c01)
+What is the primary function of Amazon Bedrock?
+A. A database service for AI applications
+B. A fully managed service that provides foundation models via API
+C. A tool for creating custom neural network architectures
+D. A service for managing AI model versioning
+Answer: A
+Explanation: Amazon Bedrock is a fully managed service that makes foundation models from AWS and third-party providers accessible via an API. It allows developers to easily experiment with and evaluate different f...
+
+---
+
+Q#: 27 (source: jwalsh/aif-c01)
+In machine learning, what does the term 'overfitting' refer to?
+A. When a model is too simple to capture the underlying patterns in the data
+B. When a model learns the training data too well, including its noise and peculiarities
+C. When a model takes too long to train
+D. When a model requires too much computational power
+Answer: A
+Explanation: Overfitting occurs when a machine learning model learns the training data too well, including the noise and random fluctuations in the training set. As a result, the model performs very well on the tr...
+
+---
+
+Q#: 28 (source: jwalsh/aif-c01)
+What is the purpose of the 'top-p' (or nucleus) sampling parameter in text generation?
+A. To set the maximum length of generated text
+B. To control the diversity of generated text by limiting the cumulative probability of considered tokens
+C. To determine the processing speed of the model
+D. To set the minimum probability threshold for each word
+Answer: A
+Explanation: Top-p (nucleus) sampling is a text generation strategy that dynamically selects the smallest set of words whose cumulative probability exceeds the probability p. This method helps balance between dive...
+
+---
+
+Q#: 29 (source: jwalsh/aif-c01)
+Which AWS service would you use to build a conversational AI chatbot?
+A. Amazon Polly
+B. Amazon Lex
+C. Amazon Transcribe
+D. Amazon Comprehend
+Answer: A
+Explanation: Amazon Lex is a service for building conversational interfaces into any application using voice and text. It provides the advanced deep learning functionalities of automatic speech recognition (ASR) f...
+
+---
+
+Q#: 30 (source: jwalsh/aif-c01)
+Which of the following is NOT a typical stage in the machine learning development lifecycle?
+A. Feature engineering
+B. Model training
+C. Hardware optimization
+D. Model deployment
+Answer: A
+Explanation: While hardware considerations are important in machine learning, "hardware optimization" is not typically considered a distinct stage in the ML development lifecycle. The typical stages include data c...
+
+---
+
+Q#: 31 (source: jwalsh/aif-c01)
+What is the main advantage of using pre-trained foundation models?
+A. They always provide perfect accuracy for any task
+B. They reduce the need for any task-specific data
+C. They reduce the time and resources needed to develop AI applications for specific tasks
+D. They eliminate the need for any further training or fine-tuning
+Answer: A
+Explanation: Pre-trained foundation models offer significant advantages in AI development. They have already learned general patterns and features from vast amounts of data, which can be leveraged for various down...
+
+---
+
+Q#: 32 (source: jwalsh/aif-c01)
+In the context of AI security, what is 'prompt injection'?
+A. A method for optimizing model training
+B. A technique where malicious inputs are crafted to manipulate an AI model's behavior
+C. A way to inject new knowledge into a model without retraining
+D. A process for rapidly fine-tuning a model
+Answer: A
+Explanation: Prompt injection is a security concern in AI systems, particularly with large language models. It involves crafting inputs (prompts) in a way that can manipulate the model's behavior, potentially caus...
+
+---
+
+Q#: 33 (source: jwalsh/aif-c01)
+Which AWS service would you use to monitor the performance of a deployed machine learning model?
+A. AWS CloudWatch
+B. Amazon SageMaker Model Monitor
+C. AWS Config
+D. Amazon Inspector
+Answer: A
+Explanation: Amazon SageMaker Model Monitor is a capability of Amazon SageMaker that continuously monitors the quality of machine learning models in production. It detects deviations in model quality, such as data...
+
+---
+
+Q#: 34 (source: jwalsh/aif-c01)
+What is the purpose of the 'few-shot learning' technique in prompt engineering?
+A. To train a model on very small datasets
+B. To guide the model's response by providing a small number of examples in the prompt
+C. To reduce the model's memory usage
+D. To increase the model's processing speed
+Answer: A
+Explanation: Few-shot learning in prompt engineering involves providing a small number of examples (typically 2-5) within the prompt to demonstrate the desired task or output format. This technique helps guide the...
+
+---
+
+Q#: 35 (source: jwalsh/aif-c01)
+Which of the following is a key consideration for responsible AI development?
+A. Maximizing model complexity
+B. Keeping AI development processes secret
+C. Ensuring AI systems are transparent and explainable
+D. Prioritizing speed over accuracy in all cases
+Answer: A
+Explanation: Transparency and explainability are crucial aspects of responsible AI development. They involve making AI systems understandable to users, stakeholders, and regulators. This includes being able to exp...
+
+---
+
+Q#: 36 (source: jwalsh/aif-c01)
+What is the primary purpose of Amazon Comprehend?
+A. Image and video analysis
+B. Natural Language Processing (NLP) tasks such as sentiment analysis and entity recognition
+C. Text-to-speech conversion
+D. Database management
+Answer: A
+Explanation: Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text. It can be used for various NLP tasks including sentiment analysi...
+
+---
+
+Q#: 37 (source: jwalsh/aif-c01)
+In the context of AI governance, what is the purpose of a model card?
+A. To create a physical representation of a neural network
+B. To provide transparent documentation about a model's development, use, and limitations
+C. To encrypt model parameters for security
+D. To optimize model performance
+Answer: A
+Explanation: A model card is a documentation framework for transparent reporting of AI model information. It typically includes details about a model's development, intended use cases, performance characteristics,...
+
+---
+
+Q#: 38 (source: jwalsh/aif-c01)
+Which AWS service would you use to convert speech to text?
+A. Amazon Polly
+B. Amazon Transcribe
+C. Amazon Translate
+D. Amazon Comprehend
+Answer: A
+Explanation: Amazon Transcribe is an automatic speech recognition (ASR) service that makes it easy for developers to add speech-to-text capability to their applications. It uses machine learning models to accurate...
+
+---
+
+Q#: 39 (source: jwalsh/aif-c01)
+What is a potential risk of using generative AI models in content creation?
+A. The model may generate content too slowly
+B. The model may generate content that infringes on copyrights or contains biased information
+C. The model may consume too much storage space
+D. The model may only generate content in a single language
+Answer: B
+Explanation: While generative AI models are powerful tools for content creation, they come with certain risks. One significant risk is that these models, trained on vast amounts of data from the internet, may inad...
+
+---
+

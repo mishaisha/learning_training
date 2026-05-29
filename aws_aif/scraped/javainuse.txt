@@ -1,0 +1,329 @@
+QUESTION 1 MEDIUM
+A healthcare company wants to build an AI application that listens to patient consultations and automatically generates structured clinical notes. Which AWS service is MOST appropriate for this use case?
+A. Amazon Comprehend Medical
+B. Amazon Transcribe Medical
+C. Amazon Textract
+D. Amazon Polly
+Answer: B
+Explanation: Amazon Transcribe Medical is a speech-to-text service specifically optimized for medical terminology and clinical conversations.
+
+QUESTION 2 MEDIUM
+A company is building a RAG (Retrieval Augmented Generation) application using Amazon Bedrock. The company wants to store and search vector embeddings of its internal product catalog. Which AWS service is MOST suitable for storing and querying these embeddings?
+A. Amazon RDS for PostgreSQL
+B. Amazon DynamoDB
+C. Amazon OpenSearch Service
+D. Amazon Redshift
+Answer: C
+Explanation: Amazon OpenSearch Service supports k-NN vector search.
+
+QUESTION 3 MEDIUM
+A data science team is evaluating a classification model. The model must minimize false negatives because missing a positive case has serious medical consequences. Which evaluation metric should the team prioritize?
+A. Precision
+B. Recall
+C. Specificity
+D. F1 score
+Answer: B
+
+QUESTION 4 EASY
+A financial services company uses a large language model (LLM) to generate investment reports. The company is concerned that the model occasionally produces confident-sounding responses that contain factually incorrect information. What is this phenomenon called?
+A. Model drift
+B. Prompt injection
+C. Hallucination
+D. Overfitting
+Answer: C
+
+QUESTION 5 EASY
+A company is developing an AI image moderation system for a social media platform. The system needs to automatically detect and flag inappropriate images uploaded by users. Which AWS service is MOST appropriate?
+A. Amazon Comprehend
+B. Amazon Rekognition
+C. Amazon Textract
+D. Amazon Kendra
+Answer: B
+
+QUESTION 6 MEDIUM
+A machine learning team notices that their model performs well on the training dataset but poorly when deployed in production. Investigation reveals that the statistical distribution of production input data has shifted significantly since training. What is this problem called?
+A. Overfitting
+B. Data drift
+C. Underfitting
+D. Label noise
+Answer: B
+
+QUESTION 7 EASY
+A company wants to automatically extract structured data from thousands of scanned paper invoices with varying formats and populate a database. Which AWS service is MOST appropriate?
+A. Amazon Comprehend
+B. Amazon Rekognition
+C. Amazon Textract
+D. Amazon Translate
+Answer: C
+
+QUESTION 8 MEDIUM
+A company is evaluating foundation models on Amazon Bedrock for a text summarization task. The team wants to measure how well generated summaries capture key information compared to human-written reference summaries. Which evaluation metric is MOST appropriate?
+A. BLEU score
+B. ROUGE score
+C. Perplexity
+D. F1 score
+Answer: B
+
+QUESTION 9 MEDIUM
+A company has deployed a machine learning model to production. The team wants to continuously monitor the model for data quality issues, prediction drift, and performance degradation over time. Which Amazon SageMaker feature provides this capability?
+A. SageMaker Experiments
+B. SageMaker Model Monitor
+C. SageMaker Data Wrangler
+D. SageMaker Feature Store
+Answer: B
+
+QUESTION 10 MEDIUM
+A startup wants to build a mobile application that identifies plant species from photos. The team has no machine learning expertise and needs a solution that requires minimal ML knowledge. Which approach requires the LEAST amount of ML knowledge?
+A. Train a custom CNN model using Amazon SageMaker
+B. Use Amazon Rekognition Custom Labels
+C. Fine-tune a vision model on Amazon Bedrock
+D. Build a custom model using TensorFlow on Amazon EC2
+Answer: B
+
+QUESTION 11 MEDIUM
+An AI team is building a multi-turn conversational assistant using Amazon Bedrock. The assistant must remember the context of previous messages within a conversation session. What is the MOST effective approach to maintain conversation context?
+A. Increase the model temperature parameter
+B. Include the full conversation history in each API request
+C. Enable Provisioned Throughput for the model
+D. Use a foundation model with more parameters
+Answer: B
+
+QUESTION 12 MEDIUM
+A company is concerned about the carbon footprint of running ML inference at scale. The team wants to use AWS infrastructure with the MOST energy-efficient chips specifically designed for ML inference workloads. Which EC2 instance series should they choose?
+A. P5 instances with NVIDIA H100 GPUs
+B. G5 instances with NVIDIA A10G GPUs
+C. Inf2 instances with AWS Inferentia chips
+D. C7g instances with AWS Graviton3 processors
+Answer: C
+
+QUESTION 13 EASY
+A company wants to use Amazon Bedrock to build an application that answers employee questions based on a large internal knowledge base of PDF policy documents. Which Amazon Bedrock feature should the company use?
+A. Model fine-tuning
+B. Knowledge Bases
+C. Agents
+D. Continued pre-training
+Answer: B
+
+QUESTION 14 MEDIUM
+A company is building a generative AI application and is concerned about users embedding malicious instructions in their input to override the system prompt and hijack the model's behavior. What type of attack is this?
+A. Model inversion attack
+B. Adversarial example attack
+C. Prompt injection attack
+D. Data poisoning attack
+Answer: C
+
+QUESTION 15 MEDIUM
+A company needs to process and run inference on 50,000 customer feedback records stored in Amazon S3. The results are needed the following morning and do not require real-time processing. Which Amazon SageMaker inference type is MOST cost-effective for this workload?
+A. Real-time inference
+B. Serverless inference
+C. Asynchronous inference
+D. Batch transform
+Answer: D
+
+QUESTION 16 EASY
+A company is using a large language model (LLM) for code generation. Developers want the model to produce more deterministic and consistent outputs, with less random variation between runs on identical prompts. Which parameter adjustment achieves this?
+A. Increase the temperature
+B. Decrease the temperature
+C. Increase Top-P
+D. Increase Top-K
+Answer: B
+
+QUESTION 17 EASY
+A retail company wants to build a personalized product recommendation system that learns from each customer's browsing history, purchase behavior, and ratings. Which AWS service is purpose-built for this use case?
+A. Amazon Comprehend
+B. Amazon Forecast
+C. Amazon Personalize
+D. Amazon Kendra
+Answer: C
+
+QUESTION 18 EASY
+A company wants to implement responsible AI practices. They need to ensure that customers who receive adverse outcomes from their AI model, such as loan denials, can receive an understandable explanation of why the decision was made. Which responsible AI principle does this requirement represent?
+A. Fairness
+B. Privacy
+C. Explainability
+D. Robustness
+Answer: C
+
+QUESTION 19 MEDIUM
+A company has trained a binary classification model to detect fraudulent transactions. The dataset contains 98% legitimate transactions and only 2% fraudulent ones. The model achieves 98% accuracy by predicting every transaction as legitimate. Which technique BEST addresses the class imbalance problem?
+A. Increase the number of training epochs
+B. Use a larger neural network architecture
+C. Apply SMOTE to oversample the minority class
+D. Reduce the learning rate
+Answer: C
+
+QUESTION 20 MEDIUM
+A company uses Amazon Bedrock to power a customer-facing chatbot. The security team requires that no customer personally identifiable information (PII) appears in the model's responses. Which Amazon Bedrock Guardrails feature specifically addresses this requirement?
+A. Content filters
+B. Denied topics
+C. Sensitive information filters
+D. Word filters
+Answer: C
+
+QUESTION 21 MEDIUM
+A team of data scientists wants to automatically search through many hyperparameter configurations for a training job and identify the best-performing model without manual experimentation. Which Amazon SageMaker feature should they use?
+A. SageMaker Pipelines
+B. SageMaker Automatic Model Tuning
+C. SageMaker Clarify
+D. SageMaker Model Registry
+Answer: B
+
+QUESTION 22 EASY
+A company is building a generative AI pipeline that must perform multiple sequential steps automatically -- classifying a customer request, routing it to the correct department, querying a knowledge base, and generating a final response. Which Amazon Bedrock feature enables this multi-step orchestration?
+A. Knowledge Bases
+B. Model fine-tuning
+C. Agents
+D. Guardrails
+Answer: C
+
+QUESTION 23 EASY
+A media company wants to generate captions for video content in the source language and then produce subtitles in five additional languages for international distribution. Which combination of AWS services creates the MOST complete solution?
+A. Amazon Rekognition and Amazon Translate
+B. Amazon Transcribe and Amazon Translate
+C. Amazon Polly and Amazon Comprehend
+D. Amazon Textract and Amazon Translate
+Answer: B
+
+QUESTION 24 MEDIUM
+A company is fine-tuning an Amazon Bedrock model on proprietary internal data. The security and compliance team requires that all fine-tuning data and resulting custom model weights are encrypted using the company's own encryption keys. Which AWS service enables this customer-controlled encryption?
+A. AWS Shield
+B. AWS Key Management Service (AWS KMS)
+C. AWS Secrets Manager
+D. AWS Certificate Manager
+Answer: B
+
+QUESTION 25 MEDIUM (MULTI-SELECT)
+Which of the following are characteristics of foundation models that distinguish them from traditional task-specific ML models? (Select TWO.)
+A. They are trained on large, diverse datasets using self-supervised learning
+B. They can only be used for the specific task they were trained on
+C. They can be adapted to many downstream tasks through prompting or fine-tuning
+D. They require manually labeled data for the initial pre-training phase
+Answer: A, C
+
+QUESTION 26 EASY
+A company wants to convert call center audio recordings into searchable text transcripts. The recordings involve conversations between agents and customers, and the company needs to identify which speaker said what. Which Amazon Transcribe feature addresses this requirement?
+A. Custom vocabulary
+B. Speaker diarization
+C. Vocabulary filtering
+D. Automatic language identification
+Answer: B
+
+QUESTION 27 MEDIUM
+A company is using Amazon SageMaker to train a deep learning model. The training job is taking many hours due to the very large dataset size. The team wants to reduce training time without significantly impacting model accuracy. Which technique can reduce training time MOST effectively?
+A. Increase the dropout rate
+B. Use distributed training across multiple instances
+C. Decrease the model depth
+D. Apply L2 regularization
+Answer: B
+
+QUESTION 28 EASY
+A company is selecting a foundation model on Amazon Bedrock for a legal document review task. The documents can be up to 500 pages long and must be processed in a single API request to preserve full context. Which model characteristic is MOST critical for this use case?
+A. Number of model parameters
+B. Context window size
+C. Training data recency
+D. Model inference latency
+Answer: B
+
+QUESTION 29 MEDIUM
+A data scientist is building a demand forecasting model using Amazon SageMaker. The model needs to forecast electricity consumption for the next 30 days using 3 years of historical hourly meter readings. Which SageMaker built-in algorithm is MOST suitable?
+A. XGBoost
+B. Linear Learner
+C. DeepAR
+D. K-Means
+Answer: C
+
+QUESTION 30 MEDIUM
+A company wants to implement an AI governance framework. They need to document the intended use, limitations, training data provenance, and performance metrics for each ML model in a standardized format for regulatory compliance. Which AWS service supports this requirement?
+A. Amazon SageMaker Experiments
+B. Amazon SageMaker Model Cards
+C. AWS Audit Manager
+D. Amazon SageMaker Pipelines
+Answer: B
+
+QUESTION 31 MEDIUM
+A company's AI hiring tool has been generating biased outputs that disadvantage certain demographic groups. The ML team wants to systematically detect and measure this bias across protected attributes. Which Amazon SageMaker feature is designed for this purpose?
+A. SageMaker Model Monitor
+B. SageMaker Clarify
+C. SageMaker Debugger
+D. SageMaker Feature Store
+Answer: B
+
+QUESTION 32 MEDIUM
+A company is building a conversational AI assistant using Amazon Bedrock. Users frequently ask questions about news events and developments that occurred after the foundation model's training cutoff date. Which technique BEST addresses this limitation?
+A. Increase the model temperature to improve answer creativity
+B. Use RAG with a Knowledge Base connected to a regularly updated news data source
+C. Fine-tune the model on recent news articles every week
+D. Switch to a foundation model with more parameters
+Answer: B
+
+QUESTION 33 MEDIUM
+A company wants to build a solution to automatically detect when customers in call center recordings express frustration or dissatisfaction during their conversations. Which combination of AWS services BEST achieves this?
+A. Amazon Transcribe and Amazon Comprehend
+B. Amazon Polly and Amazon Rekognition
+C. Amazon Textract and Amazon Kendra
+D. Amazon Lex and Amazon Connect
+Answer: A
+
+QUESTION 34 MEDIUM
+A company wants to use Amazon Bedrock to build a customer service chatbot. The chatbot must always respond in a formal professional tone and must never discuss competitor products under any circumstances. Which Amazon Bedrock features should the company configure to meet these requirements?
+A. Model fine-tuning and Provisioned Throughput
+B. System prompts and Guardrails with denied topics
+C. Knowledge Bases and Agents
+D. Continued pre-training and invocation logging
+Answer: B
+
+QUESTION 35 MEDIUM
+A company trained an ML model to classify customer support tickets into three categories. The model achieves 95% accuracy on the training set but only 58% accuracy on new, unseen tickets. Which conclusion BEST describes this situation?
+A. The model is underfitting on the training data.
+B. The model is overfitting on the training data.
+C. The model has an insufficient number of parameters.
+D. The model requires a higher learning rate.
+Answer: B
+
+QUESTION 36 HARD
+A company wants to use Amazon Bedrock to enable employees to ask questions in plain English about data stored in a relational database, automatically generating and executing SQL queries without requiring employees to know SQL. Which Amazon Bedrock feature BEST supports this use case?
+A. Knowledge Bases for document retrieval
+B. Agents with action groups connected to a database via AWS Lambda
+C. Model fine-tuning on SQL examples
+D. Continued pre-training on database schemas
+Answer: B
+
+QUESTION 37 MEDIUM
+A company is building a foundation model (FM) for a specialized scientific domain. The company wants to teach the model broad knowledge about a new scientific field using a large collection of unlabeled research papers before task-specific adaptation. Which training approach is MOST appropriate?
+A. Fine-tuning with prompt-completion pairs
+B. Continued pre-training on domain-specific unlabeled data
+C. Retrieval Augmented Generation (RAG)
+D. Few-shot prompting with scientific examples
+Answer: B
+
+QUESTION 38 MEDIUM
+A company must ensure that Amazon SageMaker training jobs process sensitive data in complete network isolation, with no ability to make outbound calls to the internet or other AWS services during training. Which solution meets this requirement?
+A. Run training jobs using SageMaker Experiments
+B. Enable network isolation mode for SageMaker training jobs
+C. Encrypt training data at rest using AWS KMS
+D. Assign a restrictive IAM role to the SageMaker training job
+Answer: B
+
+QUESTION 39 MEDIUM
+A company is using an Amazon Bedrock base model for an internal application and has trained a custom fine-tuned version of the model to improve performance on their specific use case. What must the company do before they can use the custom fine-tuned model for inference through Amazon Bedrock?
+A. Purchase Provisioned Throughput for the custom model.
+B. Deploy the custom model to an Amazon SageMaker real-time endpoint.
+C. Register the custom model in the Amazon SageMaker Model Registry.
+D. Enable on-demand pricing for the custom model in the Amazon Bedrock console.
+Answer: A
+
+QUESTION 40 MEDIUM
+An AI practitioner is building a model to generate images of professionals in various career fields. After reviewing the outputs, they discover the generated images consistently show gender and racial bias reflecting imbalances in the training dataset. Which technique BEST addresses this problem at its source?
+A. Apply watermark detection to generated images
+B. Use Retrieval Augmented Generation (RAG) during inference
+C. Implement post-generation filtering with Amazon Rekognition
+D. Apply data augmentation to increase representation of underrepresented groups in the training data
+Answer: D
+
+QUESTION 41 MEDIUM (MULTI-SELECT)
+A loan company is building a generative AI-based solution to offer new applicants discounts based on specific business criteria. The company wants to build and use an AI model responsibly to minimize bias that could negatively affect some customers. Which actions should the company take to meet these requirements? (Select TWO.)
+A. Use diverse and representative training data that includes various demographic groups
+B. Implement regular bias testing and fairness audits on the model outputs
+C. Use ROUGE to ensure the model is 100% accurate
+D. Disable all content filtering
+Answer: A, B

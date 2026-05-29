@@ -1,0 +1,16 @@
+[
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is Retrieval Augmented Generation (RAG) in the context of generative AI?",
+    "options": [
+      "A method for compressing large language models",
+      "A technique that combines information retrieval with text generation to produce more accurate and contextually relevant responses",
+      "A type of generative adversarial network",
+      "A way to visualize the internal workings of a neural network"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Retrieval Augmented Generation (RAG) is a technique that enhances language models by retrieving relevant information from an external knowledge base before generating a response. This allows the model to access up-to-date or domain-specific information, improving the accuracy and relevance of its outputs. RAG is particularly useful for applications requiring current or specialized knowledge."
+  }
+]

@@ -1,0 +1,208 @@
+QUESTION 1
+A company wants to predict house prices based on size, location, and number of bedrooms. Which ML technique is the most appropriate?
+A. Classification
+B. Clustering
+C. Regression
+D. Reinforcement learning
+Answer: C
+
+QUESTION 2
+Which AWS service provides a fully managed environment to build, train, and deploy custom ML models?
+A. Amazon Comprehend
+B. Amazon SageMaker
+C. Amazon Translate
+D. Amazon Polly
+Answer: B
+
+QUESTION 3
+A logistics company aims to enhance delivery efficiency by predicting whether a shipment will arrive on time or late. The company has historical shipment data that includes delivery status, route distance, weather conditions, and carrier performance. The business team insists that the model output must be interpretable so that delays can be explained to customers. Which ML approach is most appropriate?
+A. Regression model because delivery delay is time-based
+B. Classification model because the outcome is categorical
+C. Clustering model to group shipments with similar patterns
+D. Reinforcement learning to optimize delivery routes dynamically
+Answer: B
+
+QUESTION 4 (MATCHING)
+Match each learning type with its correct description.
+A. Supervised learning -> Uses labeled input-output pairs
+B. Unsupervised learning -> Finds patterns in unlabeled data
+C. Reinforcement learning -> Learns by receiving rewards or penalties
+Answer: A-2, B-3, C-1
+
+QUESTION 5
+A health care organization trained a machine learning model to predict the risk of patient readmission. The model performs exceptionally well during training but shows significantly worse performance after deployment when new patient data is introduced. Which ML life cycle concept addresses this issue most directly?
+A. Hyperparameter tuning to improve model accuracy
+B. Feature engineering to add more input variables
+C. Model monitoring to detect data and concept drift
+D. Exploratory data analysis (EDA) on historical data
+E. Model retraining triggered by production feedback
+Answer: C
+
+QUESTION 6
+Which concept represents converting text into numerical representations that capture semantic meaning for similarity search and retrieval?
+A. Tokenization
+B. Chunking
+C. Embeddings
+D. Prompt templates
+Answer: C
+
+QUESTION 7
+A global e-commerce company is building a generative AI system to automatically generate product descriptions across thousands of categories. During testing, the business notices that repeated prompts sometimes produce different descriptions for the same product, even when the input remains unchanged. Which characteristic of generative AI most directly explains this behavior?
+A. Hallucination caused by insufficient fine-tuning
+B. Nondeterministic output behavior influenced by sampling strategies
+C. Poor data selection during foundation model pretraining
+D. Tokenization errors during inference
+Answer: B
+
+QUESTION 8 (MULTI-SELECT)
+Which factors should most influence the selection of a generative AI model for a regulated industry? (Select any two options.)
+A. Compliance requirements
+B. Model creativity level
+C. Interpretability needs
+D. Token randomness
+E. UI design
+Answer: A, C
+
+QUESTION 9
+A financial services company wants to deploy a generative AI chatbot to summarize internal compliance documents. The chatbot must: Provide accurate summaries, Avoid fabricating information, Be explainable enough for auditors. Which approach best addresses these requirements with the lowest operational complexity?
+A. Increase model temperature to improve fluency.
+B. Use a larger foundation model with more parameters.
+C. Combine a foundation model with retrieval-augmented generation (RAG).
+D. Pretrain a custom foundation model from scratch using internal data.
+Answer: C
+
+QUESTION 10 (ORDERING)
+A startup is building a generative AI application using AWS managed services. The team aims to adhere to AWS-aligned best practices for developing and deploying the solution. Arrange the following steps in the most appropriate order.
+1. Define business objectives and success metrics.
+2. Select an appropriate foundation model.
+3. Evaluate the model against business requirements.
+4. Apply guardrails and safety controls.
+5. Deploy the application for production use.
+Answer: 1, 2, 3, 4, 5
+
+QUESTION 11
+Which inference parameter most directly controls the randomness of a foundation model's responses?
+A. Batch size
+B. Epochs
+C. Temperature
+D. Learning rate
+Answer: C
+
+QUESTION 12 (MATCHING)
+Match the right answer:
+A. Few-shot prompting -> Providing a small number of examples in the prompt
+B. Zero-shot prompting -> Prompting without examples
+C. Chain-of-thought -> Encouraging step-by-step reasoning
+D. Prompt template -> Reusable structured prompts
+Answer: A-1, B-2, C-3, D-4
+
+QUESTION 13
+A company wants a foundation model to perform multi-step tasks such as calling APIs, querying databases, and summarizing results. Which feature best supports this requirement?
+A. Fine-tuning
+B. Agents for Amazon Bedrock
+C. Temperature tuning
+D. Vector databases
+Answer: B
+
+QUESTION 14
+A legal services company is building an internal AI assistant using Amazon Bedrock to answer employee questions about contracts and compliance policies. The documents change frequently, and the legal team wants responses to always reflect the latest approved documents. The company also aims to avoid retraining models due to their high cost and lengthy turnaround times. Which solution best meets these requirements?
+A. Fine-tune a foundation model weekly using updated legal documents.
+B. Use retrieval-augmented generation (RAG) with a managed knowledge base.
+C. Use few-shot prompting with examples embedded in the prompt.
+D. Pretrain a custom foundation model using historical legal data.
+Answer: B
+
+QUESTION 15 (MULTI-SELECT)
+A company is evaluating two pretrained foundation models for a multilingual customer support application. The application must support customer conversations across multiple regions and remain within a strict budget. Which selection criteria are most critical when choosing the foundation model? (Select any two options.)
+A. Input/output length
+B. Model size
+C. Multi-lingual support
+D. Training dataset source
+E. Token-based pricing
+Answer: C, E
+
+QUESTION 16
+Which characteristic of responsible AI is most directly addressed when a health care provider ensures their diagnostic model does not produce less accurate results for a specific ethnic group compared to others?
+A. Explainability
+B. Fairness
+C. Sustainability
+D. Security
+Answer: B
+
+QUESTION 17 (MULTI-SELECT)
+Which characteristics describe a responsible dataset used for training AI models? (Select any two options.)
+A. Balanced representation across demographic groups
+B. Large dataset size regardless of source
+C. Curated and vetted data sources
+D. High-frequency data updates only
+E. Unlabeled raw data
+Answer: A, C
+
+QUESTION 18 (MULTI-SELECT)
+A health care company is developing a generative AI assistant to assist clinicians in drafting patient discharge summaries. The summaries must be accurate, unbiased, and auditable, and clinicians must be able to review and override AI-generated outputs before final use. Which solutions best support these requirements? (Select any two options.)
+A. Amazon Augmented AI (Amazon A2I)
+B. Amazon SageMaker Clarify
+C. Amazon Bedrock Guardrails
+D. AWS Artifact
+E. Amazon SageMaker Model Registry
+Answer: A, C
+
+QUESTION 19
+A model performs extremely well on training data but produces inconsistent and inaccurate predictions across different demographic groups in production. Which issue best explains this behavior?
+A. High bias and low variance
+B. High variance leading to overfitting
+C. Underfitting due to limited features
+D. Poor hyperparameter initialization
+Answer: B
+
+QUESTION 20 (MULTI-SELECT)
+A government agency is deploying an AI model to help allocate public housing resources. Due to regulatory requirements, the agency must ensure decision transparency, auditability, and public trust, even if this reduces raw model performance. Which choices best align with these goals? (Select any two options.)
+A. Using a highly complex, opaque deep learning model
+B. Documenting model intent and limitations using SageMaker Model Cards
+C. Prioritizing explainable and interpretable model architectures
+D. Maximizing accuracy regardless of explainability
+E. Disabling access to model metadata
+Answer: B, C
+
+QUESTION 21
+A company is deploying an AI application on AWS and wants to ensure that all data used by the model is encrypted while stored in Amazon S3. Which AWS feature satisfies this requirement?
+A. IAM policies
+B. Encryption at rest using AWS KMS
+C. AWS CloudTrail
+D. Amazon Macie
+Answer: B
+
+QUESTION 22 (MULTI-SELECT)
+Which practices best help ensure secure data engineering for AI systems? (Select any two options.)
+A. Assessing data quality before model training
+B. Using larger datasets regardless of sensitivity
+C. Implementing data access controls
+D. Disabling encryption to improve performance
+E. Ignoring data lineage documentation
+Answer: A, C
+
+QUESTION 23
+A company wants to document the training data sources, intended use, risk considerations, and evaluation results of an AI model for audit purposes. Which AWS feature is most appropriate?
+A. AWS Config
+B. SageMaker Model Cards
+C. Amazon Inspector
+D. AWS CloudTrail
+Answer: B
+
+QUESTION 24 (MULTI-SELECT)
+A company must track configuration changes and API activity related to its AI systems to meet governance and audit requirements. Which AWS services should the company use? (Select any two options.)
+A. AWS CloudTrail
+B. AWS Config
+C. Amazon Macie
+D. AWS PrivateLink
+E. Amazon Inspector
+Answer: A, B
+
+QUESTION 25 (MULTI-SELECT)
+A company aims to establish a structured governance framework to assess and manage security risks associated with generative AI workloads. Which two approaches best support this goal?
+A. Applying the generative AI Security Scoping Matrix
+B. Using AWS Well-Architected Tool exclusively
+C. Defining governance policies and review cadence
+D. Increasing model inference throughput
+E. Ignoring transparency standards
+Answer: A, C

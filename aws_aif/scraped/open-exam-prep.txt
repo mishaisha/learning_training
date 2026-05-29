@@ -1,0 +1,69 @@
+1Which AWS service is a fully managed platform for building, training, and deploying machine learning models?
+A.Amazon Comprehend
+B.Amazon SageMaker
+C.Amazon Rekognition
+D.AWS Lambda
+Answer: B
+
+2What is the primary difference between supervised and unsupervised learning?
+A.Supervised learning requires more computational power
+B.Supervised learning uses labeled data; unsupervised learning discovers patterns in unlabeled data
+C.Unsupervised learning always produces better results
+D.Supervised learning can only be used for classification tasks
+Answer: B
+
+3A company wants to extract text and data from scanned documents and forms. Which AWS service should they use?
+A.Amazon Textract
+B.Amazon Comprehend
+C.Amazon Polly
+D.Amazon Translate
+Answer: A
+
+4Which concept describes a large pre-trained model that can be adapted for various downstream tasks through fine-tuning or prompting?
+A.Feature engineering model
+B.Foundation model
+C.Decision tree
+D.Rule-based system
+Answer: B
+
+5What is Amazon Bedrock?
+A.A database service optimized for ML workloads
+B.A fully managed service that offers foundation models from leading AI companies through a single API
+C.A tool for labeling training data
+D.A service for deploying ML models to edge devices
+Answer: B
+
+6A data scientist notices that a model performs well on training data but poorly on new, unseen data. What is this problem called?
+A.Underfitting
+B.Overfitting
+C.Data drift
+D.Concept drift
+Answer: B
+
+7Which AWS service provides pre-built natural language processing (NLP) capabilities such as sentiment analysis, entity recognition, and language detection?
+A.Amazon Lex
+B.Amazon Comprehend
+C.Amazon Transcribe
+D.Amazon Kendra
+Answer: B
+
+8What is Retrieval-Augmented Generation (RAG) in the context of foundation models?
+A.A method to compress model size for faster inference
+B.A technique that enhances model responses by retrieving relevant information from external knowledge sources
+C.A way to generate synthetic training data
+D.A process for converting text to images
+Answer: B
+
+9Which metric measures the percentage of actual positive cases that a model correctly identifies?
+A.Precision
+B.Recall
+C.Accuracy
+D.F1 Score
+Answer: B
+
+10A marketing team wants to build a chatbot that answers customer questions about company products. They have no ML experience. Which AWS service is most appropriate?
+A.Amazon SageMaker
+B.Amazon Lex with Amazon Bedrock
+C.Amazon EC2 with a custom chatbot framework
+D.Amazon Comprehend
+Answer: B

@@ -1,0 +1,548 @@
+[
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the primary difference between AI and Machine Learning?",
+    "options": [
+      "AI is data-driven while Machine Learning is rule-based",
+      "Machine Learning is a subset of AI that focuses on systems that can learn from data",
+      "AI requires supervised learning while Machine Learning can be unsupervised",
+      "There is no significant difference between AI and Machine Learning"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "AI is a broader concept of machines being able to carry out tasks in a way that we would consider \"smart\". Machine Learning is a specific subset of AI that trains a machine how to learn, focusing on the development of computer programs that can access data and use it to learn for themselves."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which of the following is an example of unsupervised learning?",
+    "options": [
+      "Predicting house prices based on historical sales data",
+      "Classifying emails as spam or not spam",
+      "Clustering customer data to identify market segments",
+      "Recognizing handwritten digits in images"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "Unsupervised learning involves finding patterns or structures in data without pre-existing labels. Clustering is a common unsupervised learning technique used to group similar data points together, such as identifying market segments from customer data."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service is most appropriate for natural language processing tasks?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon SageMaker",
+      "Amazon Polly"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text. It's specifically designed for tasks such as sentiment analysis, entity recognition, and key phrase extraction."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the primary purpose of feature engineering in the ML development lifecycle?",
+    "options": [
+      "To reduce the number of features in the dataset",
+      "To create new input features that better represent the underlying problem to predictive models",
+      "To normalize all features to the same scale",
+      "To remove outliers from the dataset"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Feature engineering is the process of using domain knowledge to extract features from raw data. This process helps to create new input features that can better represent the underlying problem to predictive models, potentially improving their performance and interpretability."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which of the following is a key component of MLOps?",
+    "options": [
+      "Manual data cleansing",
+      "One-time model deployment",
+      "Continuous integration and continuous delivery (CI/CD) for ML models",
+      "Ad-hoc model retraining"
+    ],
+    "correct_answers": [
+      2
+    ],
+    "explanation": "MLOps (Machine Learning Operations) aims to streamline the process of taking machine learning models to production and maintaining them. Continuous integration and continuous delivery (CI/CD) for ML models is a key component of MLOps, ensuring that models can be reliably and efficiently updated and deployed."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a key characteristic of foundation models in generative AI?",
+    "options": [
+      "They are small, task-specific models",
+      "They require minimal computational resources",
+      "They are trained on large, diverse datasets and can be adapted to a wide range of tasks",
+      "They can only be used for text generation tasks"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Foundation models are large AI models trained on vast amounts of unlabeled data. They can be adapted to a wide range of downstream tasks through fine-tuning or prompt engineering, making them versatile tools for various AI applications."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is prompt engineering in the context of generative AI?",
+    "options": [
+      "A technique for training AI models",
+      "The practice of designing and refining input prompts to get desired outputs from AI models",
+      "A method for compressing AI models",
+      "A way to visualize AI model outputs"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Prompt engineering is the process of crafting and refining input prompts to elicit specific, desired responses from large language models or other AI systems. It's a crucial skill in effectively using and interacting with generative AI models."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service provides a fully managed environment for building generative AI applications?",
+    "options": [
+      "Amazon SageMaker",
+      "Amazon Comprehend",
+      "Amazon Bedrock",
+      "AWS Lambda"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon Bedrock is a fully managed service that provides access to foundation models from leading AI companies through a single API. It offers tools and capabilities to build, scale, and deploy generative AI applications securely."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a potential limitation of generative AI models?",
+    "options": [
+      "They can only process text data",
+      "They require small datasets to function",
+      "They may produce hallucinations or false information",
+      "They are always 100% accurate"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Generative AI models, especially large language models, can sometimes produce \"hallucinations\" - plausible-sounding but factually incorrect or nonsensical information. This is a known limitation that users and developers need to be aware of when working with these models."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the primary advantage of using AWS generative AI services for building applications?",
+    "options": [
+      "They are always free to use",
+      "They provide accessibility and lower barriers to entry for AI development",
+      "They guarantee 100% accuracy in all outputs",
+      "They eliminate the need for any programming knowledge"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "AWS generative AI services, like Amazon Bedrock, provide accessibility and lower barriers to entry for AI development. They offer pre-trained models and managed infrastructure, allowing developers to build AI applications without the need for extensive ML expertise or large computational resources."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is Retrieval Augmented Generation (RAG) in the context of foundation models?",
+    "options": [
+      "A method for compressing large language models",
+      "A technique that combines information retrieval with text generation to produce more accurate and contextually relevant responses",
+      "A type of generative adversarial network",
+      "A way to visualize the internal workings of a neural network"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Retrieval Augmented Generation (RAG) is a technique that enhances language models by retrieving relevant information from an external knowledge base before generating a response. This allows the model to access up-to-date or domain-specific information, improving the accuracy and relevance of its outputs."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service is suitable for storing embeddings within a vector database for use with foundation models?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon S3",
+      "Amazon OpenSearch Service",
+      "Amazon RDS for MySQL"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon OpenSearch Service supports vector search capabilities, making it suitable for storing and querying embeddings. This can be particularly useful in applications using foundation models, such as implementing efficient similarity search or enhancing retrieval for RAG systems."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the purpose of the 'temperature' parameter in text generation with foundation models?",
+    "options": [
+      "To set the maximum length of the generated text",
+      "To control the processing speed of the model",
+      "To control the randomness and creativity of the generated text",
+      "To adjust the model's learning rate"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "The 'temperature' parameter in text generation controls the randomness of the model's output. A higher temperature results in more diverse and creative outputs, while a lower temperature makes the output more focused and deterministic. This allows users to balance between creativity and consistency in generated text."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is 'few-shot learning' in the context of prompt engineering?",
+    "options": [
+      "A method for training models on very small datasets",
+      "A technique where a small number of examples are provided in the prompt to guide the model's response",
+      "A way to reduce the size of the model",
+      "A process for rapidly fine-tuning a model"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "Few-shot learning in prompt engineering involves providing a small number of examples (typically 2-5) within the prompt to demonstrate the desired task or output format. This technique helps guide the model's understanding and can improve performance on specific tasks without fine-tuning the model."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a key consideration when fine-tuning a foundation model for a specific task?",
+    "options": [
+      "The size of the original pre-training dataset",
+      "The quality and relevance of the fine-tuning dataset",
+      "The number of parameters in the model",
+      "The hardware used for training"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "When fine-tuning a foundation model, the quality and relevance of the fine-tuning dataset is crucial. The dataset should be representative of the target task, free from biases, and of high quality. Poor quality or irrelevant data can lead to degraded performance or unintended behaviors in the fine-tuned model."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a key principle of responsible AI development?",
+    "options": [
+      "Maximizing model complexity",
+      "Prioritizing speed over accuracy",
+      "Fairness and non-discrimination in AI system outputs",
+      "Keeping AI development processes secret"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Fairness and non-discrimination are crucial principles in responsible AI development. This involves ensuring that AI systems do not perpetuate or amplify biases based on characteristics such as race, gender, age, or other protected attributes. It's important to assess and mitigate biases in training data and model outputs."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service can help detect and monitor bias in machine learning models?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon SageMaker Clarify",
+      "Amazon Comprehend",
+      "AWS CloudTrail"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon SageMaker Clarify provides tools for detecting bias in machine learning models. It can help identify potential biases in training data and model predictions, and provide explanations for model decisions, supporting the development of fair and transparent AI systems."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a key benefit of using explainable AI models?",
+    "options": [
+      "They always produce more accurate results than black-box models",
+      "They require less computational resources",
+      "They provide transparency in decision-making processes, building trust with users and stakeholders",
+      "They eliminate the need for human oversight"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Explainable AI models provide insights into how they arrive at their decisions or predictions. This transparency helps build trust with users and stakeholders, allows for better auditing and validation of model behavior, and can be crucial in regulated industries where decision rationales must be provided."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service can help with maintaining regulatory compliance for AI systems?",
+    "options": [
+      "Amazon SageMaker",
+      "Amazon Rekognition",
+      "AWS Audit Manager",
+      "Amazon Comprehend"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "AWS Audit Manager helps continuously audit AWS usage to simplify how you assess risk and compliance with regulations and industry standards. It can be particularly useful for AI systems, helping to ensure they meet various regulatory requirements and governance standards."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a key aspect of data governance in AI systems?",
+    "options": [
+      "Collecting as much data as possible without restrictions",
+      "Ensuring data quality, privacy, and appropriate usage throughout its lifecycle",
+      "Keeping all data indefinitely",
+      "Sharing all data publicly to promote transparency"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Data governance in AI systems involves managing the availability, usability, integrity, and security of data. This includes ensuring data quality, protecting privacy, maintaining appropriate access controls, and ensuring that data is used in compliance with relevant regulations and ethical standards throughout its lifecycle."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the primary purpose of Amazon SageMaker?",
+    "options": [
+      "To provide database services",
+      "To build, train, and deploy machine learning models at scale",
+      "To manage EC2 instances",
+      "To provide content delivery services"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon SageMaker is a fully managed machine learning platform that enables developers and data scientists to quickly and easily build, train, and deploy machine learning models at any scale. It provides all the components used for machine learning in a single toolset, so models get to production faster with much less effort and at lower cost."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "In the context of generative AI, what is a 'token'?",
+    "options": [
+      "A security credential",
+      "A unit of computational power",
+      "A unit of text that the model processes, which can be a word, part of a word, or a character",
+      "A type of neural network layer"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "In generative AI, particularly with large language models, a 'token' is the basic unit of text that the model processes. Depending on the model and tokenization method, a token can represent a word, part of a word, or even a single character. Understanding tokens is important for tasks like prompt engineering and managing model inputs and outputs."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the purpose of 'fine-tuning' a foundation model?",
+    "options": [
+      "To reduce the model's size",
+      "To increase the model's general knowledge",
+      "To adapt the model to perform well on a specific task or domain",
+      "To make the model forget its previous training"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Fine-tuning is the process of further training a pre-trained foundation model on a specific dataset or for a specific task. This allows the model to adapt its general knowledge to perform well on a particular domain or application, improving its performance and relevance for specific use cases."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which of the following is a key principle of responsible AI?",
+    "options": [
+      "Maximizing profit",
+      "Fairness and non-discrimination",
+      "Rapid development at any cost",
+      "Keeping AI development processes secret"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Fairness and non-discrimination are crucial principles in responsible AI development. This involves ensuring that AI systems do not perpetuate or amplify biases based on characteristics such as race, gender, age, or other protected attributes. It's important to assess and mitigate biases in training data and model outputs to create AI systems that are equitable and just."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What AWS service would you use to detect and redact sensitive information in documents?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon Macie",
+      "Amazon Textract"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon Macie is a data security and data privacy service that uses machine learning and pattern matching to discover and protect sensitive data in AWS. It can automatically detect sensitive data such as personally identifiable information (PII) or intellectual property, and provide alerts or automated remediation."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the primary function of Amazon Bedrock?",
+    "options": [
+      "A database service for AI applications",
+      "A fully managed service that provides foundation models via API",
+      "A tool for creating custom neural network architectures",
+      "A service for managing AI model versioning"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon Bedrock is a fully managed service that makes foundation models from AWS and third-party providers accessible via an API. It allows developers to easily experiment with and evaluate different foundation models, privately customize them, and build generative AI applications."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "In machine learning, what does the term 'overfitting' refer to?",
+    "options": [
+      "When a model is too simple to capture the underlying patterns in the data",
+      "When a model learns the training data too well, including its noise and peculiarities",
+      "When a model takes too long to train",
+      "When a model requires too much computational power"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Overfitting occurs when a machine learning model learns the training data too well, including the noise and random fluctuations in the training set. As a result, the model performs very well on the training data but poorly on new, unseen data. This reduces the model's ability to generalize and make accurate predictions on new data."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the purpose of the 'top-p' (or nucleus) sampling parameter in text generation?",
+    "options": [
+      "To set the maximum length of generated text",
+      "To control the diversity of generated text by limiting the cumulative probability of considered tokens",
+      "To determine the processing speed of the model",
+      "To set the minimum probability threshold for each word"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Top-p (nucleus) sampling is a text generation strategy that dynamically selects the smallest set of words whose cumulative probability exceeds the probability p. This method helps balance between diversity and quality in generated text. By adjusting the 'top-p' parameter, you can control how focused or creative the model's outputs are."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service would you use to build a conversational AI chatbot?",
+    "options": [
+      "Amazon Polly",
+      "Amazon Lex",
+      "Amazon Transcribe",
+      "Amazon Comprehend"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon Lex is a service for building conversational interfaces into any application using voice and text. It provides the advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text, and natural language understanding (NLU) to recognize the intent of the text, enabling you to build applications with highly engaging user experiences and lifelike conversational interactions."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which of the following is NOT a typical stage in the machine learning development lifecycle?",
+    "options": [
+      "Feature engineering",
+      "Model training",
+      "Hardware optimization",
+      "Model deployment"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "While hardware considerations are important in machine learning, \"hardware optimization\" is not typically considered a distinct stage in the ML development lifecycle. The typical stages include data collection, data preparation, feature engineering, model selection, training, evaluation, deployment, and monitoring. Hardware optimization might be a consideration throughout these stages but is not usually treated as a separate phase."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the main advantage of using pre-trained foundation models?",
+    "options": [
+      "They always provide perfect accuracy for any task",
+      "They reduce the need for any task-specific data",
+      "They reduce the time and resources needed to develop AI applications for specific tasks",
+      "They eliminate the need for any further training or fine-tuning"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Pre-trained foundation models offer significant advantages in AI development. They have already learned general patterns and features from vast amounts of data, which can be leveraged for various downstream tasks. This reduces the time, data, and computational resources needed to develop AI applications for specific tasks, as developers can fine-tune these models rather than training from scratch."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "In the context of AI security, what is 'prompt injection'?",
+    "options": [
+      "A method for optimizing model training",
+      "A technique where malicious inputs are crafted to manipulate an AI model's behavior",
+      "A way to inject new knowledge into a model without retraining",
+      "A process for rapidly fine-tuning a model"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Prompt injection is a security concern in AI systems, particularly with large language models. It involves crafting inputs (prompts) in a way that can manipulate the model's behavior, potentially causing it to ignore previous instructions, reveal sensitive information, or produce harmful outputs. Understanding and mitigating prompt injection risks is crucial for developing secure AI applications."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service would you use to monitor the performance of a deployed machine learning model?",
+    "options": [
+      "AWS CloudWatch",
+      "Amazon SageMaker Model Monitor",
+      "AWS Config",
+      "Amazon Inspector"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon SageMaker Model Monitor is a capability of Amazon SageMaker that continuously monitors the quality of machine learning models in production. It detects deviations in model quality, such as data drift and model drift, and provides alerts so that you can take corrective action. This helps ensure that the models maintain their prediction quality over time."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the purpose of the 'few-shot learning' technique in prompt engineering?",
+    "options": [
+      "To train a model on very small datasets",
+      "To guide the model's response by providing a small number of examples in the prompt",
+      "To reduce the model's memory usage",
+      "To increase the model's processing speed"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Few-shot learning in prompt engineering involves providing a small number of examples (typically 2-5) within the prompt to demonstrate the desired task or output format. This technique helps guide the model's understanding and can improve performance on specific tasks without fine-tuning the model. It's particularly useful when you want the model to follow a specific pattern or style in its responses."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which of the following is a key consideration for responsible AI development?",
+    "options": [
+      "Maximizing model complexity",
+      "Keeping AI development processes secret",
+      "Ensuring AI systems are transparent and explainable",
+      "Prioritizing speed over accuracy in all cases"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Transparency and explainability are crucial aspects of responsible AI development. They involve making AI systems understandable to users, stakeholders, and regulators. This includes being able to explain how the AI makes decisions, what data it uses, and what its limitations are. Transparent and explainable AI helps build trust, enables better auditing and validation, and is often necessary for regulatory compliance in many industries."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is the primary purpose of Amazon Comprehend?",
+    "options": [
+      "Image and video analysis",
+      "Natural Language Processing (NLP) tasks such as sentiment analysis and entity recognition",
+      "Text-to-speech conversion",
+      "Database management"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text. It can be used for various NLP tasks including sentiment analysis, entity recognition, key phrase extraction, and topic modeling. This makes it useful for analyzing customer feedback, processing documents, and deriving insights from large volumes of text data."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "In the context of AI governance, what is the purpose of a model card?",
+    "options": [
+      "To create a physical representation of a neural network",
+      "To provide transparent documentation about a model's development, use, and limitations",
+      "To encrypt model parameters for security",
+      "To optimize model performance"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "A model card is a documentation framework for transparent reporting of AI model information. It typically includes details about a model's development, intended use cases, performance characteristics, limitations, and ethical considerations. Model cards help improve transparency and accountability in AI development, enabling better understanding and appropriate use of AI models by developers, users, and stakeholders."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "Which AWS service would you use to convert speech to text?",
+    "options": [
+      "Amazon Polly",
+      "Amazon Transcribe",
+      "Amazon Translate",
+      "Amazon Comprehend"
+    ],
+    "correct_answers": [
+      0
+    ],
+    "explanation": "Amazon Transcribe is an automatic speech recognition (ASR) service that makes it easy for developers to add speech-to-text capability to their applications. It uses machine learning models to accurately convert speech to text and can handle various audio formats, multiple speakers, and even provide features like speaker identification and custom vocabulary."
+  },
+  {
+    "source": "jwalsh/aif-c01",
+    "question": "What is a potential risk of using generative AI models in content creation?",
+    "options": [
+      "The model may generate content too slowly",
+      "The model may generate content that infringes on copyrights or contains biased information",
+      "The model may consume too much storage space",
+      "The model may only generate content in a single language"
+    ],
+    "correct_answers": [
+      1
+    ],
+    "explanation": "While generative AI models are powerful tools for content creation, they come with certain risks. One significant risk is that these models, trained on vast amounts of data from the internet, may inadvertently reproduce copyrighted material or reflect biases present in their training data. This could lead to legal issues with copyright infringement or the propagation of harmful biases. It's crucial to implement appropriate safeguards and review processes when using generative AI for content creation."
+  }
+]
