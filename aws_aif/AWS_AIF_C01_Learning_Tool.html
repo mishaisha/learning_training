@@ -755,6 +755,158 @@ const CONTENT = [
 <h3>Shared Responsibility Model for AI</h3>
 <p>AWS is responsible for <strong>security OF the cloud</strong> (infrastructure, physical security, managed service security). The customer is responsible for <strong>security IN the cloud</strong> (data, IAM configuration, network configuration, model governance, prompt safety). <em>Exam: "who is responsible for encrypting training data?" = The customer (security IN the cloud).</em></p>
 </div>`},
+{id:'d3-agents',domain:2,title:'Agents & Knowledge Bases Deep Dive',content:`<div class="domain-card">
+<h3>Amazon Bedrock Agents</h3>
+<p>Agents are autonomous AI assistants that can <strong>break down complex tasks</strong>, invoke tools, and orchestrate multi-step workflows. They use the <strong>ReAct (Reasoning and Acting) framework</strong> to reason about what to do and take actions.</p>
+
+<h3>How Agents Work</h3>
+<ol>
+<li><strong>User request</strong> → Agent receives a natural language task</li>
+<li><strong>Reasoning</strong> → Agent breaks task into subtasks using ReAct</li>
+<li><strong>Action</strong> → Agent invokes Lambda functions through action groups</li>
+<li><strong>Observation</strong> → Agent processes the result</li>
+<li><strong>Iteration</strong> → Repeats until task is complete</li>
+<li><strong>Response</strong> → Returns final answer to user</li>
+</ol>
+
+<h3>Key Agent Capabilities</h3>
+<div class="key-service"><h4>Action Groups</h4><p>Define which Lambda functions the agent can call. Each action group specifies: API schemas, Lambda function ARNs, and descriptions. <em>Exam: "agent needs to call specific APIs" = Configure action groups.</em></p></div>
+<div class="key-service"><h4>Knowledge Base Integration</h4><p>Agents can query Knowledge Bases (RAG) to retrieve relevant documents before answering. Combines reasoning with grounded knowledge. <em>Exam: "agent that answers questions AND takes actions" = Agent + Knowledge Base.</em></p></div>
+<div class="key-service"><h4>Text-to-SQL Pattern</h4><p>Agents translate natural language to SQL, execute queries against databases via Lambda, and return results as natural language. <em>Exam: "ask questions about database in plain English" = Agent with text-to-SQL.</em></p></div>
+
+<h3>When to Use Agents vs Simple Q&A</h3>
+<ul>
+<li><strong>Agent:</strong> Multi-step tasks, API calls, database queries, workflow orchestration</li>
+<li><strong>Knowledge Base only:</strong> Q&A over documents, no actions needed</li>
+<li><strong>Fine-tuning:</strong> Changing model behavior/persona, not adding capabilities</li>
+</ul>
+
+<h3>Common Agent Exam Patterns</h3>
+<ul>
+<li>"Classify request → route to department → query KB → generate response" = <strong>Agent</strong></li>
+<li>"Process refund by calling business APIs" = <strong>Agent with action groups</strong></li>
+<li>"Answer HR policy questions from PDF" = <strong>Knowledge Base</strong> (not Agent)</li>
+</ul>
+
+<h3>Amazon Bedrock Knowledge Bases (RAG)</h3>
+<p><strong>RAG (Retrieval Augmented Generation)</strong> grounds model responses in your enterprise data by retrieving relevant documents at query time.</p>
+
+<h3>How RAG Works</h3>
+<ol>
+<li><strong>Ingest:</strong> Documents uploaded to S3 → Bedrock generates embeddings → Stored in vector database</li>
+<li><strong>Query:</strong> User question → Bedrock generates query embedding → Finds similar documents → Returns context</li>
+<li><strong>Generate:</strong> Model receives context + question → Generates grounded response with citations</li>
+</ol>
+
+<h3>Vector Database Options</h3>
+<ul>
+<li><strong>Amazon OpenSearch Service:</strong> k-NN vector search, production-ready</li>
+<li><strong>Amazon Aurora:</strong> pgvector extension for PostgreSQL</li>
+<li><strong>Amazon DynamoDB:</strong> Serverless, high-throughput</li>
+<li><strong>Amazon MemoryDB:</strong> Redis-compatible, low-latency</li>
+</ul>
+
+<h3>RAG vs Fine-tuning vs Prompt Engineering</h3>
+<ul>
+<li><strong>RAG:</strong> Use when data changes frequently, need citations, or have large knowledge bases</li>
+<li><strong>Fine-tuning:</strong> Use when you need to change model behavior/persona, not add knowledge</li>
+<li><strong>Prompt engineering:</strong> Use for simple tasks, quick iteration, no additional data needed</li>
+</ul>
+</div>`},
+{id:'d2-multimodal',domain:1,title:'Multi-modal AI',content:`<div class="domain-card">
+<h3>What is Multi-modal AI?</h3>
+<p>Multi-modal AI models can process and generate <strong>multiple types of data</strong>: text, images, audio, and video. They understand relationships between different modalities.</p>
+
+<h3>Multi-modal Capabilities on AWS</h3>
+<div class="key-service"><h4>Image Understanding</h4><p><strong>Amazon Rekognition:</strong> Object detection, face recognition, content moderation, text in images, celebrity recognition. <strong>Amazon Bedrock Vision Models:</strong> Claude 3/3.5 Vision, Llama Vision — analyze images, answer questions about visuals, extract information from documents.</p></div>
+<div class="key-service"><h4>Speech-to-Text</h4><p><strong>Amazon Transcribe:</strong> General speech-to-text. <strong>Amazon Transcribe Medical:</strong> Medical terminology optimized for clinical conversations, generates structured clinical notes.</p></div>
+<div class="key-service"><h4>Text-to-Speech</h4><p><strong>Amazon Polly:</strong> Neural text-to-speech with natural-sounding voices. Supports SSML for pronunciation control, multiple languages, and custom lexicons.</p></div>
+<div class="key-service"><h4>Document Understanding</h4><p><strong>Amazon Textract:</strong> Extracts text, forms, tables, and key-value pairs from scanned documents. Handles varying layouts without templates. <em>Exam: "extract data from invoices with varying formats" = Textract.</em></p></div>
+<div class="key-service"><h4>Language Understanding</h4><p><strong>Amazon Comprehend:</strong> Sentiment analysis, entity recognition, key phrase extraction, PII detection, language detection. <strong>Amazon Comprehend Medical:</strong> Medical entity extraction, relationships, PHI detection.</p></div>
+
+<h3>Common Multi-modal Patterns</h3>
+<ul>
+<li><strong>Document processing:</strong> Textract → Comprehend → Bedrock for analysis</li>
+<li><strong>Call center:</strong> Transcribe → Comprehend for sentiment → Bedrock for response</li>
+<li><strong>Image moderation:</strong> Rekognition for detection → Lambda for action</li>
+<li><strong>Video analysis:</strong> Rekognition Video → S3 → Bedrock for summaries</li>
+</ul>
+
+<h3>Exam: Matching Service to Use Case</h3>
+<ul>
+<li>"Extract text from scanned PDFs" = <strong>Textract</strong></li>
+<li>"Identify faces in images" = <strong>Rekognition</strong></li>
+<li>"Convert speech to text with medical terms" = <strong>Transcribe Medical</strong></li>
+<li>"Detect sentiment in customer emails" = <strong>Comprehend</strong></li>
+<li>"Generate natural-sounding speech" = <strong>Polly</strong></li>
+</ul>
+</div>`},
+{id:'d2-usecases',domain:1,title:'Real-World AI Use Cases',content:`<div class="domain-card">
+<h3>Common AWS AI Use Cases on the Exam</h3>
+<p>The exam often presents real-world scenarios. Recognize these patterns to choose the right service.</p>
+
+<h3>Customer Service & Support</h3>
+<div class="key-service"><h4>Chatbots & Virtual Assistants</h4><p><strong>Pattern:</strong> Customer asks questions → Bot answers from knowledge base. <strong>Solution:</strong> Amazon Bedrock + Knowledge Bases (RAG). For multi-step tasks (refunds, account changes): Bedrock Agents with action groups. <em>Exam: "answer questions from PDF policy docs" = Knowledge Bases. "Process refund by calling APIs" = Agents.</em></p></div>
+<div class="key-service"><h4>Sentiment Analysis</h4><p><strong>Pattern:</strong> Analyze customer feedback for positive/negative sentiment. <strong>Solution:</strong> Amazon Comprehend for text analysis. For call centers: Transcribe → Comprehend. <em>Exam: "detect frustration in calls" = Transcribe + Comprehend.</em></p></div>
+
+<h3>Document Processing</h3>
+<div class="key-service"><h4>Invoice/Receipt Processing</h4><p><strong>Pattern:</strong> Extract data from scanned invoices with varying formats. <strong>Solution:</strong> Amazon Textract (no templates needed, handles forms and tables). <em>Exam: "extract data from invoices with varying formats" = Textract.</em></p></div>
+<div class="key-service"><h4>Document Summarization</h4><p><strong>Pattern:</strong> Summarize long documents, contracts, or reports. <strong>Solution:</strong> Amazon Bedrock for summarization. For RAG-based Q&A: Knowledge Bases. <em>Exam: "summarize 500-page legal document" = Bedrock with large context window.</em></p></div>
+
+<h3>Content Moderation</h3>
+<div class="key-service"><h4>Image/Video Moderation</h4><p><strong>Pattern:</strong> Automatically detect inappropriate content. <strong>Solution:</strong> Amazon Rekognition Content Moderation API. Returns confidence scores for categories. <em>Exam: "flag inappropriate images" = Rekognition.</em></p></div>
+
+<h3>Personalization</h3>
+<div class="key-service"><h4>Recommendations</h4><p><strong>Pattern:</strong> Personalized product/content recommendations based on user behavior. <strong>Solution:</strong> Amazon Personalize (same tech as Amazon.com recommendations). <em>Exam: "recommend products based on browsing history" = Personalize.</em></p></div>
+
+<h3>Search & Discovery</h3>
+<div class="key-service"><h4>Enterprise Search</h4><p><strong>Pattern:</strong> Search across internal documents, wikis, PDFs. <strong>Solution:</strong> Amazon Kendra (AI-powered enterprise search) or Bedrock Knowledge Bases for Q&A. <em>Exam: "search across internal wikis" = Kendra. "Answer questions from documents" = Knowledge Bases.</em></p></div>
+
+<h3>Translation</h3>
+<div class="key-service"><h4>Multi-language Support</h4><p><strong>Pattern:</strong> Translate content to multiple languages. <strong>Solution:</strong> Amazon Translate (neural machine translation). Combine with Transcribe for spoken language translation. <em>Exam: "generate subtitles in 5 languages" = Transcribe + Translate.</em></p></div>
+</div>`},
+{id:'d3-cost',domain:2,title:'Cost Optimization for AI',content:`<div class="domain-card">
+<h3>AI Cost Optimization Strategies</h3>
+<p>AWS AI services have different pricing models. The exam tests your ability to choose cost-effective solutions.</p>
+
+<h3>Bedrock Pricing Models</h3>
+<div class="key-service"><h4>On-Demand</h4><p>Pay per input/output tokens. No commitment. Best for: variable workloads, experimentation, testing. <strong>NOT available for custom fine-tuned models.</strong> <em>Exam: "use fine-tuned model" = Provisioned Throughput required, not on-demand.</em></p></div>
+<div class="key-service"><h4>Provisioned Throughput</h4><p>Reserved model units with 1-month or 6-month commitment. Best for: production workloads requiring consistent performance, custom models. <em>Exam: "predictable latency for production" = Provisioned Throughput.</em></p></div>
+
+<h3>SageMaker Inference Types</h3>
+<div class="key-service"><h4>Real-time Inference</h4><p>Always-on endpoint. Pay for instance hours. Best for: low-latency, interactive applications. <em>Exam: "sub-200ms response time" = Real-time.</em></p></div>
+<div class="key-service"><h4>Serverless Inference</h4><p>Auto-scales to zero when idle. Pay per invocation + compute time. Best for: intermittent traffic, development/testing. <em>Exam: "minimal traffic, want to pay only when used" = Serverless.</em></p></div>
+<div class="key-service"><h4>Asynchronous Inference</h4><p>Queue-based. Handles large payloads (up to 1GB). Best for: long-processing times, large inputs. <em>Exam: "process 1GB input files" = Asynchronous.</em></p></div>
+<div class="key-service"><h4>Batch Transform</h4><p>Process entire dataset, save to S3. Pay for instance hours only during batch. Best for: offline scoring, large static datasets. <em>Exam: "score 50M records overnight" = Batch Transform.</em></p></div>
+
+<h3>Cost Optimization Best Practices</h3>
+<ul>
+<li><strong>Right-size models:</strong> Use smallest model that meets accuracy requirements</li>
+<li><strong>Use distillation:</strong> Train smaller "student" models for production</li>
+<li><strong>Batch inference:</strong> When latency isn't critical, batch is cheaper</li>
+<li><strong>Serverless:</strong> For intermittent traffic, pay only when used</li>
+<li><strong>Provisioned vs On-Demand:</strong> Compare based on usage patterns</li>
+<li><strong>Inferentia2:</strong> Most energy-efficient for inference (Inf2 instances)</li>
+<li><strong>Trainium:</strong> Most cost-effective for training (Trn1 instances)</li>
+</ul>
+
+<h3>Instance Selection for Cost</h3>
+<ul>
+<li><strong>Inference (energy efficiency):</strong> Inf2 (Inferentia2) — best performance/watt</li>
+<li><strong>Training (cost-effective):</strong> Trn1 (Trainium) — lowest cost for training</li>
+<li><strong>General ML:</strong> G5 (A10G GPU) — balanced cost/performance</li>
+<li><strong>Large model training:</strong> P5 (H100 GPU) — highest performance</li>
+</ul>
+
+<h3>Exam: Cost vs Performance Tradeoffs</h3>
+<ul>
+<li>"Lowest cost for inference" = <strong>Inf2 (Inferentia2)</strong></li>
+<li>"Lowest cost for training" = <strong>Trn1 (Trainium)</strong></li>
+<li>"Predictable performance, fixed budget" = <strong>Provisioned Throughput</strong></li>
+<li>"Variable traffic, minimize idle cost" = <strong>Serverless Inference</strong></li>
+<li>"Process millions of records overnight" = <strong>Batch Transform</strong></li>
+</ul>
+</div>`},
 {id:'d5-gov',domain:4,title:'Governance & Compliance',content:`<div class="domain-card">
 <h3>AI Governance Framework</h3>
 <p>AI governance encompasses the policies, processes, and tools to ensure AI systems are developed and used responsibly, securely, and in compliance with regulations.</p>
