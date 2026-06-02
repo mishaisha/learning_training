@@ -173,7 +173,7 @@ header .exam-badge{font-size:.7rem;background:var(--accent);color:var(--primary)
 </head>
 <body>
 <header>
-  <h1>AWS <span>AIF-C01</span> AI Practitioner <span class="exam-badge" id="questionCount">524 Q</span></h1>
+  <h1>AWS <span>AIF-C01</span> AI Practitioner <span class="exam-badge" id="questionCount"></span></h1>
   <div class="mode-toggle">
     <button class="mode-btn active" onclick="switchMode('learn')" id="learnBtn">Learning</button>
     <button class="mode-btn" onclick="switchMode('quiz')" id="quizBtn">Quiz</button>
@@ -1468,7 +1468,7 @@ const ALL_QUESTIONS = [
 
 const ROUNDS = 5;
 const QUESTIONS_PER_ROUND = 15;
-const ITERATIONS = 8;
+const ITERATIONS = 7;
 const PASS_SCORE = 70;
 
 let currentMode = 'learn';
@@ -1478,6 +1478,7 @@ let currentRound = 0;
 let answeredQuestions = {};
 
 function init() {
+  document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
   buildNav();
   showSection(0);
   loadNotes();
@@ -1950,7 +1951,7 @@ function retakeIteration(iter) {
 function startNextIteration() {
   if (currentIteration < ITERATIONS - 1) { startIteration(currentIteration + 1); return; }
   const area = document.getElementById('quizArea');
-  let html = '<div class="results-card"><h2>All 6 Iterations Complete!</h2><div class="sub">You have completed 6 iterations of 5 rounds each (' + (ROUNDS * QUESTIONS_PER_ROUND * ITERATIONS) + ' questions total).</div>';
+  let html = '<div class="results-card"><h2>All ' + ITERATIONS + ' Iterations Complete!</h2><div class="sub">You have completed ' + ITERATIONS + ' iterations of 5 rounds each (' + (ROUNDS * QUESTIONS_PER_ROUND * ITERATIONS) + ' questions total).</div>';
   let grandTotal = 0, grandCorrect = 0;
   html += '<div style="margin:20px 0;text-align:left"><h4>Progress Summary</h4>';
   for (let i = 0; i < ITERATIONS; i++) {
