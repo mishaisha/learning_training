@@ -1,0 +1,2928 @@
+[
+  {
+    "id": 1,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 2,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 3,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 4,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 5,
+    "domain": "Security, Compliance, and Governance for AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 6,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 7,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 8,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 9,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 10,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 11,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 12,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 13,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 14,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 15,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 16,
+    "domain": "Prompt Engineering",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 17,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 18,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 19,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 20,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 21,
+    "domain": "Prompt Engineering",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 22,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 23,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 24,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 25,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 26,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 27,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 28,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 29,
+    "domain": "AWS Security Services",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 30,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 31,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 32,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 33,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 34,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 35,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 36,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 37,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 38,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 39,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 40,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 41,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 42,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 43,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 44,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 45,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 46,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 47,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "[3,5]"
+  },
+  {
+    "id": 48,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 49,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 50,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "1"
+  },
+  {
+    "id": 51,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "1"
+  },
+  {
+    "id": 52,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "1"
+  },
+  {
+    "id": 53,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "0"
+  },
+  {
+    "id": 54,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "1"
+  },
+  {
+    "id": 55,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "1"
+  },
+  {
+    "id": 56,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 57,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 58,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,1]"
+  },
+  {
+    "id": 59,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 60,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 61,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 62,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 63,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 64,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 65,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 66,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 67,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 68,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 69,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 70,
+    "domain": "Security, Compliance, and Governance for AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 71,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 72,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 73,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 74,
+    "domain": "Security, Compliance, and Governance for AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 75,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 76,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 77,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 78,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 79,
+    "domain": "Prompt Engineering",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 80,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 81,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 82,
+    "domain": "Amazon SageMaker",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 83,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 84,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 85,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 86,
+    "domain": "Bedrock & Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 87,
+    "domain": "Security, Compliance, and Governance for AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 88,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 89,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 90,
+    "domain": "AI Challenges & Responsibilities",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 91,
+    "domain": "AWS Managed AI Services",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[1,3]"
+  },
+  {
+    "id": 92,
+    "domain": "Security, Compliance, and Governance for AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 93,
+    "domain": "Prompt Engineering",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 94,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 95,
+    "domain": "AI/ML Fundamentals",
+    "difficulty": "MEDIUM",
+    "type": "truefalse",
+    "answer": "1"
+  },
+  {
+    "id": 96,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 97,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 98,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 99,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 100,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 101,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "truefalse",
+    "answer": "0"
+  },
+  {
+    "id": 102,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 103,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 104,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 105,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 106,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 107,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 108,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 109,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 110,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 111,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 112,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "msq",
+    "answer": "[0,1,2]"
+  },
+  {
+    "id": 113,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 114,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 115,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 116,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 117,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 118,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 119,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 120,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "msq",
+    "answer": "[0,1,2,3]"
+  },
+  {
+    "id": 121,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 122,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[2,4]"
+  },
+  {
+    "id": 123,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 124,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 125,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 126,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 127,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[1,2]"
+  },
+  {
+    "id": 128,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 129,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 130,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,1]"
+  },
+  {
+    "id": 131,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,2]"
+  },
+  {
+    "id": 132,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 133,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 134,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 135,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 136,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 137,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 138,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 139,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 140,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 141,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 142,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 143,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 144,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 145,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 146,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[1,2]"
+  },
+  {
+    "id": 147,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 148,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 149,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 150,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 151,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 152,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 153,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 154,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 155,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 156,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 157,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 158,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 159,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0,3]"
+  },
+  {
+    "id": 160,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 161,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 162,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 163,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 164,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 165,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 166,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 167,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 168,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 169,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 170,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 171,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 172,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 173,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 174,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 175,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 176,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 177,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 178,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 179,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 180,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 181,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 182,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 183,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 184,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 185,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 186,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 187,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 188,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 2]"
+  },
+  {
+    "id": 189,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 190,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[1, 0]"
+  },
+  {
+    "id": 191,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 192,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 193,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 194,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 195,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 196,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[3, 2]"
+  },
+  {
+    "id": 197,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 198,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 199,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 200,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 201,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 202,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 203,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 204,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 205,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 206,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 207,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 208,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 209,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 210,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 211,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 4]"
+  },
+  {
+    "id": 212,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 213,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 2]"
+  },
+  {
+    "id": 214,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 215,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 3, 2]"
+  },
+  {
+    "id": 216,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 217,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 218,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 219,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 220,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 221,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 222,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 223,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 224,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 225,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 226,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 227,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 228,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 1]"
+  },
+  {
+    "id": 229,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 2]"
+  },
+  {
+    "id": 230,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 231,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[1, 3]"
+  },
+  {
+    "id": 232,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 233,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "4"
+  },
+  {
+    "id": 234,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 235,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 236,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 237,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 238,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 239,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 240,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 241,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 242,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 243,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 244,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 245,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 246,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[4, 2]"
+  },
+  {
+    "id": 247,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 248,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 249,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 250,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 251,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 252,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 253,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 254,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 255,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 256,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 257,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 258,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 259,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[2, 0]"
+  },
+  {
+    "id": 260,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 261,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 262,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 263,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 264,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 265,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[3, 4]"
+  },
+  {
+    "id": 266,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "7"
+  },
+  {
+    "id": 267,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 268,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 269,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 270,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 271,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 272,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 273,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 274,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 275,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 276,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 277,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 278,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 279,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 280,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 281,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 2]"
+  },
+  {
+    "id": 282,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 283,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 284,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 285,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[3, 1]"
+  },
+  {
+    "id": 286,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[1, 0]"
+  },
+  {
+    "id": 287,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 288,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 289,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 290,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[3, 4]"
+  },
+  {
+    "id": 291,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 292,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 293,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 294,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 295,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 296,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 297,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 298,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "4"
+  },
+  {
+    "id": 299,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 300,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 301,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 302,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 303,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 304,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 305,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 306,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 307,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[4, 1]"
+  },
+  {
+    "id": 308,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 309,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 310,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 311,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 312,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 313,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 314,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 315,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 3]"
+  },
+  {
+    "id": 316,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "0"
+  },
+  {
+    "id": 317,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 318,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 319,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 320,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 321,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 322,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 323,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 3]"
+  },
+  {
+    "id": 324,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 325,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 326,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 327,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 328,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 329,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 330,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 331,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 2, 4]"
+  },
+  {
+    "id": 332,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[3, 0]"
+  },
+  {
+    "id": 333,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 334,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 335,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 336,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 337,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 338,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 339,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 340,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 341,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 342,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 343,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 344,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 345,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 346,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 347,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 348,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 349,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 350,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 351,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 352,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 353,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 354,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "msq",
+    "answer": "[0, 1]"
+  },
+  {
+    "id": 355,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 356,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 357,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 358,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 359,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 360,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "6"
+  },
+  {
+    "id": 361,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 362,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 363,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 364,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 365,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 366,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 367,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 368,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 369,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 370,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 371,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 372,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 373,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 374,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 375,
+    "domain": "Guidelines for Responsible AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 376,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 377,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 378,
+    "domain": "Applications of Foundation Models",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "3"
+  },
+  {
+    "id": 379,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 380,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 381,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 382,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 383,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 384,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 385,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 386,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 387,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 388,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 389,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 390,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 391,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 392,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 393,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 394,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 395,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 396,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 397,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 398,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 399,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 400,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 401,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 402,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 403,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 404,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 405,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 406,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 407,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 408,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 409,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 410,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "0"
+  },
+  {
+    "id": 411,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 412,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 413,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "2"
+  },
+  {
+    "id": 414,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 415,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 416,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "MEDIUM",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 417,
+    "domain": "Fundamentals of AI and ML",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  },
+  {
+    "id": 418,
+    "domain": "Fundamentals of Generative AI",
+    "difficulty": "EASY",
+    "type": "mcq",
+    "answer": "1"
+  }
+]

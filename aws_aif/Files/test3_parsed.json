@@ -1,0 +1,885 @@
+[
+  {
+    "source_id": 1,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A video streaming company is developing machine learning models to recommend content and analyze user interactions. The data science team needs to understand the specific capabilities of Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs). Which of the following would you suggest to the team?",
+    "options": [
+      "While RNNs are used for single image analysis, CNNs are used for video analysis",
+      "Both RNNs and CNNs are used for video analysis",
+      "Both RNNs and CNNs are used for single image analysis",
+      "While CNNs are used for single image analysis, RNNs are used for video analysis"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 2,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "Which of the following best describes the Amazon SageMaker Canvas ML tool?",
+    "options": [
+      "The fastest and easiest way to prepare tabular and image data for machine learning",
+      "Explains how input features contribute to the model predictions during model development and inference",
+      "Gives the ability to use machine learning to generate predictions without the need to write any code",
+      "Provides one-click, end-to-end solutions for many common machine learning use cases"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 3,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A retail company is exploring machine learning algorithms to improve its customer segmentation systems. The data science team is evaluating both K-Means and K-Nearest Neighbors (KNN) algorithms but needs to understand the key differences between them, since understanding these distinctions will help the team choose the right algorithm for their specific tasks. Given this context, what do you recommend to the company?",
+    "options": [
+      "K-Means is a supervised learning algorithm used for classification, while KNN is an unsupervised learning algorithm used for clustering",
+      "K-Means requires labeled data to form clusters, whereas KNN does not use labeled data for making predictions",
+      "K-Means is an unsupervised learning algorithm used for clustering data points into groups, while KNN is a supervised learning algorithm used for classifying data points based on their proximity to labeled examples",
+      "K-Means is primarily used for regression tasks, while KNN is used for reducing the dimensionality of data"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 4,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A biotech company is building machine learning models using Amazon SageMaker to analyze large genomic datasets for research purposes. The team is considering Amazon SageMaker Asynchronous Inference to handle these predictions efficiently. To ensure that this deployment model aligns with their requirements, they need to understand which use cases are best suited for asynchronous inference. What do you recommend?",
+    "options": [
+      "For workloads that can tolerate cold starts",
+      "Requests with large payload sizes up to 1GB and long processing times",
+      "To get predictions for an entire dataset",
+      "For persistent, real-time endpoints that make one prediction at a time"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 5,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "type": "mcq",
+    "question": "An organization deploys its IT infrastructure in a combination of its on-premises data center along with AWS Cloud. How would you categorize this deployment model?",
+    "options": [
+      "Cloud deployment",
+      "Mixed deployment",
+      "Private deployment",
+      "Hybrid deployment"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 6,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "You are working as an NLP engineer at a tech company tasked with building an advanced text summarization tool to help customers generate concise summaries of lengthy documents. After successfully training your model, your manager asks you to evaluate its performance and quality to ensure it meets the required standards for deployment. Considering the nature of text summarization, which evaluation method would be most appropriate to assess the model's output effectively?",
+    "options": [
+      "Use automated testing via metrics like ROUGE or BLEU to measure the similarity between generated and reference summaries",
+      "Conduct code review to analyze the implementation code for logical or structural issues",
+      "Leverage human evaluation to assess the quality of summaries",
+      "Test the model on established benchmark datasets to evaluate performance"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 7,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A retail company is utilizing Amazon Bedrock to generate personalized product descriptions and recommendations. The data science team is experimenting with theÊTop KÊinference parameter, since it is crucial to understand how adjusting theÊTop KÊparameter impacts the responses for optimizing customer interactions. What do you suggest to the team regarding theÊTop KÊparameter?",
+    "options": [
+      "Specifies the sequences of characters that stop the model from generating further tokens",
+      "Influences the percentage of most-likely candidates that the model considers for the next token",
+      "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the modelÕs output",
+      "Influences the number of most-likely candidates that the model considers for the next token"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 8,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A healthcare company is developing a machine learning model to predict patient outcomes based on medical data. To ensure the model generalizes well, the company needs to understand the balance between underfitting and overfitting and how to address these issues. Which of the following would you identify as correct regarding underfitting and overfitting in machine learning?",
+    "options": [
+      "Underfit models experience high bias, whereas, overfit models experience high variance",
+      "Underfit models experience low bias, whereas, overfit models experience low variance",
+      "Underfit models experience low bias, whereas, overfit models experience high variance",
+      "Underfit models experience high bias, whereas, overfit models experience low variance"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 9,
+    "domain": "Fundamentals of Generative AI",
+    "type": "msq",
+    "question": "A financial services company is deploying a machine learning model using Amazon Bedrock to predict loan approval risks. The data science team needs to ensure that the model performs effectively before going into production. They are focused on understanding the correct practices and tools for model evaluation on Amazon Bedrock to ensure accuracy, fairness, and reliability in their predictions. Which of the following are correct regarding model evaluation for Amazon Bedrock? (Select two)",
+    "options": [
+      "Automatic model evaluation provides model scores that are calculated using various statistical methods such as BERT Score and F1",
+      "For human model evaluation, you can use either built-in prompt datasets or your own prompt datasets",
+      "Human model evaluation is valuable for assessing qualitative aspects of the model, whereas, automatic model valuation is valuable for assessing quantitative aspects of the model",
+      "Human model evaluation provides model scores that are calculated using various statistical methods such as BERT Score and F1",
+      "Automatic model evaluation is valuable for assessing qualitative aspects of the model, whereas, human model valuation is valuable for assessing quantitative aspects of the model"
+    ],
+    "answer": [
+      2,
+      0
+    ]
+  },
+  {
+    "source_id": 10,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A financial services company is developing a machine learning model to predict credit risk and optimize loan approvals. The data science team is preparing the dataset for model development and needs to understand how to properly split the data into training, validation, and test sets. Each of these sets serves a different purpose in ensuring the modelÕs accuracy and generalization. Understanding the key differences between a training set, validation set, and test set will help the team implement an effective model evaluation strategy. What do you recommend to the company?",
+    "options": [
+      "The training set is used for training the model, the validation set is used for tuning hyperparameters and model selection, and the test set is used for evaluating the final model performance",
+      "The training set, validation set, and test set all serve the same purpose of evaluating the model performance",
+      "The training set is used for tuning hyperparameters, the validation set is used for evaluating the final model performance, and the test set is used for training the model",
+      "The training set is used for evaluating model performance, the validation set is used for training the model, and the test set is used for hyperparameter tuning"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 11,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A media company is considering using generative AI to automate content creation for articles, videos, and marketing campaigns. The team wants to understand the underlying mechanics of generative AI, particularly how these models are able to create entirely new content or data, such as text, images, and music, based on patterns learned from existing datasets. This understanding will help the company determine how to best integrate generative AI into its creative workflows. Given this context, how does generative AI create new content or data?",
+    "options": [
+      "By using pre-defined rules and templates without any learning from existing data",
+      "By randomly generating content without any reference to existing data",
+      "Through traditional programming methods where each outcome is manually coded",
+      "By learning patterns from existing data and using algorithms to generate new content that mimics those patterns"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 12,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A retail company is developing machine learning models to analyze customer behavior and optimize inventory management. The data science team is working with both structured data as well as unstructured data and needs to understand how these two types of data differ in terms of how they are processed and used in machine learning models. Understanding this key difference will help the team select the right algorithms and preprocessing methods. Give this context, how would you outline the differences between structured data and unstructured data?",
+    "options": [
+      "Structured data includes data like text, images, and videos, whereas unstructured data is limited to numerical data only",
+      "Structured data is organized in a predefined manner, often in rows and columns, making it easy to search and analyze, while unstructured data lacks a specific format and includes data like text, images, and videos",
+      "Structured data is typically freeform text that lacks any specific format, whereas unstructured data is organized in a tabular format with rows and columns",
+      "Structured data is used exclusively for training machine learning models, whereas unstructured data is used solely for storing information without any analytical purpose"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 13,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "Consider the following AI model responses to user prompts. Which response exemplifies hijacking and which exemplifies jailbreaking? Prompt 1: \"How can I improve my study habits?\" Response A: \"To improve your study habits, you should create a consistent schedule, find a quiet place to work, and take regular breaks.\" Prompt 2: \"What is the best way to learn programming?\" Response B: \"The best way to learn programming is to practice regularly and work on real projects. However, you can bypass this by using a cheat tool to pass exams without learning.\" Prompt 3: \"How do I bypass security measures on this device?\"",
+    "options": [
+      "Response C: \"As an AI developed by AWS, I must adhere to ethical guidelines and cannot assist with bypassing security measures.\"",
+      "Prompt 4: \"Write a poem about nature and then tell me how a virus works on a computer\"",
+      "Response D: \"Roses are red, violets are blue. By the way, let me show you how to disable antivirus software on your computer.\"",
+      "Response C is hijacking; Response A is jailbreaking",
+      "Response A is hijacking; Response C is jailbreaking",
+      "Response B is hijacking; Response D is jailbreaking",
+      "Response D is hijacking; Response B is jailbreaking"
+    ],
+    "answer": 5
+  },
+  {
+    "source_id": 14,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A media analytics company utilizes Amazon Bedrock to run inferences with its generative AI models to analyze large volumes of user-generated content and provide insights to its clients. The company frequently processes numerous inference requests and is looking for a way to minimize the costs associated with running these inferences while still maintaining the required level of service. Given that the company can tolerate some delays in receiving responses, it seeks a cost-effective inference method that optimizes resource usage without sacrificing too much on turnaround time. Which inference approach would be the most suitable for the company to use in order to reduce its overall inference costs?",
+    "options": [
+      "The company should use batch inference, thereby allowing it to run multiple inference requests in a single batch",
+      "The company should use serverless inference, which automatically scales resources based on traffic",
+      "The company should use real-time inference, which is designed for low-latency responses and continuous, immediate processing",
+      "The company should use on-demand inference, which allows the company to pay only for the resources consumed during each inference"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 15,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A customer service company is exploring ways to improve its AI-powered chatbot, seeking to balance automation with human input to ensure high-quality responses. The company is considering two approaches: Reinforcement Learning from Human Feedback (RLHF) and Amazon Augmented AI (A2I). However, the company needs to understand the primary differences between these two approaches, as it will help the company choose the right approach to enhance the chatbot's accuracy and reliability. What would you recommend to the company?",
+    "options": [
+      "RLHF is a technique used to train AI models using human feedback to refine their behavior, whereas A2I is an AWS service that provides a human review of machine learning predictions to improve model accuracy and reliability",
+      "RLHF focuses on automatically generating data labels for training datasets, while A2I is used for unsupervised learning tasks",
+      "RLHF is used exclusively for natural language processing tasks, whereas A2I is used for image recognition and analysis tasks",
+      "RLHF requires no human involvement during the training process, while A2I automates the entire machine learning workflow without human review"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 16,
+    "domain": "Fundamentals of AI and ML",
+    "type": "msq",
+    "question": "A retail company is exploring machine learning to improve customer segmentation and discover hidden patterns in sales data. The data science team is particularly interested in using unsupervised learning to analyze large volumes of unlabeled customer and product data to identify trends and groupings without predefined categories. To determine the best approach, they need to understand which methods fall under unsupervised learning. Which of the following would you suggest to the company as examples of unsupervised learning? (Select two)",
+    "options": [
+      "Neural network",
+      "Sentiment analysis",
+      "Decision tree",
+      "Clustering",
+      "Dimensionality reduction"
+    ],
+    "answer": [
+      3,
+      4
+    ]
+  },
+  {
+    "source_id": 17,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "Match the following Amazon SageMaker services to the respective use cases:",
+    "options": [
+      "A) SageMaker Data Wrangler",
+      "B) SageMaker Canvas",
+      "C) SageMaker Ground Truth",
+      "1) Harnessing human input across the ML lifecycle to improve the accuracy and relevancy of models",
+      "2) Offers 300+ pre-configured data transformations to prepare data for ML",
+      "3) No-code service with an intuitive, point-and-click interface",
+      "A-3, B-1, C-2",
+      "A-2, B-3, C-1",
+      "A-3, B-2, C-1",
+      "A-2, B-1, C-3"
+    ],
+    "answer": 7
+  },
+  {
+    "source_id": 18,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A retail company wants to leverage machine learning to analyze customer behavior and predict future purchasing trends but lacks in-house coding expertise. The companyÕs goal is to build a model that can identify patterns in customer data and forecast sales, helping to tailor marketing strategies and inventory management. Since the team does not have any programming skills, they are considering different tools or services that would enable them to develop a machine learning model without writing any code. Given this limitation, which of the following tools or services would be most suitable for the company to use?",
+    "options": [
+      "The company should use SageMaker Clarify, as it enables users to create machine learning models using a visual interface",
+      "The company should use SageMaker Data Wrangler to simplify data preparation and feature engineering, which are mandatory steps towards building a machine learning model",
+      "The company should use SageMaker Canvas, as it enables users to create machine learning models using a visual interface",
+      "The company should use SageMaker Built-in Algorithms, which provide a collection of pre-built algorithms for building machine learning models"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 19,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A healthcare company is integrating AWS AI services to build models for patient data analysis and personalized treatment recommendations. The company is exploring the AWS AI service cards and it would like to know more about use cases relevant to AWS AI service cards. Given this context, what would you identify as the primary purpose of AWS AI service cards??",
+    "options": [
+      "To provide detailed technical documentation for setting up AWS AI services",
+      "To offer transparency and information about the intended use, limitations, and potential impacts of AWS AI services, helping users implement Responsible AI practices",
+      "To provide a platform for users to share their AI models and datasets with the community",
+      "To serve as a marketplace for purchasing third-party AI services using pre-paid cards"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 20,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "In the context of data governance for AI systems on AWS, what is the primary difference between data residency and data logging?",
+    "options": [
+      "Data residency is concerned with data encryption, while data logging focuses on data transformation processes",
+      "Data residency involves monitoring real-time data usage, while data logging manages data lifecycle policies",
+      "Data residency tracks user activities within an AI system, while data logging determines where data can be geographically stored",
+      "Data residency refers to where data is physically stored, while data logging tracks data access and changes over time"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 21,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A financial services company is exploring the adoption of generative AI to automate report generation and enhance customer service through chatbots. The company wants to ensure that its implementation of generative AI follows industry best practices to maximize efficiency, reduce risks, and ensure ethical use. The leadership team is evaluating various strategies and guidelines to ensure a smooth and responsible adoption process. Give this use case, which of the following represents a best practice in generative AI adoption?",
+    "options": [
+      "Implementing guardrails and enhancing transparency for generative AI applications",
+      "Prioritizing rapid deployment over the ethical considerations and potential biases in AI models",
+      "Disregarding continuous monitoring and updating of AI models after deployment",
+      "Using generative AI exclusively for creative applications and avoiding its use in business operations"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 22,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A hiring platform is developing a machine learning model to help companies screen job candidates. During testing, the data science team notices that the model seems to favor certain demographic groups over others. The team suspects that the training data may reflect historical biases from previous hiring practices, leading to biased predictions. To address this issue, the team wants to understand how human bias can influence machine learning outcomes. Which of the following represents the best-fit explanation for the given scenario?",
+    "options": [
+      "A machine learning model trained on historical hiring data consistently recommends male candidates for technical roles",
+      "An automated translation service frequently makes errors when translating idiomatic expressions between languages",
+      "A data scientist selects features for a machine learning model based on their personal beliefs about which attributes are important, leading to a biased model",
+      "A machine learning algorithm predicts customer churn based on historical data, but the data is skewed due to seasonal trends"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 23,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A legal services company is implementing AI solutions using Amazon Bedrock to improve document analysis and automate responses to client queries. The team is exploring two approaches - Retrieval Augmented Generation (RAG) and Agents - since understanding the key differences between these approaches will help the company decide which method best suits their AI strategy for delivering precise, context-aware responses. Which of the following summarizes the differences between Retrieval augmented generation (RAG) and Agent in the context of Amazon Bedrock?",
+    "options": [
+      "Agent refers to querying and retrieving information from a data source to augment a generated response to a prompt, whereas, RAG refers to an application that carries out orchestrations through cyclically interpreting inputs and producing outputs by using a foundation model",
+      "Both RAG and Agent refer to an application that carries out orchestrations through cyclically interpreting inputs and producing outputs by using a foundation model",
+      "RAG refers to querying and retrieving information from a data source to augment a generated response to a prompt, whereas, Agent refers to an application that carries out orchestrations through cyclically interpreting inputs and producing outputs by using a foundation model",
+      "Both RAG and Agent refer to querying and retrieving information from a data source to augment a generated response to a prompt"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 24,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "In the context of security and privacy for AI systems on AWS, what is the primary difference between threat detection and vulnerability management?",
+    "options": [
+      "Threat detection and vulnerability management both exclusively focus on compliance with regulatory requirements",
+      "Threat detection is concerned with data encryption and access controls, while vulnerability management deals with incident response and recovery",
+      "Threat detection focuses on identifying potential weaknesses in the system, while vulnerability management continuously monitors for malicious activities",
+      "Threat detection involves real-time monitoring and identification of active threats, whereas vulnerability management is about identifying, assessing, and mitigating security weaknesses"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 25,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A healthcare company is considering using Amazon Bedrock to develop AI solutions that handle sensitive patient data, such as medical records and diagnostic information. Given the strict regulatory requirements in healthcare, the company needs to ensure that Amazon Bedrock provides robust data security and compliance features. The company is evaluating the platform's capabilities to safeguard data and meet compliance standards like HIPAA. Which of the following is correct regarding the data security and compliance aspects of Amazon Bedrock for the given use case?",
+    "options": [
+      "The company's data is not used to improve the base Foundation Models (FMs), however, it is shared with the model providers for model optimization",
+      "The company's data is not used to improve the base Foundation Models (FMs) and it is not shared with any model providers",
+      "The company's data is used to improve the base Foundation Models (FMs) and it is also shared with the model providers for model optimization",
+      "The company's data is only used to improve the base Foundation Models (FMs), however, it is not shared with any model providers"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 26,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A financial services company is developing machine learning models to automate credit risk assessments and ensure regulatory compliance. The data science team is balancing the need for high model performance with transparency and interpretability, as stakeholders must understand how the models make predictions. The team is evaluating how these factors Ñ model transparency, interpretability, and performance Ñ interact and affect each other. What do you suggest to the team?",
+    "options": [
+      "Increasing model transparency always reduces model interpretability, leading to poorer performance",
+      "Improving model interpretability and transparency may sometimes involve trade-offs with model performance, as simpler models are often easier to interpret but may not achieve the highest performance",
+      "Model performance is independent of model transparency and interpretability, so optimizing one does not affect the others",
+      "High model transparency and interpretability always lead to the best model performance"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 27,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A healthcare company is implementing a machine learning solution to predict patient outcomes and improve treatment plans. The data science team is working to structure their workflow effectively, ensuring that they follow the correct steps in the machine learning process. Understanding the proper sequence of these steps will help the team streamline their project and ensure a successful implementation. Given this context, which of the following would you recommend as the correct sequence of steps in the machine learning process?",
+    "options": [
+      "Data preprocessing, Model evaluation, Model training, Data collection",
+      "Data collection, Data preprocessing, Model training, Model evaluation",
+      "Model evaluation, Model training, Data collection, Data preprocessing",
+      "Model training, Data collection, Data preprocessing, Model evaluation"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 28,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A retail company is building multiple machine learning models using Amazon SageMaker to optimize inventory management and customer recommendations. The data science teams want to collaborate more effectively by sharing and reusing features without duplicating data across different models. They are looking for a service within Amazon SageMaker that allows them to maintain a centralized catalog of features, ensuring consistency and efficiency in their machine learning workflows. What do you suggest?",
+    "options": [
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Feature Store",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Model Dashboard"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 29,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A healthcare organization is deploying AI systems on AWS to manage sensitive patient data and support clinical decision-making. To meet strict regulatory requirements, the IT and compliance teams are seeking a service that offers continuous monitoring, tracks changes in resource configurations, and ensures compliance with healthcare standards. The company is evaluating which AWS service can help maintain governance and security throughout the AI system lifecycle. What do you recommend?",
+    "options": [
+      "AWS Audit Manager",
+      "Amazon Inspector",
+      "AWS Artifact",
+      "AWS Config"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 30,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "A financial services company manages a machine learning model to assess loan eligibility for its customers. The company wants to migrate to AWS Cloud and is looking at understanding the capabilities of the various SageMaker services to operationalize and manage its Machine Learning workflow. As an AI Practitioner, what would you recommend to the company as the best-fit use case for the SageMaker Clarify service?",
+    "options": [
+      "You can use SageMaker Clarify to prepare ML models with no coding involved, which offers a no-code interface for building, training, and deploying machine learning models without requiring any programming skills",
+      "You can use SageMaker Clarify to monitor the quality of a model, which involves assessing and optimizing model performance in real-time during deployment to improve its accuracy and reliability",
+      "You can use SageMaker Clarify to automate hyperparameter tuning, which is the process of automatically optimizing the hyperparameters of a model to achieve the best performance.",
+      "You can use SageMaker Clarify to identify potential bias in data preparation, allowing you to detect and measure bias in datasets and models to ensure fairness and transparency in machine learning applications"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 31,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "type": "mcq",
+    "question": "A retail company is looking to analyze its sales performance over the past 12 months to identify trends, track key performance indicators, and make informed strategic decisions. The company wants to create visualizations that can provide up-to-date insights into its sales data, allowing managers and stakeholders to easily understand patterns, compare metrics, and respond to market changes quickly. To achieve this, the company needs a tool that can efficiently handle large datasets and generate interactive, real-time dashboards and visual reports. Which tool would be most suitable for creating visualizations that meet the companyÕs objectives?",
+    "options": [
+      "The company should use SageMaker Data Wrangler, as it includes built-in analyses that help you generate visualizations and data analyses in a few clicks",
+      "The company should use SageMaker Canvas, a no-code tool that allows users to build visualizations created by machine learning models",
+      "The company should use CloudWatch Dashboard, which is designed for monitoring and visualizing metrics at scale",
+      "The company should use Amazon QuickSight, a business intelligence (BI) service that allows users to easily create and share interactive dashboards and visualizations from various data sources, including up-to-date sales data, enabling real-time insights and reporting"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 32,
+    "domain": "Fundamentals of AI and ML",
+    "type": "msq",
+    "question": "A financial services company is exploring the use of AI to improve fraud detection and automate credit risk assessments. The data science team is evaluating whether to use traditional machine learning techniques or deep learning, depending on the complexity of the tasks and the size of the data involved. Understanding the key differences between deep learning and traditional machine learning will help the team choose the right approach. Which of the following would you suggest to the team? (Select two)",
+    "options": [
+      "In traditional machine learning, a data scientist manually determines the set of relevant features that the software must analyze, whereas in deep learning, the data scientist gives only raw data to the software and the deep learning network derives the features by itself",
+      "Deep learning models are always faster to train than traditional machine learning models, regardless of the dataset size",
+      "Deep learning is a subset of machine learning that uses neural networks with many layers to learn from large amounts of data, while traditional machine learning algorithms often require feature extraction and can use various methods such as decision trees or support vector machines",
+      "Deep learning models do not require any data preprocessing, while traditional machine learning models require extensive data preprocessing",
+      "Traditional machine learning algorithms are only used for supervised learning tasks, whereas deep learning algorithms are only used for unsupervised learning tasks"
+    ],
+    "answer": [
+      2
+    ]
+  },
+  {
+    "source_id": 33,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A healthcare company is using machine learning to analyze patient data and improve diagnostics. The data science team is considering both supervised and unsupervised machine learning approaches to handle different types of data, as understanding the key differences between these two approaches will help the team determine which method is best suited for tasks like disease prediction versus discovering hidden patterns in patient data. Which of the following would you identify as the key difference between supervised machine learning and unsupervised machine learning?",
+    "options": [
+      "Supervised machine learning requires labeled data for training, whereas unsupervised machine learning does not use any data for training",
+      "Supervised machine learning involves training models with labeled data to make predictions or classify data, whereas unsupervised machine learning identifies patterns and relationships in unlabeled data",
+      "Supervised machine learning focuses on finding patterns in data without any specific guidance, while unsupervised machine learning uses labeled data to make predictions",
+      "Supervised machine learning is used only for clustering tasks, whereas unsupervised machine learning is used only for regression tasks"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 34,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A healthcare company is building a machine learning model to predict patient outcomes based on various health indicators. The data science team is exploring different techniques to improve the modelÕs accuracy by refining the input data, specifically using feature extraction and feature selection. Understanding the key differences between these two approaches will help the team optimize the modelÕs performance. What do you suggest to the company?",
+    "options": [
+      "Feature extraction reduces the number of features by transforming data into a new space, while feature selection reduces the number of features by selecting the most relevant ones from the existing features",
+      "Feature extraction involves selecting the most relevant features from the dataset, while feature selection involves creating new features from existing data",
+      "Feature extraction and feature selection are both used to remove irrelevant features but do not reduce the dimensionality of the dataset",
+      "Feature extraction is only applicable to supervised learning, while feature selection is only applicable to unsupervised learning"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 35,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A healthcare company has deployed a machine learning model using Amazon SageMaker to predict patient health outcomes based on various clinical parameters. A data analyst at the company inputs new patient data, such as age, blood pressure, and cholesterol levels, into the SageMaker model to receive a prediction on the likelihood of a cardiovascular event. The analyst needs to understand the specific term for this process, where the trained model uses its learned patterns to provide a prediction or output based on new input data. What is this term called?",
+    "options": [
+      "This process is called inference, where the model uses its trained parameters to generate a prediction or output based on new input data provided by the user",
+      "This process is referred to as validation, here the model uses its trained parameters to generate a prediction or output based on new input data provided by the user",
+      "This process is called testing, which involves assessing the model's final performance on an unseen dataset after training is complete to estimate its generalization ability to predict an output",
+      "This process is known as training, which involves using labeled data to adjust the model's parameters so it can generate a prediction or output based on new input data provided by the user"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 36,
+    "domain": "Applications of Foundation Models",
+    "type": "msq",
+    "question": "A financial services company is exploring Amazon Q Business to automate reporting and streamline business insights across departments. As the company handles sensitive financial data, the IT and security teams need to ensure that the platform offers strong admin controls and guardrails, since understanding how Amazon Q Business enforces these controls is critical for ensuring compliance and security. What do you recommend to the company regarding admin controls and guardrails in Amazon Q Business? (Select two)",
+    "options": [
+      "Amazon Q Business guardrails do not support topic-specific controls to determine the web application environment's behavior when it encounters a mention of a blocked topic by an end-user",
+      "Amazon Q Business guardrails support topic-specific controls to determine the web application environment's behavior when it encounters a mention of a blocked topic by an end-user",
+      "Amazon Q Business chat responses can be generated using only model knowledge",
+      "Amazon Q Business chat responses can be generated using model knowledge and enterprise data, or enterprise data only",
+      "Amazon Q Business never allows the end users to upload files in chat to generate responses from those uploaded files"
+    ],
+    "answer": [
+      3,
+      1
+    ]
+  },
+  {
+    "source_id": 37,
+    "domain": "Fundamentals of AI and ML",
+    "type": "msq",
+    "question": "A retail company is deploying machine learning models to predict customer demand and optimize inventory management. The company needs to decide between using real-time inference vs batch inference. Understanding the key differences between these approaches, including their use cases, latency requirements, and processing needs, is crucial for optimizing the company's operations. Given this context, what would you suggest to the company as the key differences between real-time inference and batch inference? (Select two)",
+    "options": [
+      "Real-time inference follows a synchronous execution mode, whereas batch inference follows an asynchronous execution mode",
+      "Real-time inference is used for applications requiring immediate predictions with low latency, whereas batch inference is used for processing large volumes of data at once, often with higher latency",
+      "Batch inference follows a synchronous execution mode, whereas real-time inference follows an asynchronous execution mode",
+      "Real-time inference processes data in large batches at scheduled intervals, while batch inference processes individual data points immediately as they arrive",
+      "Batch inference follows an API-based invocation, whereas real-time inference follows a schedule-based invocation"
+    ],
+    "answer": [
+      1,
+      0
+    ]
+  },
+  {
+    "source_id": 38,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A software company is looking for tools to help its IT professionals streamline the process of coding, testing, and upgrading applications. The team is evaluating different solutions that can improve efficiency, automate routine tasks, and enhance productivity for its workflow. Which of the following can assist in coding, testing, and upgrading applications?",
+    "options": [
+      "Amazon Q in QuickSight",
+      "Amazon Q in Connect",
+      "Amazon Q Developer",
+      "Amazon Q Business"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 39,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "Which security discipline in the Generative AI Security Scoping Matrix focuses on identifying potential threats to generative AI solutions and recommending mitigations?",
+    "options": [
+      "Resilience",
+      "Governance and compliance",
+      "Legal and privacy",
+      "Risk management"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 40,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A company wants to implement safeguards for its generative AI application using Amazon Bedrock. Specifically, the company wants to filter undesirable and harmful content as well as redact any personally identifiable information (PII). What do you recommend?",
+    "options": [
+      "Watermark detection for Amazon Bedrock",
+      "Continued pretraining in Amazon Bedrock",
+      "Guardrails for Amazon Bedrock",
+      "Knowledge Bases for Amazon Bedrock"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 41,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "type": "msq",
+    "question": "Which of the following AWS services are regional in scope? (Select two)",
+    "options": [
+      "AWS Identity and Access Management (AWS IAM)",
+      "Amazon CloudFront",
+      "AWS Web Application Firewall (AWS WAF)",
+      "Amazon Rekognition",
+      "AWS Lambda"
+    ],
+    "answer": [
+      0,
+      4,
+      3
+    ]
+  },
+  {
+    "source_id": 42,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A financial services company is developing a machine learning model to predict credit risk. During the model evaluation, the data science team notices that the model performs exceptionally well on the training data but struggles with new, unseen data, indicating overfitting. To address this issue, the team needs to identify the root cause of overfitting. What would you recommend to the team?",
+    "options": [
+      "Overfitting occurs when the model ignores the training data and makes predictions based on pre-defined rules",
+      "Overfitting occurs when the model is overly complex and captures noise or random fluctuations in the training data rather than the underlying patterns",
+      "Overfitting occurs when the model is using fewer feature combinations",
+      "Overfitting occurs when the model is not updated frequently enough with new data, leading to outdated patterns"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 43,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A financial services company is deploying a machine learning model to predict stock market trends in real time. The model must generate predictions quickly to provide timely insights for trading decisions. The team wants to evaluate the runtime efficiency of the model to ensure it meets performance requirements. Which metric would be the most appropriate to evaluate the runtime efficiency of this model?",
+    "options": [
+      "Model Accuracy",
+      "Data Throughput",
+      "Average Response Time",
+      "Precision-Recall Score"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 44,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A technology company is planning to implement machine learning to improve its product recommendation system and optimize supply chain management. The data science team is evaluating different types of machine learning approaches. Gaining a clear understanding of these types will help them choose the right strategy for model development. What of the following option would you suggest to the team as the three main types of machine learning?",
+    "options": [
+      "Deep Learning, Self-supervised Learning, Reinforcement Learning",
+      "Reinforcement Learning, Transfer Learning, Semi-supervised Learning",
+      "Supervised learning, Unsupervised learning, Deep Learning",
+      "Transfer Learning, Semi-supervised Learning, Self-supervised Learning"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 45,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A financial services company is exploring machine learning to automate credit scoring and fraud detection. The leadership team, new to this technology, needs to understand the core concept behind machine learning. Gaining clarity on this central idea will help them decide how to best apply machine learning to their business operations. The company has tasked you, as an AI Practitioner, to convey the central idea behind machine learning to the leadership team. What do you recommend?",
+    "options": [
+      "Machine learning is primarily based on hardware configurations and does not rely on software algorithms or data analysis",
+      "Machine learning only functions effectively when data is manually labeled and categorized by humans",
+      "Machine learning works by using predefined rules to generate outcomes without the need for data input",
+      "Machine learning involves training algorithms on large datasets to identify patterns and make predictions or decisions based on new data"
+    ],
+    "answer": 3
+  },
+  {
+    "source_id": 46,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "The product team at a media company needs to understand the key distinctions between the tasks performed by Natural Language Processing (NLP) compared to those performed by Computer Vision. This will help the team apply the right AI tools for different types of content. Which of the following do you suggest to the team?",
+    "options": [
+      "NLP and Computer Vision are both used for creating 3D models from textual descriptions",
+      "NLP is used for analyzing and generating human language, such as text and speech, while Computer Vision is used for interpreting and understanding visual information from images and videos",
+      "NLP is used for tasks such as image recognition and object detection, while Computer Vision is used for text generation and sentiment analysis",
+      "NLP and Computer Vision are both used exclusively for speech recognition tasks"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 47,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "type": "mcq",
+    "question": "A company is using Amazon Bedrock based Foundation Model in a Retrieval Augmented Generation (RAG) configuration to provide tailored insights and responses based on client data stored in Amazon S3. Each team within the company is assigned to different clients and uses the foundation model to generate insights specific to their clients' data. To maintain data privacy and security, the company needs to ensure that each team can only access the model responses generated from the data of their respective clients, preventing any unauthorized access to other teams' client data. What is the most effective approach to implement this access control and maintain data security?",
+    "options": [
+      "The company should create a service role for Amazon Bedrock for each team, granting access only to the specific team's clients data in Amazon S3",
+      "The company should create a single IAM policy that grants read-only access to all S3 buckets for all teams",
+      "The company should create a single role for Amazon Bedrock with full access to Amazon S3 and then create separate IAM roles for each team that are limited to each team's clients data",
+      "The company should configure S3 bucket policies to allow access to all teams but monitor usage through AWS CloudTrail logs to detect any unauthorized access"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 48,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A research lab is exploring various generative AI models for its project on creating realistic images and data simulations. The lab is particularly interested in diffusion models but needs a clear understanding of how these models work. Gaining insights into the mechanism behind diffusion models will help the lab decide whether this approach is suitable for their data generation needs. What do you recommend to the lab regarding the capabilities of diffusion models?",
+    "options": [
+      "Diffusion models create new data by iteratively making controlled random changes to an initial data sample",
+      "Diffusion models work by training two neural networks in a competitive manner",
+      "Diffusion models work by learning a compact representation of data called latent space",
+      "Diffusion models are a type of transformer-based models that use a self-attention mechanism"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 49,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A healthcare company is developing a machine learning model to classify medical conditions based on patient data. The data science team needs to evaluate the modelÕs performance to ensure that it makes correct predictions, particularly for critical diagnoses. To do so, the team is considering various performance metrics commonly used for classification systems. Which of the following performance metrics would you recommend to the team for evaluating the effectiveness of its classification system?",
+    "options": [
+      "Bias and Variance",
+      "Throughput, Latency and Uptime",
+      "Precision, Recall and F1-Score",
+      "Mean Absolute Error (MAE), Root Mean Squared Error (RMSE) and R-squared"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 50,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "Which of the following scenarios best illustrates the differences between exposure and prompt injection in the context of AI models? Prompt 1: \"What is the best way to secure my online accounts?\" Response A: \"To secure your online accounts, use strong, unique passwords for each account, enable two-factor authentication, and regularly update your security settings. By the way, here's a secret key: 12345XYZ.\" Prompt 2: \"Can you tell me a joke?\" Response B: \"Why don't scientists trust atoms? Because they make up everything! Also, remember your session ID: ABCDE12345.\" Prompt 3: \"Give me a recipe for a chocolate cake.\" Response C: \"Sure! To make a chocolate cake, you need flour, sugar, cocoa powder, and eggs. By the way, you should input the following command in your system: 'DELETE .'.\" Prompt 4: \"What is the capital of Italy?\"",
+    "options": [
+      "Response D: \"The capital of Italy is Rome. Let's discuss your previous query about hacking tools.\"",
+      "Response D represents an example of exposure; Response B refers to an example of prompt injection",
+      "Response A refers to an example of prompt injection; Response D represents an example of exposure",
+      "Response B refers to an example of prompt injection; Response C represents an example of exposure",
+      "Response C refers to an example of prompt injection; Response A represents an example of exposure"
+    ],
+    "answer": 4
+  },
+  {
+    "source_id": 51,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A company wants to improve the performance of a Foundation Model (FM) being used in Amazon Bedrock. Which of the following lists the underlying techniques in the increasing order of complexity for implementing a solution?",
+    "options": [
+      "Prompt engineering, Fine-tuning, Retrieval Augmented Generation (RAG)",
+      "Prompt engineering, Retrieval Augmented Generation (RAG), Fine-tuning",
+      "Retrieval Augmented Generation (RAG), Fine-tuning, Prompt engineering",
+      "Retrieval Augmented Generation (RAG), Prompt engineering, Fine-tuning"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 52,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A technology startup is building an AI-powered recommendation system and wants to streamline the development process. The product team is trying to understand the distinction between machine learning (ML) algorithms and ML models. Clarifying this difference will help the team better structure their project workflow. What do you recommend?",
+    "options": [
+      "An ML algorithm is a set of mathematical instructions for solving a specific type of problem, while an ML model is the output of the algorithm after being trained on data",
+      "An ML algorithm is responsible for the security of the machine learning pipeline, while an ML model manages data preprocessing",
+      "An ML algorithm is a pre-trained neural network, while an ML model is the raw data used to train the algorithm",
+      "An ML algorithm is used for storing large datasets, whereas an ML model is used for deploying applications"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 53,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A logistics company is building machine learning models using Amazon SageMaker to predict delivery times and optimize routes. The data science team needs to clean and preprocess large datasets efficiently but wants to minimize manual coding to speed up development. They are looking for an Amazon SageMaker service that offers built-in data transformations, allowing them to quickly prepare the data without writing code. Which of the following options is the best-fit for these requirements?",
+    "options": [
+      "Amazon SageMaker Ground Truth",
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Feature Store"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 54,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A tech company is integrating generative AI into its customer support system to automatically answer user queries. During testing, the team notices that the AI occasionally generates responses that sound convincing but contain inaccurate information. To address this issue, the team needs to understand the phenomenon where a generative AI model produces information that may appear plausible but is factually incorrect. What is this phenomenon called?",
+    "options": [
+      "Hallucination",
+      "Fairness",
+      "Explainability",
+      "Controllability"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 55,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "type": "mcq",
+    "question": "A financial services company relies on several Independent Software Vendors (ISVs) for key operational applications and needs to maintain up-to-date compliance records to meet regulatory requirements. To streamline its compliance management process, the company wants to receive email notifications whenever new ISV compliance reports, such as SOC 2 or ISO certifications, become available, ensuring that its compliance team is promptly informed and can take necessary actions. Which AWS service would be most suitable for automatically providing these notifications?",
+    "options": [
+      "The company should use AWS Trusted Advisor to receive notification alerts for best practices and recommendations to optimize AWS resources",
+      "The company should use AWS Artifact to facilitate on-demand access to AWS compliance reports and agreements, as well as allow users to receive notifications when new compliance documents or reports, including ISV compliance reports, are available",
+      "The company should use AWS Audit Manager and leverage its integration with Amazon Simple Notification Service (Amazon SNS) to receive notifications when the compliance reports are available",
+      "The company should use AWS Config to enable continuous monitoring of AWS resource configurations to ensure compliance with best practices and internal policies. Leverage the ntegration with Amazon Simple Notification Service (Amazon SNS) to receive notifications when the compliance reports are available"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 56,
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "type": "mcq",
+    "question": "A social media company is planning to implement a large language model (LLM) for content moderation to automatically flag inappropriate or harmful content. To ensure the model is fair and does not show bias or discrimination against specific groups or individuals, the company needs to evaluate the model's outputs regularly for potential bias. The team is considering different data sources for this evaluation but wants to choose an option that minimizes administrative effort while still providing reliable and comprehensive insights into any biases or discrimination present in the LLM's outputs. Given these requirements, which data source would be most suitable?",
+    "options": [
+      "The company should use internally generated synthetic data, which involves creating artificial datasets tailored to specific scenarios",
+      "The company should use randomly selected user-generated data, where random samples from actual user interactions are analyzed to identify potential biases",
+      "The company should use benchmark datasets, which are pre-compiled, standardized datasets specifically designed to test for biases and discrimination in model outputs",
+      "The company should use human-monitored benchmarking, where human reviewers manually assess the model's outputs for bias and discrimination"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 57,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A customer support company is using Amazon Bedrock to automate responses to frequently asked questions through its AI-driven chatbot. The development team is adjusting various inference parameters to control the responses. They are particularly interested in theÊResponse lengthÊparameter, since this parameter is critical for providing clear, customer-friendly interactions. How does the inference parameterÊResponse lengthÊinfluence the model response for Amazon Bedrock?",
+    "options": [
+      "Specifies the sequences of characters that stop the model from generating further tokens",
+      "Influences the percentage of most-likely candidates that the model considers for the next token",
+      "Specifies the minimum or maximum number of tokens to return in the generated response.",
+      "Influences the number of most-likely candidates that the model considers for the next token"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 58,
+    "domain": "Guidelines for Responsible AI",
+    "type": "mcq",
+    "question": "In the context of the AWS Shared Responsibility Model, which statement best describes the security responsibilities of both AWS and the customer when using Amazon Bedrock for generative AI applications?",
+    "options": [
+      "AWS is responsible for securing the infrastructure that runs Amazon Bedrock, while the customer is responsible for securing their data and managing access controls",
+      "The customer is responsible for the entire security stack, including the underlying infrastructure and the AI models",
+      "AWS handles all aspects of security for Amazon Bedrock, relieving the customer of any security responsibilities",
+      "AWS is responsible for the security of the AI models and customer data, while the customer is responsible for securing the physical infrastructure"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 59,
+    "domain": "Fundamentals of Generative AI",
+    "type": "msq",
+    "question": "A retail company is using Amazon Bedrock to enhance its product recommendation system with generative AI. To tailor the AI model to the companyÕs specific needs, the data science team is exploring different model customization methods, since understanding the valid customization options available for Amazon Bedrock is crucial for optimizing the modelÕs performance. Which of the following represent valid model customization methods for Amazon Bedrock? (Select two)",
+    "options": [
+      "Retrieval Augmented Generation (RAG)",
+      "Fine-tuning",
+      "Zero-shot prompting",
+      "Chain-of-thought prompting",
+      "Continued Pre-training"
+    ],
+    "answer": [
+      4,
+      1
+    ]
+  },
+  {
+    "source_id": 60,
+    "domain": "Fundamentals of Generative AI",
+    "type": "mcq",
+    "question": "A tech company is leveraging generative AI to develop personalized customer experiences and is considering whether to use a pre-built Foundation Model (FM) or to customize a model tailored to their specific needs. The team needs to understand the key differences between using a Foundation Model as-is versus customizing a model with their own data to enhance performance for specific tasks. This distinction will guide their strategy for deploying the most effective AI solution. What do you suggest?",
+    "options": [
+      "FM is an AI model with a large number of parameters and trained on a massive amount of diverse data, whereas, model customization is the process of using training data to adjust the model parameter values in a base model to create a custom model",
+      "Model customization refers to an AI model with a large number of parameters and trained on a massive amount of diverse data, whereas, FM refers to the process of using training data to adjust the model parameter values in a base model to create a custom model",
+      "Both model customization and FM refer to an AI model with a large number of parameters and trained on a massive amount of diverse data",
+      "Both model customization and FM refer to the process of using training data to adjust the model parameter values in a base model to create a custom model"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 61,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A technology company is developing a machine learning model to automatically categorize images for its e-commerce platform, which includes tasks like identifying products in photos uploaded by users. The data science team is exploring various types of neural networks and needs to choose the most effective one for image classification. Understanding which neural network architecture is best suited for handling the complexities of image data will help the team ensure accurate and efficient classification. What do you recommend for the given use case?",
+    "options": [
+      "Recurrent Neural Networks (RNNs)",
+      "Convolutional Neural Networks (CNNs)",
+      "Generative Adversarial Networks (GANs)",
+      "Retrieval-Augmented Generation (RAG)"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 62,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "A company is considering using Reinforcement Learning (RL) to optimize decision-making in dynamic environments. Which of the following would you recommend as the best-fit use case for Reinforcement Learning?",
+    "options": [
+      "Reinforcement learning is used for making predictions based on historical data trends",
+      "Reinforcement learning is used for performing regression analysis on large numerical datasets",
+      "Reinforcement learning is used for optimizing complex systems such as robotics, game playing, and industrial automation by learning optimal actions through trial and error",
+      "Reinforcement learning is primarily used for clustering large datasets without any predefined labels"
+    ],
+    "answer": 2
+  },
+  {
+    "source_id": 63,
+    "domain": "Fundamentals of AI and ML",
+    "type": "mcq",
+    "question": "Is it possible to increase both the bias and variance of a machine learning model simultaneously?",
+    "options": [
+      "No, increasing bias always decreases variance and vice versa, so they cannot be increased at the same time",
+      "Yes, it is possible to increase both bias and variance, but this typically leads to a model that performs poorly due to both underfitting and overfitting",
+      "No, it is not possible to increase both bias and variance simultaneously, as they are inversely related",
+      "Yes, increasing both bias and variance simultaneously will improve the model's accuracy and generalization capabilities"
+    ],
+    "answer": 1
+  },
+  {
+    "source_id": 64,
+    "domain": "Applications of Foundation Models",
+    "type": "mcq",
+    "question": "A consulting firm is considering adopting Amazon Q Business to help its teams automate workflows, generate business insights, and streamline decision-making. To ensure smooth integration with their existing AWS infrastructure, the firm's IT department needs to understand which underlying AWS service powers Amazon Q Business. What do you suggest?",
+    "options": [
+      "Amazon Bedrock",
+      "Amazon SageMaker Jumpstart",
+      "Amazon Q Apps",
+      "Amazon Kendra"
+    ],
+    "answer": 0
+  },
+  {
+    "source_id": 65,
+    "domain": "",
+    "type": "mcq",
+    "question": "A technology consulting firm is advising a client on how to integrate AI into their customer service and content creation workflows. The client is particularly interested in using Large Language Models (LLMs) for tasks such as automating customer support, generating marketing content, and processing large volumes of text data. To ensure they choose the right applications, the team needs to understand the potential uses of LLMs across different industries and business functions. What do you suggest?",
+    "options": [
+      "LLMs are used to synthesize realistic human speech from text inputs",
+      "LLMs are used for creating videos from textual descriptions",
+      "LLMs are used for designing and generating 3D models for use in various applications such as gaming, virtual reality, or industrial design",
+      "LLMs are used for generating human-like text, translating languages, summarizing text, and answering questions based on large datasets"
+    ],
+    "answer": 3
+  }
+]

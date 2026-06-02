@@ -1,0 +1,338 @@
+Q#: 121 (from pg17.html)
+A manufacturing company uses AI to inspect products and find any damages or defects. Which type of AI application is the company using? Recommendation systemNatural language processing (NLP)Computer visionImage processing Answer(s): C Explanation:Computer vision is a field of AI that enables machines to interpret and understand visual information from the world, such as images and videos. In the case of the manufacturing company, the AI is used to inspect products for damages or defects, which involves analyzing visual data (e.g., product images or videos). This is a classic application of computer vision, where the AI system identifies and classifies objects or defects within images. Show Answer Next Question
+  A. Recommendation systemNatural language processing (NLP)Computer visionImage processing
+  B. Natural language processing (NLP)Computer visionImage processing
+* C. Computer visionImage processing
+  D. Image processing
+Answer: C
+Explanation: Explanation:Computer vision is a field of AI that enables machines to interpret and understand visual information from the world, such as images and videos. In the case of the manufacturing company, t...
+
+---
+
+Q#: 122 (from pg17.html)
+A company wants to create an ML model to predict customer satisfaction. The company needs fully automated model tuning. Which AWS service meets these requirements? Amazon PersonalizeAmazon SageMakerAmazon AthenaAmazon Comprehend Answer(s): B Explanation:Amazon SageMaker provides a fully managed environment for building, training, and deploying machine learning models, including automatic model tuning. Specifically, SageMaker includes a feature called Automatic Model Tuning (or Hyperparameter Optimization), which automates the process of finding the best hyperparameters for your machine learning model. This is essential when you want to optimize the model's performance without manual intervention.Amazon SageMaker allows you to automate the training process and hyperparameter tuning, which aligns perfectly with the company's need for fully automated model tuning. Show Answer Next Question
+  A. Amazon PersonalizeAmazon SageMakerAmazon AthenaAmazon Comprehend
+* B. Amazon SageMakerAmazon AthenaAmazon Comprehend
+  C. Amazon AthenaAmazon Comprehend
+  D. Amazon Comprehend
+Answer: B
+Explanation: Explanation:Amazon SageMaker provides a fully managed environment for building, training, and deploying machine learning models, including automatic model tuning. Specifically, SageMaker includes a fe...
+
+---
+
+Q#: 123 (from pg17.html)
+Which technique can a company use to lower bias and toxicity in generative AI applications during the post-processing ML lifecycle? Human-in-the-loopData augmentationFeature engineeringAdversarial training Answer(s): A Explanation:Human-in-the-loop (HITL) is a technique where human oversight is involved in the decision-making process of AI systems. In the context of generative AI applications, HITL can be used during the post-processing phase to identify and mitigate biases or toxic outputs. Humans can review and intervene when the model generates inappropriate or biased content, providing corrections or adjustments that help reduce the likelihood of toxicity and bias. This feedback loop helps refine and improve the model's outputs over time. Show Answer Next Question
+* A. Human-in-the-loopData augmentationFeature engineeringAdversarial training
+  B. Data augmentationFeature engineeringAdversarial training
+  C. Feature engineeringAdversarial training
+  D. Adversarial training
+Answer: A
+Explanation: Explanation:Human-in-the-loop (HITL) is a technique where human oversight is involved in the decision-making process of AI systems. In the context of generative AI applications, HITL can be used durin...
+
+---
+
+Q#: 124 (from pg17.html)
+A bank has fine-tuned a large language model (LLM) to expedite the loan approval process. During an external audit of the model, the company discovered that the model was approving loans at a faster pace for a specific demographic than for other demographics. How should the bank fix this issue MOST cost-effectively? Include more diverse training data. Fine-tune the model again by using the new data.Use Retrieval Augmented Generation (RAG) with the fine-tuned model.Use AWS Trusted Advisor checks to eliminate bias.Pre-train a new LLM with more diverse training data. Answer(s): A Explanation:The issue described is a case of bias in the model's decision-making process, where the model is showing a preference for a specific demographic. The most cost-effective way to address this is to include more diverse training data that better represents all demographics. By fine-tuning the model with this more diverse data, you can help ensure that the model treats all demographic groups fairly and does not exhibit biased behavior.Fine-tuning the model with updated data ensures that the model learns from a more representative sample, improving fairness in its predictions without needing to completely retrain the model from scratch. Show Answer Next Question
+* A. Include more diverse training data. Fine-tune the model again by using the new data.Use Retrieval Augmented Generation (RAG) with the fine-tuned model.Use AWS Trusted Advisor checks to eliminate bias.Pre-train a new LLM with more diverse training data.
+  B. Use Retrieval Augmented Generation (RAG) with the fine-tuned model.Use AWS Trusted Advisor checks to eliminate bias.Pre-train a new LLM with more diverse training data.
+  C. Use AWS Trusted Advisor checks to eliminate bias.Pre-train a new LLM with more diverse training data.
+  D. Pre-train a new LLM with more diverse training data.
+Answer: A
+Explanation: Explanation:The issue described is a case of bias in the model's decision-making process, where the model is showing a preference for a specific demographic. The most cost-effective way to address thi...
+
+---
+
+Q#: 125 (from pg17.html)
+HOTSPOT (Drag and Drop is not supported) A company has developed a large language model (LLM) and wants to make the LLM available to multiple internal teams. The company needs to select the appropriate inference mode for each team. Select the correct inference mode from the following list for each use case. Each inference mode should be selected one or more times. Hot Area: See Explanation section for answer. Answer(s): A Explanation:The company's chatbot needs predictions from the LLM to understand users' intent with minimal latency - Real-time inferenceThis scenario requires Real-time inference, as chatbots typically need immediate responses with low latency to provide an interactive user experience.A data processing job needs to query the LLM to process gigabytes of text files on weekends - Batch transformThis use case is best suited for Batch transform. Since the data processing job involves handling large amounts of data, and it is scheduled for weekends, batch processing can handle these large volumes efficiently.The company's engineering team needs to create an API that can process small pieces of text content and provide low-latency predictions - Real-time inferenceReal-time inference is the correct choice here, as the API needs to process text quickly and provide immediate responses, making real-time inference appropriate. Show Answer Next Question
+* A. See Explanation section for answer.
+Answer: A
+Explanation: Explanation:The company's chatbot needs predictions from the LLM to understand users' intent with minimal latency - Real-time inferenceThis scenario requires Real-time inference, as chatbots typically...
+
+---
+
+Q#: 126 (from pg17.html)
+A company needs to log all requests made to its Amazon Bedrock API. The company must retain the logs securely for 5 years at the lowest possible cost. Which combination of AWS service and storage class meets these requirements? (Choose two.) AWS CloudTrailAmazon CloudWatchAWS Audit ManagerAmazon S3 Intelligent-TieringAmazon S3 Standard Answer(s): A,D Explanation:AWS CloudTrail is the AWS service designed for logging and monitoring API calls made to AWS services, including Amazon Bedrock. CloudTrail records detailed information about the API requests, including the identity of the requester, the time of the request, and the source IP address. This service is ideal for logging all requests made to the Amazon Bedrock API and meets the logging requirement.Amazon S3 Intelligent-Tiering is a storage class designed for storing data that has unpredictable access patterns. It automatically moves data between two access tiers (frequent and infrequent) based on usage, which helps reduce costs while ensuring data is still available when needed. For retaining logs securely over 5 years at the lowest possible cost, this storage class provides an efficient way to handle long-term storage requirements without incurring unnecessary costs. Show Answer Next Question
+* A. AWS CloudTrailAmazon CloudWatchAWS Audit ManagerAmazon S3 Intelligent-TieringAmazon S3 Standard
+  B. Amazon CloudWatchAWS Audit ManagerAmazon S3 Intelligent-TieringAmazon S3 Standard
+  C. AWS Audit ManagerAmazon S3 Intelligent-TieringAmazon S3 Standard
+* D. Amazon S3 Intelligent-TieringAmazon S3 Standard
+  E. Amazon S3 Standard
+Answer: A,D
+Explanation: Explanation:AWS CloudTrail is the AWS service designed for logging and monitoring API calls made to AWS services, including Amazon Bedrock. CloudTrail records detailed information about the API reques...
+
+---
+
+Q#: 127 (from pg17.html)
+An ecommerce company wants to improve search engine recommendations by customizing the results for each user of the company's ecommerce platform. Which AWS service meets these requirements? Amazon PersonalizeAmazon KendraAmazon RekognitionAmazon Transcribe Answer(s): A Explanation:Amazon Personalize is an AWS service specifically designed to build and deploy personalized recommendations for users. It allows you to create custom machine learning models for personalized user experiences, such as product recommendations, search results, or content suggestions. For an ecommerce company aiming to improve search engine recommendations tailored to each user, Amazon Personalize is the ideal choice as it leverages user behavior data and machine learning to deliver highly relevant recommendations. Show Answer Next Question
+* A. Amazon PersonalizeAmazon KendraAmazon RekognitionAmazon Transcribe
+  B. Amazon KendraAmazon RekognitionAmazon Transcribe
+  C. Amazon RekognitionAmazon Transcribe
+  D. Amazon Transcribe
+Answer: A
+Explanation: Explanation:Amazon Personalize is an AWS service specifically designed to build and deploy personalized recommendations for users. It allows you to create custom machine learning models for personaliz...
+
+---
+
+Q#: 128 (from pg17.html)
+A hospital is developing an AI system to assist doctors in diagnosing diseases based on patient records and medical images. To comply with regulations, the sensitive patient data must not leave the country the data is located in. Which data governance strategy will ensure compliance and protect patient privacy? Data residencyData qualityData discoverabilityData enrichment Answer(s): A Explanation:Data residency refers to the practice of ensuring that data is stored and processed within a specific geographical location to comply with regulations or policies. In this scenario, where sensitive patient data must not leave the country it originates from, implementing a data residency strategy ensures compliance with legal and regulatory requirements while protecting patient privacy. This approach is crucial for organizations like hospitals operating under strict data governance frameworks such as HIPAA or GDPR. Show Answer Next Question
+* A. Data residencyData qualityData discoverabilityData enrichment
+  B. Data qualityData discoverabilityData enrichment
+  C. Data discoverabilityData enrichment
+  D. Data enrichment
+Answer: A
+Explanation: Explanation:Data residency refers to the practice of ensuring that data is stored and processed within a specific geographical location to comply with regulations or policies. In this scenario, where ...
+
+---
+
+Q#: 129 (from pg18.html)
+A company needs to monitor the performance of its ML systems by using a highly scalable AWS service. Which AWS service meets these requirements? Amazon CloudWatchAWS CloudTrailAWS Trusted AdvisorAWS Config Answer(s): A Explanation:Amazon CloudWatch is a highly scalable AWS service designed for monitoring and observability. It provides real-time monitoring of system metrics, including performance data for ML systems, such as resource utilization (CPU, memory, etc.), model inference latency, request counts, and errors. CloudWatch enables users to set up alarms, visualize metrics, and automate actions based on performance thresholds, making it ideal for monitoring the performance of ML systems. Show Answer Next Question
+* A. Amazon CloudWatchAWS CloudTrailAWS Trusted AdvisorAWS Config
+  B. AWS CloudTrailAWS Trusted AdvisorAWS Config
+  C. AWS Trusted AdvisorAWS Config
+  D. AWS Config
+Answer: A
+Explanation: Explanation:Amazon CloudWatch is a highly scalable AWS service designed for monitoring and observability. It provides real-time monitoring of system metrics, including performance data for ML systems,...
+
+---
+
+Q#: 130 (from pg18.html)
+An AI practitioner is developing a prompt for an Amazon Titan model. The model is hosted on Amazon Bedrock. The AI practitioner is using the model to solve numerical reasoning challenges. The AI practitioner adds the following phrase to the end of the prompt: "Ask the model to show its work by explaining its reasoning step by step." Which prompt engineering technique is the AI practitioner using? Chain-of-thought promptingPrompt injectionFew-shot promptingPrompt templating Answer(s): A Explanation:Chain-of-thought prompting is a technique in prompt engineering where the AI model is encouraged to break down its reasoning process step by step to solve a problem, such as numerical reasoning challenges. By explicitly instructing the model to "show its work by explaining its reasoning step by step," the practitioner ensures the model provides a logical sequence of intermediate steps leading to the solution. This improves the accuracy and transparency of the model's outputs, particularly for complex reasoning tasks. Show Answer Next Question
+* A. Chain-of-thought promptingPrompt injectionFew-shot promptingPrompt templating
+  B. Prompt injectionFew-shot promptingPrompt templating
+  C. Few-shot promptingPrompt templating
+  D. Prompt templating
+Answer: A
+Explanation: Explanation:Chain-of-thought prompting is a technique in prompt engineering where the AI model is encouraged to break down its reasoning process step by step to solve a problem, such as numerical reas...
+
+---
+
+Q#: 131 (from pg18.html)
+Which AWS service makes foundation models (FMs) available to help users build and scale generative AI applications? Amazon Q DeveloperAmazon BedrockAmazon KendraAmazon Comprehend Answer(s): B Explanation:Amazon Bedrock is an AWS service that allows users to build and scale generative AI applications using foundation models (FMs) without the need to manage infrastructure. It provides access to pre-trained models from AWS and third-party providers, enabling developers to integrate generative AI capabilities like text generation, summarization, and question-answering into their applications. This makes Amazon Bedrock the ideal choice for building and scaling generative AI solutions. Show Answer Next Question
+  A. Amazon Q DeveloperAmazon BedrockAmazon KendraAmazon Comprehend
+* B. Amazon BedrockAmazon KendraAmazon Comprehend
+  C. Amazon KendraAmazon Comprehend
+  D. Amazon Comprehend
+Answer: B
+Explanation: Explanation:Amazon Bedrock is an AWS service that allows users to build and scale generative AI applications using foundation models (FMs) without the need to manage infrastructure. It provides access...
+
+---
+
+Q#: 132 (from pg18.html)
+A company is building a mobile app for users who have a visual impairment. The app must be able to hear what users say and provide voice responses. Which solution will meet these requirements? Use a deep learning neural network to perform speech recognition.Build ML models to search for patterns in numeric data.Use generative AI summarization to generate human-like text.Build custom models for image classification and recognition. Answer(s): A Explanation:To meet the requirements of enabling the app to "hear what users say and provide voice responses," the solution must include speech recognition and text-to-speech capabilities. Using a deep learning neural network for speech recognition allows the app to convert spoken words into text. Once the input is understood, text-to- speech systems can provide voice responses back to users. This approach is fundamental in applications that assist users with visual impairments by enabling interaction through spoken language. Show Answer Next Question
+* A. Use a deep learning neural network to perform speech recognition.Build ML models to search for patterns in numeric data.Use generative AI summarization to generate human-like text.Build custom models for image classification and recognition.
+  B. Build ML models to search for patterns in numeric data.Use generative AI summarization to generate human-like text.Build custom models for image classification and recognition.
+  C. Use generative AI summarization to generate human-like text.Build custom models for image classification and recognition.
+  D. Build custom models for image classification and recognition.
+Answer: A
+Explanation: Explanation:To meet the requirements of enabling the app to "hear what users say and provide voice responses," the solution must include speech recognition and text-to-speech capabilities. Using a dee...
+
+---
+
+Q#: 133 (from pg18.html)
+A company wants to enhance response quality for a large language model (LLM) for complex problem-solving tasks. The tasks require detailed reasoning and a step-by-step explanation process. Which prompt engineering technique meets these requirements? Few-shot promptingZero-shot promptingDirectional stimulus promptingChain-of-thought prompting Answer(s): D Explanation:Chain-of-thought prompting is specifically designed to enhance the reasoning capabilities of a large language model (LLM) by encouraging it to provide step-by-step explanations for complex problem-solving tasks. This approach helps the model break down a problem into smaller, logical steps, ensuring that the response is detailed, accurate, and easy to follow. Show Answer Next Question
+  A. Few-shot promptingZero-shot promptingDirectional stimulus promptingChain-of-thought prompting
+  B. Zero-shot promptingDirectional stimulus promptingChain-of-thought prompting
+  C. Directional stimulus promptingChain-of-thought prompting
+* D. Chain-of-thought prompting
+Answer: D
+Explanation: Explanation:Chain-of-thought prompting is specifically designed to enhance the reasoning capabilities of a large language model (LLM) by encouraging it to provide step-by-step explanations for complex...
+
+---
+
+Q#: 134 (from pg18.html)
+A company wants to keep its foundation model (FM) relevant by using the most recent data. The company wants to implement a model training strategy that includes regular updates to the FM. Which solution meets these requirements? Batch learningContinuous pre-trainingStatic trainingLatent training Answer(s): B Explanation:Continuous pre-training keeps a foundation model "always learning" by periodically (or even continuously) ingesting the latest data and updating its weights. This approach ensures the model stays current without having to start training from scratch every time new data arrives, unlike static or strictly batch-oriented methods. Show Answer Next Question
+  A. Batch learningContinuous pre-trainingStatic trainingLatent training
+* B. Continuous pre-trainingStatic trainingLatent training
+  C. Static trainingLatent training
+  D. Latent training
+Answer: B
+Explanation: Explanation:Continuous pre-training keeps a foundation model "always learning" by periodically (or even continuously) ingesting the latest data and updating its weights. This approach ensures the mode...
+
+---
+
+Q#: 135 (from pg18.html)
+HOTSPOT (Drag and Drop is not supported) A company wants to develop ML applications to improve business operations and efficiency. Select the correct ML paradigm from the following list for each use case. Each ML paradigm should be selected one or more times. Hot Area: See Explanation section for answer. Answer(s): A Explanation:Binary classification: Supervised learningBinary classification involves predicting one of two possible outcomes, requiring labeled training data.Multi-class classification: Supervised learningMulti-class classification extends binary classification to predict one of several classes, also requiring labeled data.K-means clustering: Unsupervised learningK-means clustering is used to group data points into clusters without requiring labeled data.Dimensionality reduction: Unsupervised learningDimensionality reduction techniques, like PCA, reduce the number of features in the dataset without needing labeled data. Show Answer Next Question
+* A. See Explanation section for answer.
+Answer: A
+Explanation: Explanation:Binary classification: Supervised learningBinary classification involves predicting one of two possible outcomes, requiring labeled training data.Multi-class classification: Supervised lea...
+
+---
+
+Q#: 136 (from pg18.html)
+Which option is a characteristic of AI governance frameworks for building trust and deploying human-centered AI technologies? Expanding initiatives across business units to create long-term business valueEnsuring alignment with business standards, revenue goals, and stakeholder expectationsOvercoming challenges to drive business transformation and growthDeveloping policies and guidelines for data, transparency, responsible AI, and compliance Answer(s): D Explanation:AI governance frameworks focus on building trust and ensuring the responsible deployment of AI technologies.They establish clear policies and guidelines to address critical aspects such as data management, transparency, ethical considerations, responsible AI practices, and regulatory compliance. These frameworks help organizations mitigate risks, promote fairness, and foster public trust in AI systems, making them essential for creating human-centered AI technologies. Show Answer Next Question
+  A. Expanding initiatives across business units to create long-term business valueEnsuring alignment with business standards, revenue goals, and stakeholder expectationsOvercoming challenges to drive business transformation and growthDeveloping policies and guidelines for data, transparency, responsible AI, and compliance
+  B. Ensuring alignment with business standards, revenue goals, and stakeholder expectationsOvercoming challenges to drive business transformation and growthDeveloping policies and guidelines for data, transparency, responsible AI, and compliance
+  C. Overcoming challenges to drive business transformation and growthDeveloping policies and guidelines for data, transparency, responsible AI, and compliance
+* D. Developing policies and guidelines for data, transparency, responsible AI, and compliance
+Answer: D
+Explanation: Explanation:AI governance frameworks focus on building trust and ensuring the responsible deployment of AI technologies.They establish clear policies and guidelines to address critical aspects such as...
+
+---
+
+Q#: 137 (from pg19.html)
+An ecommerce company is using a generative AI chatbot to respond to customer inquiries. The company wants to measure the financial effect of the chatbot on the company's operations. Which metric should the company use? Number of customer inquiries handledCost of training AI modelsCost for each customer conversationAverage handled time (AHT) Answer(s): C Explanation:To measure the financial effect of a generative AI chatbot on the company's operations, the cost for each customer conversation is the most relevant metric. It directly quantifies the operational expense associated with using the chatbot to handle customer inquiries. By analyzing this metric, the company can evaluate how much it spends per conversation and compare it to the cost of alternative methods (e.g., human agents), providing insight into the chatbot's financial efficiency and ROI. Show Answer Next Question
+  A. Number of customer inquiries handledCost of training AI modelsCost for each customer conversationAverage handled time (AHT)
+  B. Cost of training AI modelsCost for each customer conversationAverage handled time (AHT)
+* C. Cost for each customer conversationAverage handled time (AHT)
+  D. Average handled time (AHT)
+Answer: C
+Explanation: Explanation:To measure the financial effect of a generative AI chatbot on the company's operations, the cost for each customer conversation is the most relevant metric. It directly quantifies the oper...
+
+---
+
+Q#: 138 (from pg19.html)
+A company wants to find groups for its customers based on the customers' demographics and buying patterns. Which algorithm should the company use to meet this requirement? K-nearest neighbors (k-NN)K-meansDecision treeSupport vector machine Answer(s): B Explanation:K-means is a clustering algorithm used in unsupervised learning to group data points into clusters based on their similarities. It is well-suited for finding patterns in customer demographics and buying behavior. The algorithm identifies groups (clusters) of customers with similar characteristics, which can then be used for targeted marketing, personalized recommendations, or segmentation. Show Answer Next Question
+  A. K-nearest neighbors (k-NN)K-meansDecision treeSupport vector machine
+* B. K-meansDecision treeSupport vector machine
+  C. Decision treeSupport vector machine
+  D. Support vector machine
+Answer: B
+Explanation: Explanation:K-means is a clustering algorithm used in unsupervised learning to group data points into clusters based on their similarities. It is well-suited for finding patterns in customer demograph...
+
+---
+
+Q#: 139 (from pg19.html)
+A company's large language model (LLM) is experiencing hallucinations. How can the company decrease hallucinations? Set up Agents for Amazon Bedrock to supervise the model training.Use data pre-processing and remove any data that causes hallucinations.Decrease the temperature inference parameter for the model.Use a foundation model (FM) that is trained to not hallucinate. Answer(s): C Explanation:In the context of large language models (LLMs), the temperature inference parameter controls the randomness of the model's output. Lowering the temperature reduces randomness and makes the model's responses more deterministic and focused on the most likely predictions. By decreasing the temperature, the likelihood of hallucinations (when the model generates incorrect or nonsensical information) is reduced, as the model relies more on high-probability outputs rather than exploring less likely possibilities. Show Answer Next Question
+  A. Set up Agents for Amazon Bedrock to supervise the model training.Use data pre-processing and remove any data that causes hallucinations.Decrease the temperature inference parameter for the model.Use a foundation model (FM) that is trained to not hallucinate.
+  B. Use data pre-processing and remove any data that causes hallucinations.Decrease the temperature inference parameter for the model.Use a foundation model (FM) that is trained to not hallucinate.
+* C. Decrease the temperature inference parameter for the model.Use a foundation model (FM) that is trained to not hallucinate.
+  D. Use a foundation model (FM) that is trained to not hallucinate.
+Answer: C
+Explanation: Explanation:In the context of large language models (LLMs), the temperature inference parameter controls the randomness of the model's output. Lowering the temperature reduces randomness and makes the...
+
+---
+
+Q#: 140 (from pg19.html)
+A company is using a large language model (LLM) on Amazon Bedrock to build a chatbot. The chatbot processes customer support requests. To resolve a request, the customer and the chatbot must interact a few times. Which solution gives the LLM the ability to use content from previous customer messages? Turn on model invocation logging to collect messages.Add messages to the model prompt.Use Amazon Personalize to save conversation history.Use Provisioned Throughput for the LLM. Answer(s): B Explanation:To give a large language model (LLM) the ability to use content from previous customer messages in a conversation, the previous messages must be included in the model prompt. This technique is known as prompt engineering and allows the LLM to retain context by incorporating a history of the interaction within the prompt. By appending prior exchanges to the prompt, the model can generate contextually relevant and coherent responses throughout the multi-turn conversation. Show Answer Next Question
+  A. Turn on model invocation logging to collect messages.Add messages to the model prompt.Use Amazon Personalize to save conversation history.Use Provisioned Throughput for the LLM.
+* B. Add messages to the model prompt.Use Amazon Personalize to save conversation history.Use Provisioned Throughput for the LLM.
+  C. Use Amazon Personalize to save conversation history.Use Provisioned Throughput for the LLM.
+  D. Use Provisioned Throughput for the LLM.
+Answer: B
+Explanation: Explanation:To give a large language model (LLM) the ability to use content from previous customer messages in a conversation, the previous messages must be included in the model prompt. This techniqu...
+
+---
+
+Q#: 141 (from pg19.html)
+A company's employees provide product descriptions and recommendations to customers when customers call the customer service center. These recommendations are based on where the customers are located. The company wants to use foundation models (FMs) to automate this process. Which AWS service meets these requirements? Amazon MacieAmazon TranscribeAmazon BedrockAmazon Textract Answer(s): C Explanation:Amazon Bedrock enables companies to use foundation models (FMs) to build and automate tasks like generating product descriptions and recommendations. It allows the integration of pre-trained FMs into applications without managing infrastructure, making it an ideal choice for automating customer service tasks.With Amazon Bedrock, the company can leverage FMs to generate tailored recommendations based on customer locations, enabling dynamic and efficient customer interactions. Show Answer Next Question
+  A. Amazon MacieAmazon TranscribeAmazon BedrockAmazon Textract
+  B. Amazon TranscribeAmazon BedrockAmazon Textract
+* C. Amazon BedrockAmazon Textract
+  D. Amazon Textract
+Answer: C
+Explanation: Explanation:Amazon Bedrock enables companies to use foundation models (FMs) to build and automate tasks like generating product descriptions and recommendations. It allows the integration of pre-train...
+
+---
+
+Q#: 142 (from pg19.html)
+A company wants to upload customer service email messages to Amazon S3 to develop a business analysis application. The messages sometimes contain sensitive data. The company wants to receive an alert every time sensitive information is found. Which solution fully automates the sensitive information detection process with the LEAST development effort? Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3.Use Amazon SageMaker endpoints to deploy a large language model (LLM) to redact sensitive data.Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook.Ask the customers to avoid sharing sensitive information in their email messages. Answer(s): A Explanation:Amazon Macie is a fully managed data security and privacy service that uses machine learning to discover and protect sensitive data in Amazon S3. It can automatically detect sensitive information, such as personally identifiable information (PII) or financial data, and send alerts when such data is found. This approach minimizes development effort, as it does not require custom regex patterns or model development, and it is specifically designed to handle the scenario described. Show Answer Next Question
+* A. Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3.Use Amazon SageMaker endpoints to deploy a large language model (LLM) to redact sensitive data.Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook.Ask the customers to avoid sharing sensitive information in their email messages.
+  B. Use Amazon SageMaker endpoints to deploy a large language model (LLM) to redact sensitive data.Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook.Ask the customers to avoid sharing sensitive information in their email messages.
+  C. Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook.Ask the customers to avoid sharing sensitive information in their email messages.
+  D. Ask the customers to avoid sharing sensitive information in their email messages.
+Answer: A
+Explanation: Explanation:Amazon Macie is a fully managed data security and privacy service that uses machine learning to discover and protect sensitive data in Amazon S3. It can automatically detect sensitive info...
+
+---
+
+Q#: 143 (from pg19.html)
+HOTSPOT (Drag and Drop is not supported) A company is training its employees on how to structure prompts for foundation models. Select the correct prompt engineering technique from the following list for each prompt template. Each prompt engineering technique should be selected one time. Hot Area: See Explanation section for answer. Answer(s): A Explanation:"Classify the following text as either sports, politics, or entertainment: [input text]."Correct Answers: Zero-shot learningZero-shot learning involves providing the model with a task and no prior examples, relying entirely on the model's pre-trained knowledge to perform the classification."A [image 1], [image 2], and [image 3] are examples of [target class]. Classify the following image as [target class]."Correct Answers: Few-shot learningFew-shot learning provides the model with a few examples (image 1, image 2, and image 3) before asking it to classify a new instance, helping it generalize to the task with minimal examples."[Question.] [Instructions to follow.] Think step by step and walk me through your thinking."Correct Answers: Chain-of-thought reasoningChain-of-thought reasoning encourages the model to break down its reasoning process step by step, enhancing its ability to solve complex tasks logically. Show Answer Next Question
+* A. See Explanation section for answer.
+Answer: A
+Explanation: Explanation:"Classify the following text as either sports, politics, or entertainment: [input text]."Correct Answers: Zero-shot learningZero-shot learning involves providing the model with a task and ...
+
+---
+
+Q#: 144 (from pg19.html)
+HOTSPOT (Drag and Drop is not supported) A company is using a generative AI model to develop a digital assistant. The model's responses occasionally include undesirable and potentially harmful content. Select the correct Amazon Bedrock filter policy from the following list for each mitigation action. Each filter policy should be selected one time. Hot Area: See Explanation section for answer. Answer(s): A Explanation:Block input prompts or model responses that contain harmful content such as hate, insults, violence, or misconduct - Content filtersAvoid subjects related to illegal investment advice or legal advice - Denied topics Detect and block specific offensive terms - Word filtersDetect and filter out information in the model's responses that is not grounded in the provided source information - Contextual grounding check Show Answer Next Question
+* A. See Explanation section for answer.
+Answer: A
+Explanation: Explanation:Block input prompts or model responses that contain harmful content such as hate, insults, violence, or misconduct - Content filtersAvoid subjects related to illegal investment advice or l...
+
+---
+
+Q#: 153 (from pg21.html)
+A company is deploying AI/ML models by using AWS services. The company wants to offer transparency into the models' decision-making processes and provide explanations for the model outputs. Which AWS service or feature meets these requirements? Amazon SageMaker Model CardsAmazon RekognitionAmazon ComprehendAmazon Lex Answer(s): A Explanation:Amazon SageMaker Model Cards help provide transparency into AI/ML models by documenting key details such as model purpose, training data, performance metrics, and limitations. This documentation enables organizations to explain model outputs and decision-making processes, ensuring accountability and compliance with responsible AI principles. Show Answer Next Question
+* A. Amazon SageMaker Model CardsAmazon RekognitionAmazon ComprehendAmazon Lex
+  B. Amazon RekognitionAmazon ComprehendAmazon Lex
+  C. Amazon ComprehendAmazon Lex
+  D. Amazon Lex
+Answer: A
+Explanation: Explanation:Amazon SageMaker Model Cards help provide transparency into AI/ML models by documenting key details such as model purpose, training data, performance metrics, and limitations. This documen...
+
+---
+
+Q#: 154 (from pg21.html)
+A manufacturing company wants to create product descriptions in multiple languages. Which AWS service will automate this task? Amazon TranslateAmazon TranscribeAmazon KendraAmazon Polly Answer(s): A Explanation:Amazon Translate is an AWS service that automates language translation using neural machine translation (NMT). It enables businesses to generate product descriptions in multiple languages quickly and accurately, making it the best choice for this task. Show Answer Next Question
+* A. Amazon TranslateAmazon TranscribeAmazon KendraAmazon Polly
+  B. Amazon TranscribeAmazon KendraAmazon Polly
+  C. Amazon KendraAmazon Polly
+  D. Amazon Polly
+Answer: A
+Explanation: Explanation:Amazon Translate is an AWS service that automates language translation using neural machine translation (NMT). It enables businesses to generate product descriptions in multiple languages ...
+
+---
+
+Q#: 155 (from pg21.html)
+HOTSPOT (Drag and Drop is not supported) A company wants more customized responses to its generative AI models' prompts. Select the correct customization methodology from the following list for each use case. Each use case should be selected one time. Hot Area: See Explanation section for answer. Answer(s): A Explanation:The models must be taught a new domain-specific task - Model fine-tuning Fine-tuning is the best approach when a model needs to learn a specific domain-related task. It involves adjusting a pre-trained model with a smaller, task-specific dataset to improve performance in that domain.A limited amount of labeled data is available and more data is needed - Data augmentation Data augmentation helps in scenarios where labeled data is scarce by artificially increasing the size and variability of the dataset, improving model generalization.Only unlabeled data is available - Continued pre-trainingContinued pre-training allows an existing foundation model to be further trained on domain-specific, unlabeled data to adapt to new contexts without requiring labeled data. Show Answer Next Question
+* A. See Explanation section for answer.
+Answer: A
+Explanation: Explanation:The models must be taught a new domain-specific task - Model fine-tuning Fine-tuning is the best approach when a model needs to learn a specific domain-related task. It involves adjusting ...
+
+---
+
+Q#: 156 (from pg21.html)
+Which AWS feature records details about ML instance data for governance and reporting? Amazon SageMaker Model CardsAmazon SageMaker DebuggerAmazon SageMaker Model MonitorAmazon SageMaker JumpStart Answer(s): A Explanation:Amazon SageMaker Model Cards record key details about machine learning models, including intended use, training data, evaluation metrics, and compliance information. They support governance and reporting by providing a standardized way to document model information throughout its lifecycle. Show Answer Next Question
+* A. Amazon SageMaker Model CardsAmazon SageMaker DebuggerAmazon SageMaker Model MonitorAmazon SageMaker JumpStart
+  B. Amazon SageMaker DebuggerAmazon SageMaker Model MonitorAmazon SageMaker JumpStart
+  C. Amazon SageMaker Model MonitorAmazon SageMaker JumpStart
+  D. Amazon SageMaker JumpStart
+Answer: A
+Explanation: Explanation:Amazon SageMaker Model Cards record key details about machine learning models, including intended use, training data, evaluation metrics, and compliance information. They support governanc...
+
+---
+
+Q#: 157 (from pg21.html)
+A financial company is using ML to help with some of the company's tasks. Which option is a use of generative AI models? Summarizing customer complaintsClassifying customers based on product usageSegmenting customers based on type of investmentsForecasting revenue for certain products Answer(s): A Explanation:Generative AI models are designed to generate new content such as text, images, or audio. Summarizing customer complaints involves generating concise versions of longer texts, which is a task well-suited for generative AI models like large language models. Show Answer Next Question
+* A. Summarizing customer complaintsClassifying customers based on product usageSegmenting customers based on type of investmentsForecasting revenue for certain products
+  B. Classifying customers based on product usageSegmenting customers based on type of investmentsForecasting revenue for certain products
+  C. Segmenting customers based on type of investmentsForecasting revenue for certain products
+  D. Forecasting revenue for certain products
+Answer: A
+Explanation: Explanation:Generative AI models are designed to generate new content such as text, images, or audio. Summarizing customer complaints involves generating concise versions of longer texts, which is a t...
+
+---
+
+Q#: 158 (from pg21.html)
+A medical company wants to develop an AI application that can access structured patient records, extract relevant information, and generate concise summaries. Which solution will meet these requirements? Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries. Answer(s): A Explanation:Amazon Comprehend Medical is specifically designed to extract structured medical information (such as medication, condition, test results) from unstructured text. By applying rule-based logic afterward, relevant data can be formatted into concise summaries, meeting both the extraction and summarization needs. Show Answer Next Question
+* A. Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.
+  B. Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.
+  C. Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.
+  D. Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.
+Answer: A
+Explanation: Explanation:Amazon Comprehend Medical is specifically designed to extract structured medical information (such as medication, condition, test results) from unstructured text. By applying rule-based lo...
+
+---
+
+Q#: 159 (from pg21.html)
+Which option describes embeddings in the context of AI? A method for compressing large datasetsAn encryption method for securing sensitive dataA method for visualizing high-dimensional dataA numerical method for data representation in a reduced dimensionality space Answer(s): D Explanation:Embeddings are numerical representations of data, such as words, images, or items, in a lower-dimensional vector space. They capture semantic relationships and patterns in the data, enabling models to process and compare inputs efficiently. Show Answer Next Question
+  A. A method for compressing large datasetsAn encryption method for securing sensitive dataA method for visualizing high-dimensional dataA numerical method for data representation in a reduced dimensionality space
+  B. An encryption method for securing sensitive dataA method for visualizing high-dimensional dataA numerical method for data representation in a reduced dimensionality space
+  C. A method for visualizing high-dimensional dataA numerical method for data representation in a reduced dimensionality space
+* D. A numerical method for data representation in a reduced dimensionality space
+Answer: D
+Explanation: Explanation:Embeddings are numerical representations of data, such as words, images, or items, in a lower-dimensional vector space. They capture semantic relationships and patterns in the data, enabli...
+
+---
+
+Q#: 160 (from pg21.html)
+A company is building an AI application to summarize books of varying lengths. During testing, the application fails to summarize some books. Why does the application fail to summarize some books? The temperature is set too high.The selected model does not support fine-tuning.The Top P value is too high.The input tokens exceed the model's context size. Answer(s): D Explanation:Language models have a maximum context size, which limits the number of input tokens they can process at once. If a book's length exceeds this limit, the model cannot handle the full input, leading to failure in summarization. Show Answer Next Question
+  A. The temperature is set too high.The selected model does not support fine-tuning.The Top P value is too high.The input tokens exceed the model's context size.
+  B. The selected model does not support fine-tuning.The Top P value is too high.The input tokens exceed the model's context size.
+  C. The Top P value is too high.The input tokens exceed the model's context size.
+* D. The input tokens exceed the model's context size.
+Answer: D
+Explanation: Explanation:Language models have a maximum context size, which limits the number of input tokens they can process at once. If a book's length exceeds this limit, the model cannot handle the full input...
+
+---
+
