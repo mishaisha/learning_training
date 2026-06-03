@@ -1465,7 +1465,28 @@ const ALL_QUESTIONS = [
 {id:521,domain:"Fundamentals of AI and ML",difficulty:"MEDIUM",type:"mcq",question:"A company uses Amazon Bedrock for its generative AI application. The company wants to use Amazon Bedrock Guardrails to detect and filter harmful user inputs and model-generated outputs. Which content categories can the guardrails filter?",options:["Politics", "Violence", "Gambling", "Religion"],answer:1,explanation:"Amazon Bedrock Guardrails can filter content in the following categories: Hate, Insults, Sexual, Violence, Misconduct, and Prompt Attack. Among the given options, only Violence is a valid content filter category. Politics, Gambling, and Religion are not supported content filter categories in Amazon Bedrock Guardrails."},
 {id:522,domain:"Fundamentals of AI and ML",difficulty:"MEDIUM",type:"mcq",question:"Which scenario describes a potential risk and limitation of prompt engineering in the context of a generative AI model?",options:["Prompt engineering does not ensure that the model always produces consistent and deterministic outputs, eliminating the need for validation.", "Prompt engineering could expose the model to vulnerabilities such as prompt injection attacks.", "Properly designed prompts reduce but do not eliminate the risk of data poisoning or model hijacking.", "Prompt engineering does not ensure that the model will consistently generate highly reliable outputs when working with real-world data."],answer:3,explanation:""},
 {id:523,domain:"Fundamentals of AI and ML",difficulty:"MEDIUM",type:"mcq",question:"A publishing company built a Retrieval Augmented Generation (RAG) based solution to give its users the ability to interact with published content. New content is published daily. The company wants to provide a near real-time experience to users. Which steps in the RAG pipeline should the company implement by using offline batch processing to meet these requirements? (Choose two.) Generation of content embeddings",options:["Generation of embeddings for user queries", "Creation of the search index", "Retrieval of relevant content", "Response generation for the user"],answer:0,explanation:""},
-{id:524,domain:"Fundamentals of AI and ML",difficulty:"MEDIUM",type:"mcq",question:"Which technique breaks a complex task into smaller subtasks that are sent sequentially to a large language model (LLM)?",options:["One-shot prompting", "Prompt chaining", "Tree of thoughts", "Retrieval Augmented Generation (RAG)"],answer:1,explanation:""}
+{id:524,domain:"Fundamentals of AI and ML",difficulty:"MEDIUM",type:"mcq",question:"Which technique breaks a complex task into smaller subtasks that are sent sequentially to a large language model (LLM)?",options:["One-shot prompting", "Prompt chaining", "Tree of thoughts", "Retrieval Augmented Generation (RAG)"],answer:1,explanation:""},
+
+{id:525,domain:"Security, Compliance, and Governance for AI",difficulty:"HARD",type:"mcq",question:"An AI practitioner at a healthcare company trained a custom model on Amazon Bedrock using a dataset that included a mix of public records and confidential patient information. After deployment, the team realizes that the model occasionally surfaces details in its responses that appear to originate from the confidential portion of the training data. What is the correct course of action?",options:["Delete the custom model, remove all confidential data from the training dataset, and retrain the model from scratch using only the cleaned dataset.", "Apply dynamic data masking to the model's inference outputs so that confidential information is automatically hidden before responses reach end users.", "Encrypt all inference responses using Amazon SageMaker to prevent confidential data from being exposed.", "Encrypt the model weights that contain confidential data using AWS Key Management Service (AWS KMS) to secure the information inside the model."],answer:0,explanation:"You cannot selectively remove knowledge from a trained model without retraining it. When a model is trained on confidential data, those patterns are embedded into the model weights. The only reliable remediation is to delete the compromised model, remove the confidential data from the training set, and retrain from scratch. Dynamic data masking operates at the database layer, not the model layer. Encryption protects data at rest and in transit but does not alter what the model learned. KMS encryption secures the model artifact file but does not remove learned patterns from weights."},
+
+{id:526,domain:"Fundamentals of Generative AI",difficulty:"HARD",type:"mcq",question:"A startup is building a product recommendation engine that uses machine learning embeddings to find semantically similar items. When a user views a product, the system needs to instantly retrieve the most similar products from a catalog of 10 million items by comparing high-dimensional vector representations. Which Amazon OpenSearch Service capability directly enables this application?",options:["Native integration with Amazon S3 for storing raw product catalog data at scale.", "Built-in geospatial indexing and query support for location-aware product filtering.", "Scalable vector index management with approximate nearest neighbor (ANN) search capability.", "Real-time analysis of streaming data from user clickstream events."],answer:2,explanation:"Amazon OpenSearch Service supports vector search through its k-NN (k-Nearest Neighbor) plugin, which enables vector indexing at scale and uses Approximate Nearest Neighbor (ANN) algorithms to return highly accurate similarity results in milliseconds across millions of vectors. S3 integration provides storage but no search capability. Geospatial indexing operates in 2D geographic space, not high-dimensional vector space. Streaming analysis processes data streams but does not perform similarity search over a vector index."},
+
+{id:527,domain:"Applications of Foundation Models",difficulty:"HARD",type:"mcq",question:"A retail chain with 200 store locations wants to give its non-technical business analysts the ability to explore total sales data for their top 50 products over the past 12 months without writing SQL queries. The solution needs to automatically generate charts and graphs in response to plain-English questions. Which AWS solution should the company implement?",options:["Amazon Q in Amazon EC2.", "Amazon Q Developer.", "Amazon Q in Amazon QuickSight.", "Amazon Q in AWS Chatbot."],answer:2,explanation:"Amazon Q in Amazon QuickSight allows users to type natural language questions about their data and automatically generates visualizations like bar charts, trend lines, and comparison tables. Amazon Q Developer is an AI coding assistant for developers. Amazon Q in AWS Chatbot provides operational monitoring alerts via Slack or Teams. There is no Amazon Q in EC2 variant."},
+
+{id:528,domain:"Applications of Foundation Models",difficulty:"HARD",type:"mcq",question:"A children's education technology company is building an interactive storytelling application using Amazon Bedrock. The application allows children aged 6-12 to input prompts, and the model generates original story continuations. Leadership requires a guarantee that every generated story avoids violence, adult themes, and inappropriate language regardless of how a child phrases their input. Which Amazon Bedrock feature directly enforces these content boundaries in production?",options:["Amazon Rekognition configured to scan generated text for inappropriate content.", "Amazon Bedrock Playgrounds used to test and validate model outputs before deployment.", "Guardrails for Amazon Bedrock configured with topic restrictions and content filters.", "Agents for Amazon Bedrock programmed to intercept and rewrite inappropriate outputs."],answer:2,explanation:"Guardrails for Amazon Bedrock allows developers to configure topic restrictions, content filters for hate/sexual/violence/misconduct, word blocklists, and sensitive information redaction. These are enforced at the infrastructure level for every inference request. Amazon Rekognition analyzes images and videos, not text. Bedrock Playgrounds are a development tool, not a production enforcement mechanism. Agents orchestrate multi-step workflows, not content moderation."},
+
+{id:529,domain:"Applications of Foundation Models",difficulty:"HARD",type:"mcq",question:"A healthcare startup has finished training an image classification model that detects anomalies in medical scan images. They need to deploy the model so that a web application used by radiologists can submit scan images and receive predictions in real time. The engineering team has no infrastructure management capacity. Which deployment approach meets these requirements?",options:["Deploy the model using Amazon SageMaker Serverless Inference.", "Host the model on Amazon CloudFront edge locations for low-latency global distribution.", "Build a RESTful API using Amazon API Gateway that routes requests to the model.", "Run batch prediction jobs using AWS Batch to process incoming scan images."],answer:0,explanation:"Amazon SageMaker Serverless Inference provides fully managed, auto-scaling model hosting with no infrastructure management. It scales to zero when idle and handles real-time synchronous predictions. CloudFront is a CDN for static content, not model hosting. API Gateway manages APIs but cannot host or execute ML models. AWS Batch processes jobs asynchronously, not suitable for real-time inference."},
+
+{id:530,domain:"Fundamentals of AI and ML",difficulty:"HARD",type:"mcq",question:"A global e-commerce company has accumulated petabytes of customer transaction data collected over five years. None of the data has been manually labeled or categorized. The marketing team wants to group customers into distinct tiers based on natural patterns in their behavior. Which machine learning methodology is appropriate?",options:["Supervised learning, which trains a model on labeled input-output pairs.", "Unsupervised learning, which identifies hidden patterns and natural groupings in unlabeled data.", "Reinforcement learning, which trains an agent to maximize a reward signal through trial and error.", "Reinforcement learning from human feedback (RLHF), which uses human preferences to align model behavior."],answer:1,explanation:"The data is unlabeled and the goal is to discover natural groupings, which are the textbook characteristics of unsupervised learning. Clustering algorithms like K-Means, Hierarchical Clustering, or DBSCAN identify distinct customer segments from unlabeled transaction data. Supervised learning requires labeled data with known outcomes. Reinforcement learning involves sequential decision-making with reward signals. RLHF aligns LLM behavior with human preferences, not customer segmentation."},
+
+{id:531,domain:"Fundamentals of AI and ML",difficulty:"HARD",type:"mcq",question:"A financial services company uses ML models to generate quarterly demand forecasts. The board of directors requires a transparency report that clearly explains how the model's input variables influence its predictions, understandable to non-technical stakeholders. What should the AI practitioner include in the report?",options:["The raw Python code used to train the model, including hyperparameter configurations.", "Partial Dependence Plots (PDPs) showing how each input feature affects the model's predicted output.", "A sample of the raw training dataset used to build the model.", "Model convergence tables showing loss and accuracy metrics across training epochs."],answer:1,explanation:"Partial Dependence Plots (PDPs) show visually how each input feature affects the model's prediction while holding all other features constant, making them understandable to non-technical stakeholders. Amazon SageMaker Clarify can automatically generate PDPs. Raw training code is not interpretable to board members. Training data samples show what the model was fed, not how it uses inputs. Convergence tables are internal development diagnostics, not explainability tools."},
+
+{id:532,domain:"Fundamentals of Generative AI",difficulty:"HARD",type:"mcq",question:"A digital marketing agency is evaluating whether to incorporate generative AI into its production workflow. Which of the following represents a genuine generative AI use case?",options:["Strengthening network perimeter security by training an intrusion detection system on historical attack patterns.", "Generating photorealistic product lifestyle images from text descriptions written by the creative team.", "Improving database query response times through intelligent index selection and query optimization.", "Predicting next quarter's revenue by training a regression model on three years of historical sales data."],answer:1,explanation:"Generative AI models create new content that did not exist before — text, images, audio, video, code, or other modalities. Generating photorealistic product images from text descriptions is a defining use case of text-to-image generative AI, achievable through models like Stability AI's Stable Diffusion or Amazon's Titan Image Generator on Amazon Bedrock. Intrusion detection is classification and anomaly detection (traditional ML). Database optimization is a database engineering problem. Revenue prediction is regression analysis (traditional ML)."},
+
+{id:533,domain:"Fundamentals of Generative AI",difficulty:"HARD",type:"mcq",question:"A SaaS company has integrated a large language model into its marketing platform. The content team notices a recurring problem: the model produces copy that reads confidently, uses specific-sounding statistics, and makes factual claims — but the statistics are fabricated and the factual claims are false. The model shows no uncertainty. Which AI failure mode does this describe?",options:["Data leakage — the model is exposing training data that it was not supposed to reproduce.", "Hallucination — the model generates plausible-sounding content that is factually incorrect or fabricated.", "Overfitting — the model has memorized training data so precisely that it cannot generalize to new inputs.", "Underfitting — the model is too simple to capture the complexity of the task."],answer:1,explanation:"Hallucination occurs when an LLM generates output that is confidently stated, plausible in form, but factually incorrect or fabricated. LLMs are optimized to produce text that sounds right, not text that is right. When a model does not know a specific fact, it generates the most plausible-sounding continuation rather than saying I don't know. Data leakage involves reproducing memorized training data verbatim. Overfitting causes poor generalization to new data. Underfitting produces incoherent or low-quality outputs."},
+
+{id:534,domain:"Guidelines for Responsible AI",difficulty:"HARD",type:"multi",question:"A financial institution is building a generative AI system that automatically calculates and offers personalized discount rates to loan applicants. The system will make decisions that directly affect applicants' financial outcomes. The legal and compliance team requires that the AI system minimizes the risk of discriminatory outcomes across demographic groups and can be audited and explained to regulators. Which TWO actions should the AI team prioritize?",options:["Proactively analyze the training dataset to detect and address imbalances, disparities, or underrepresentation across demographic groups.", "Schedule the model to retrain more frequently so that it continuously incorporates newer data.", "Continuously evaluate the deployed model's behavior across demographic groups and provide transparent reporting to compliance stakeholders.", "Apply ROUGE scoring to the model's outputs to verify accuracy and ensure 100% precision.", "Monitor and optimize the model's inference latency to ensure predictions are returned within acceptable time limits."],answer:[0,2],explanation:"Proactively analyzing training data for imbalances addresses fairness at the data level, the most effective intervention point against discriminatory outcomes. Amazon SageMaker Clarify provides pre-training bias detection for this purpose. Continuously evaluating model behavior across demographic groups ensures fairness over time as populations change and enables transparent reporting to regulators. SageMaker Clarify also supports post-deployment bias monitoring. Increasing retraining frequency does not address bias. ROUGE scoring evaluates summarization quality, not fairness. Inference latency is a performance metric, not a fairness metric."}
+
 ];
 
 const ROUNDS = 5;
@@ -1545,23 +1566,38 @@ function switchMode(mode) {
 }
 function initQuiz() {
   const qc = document.getElementById('quizContent');
-  qc.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:8px"><div class="iteration-selector" id="iterationSelector"></div><div style="display:flex;gap:8px;align-items:center"><span style="font-size:.8rem;color:var(--text2)">Pass: ' + PASS_SCORE + '%</span><button class="quiz-action-btn danger" style="padding:4px 12px;font-size:.75rem" onclick="resetAll()">Reset All</button></div></div>' +
+  qc.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:8px"><div class="iteration-selector" id="iterationSelector"></div><div style="display:flex;gap:8px;align-items:center"><button class="quiz-action-btn outline" id="viewResultsBtn" style="padding:4px 12px;font-size:.75rem" onclick="viewPastResults()">View Past Results</button><span style="font-size:.8rem;color:var(--text2)">Pass: ' + PASS_SCORE + '%</span><button class="quiz-action-btn danger" style="padding:4px 12px;font-size:.75rem" onclick="resetAll()">Reset All</button></div></div>' +
     '<div class="round-selector" id="roundSelector"></div><div id="quizArea"></div>';
   buildIterationSelector();
   buildRoundSelector();
   startIteration(0);
+  updateViewResultsBtn();
 }
 function buildIterationSelector() {
   const c = document.getElementById('iterationSelector');
   c.innerHTML = '<span class="iter-label">Iteration:</span>';
   for (let i = 0; i < ITERATIONS; i++) {
+    const s = JSON.parse(localStorage.getItem('aif_iter_' + i) || '{}');
+    const wrapper = document.createElement('span');
+    wrapper.style.display = 'inline-flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.gap = '2px';
     const b = document.createElement('button');
     b.className = 'iter-btn' + (i === currentIteration ? ' active' : '');
     b.textContent = (i + 1);
     b.onclick = () => startIteration(i);
-    const s = JSON.parse(localStorage.getItem('aif_iter_' + i) || '{}');
     if (s.complete) b.classList.add('completed');
-    c.appendChild(b);
+    wrapper.appendChild(b);
+    if (s.complete) {
+      const r = document.createElement('button');
+      r.className = 'iter-btn';
+      r.style.cssText = 'padding:2px 6px;font-size:.65rem;min-width:unset';
+      r.textContent = '\u{1F4CB}';
+      r.title = 'View Iteration ' + (i + 1) + ' Results';
+      r.onclick = (e) => { e.stopPropagation(); showIterationResultsFor(i); };
+      wrapper.appendChild(r);
+    }
+    c.appendChild(wrapper);
   }
 }
 function buildRoundSelector() {
@@ -1584,6 +1620,7 @@ function startIteration(iter) {
   document.querySelectorAll('.iter-btn').forEach((b, i) => b.classList.toggle('active', i === iter));
   buildRoundSelector();
   startRound(0);
+  updateViewResultsBtn();
 }
 function startRound(round) {
   currentRound = round;
@@ -1873,6 +1910,50 @@ function showIterationResults() {
     '<button class="quiz-action-btn warning" onclick="startNextIteration()">' + (currentIteration < ITERATIONS - 1 ? 'Start Iteration ' + (currentIteration + 2) : 'All Complete') + '</button></div></div>';
   area.innerHTML = html;
 }
+function updateViewResultsBtn() {
+  const btn = document.getElementById('viewResultsBtn');
+  if (!btn) return;
+  let hasResults = false;
+  for (let i = 0; i < ITERATIONS; i++) {
+    const s = JSON.parse(localStorage.getItem('aif_iter_' + i) || '{}');
+    if (s.complete) { hasResults = true; break; }
+  }
+  btn.style.display = hasResults ? '' : 'none';
+}
+function viewPastResults() {
+  const area = document.getElementById('quizArea');
+  let html = '<div class="results-card"><h2>Past Iteration Results</h2><div class="sub">Click an iteration to view its detailed results.</div>';
+  let anyComplete = false;
+  for (let i = 0; i < ITERATIONS; i++) {
+    const s = JSON.parse(localStorage.getItem('aif_iter_' + i) || '{}');
+    if (s.complete) {
+      anyComplete = true;
+      let total = 0, correct = 0;
+      for (let r = 0; r < ROUNDS; r++) {
+        const rs = JSON.parse(localStorage.getItem('aif_iter_' + i + '_round_' + r) || '{}');
+        if (rs.complete) { total += rs.total || 0; correct += rs.score || 0; }
+      }
+      const p = total > 0 ? Math.round(correct / total * 100) : 0;
+      const c = p >= PASS_SCORE ? 'var(--success)' : 'var(--error)';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;margin:6px 0;border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:.15s" onmouseover="this.style.background=\'#f0f4ff\'" onmouseout="this.style.background=\'var(--card)\'" onclick="showIterationResultsFor(' + i + ')">' +
+        '<span style="font-weight:600">Iteration ' + (i + 1) + '</span>' +
+        '<span style="color:' + c + ';font-weight:600">' + correct + '/' + total + ' (' + p + '%) ' + (p >= PASS_SCORE ? 'PASS' : 'FAIL') + '</span></div>';
+    }
+  }
+  if (!anyComplete) {
+    html += '<div class="sub" style="margin-top:12px">No completed iterations yet. Complete a full iteration to see results here.</div>';
+  }
+  html += '<div style="margin-top:16px"><button class="quiz-action-btn primary" onclick="startIteration(' + currentIteration + ')">Back to Quiz</button></div></div>';
+  area.innerHTML = html;
+  document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.iter-btn').forEach(b => b.classList.remove('active'));
+}
+function showIterationResultsFor(iter) {
+  const prevIteration = currentIteration;
+  currentIteration = iter;
+  showIterationResults();
+  currentIteration = prevIteration;
+}
 function showWrongAnswers(iter) {
   const area = document.getElementById('quizArea');
   const allAnswered = {};
@@ -1952,6 +2033,7 @@ function retakeIteration(iter) {
 }
 function startNextIteration() {
   if (currentIteration < ITERATIONS - 1) { startIteration(currentIteration + 1); return; }
+  updateViewResultsBtn();
   const area = document.getElementById('quizArea');
   let html = '<div class="results-card"><h2>All ' + ITERATIONS + ' Iterations Complete!</h2><div class="sub">You have completed ' + ITERATIONS + ' iterations of 5 rounds each (' + (ROUNDS * QUESTIONS_PER_ROUND * ITERATIONS) + ' questions total).</div>';
   let grandTotal = 0, grandCorrect = 0;
