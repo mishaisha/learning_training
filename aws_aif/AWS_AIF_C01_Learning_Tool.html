@@ -1769,13 +1769,11 @@ function moveOrderItem(qId, pos, dir) {
 }
 function selectOption(qId, optIdx, isMulti) {
   if (answeredQuestions[qId] && answeredQuestions[qId].correct !== undefined) return;
-  console.log('selectOption called', {qId, optIdx, isMulti, before: answeredQuestions[qId] ? JSON.parse(JSON.stringify(answeredQuestions[qId])) : null});
   if (isMulti) {
     if (!answeredQuestions[qId]) answeredQuestions[qId] = {selected:[]};
     const arr = answeredQuestions[qId].selected;
     const idx = arr.indexOf(optIdx);
     if (idx > -1) arr.splice(idx, 1); else arr.push(optIdx);
-    console.log('multi-select after:', JSON.parse(JSON.stringify(answeredQuestions[qId])));
     document.querySelectorAll('#opts-' + qId + ' .option').forEach((o, i) => {
       const sel = answeredQuestions[qId].selected;
       o.classList.toggle('selected', sel.indexOf(i) > -1);
@@ -1801,7 +1799,6 @@ function selectOption(qId, optIdx, isMulti) {
   if (pf) pf.style.width = progress + '%';
 }
 function submitRound(round) {
-  console.log('submitRound called', {round, currentIteration, answeredQuestions: JSON.parse(JSON.stringify(answeredQuestions))});
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
   const saved = JSON.parse(localStorage.getItem(key) || '{}');
   const questions = getQuestionsForRound(currentIteration * ROUNDS + round);
