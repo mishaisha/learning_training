@@ -1661,7 +1661,7 @@ function getQuestionsForRound(seed) {
 function renderQuiz(questions, round, saved) {
   const area = document.getElementById('quizArea');
   const allAnswered = questions.every(q => answeredQuestions[q.id] !== undefined);
-  const answeredCount = Object.keys(answeredQuestions).length;
+  const answeredCount = questions.filter(q => answeredQuestions[q.id] !== undefined).length;
   let html = '<div class="quiz-header">' +
     '<div class="stat"><div class="num">' + (currentIteration + 1) + '/' + ITERATIONS + '</div><div class="label">Iteration</div></div>' +
     '<div class="stat"><div class="num">' + (round + 1) + '/' + ROUNDS + '</div><div class="label">Round</div></div>' +
@@ -1814,7 +1814,7 @@ function submitRound(round) {
       ans.correct = JSON.stringify(sel) === JSON.stringify(q.answer);
       if (ans.correct) correctCount++;
     } else if (Array.isArray(q.answer)) {
-      const sel = (ans.selected || []).slice().sort();
+      const sel = Array.isArray(ans.selected) ? ans.selected.slice().sort() : [ans.selected].sort();
       const cor = [...q.answer].sort();
       ans.correct = JSON.stringify(sel) === JSON.stringify(cor);
       if (ans.correct) correctCount++;
