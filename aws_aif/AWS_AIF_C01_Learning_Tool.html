@@ -173,7 +173,7 @@ header .exam-badge{font-size:.7rem;background:var(--accent);color:var(--primary)
 </head>
 <body>
 <header>
-  <h1>AWS <span>AIF-C01</span> AI Practitioner <span class="exam-badge" id="questionCount"></span></h1>
+  <h1>AWS <span>AIF-C01</span> AI Practitioner <span class="exam-badge" id="questionCount"></span> <span style="font-size:.6rem;color:rgba(255,255,255,.5);font-weight:400" id="lastUpdated"></span></h1>
   <div class="mode-toggle">
     <button class="mode-btn active" onclick="switchMode('learn')" id="learnBtn">Learning</button>
     <button class="mode-btn" onclick="switchMode('quiz')" id="quizBtn">Quiz</button>
@@ -1508,6 +1508,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
+  document.getElementById('lastUpdated').textContent = 'Updated: Jun 3, 2026';
   buildNav();
   showSection(0);
   loadNotes();
