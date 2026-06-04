@@ -1508,7 +1508,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: Jun 3, 2026';
+  document.getElementById('lastUpdated').textContent = 'Updated: ' + new Date().toLocaleString();
   buildNav();
   showSection(0);
   loadNotes();
