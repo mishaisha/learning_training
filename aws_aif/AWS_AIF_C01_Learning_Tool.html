@@ -434,6 +434,17 @@ const CONTENT = [
 <div class="key-service"><h4>SageMaker Pipelines</h4><p>Automates end-to-end ML workflows (CI/CD for ML). Orchestrates data preparation, training, evaluation, and deployment steps.</p></div>
 <div class="key-service"><h4>DeepAR (Built-in Algorithm)</h4><p>Probabilistic time-series forecasting using recurrent neural networks. <em>Exam: "forecast electricity demand / time-series prediction" = DeepAR.</em></p></div>
 
+<h3>Model Cards vs Model Dashboard vs Model Monitor (Exam Common Trap)</h3>
+<p>These three SageMaker features serve different purposes across the model lifecycle. The exam frequently tests whether you can distinguish them.</p>
+<table>
+<tr><th>Feature</th><th>Purpose</th><th>When Used</th><th>What It Does</th><th>Mnemonic</th></tr>
+<tr><td><strong>Model Cards</strong></td><td>Documentation</td><td>Before/during deployment</td><td>Records intended use, risk rating, training data, evaluation metrics, limitations, ethical considerations for a <strong>single model</strong></td><td>"Birth certificate" for a model</td></tr>
+<tr><td><strong>Model Dashboard</strong></td><td>Visibility</td><td>Any time</td><td>Centralized view of <strong>ALL models</strong> across the organization. Shows status, versions, endpoints, and governance info in one place</td><td>"Control tower" for all models</td></tr>
+<tr><td><strong>Model Monitor</strong></td><td>Detection</td><td>After deployment (production)</td><td>Continuously monitors data quality, model quality, bias drift, and feature attribution drift. Alerts when metrics fall below thresholds</td><td>"Smoke detector" for model degradation</td></tr>
+</table>
+<p><strong>Key distinction:</strong> Model Cards = what the model IS (documentation). Model Dashboard = where all models ARE (visibility). Model Monitor = how the model IS DOING (detection). They complement each other across the lifecycle.</p>
+<p><em>Exam trap: Model Cards ≠ Model Monitor. Cards are static documentation; Monitor is active production monitoring. If the question asks about documenting a model for compliance, it's Model Cards. If it asks about detecting drift in production, it's Model Monitor. If it asks about seeing all models in one place, it's Model Dashboard.</em></p>
+
 <h3>Inference Types — SageMaker (Know the Differences)</h3>
 <table>
 <tr><th>Type</th><th>Payload Limit</th><th>Latency</th><th>Traffic Pattern</th><th>Cost Model</th><th>Best For</th></tr>
