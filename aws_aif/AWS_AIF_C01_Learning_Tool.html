@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:26:49 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:34:38 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2284,7 +2284,7 @@ function moveOrderItem(qId, pos, dir) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = currentIteration === 999 ? _catchUpRounds[currentRound] : getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   renderQuiz(questions, currentRound, saved);
 }
 function selectOption(qId, optIdx, isMulti) {
@@ -2311,7 +2311,7 @@ function selectOption(qId, optIdx, isMulti) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = currentIteration === 999 ? _catchUpRounds[currentRound] : getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   const btn = document.getElementById('submitBtn');
   if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined);
   const progress = Object.keys(answeredQuestions).length / questions.length * 100;
@@ -2327,7 +2327,7 @@ function selectMatch(qId, leftIdx, rightVal) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = currentIteration === 999 ? _catchUpRounds[currentRound] : getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   const btn = document.getElementById('submitBtn');
   if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined && (q.type !== 'match' || !answeredQuestions[q.id].selected.includes(-1)));
 }
@@ -2405,6 +2405,7 @@ function renderResultSummary(res) {
     '<div style="font-size:.85rem;margin-top:4px;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + ';font-weight:600">' + (res.pct >= PASS_SCORE ? 'PASS' : 'FAIL') + '</div></div>';
 }
 function updateIterationProgress() {
+  if (currentIteration === 999) return;
   let total = 0, correct = 0;
   for (let r = 0; r < ROUNDS; r++) {
     const rs = JSON.parse(localStorage.getItem('aif_iter_' + currentIteration + '_round_' + r) || '{}');
