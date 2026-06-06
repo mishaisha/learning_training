@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:55:00 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:00:35 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2063,18 +2063,20 @@ function startIteration(iter) {
   startRound(0);
   updateViewResultsBtn();
 }
+let _currentQuestions = [];
 function startRound(round) {
   currentRound = round;
   document.querySelectorAll('.round-btn').forEach((b, i) => b.classList.toggle('active', i === round));
   const seed = currentIteration * ROUNDS + round;
   const questions = getQuestionsForRound(seed);
+  _currentQuestions = questions;
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
   const saved = JSON.parse(localStorage.getItem(key) || '{}');
   if (!saved.answers) saved.answers = {};
   if (saved.complete && saved.submitted) { /* ok */ }
   answeredQuestions = saved.answers || {};
   renderQuiz(questions, round, saved);
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  setTimeout(function() { document.querySelector('.main').scrollTop = 0; }, 50);
 }
 function xorshift(seed) {
   let s = seed || 1;
@@ -2242,7 +2244,7 @@ function moveOrderItem(qId, pos, dir) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = _currentQuestions || getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   renderQuiz(questions, currentRound, saved);
 }
 function selectOption(qId, optIdx, isMulti) {
@@ -2269,7 +2271,7 @@ function selectOption(qId, optIdx, isMulti) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = _currentQuestions || getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   const btn = document.getElementById('submitBtn');
   if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined);
   const progress = Object.keys(answeredQuestions).length / questions.length * 100;
@@ -2285,7 +2287,7 @@ function selectMatch(qId, leftIdx, rightVal) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = _currentQuestions || getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   const btn = document.getElementById('submitBtn');
   if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined && (q.type !== 'match' || !answeredQuestions[q.id].selected.includes(-1)));
 }
