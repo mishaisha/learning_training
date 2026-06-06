@@ -2307,9 +2307,7 @@ function submitRound(round) {
   renderQuiz(questions, round, saved);
   updateIterationProgress();
   setTimeout(function() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    window.scrollTo(0, 0);
+    document.querySelector('.main').scrollTop = 0;
   }, 50);
   const allDone = Array.from(document.querySelectorAll('.round-btn')).every(b => b.classList.contains('completed'));
   if (allDone) {
