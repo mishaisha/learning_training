@@ -2073,10 +2073,6 @@ function startRound(round) {
   renderQuiz(questions, round, saved);
 }
 function getQuestionsForRound(seed) {
-  // TEMPORARY: iteration 9 (index 8), round 0 shows match questions for preview
-  if (seed === 8 * 5) {
-    return ALL_QUESTIONS.filter(q => q.type === 'match');
-  }
   const shuffled = [...ALL_QUESTIONS];
   let s = (seed * 2654435761) >>> 0;
   for (let i = shuffled.length - 1; i > 0; i--) {
