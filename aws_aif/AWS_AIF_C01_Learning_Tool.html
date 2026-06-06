@@ -2071,6 +2071,7 @@ function startRound(round) {
   if (saved.complete && saved.submitted) { /* ok */ }
   answeredQuestions = saved.answers || {};
   renderQuiz(questions, round, saved);
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 function getQuestionsForRound(seed) {
   const shuffled = [...ALL_QUESTIONS];
@@ -2302,8 +2303,20 @@ function submitRound(round) {
   document.querySelectorAll('.round-btn').forEach((b, i) => { if (i === round) b.classList.add('completed'); });
   renderQuiz(questions, round, saved);
   updateIterationProgress();
+  window.scrollTo({top: 0, behavior: 'smooth'});
   const allDone = Array.from(document.querySelectorAll('.round-btn')).every(b => b.classList.contains('completed'));
-  if (allDone) showIterationResults();
+  if (allDone) {
+    setTimeout(function() {
+      const area = document.getElementById('quizArea');
+      const iterScore = document.querySelector('.results-summary');
+      if (iterScore) {
+        const btn = document.createElement('div');
+        btn.style.cssText = 'text-align:center;margin-top:12px';
+        btn.innerHTML = '<button class="quiz-action-btn primary" onclick="showIterationResults()">View Iteration ' + (currentIteration + 1) + ' Full Results</button>';
+        iterScore.parentNode.insertBefore(btn, iterScore.nextSibling);
+      }
+    }, 100);
+  }
 }
 function retakeRound(round) {
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
