@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:01:41 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:10:25 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2363,7 +2363,7 @@ function getRoundResults(iter, round) {
 function renderResultSummary(res) {
   if (!res) return '';
   const pcls = res.pct >= PASS_SCORE ? 'pass' : 'fail';
-  return '<div style="margin-top:16px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-align:center">' +
+  return '<div class="results-summary" style="margin-top:16px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-align:center">' +
     '<div style="font-size:.85rem;color:var(--text2)">Round Score</div>' +
     '<div style="font-size:2rem;font-weight:700;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + '">' + res.score + '/' + res.total + ' (' + res.pct + '%)</div>' +
     '<div style="font-size:.85rem;margin-top:4px;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + ';font-weight:600">' + (res.pct >= PASS_SCORE ? 'PASS' : 'FAIL') + '</div></div>';
