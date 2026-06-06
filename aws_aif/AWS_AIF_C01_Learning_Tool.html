@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:00:35 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:01:41 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2294,7 +2294,7 @@ function selectMatch(qId, leftIdx, rightVal) {
 function submitRound(round) {
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
   const saved = JSON.parse(localStorage.getItem(key) || '{}');
-  const questions = getQuestionsForRound(currentIteration * ROUNDS + round);
+  const questions = _currentQuestions;
   let correctCount = 0;
   questions.forEach(q => {
     const ans = answeredQuestions[q.id];
