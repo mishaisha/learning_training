@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:10:25 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:11:02 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2124,7 +2124,7 @@ function renderQuiz(questions, round, saved) {
     '<div class="quiz-progress"><div class="fill" style="width:' + (answeredCount / questions.length * 100) + '%"></div></div></div>';
   if (saved.complete && saved.submitted) {
     const res = getRoundResults(currentIteration, round);
-    html += renderResultSummary(res);
+    html += renderResultSummary(res, questions, answeredQuestions);
   }
   questions.forEach((q, qi) => {
     const isMulti = Array.isArray(q.answer);
@@ -2360,13 +2360,38 @@ function getRoundResults(iter, round) {
   if (!saved.complete) return null;
   return { score: saved.score, total: saved.total, pct: Math.round(saved.score / saved.total * 100) };
 }
-function renderResultSummary(res) {
+function renderResultSummary(res, questions, answeredQuestions) {
   if (!res) return '';
   const pcls = res.pct >= PASS_SCORE ? 'pass' : 'fail';
-  return '<div class="results-summary" style="margin-top:16px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-align:center">' +
-    '<div style="font-size:.85rem;color:var(--text2)">Round Score</div>' +
+  const domainScores = {};
+  if (questions) {
+    questions.forEach(q => {
+      const ans = answeredQuestions[q.id];
+      if (!ans) return;
+      const d = DOMAIN_ALIASES[q.domain] || q.domain;
+      if (!domainScores[d]) domainScores[d] = {correct:0,total:0};
+      domainScores[d].total++;
+      if (ans.correct) domainScores[d].correct++;
+    });
+  }
+  let html = '<div class="results-summary" style="margin-top:16px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px">' +
+    '<div style="text-align:center;margin-bottom:12px"><div style="font-size:.85rem;color:var(--text2)">Round Score</div>' +
     '<div style="font-size:2rem;font-weight:700;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + '">' + res.score + '/' + res.total + ' (' + res.pct + '%)</div>' +
-    '<div style="font-size:.85rem;margin-top:4px;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + ';font-weight:600">' + (res.pct >= PASS_SCORE ? 'PASS' : 'FAIL') + '</div></div>';
+    '<div style="font-size:.85rem;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + ';font-weight:600">' + (res.pct >= PASS_SCORE ? 'PASS' : 'FAIL') + '</div></div>';
+  if (Object.keys(domainScores).length > 0) {
+    html += '<div class="domain-breakdown"><h4>Domain Performance</h4>';
+    DOMAINS.forEach(d => {
+      const ds = domainScores[d.short] || domainScores[d.name] || {correct:0,total:0};
+      const dpct = ds.total > 0 ? Math.round(ds.correct/ds.total*100) : 0;
+      const color = dpct >= 80 ? '#2ecc71' : dpct >= 60 ? '#f39c12' : '#e74c3c';
+      html += '<div class="domain-row"><span>' + d.short + '</span>' +
+        '<div class="bar-container"><div class="bar-fill" style="width:' + dpct + '%;background:' + color + '"></div></div>' +
+        '<span class="score" style="color:' + color + '">' + ds.correct + '/' + ds.total + ' (' + dpct + '%)</span></div>';
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
 }
 function updateIterationProgress() {
   let total = 0, correct = 0;
@@ -2546,7 +2571,12 @@ function showWrongAnswers(iter) {
   area.innerHTML = html;
 }
 function retakeIteration(iter) {
-  for (let r = 0; r < ROUNDS; r++) localStorage.removeItem('aif_iter_' + iter + '_round_' + r);
+  for (let r = 0; r < ROUNDS; r++) {
+    const k = 'aif_iter_' + iter + '_round_' + r;
+    const old = JSON.parse(localStorage.getItem(k) || '{}');
+    if (old.answers) localStorage.setItem(k + '_seen', JSON.stringify(old.answers));
+    localStorage.removeItem(k);
+  }
   localStorage.removeItem('aif_iter_' + iter);
   startIteration(iter);
 }
