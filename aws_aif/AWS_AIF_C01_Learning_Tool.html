@@ -2119,9 +2119,9 @@ function renderQuiz(questions, round, saved) {
       '<div class="q-domain">' + q.domain + '</div>' +
       '<div class="q-num">Question ' + (qi + 1) + ' of ' + questions.length + ' <span class="q-difficulty ' + diffClass + '">' + q.difficulty + '</span></div>' +
       '<div class="q-text">' + q.question.replace(/\n/g, '<br>') + '</div>' +
-      (isMulti ? '<div class="q-instruction">(Select TWO.)</div>' : '') +
+      (q.type === 'match' ? '<div class="q-instruction">(Match each item on the left with the best option on the right.)</div>' : (isMulti ? '<div class="q-instruction">(Select TWO.)</div>' : '')) +
       (q.type === 'order' ? '<div class="q-instruction">(Order the steps. Use arrows to reorder.)</div>' : '') +
-      (q.type === 'match' ? '<div class="q-instruction">(Match each item on the left with the best option on the right.)</div>' : '');
+      (q.type === 'match' ? '' : '');
     if (q.type === 'order') {
       const order = selected || q.options.map((_, i) => i);
       html += '<div class="order-options" id="opts-' + q.id + '">';
@@ -2191,7 +2191,7 @@ function renderQuiz(questions, round, saved) {
       });
       html += '</div>';
     }
-    if (submitted) {
+    if (submitted && q.type !== 'match') {
       const ansTxt = isMulti ? q.answer.map(i => optLabels[i]).join(', ') : optLabels[q.answer] + '. ' + q.options[q.answer];
       html += '<div class="feedback show ' + (isCorrect ? 'correct' : 'wrong') + '">' +
         '<div class="ans">' + (isCorrect ? 'Correct!' : 'Incorrect') + '</div>' +
