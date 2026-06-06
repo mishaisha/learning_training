@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:46:59 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:48:19 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2102,25 +2102,24 @@ function shuffle(arr, rng) {
   }
   return arr;
 }
-let _seenGlobal = getSeenQuestionIds();
 function getQuestionsForRound(seed) {
-  const unseen = ALL_QUESTIONS.filter(q => !_seenGlobal.has(q.id));
-  if (unseen.length > 0 && unseen.length < QUESTIONS_PER_ROUND) {
-    const remaining = QUESTIONS_PER_ROUND - unseen.length;
-    const seenQs = ALL_QUESTIONS.filter(q => _seenGlobal.has(q.id));
-    const rng = xorshift(seed * 2654435761);
-    shuffle(seenQs, rng);
-    const result = [...unseen, ...seenQs.slice(0, remaining)];
-    result.forEach(q => _seenGlobal.add(q.id));
-    return result;
+  const seen = new Set();
+  for (let i = 0; i < ITERATIONS; i++) {
+    for (let r = 0; r < ROUNDS; r++) {
+      const s = JSON.parse(localStorage.getItem('aif_iter_' + i + '_round_' + r) || '{}');
+      if (s.answers) Object.keys(s.answers).forEach(id => seen.add(Number(id)));
+    }
   }
-  const pool = unseen.length >= QUESTIONS_PER_ROUND ? unseen : ALL_QUESTIONS;
-  const shuffled = [...pool];
+  const unseen = ALL_QUESTIONS.filter(q => !seen.has(q.id));
   const rng = xorshift(seed * 2654435761);
-  shuffle(shuffled, rng);
-  const result = shuffled.slice(0, QUESTIONS_PER_ROUND);
-  result.forEach(q => _seenGlobal.add(q.id));
-  return result;
+  if (unseen.length >= QUESTIONS_PER_ROUND) {
+    const shuffled = [...unseen];
+    shuffle(shuffled, rng);
+    return shuffled.slice(0, QUESTIONS_PER_ROUND);
+  }
+  const seenQs = ALL_QUESTIONS.filter(q => seen.has(q.id));
+  shuffle(seenQs, rng);
+  return [...unseen, ...seenQs.slice(0, QUESTIONS_PER_ROUND - unseen.length)];
 }
 function renderQuiz(questions, round, saved) {
   const area = document.getElementById('quizArea');
