@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:48:19 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:55:00 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2076,20 +2076,8 @@ function startRound(round) {
   renderQuiz(questions, round, saved);
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
-function getSeenQuestionIds() {
-  const seen = new Set();
-  for (let i = 0; i < ITERATIONS; i++) {
-    for (let r = 0; r < ROUNDS; r++) {
-      const saved = JSON.parse(localStorage.getItem('aif_iter_' + i + '_round_' + r) || '{}');
-      if (saved.answers) {
-        Object.keys(saved.answers).forEach(id => seen.add(Number(id)));
-      }
-    }
-  }
-  return seen;
-}
 function xorshift(seed) {
-  let s = seed;
+  let s = seed || 1;
   return function() {
     s ^= s << 13; s ^= s >> 17; s ^= s << 5;
     return s >>> 0;
@@ -2108,6 +2096,8 @@ function getQuestionsForRound(seed) {
     for (let r = 0; r < ROUNDS; r++) {
       const s = JSON.parse(localStorage.getItem('aif_iter_' + i + '_round_' + r) || '{}');
       if (s.answers) Object.keys(s.answers).forEach(id => seen.add(Number(id)));
+      const backed = JSON.parse(localStorage.getItem('aif_iter_' + i + '_round_' + r + '_seen') || '{}');
+      if (backed) Object.keys(backed).forEach(id => seen.add(Number(id)));
     }
   }
   const unseen = ALL_QUESTIONS.filter(q => !seen.has(q.id));
@@ -2353,6 +2343,10 @@ function submitRound(round) {
 }
 function retakeRound(round) {
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
+  const old = JSON.parse(localStorage.getItem(key) || '{}');
+  if (old.answers) {
+    localStorage.setItem(key + '_seen', JSON.stringify(old.answers));
+  }
   localStorage.removeItem(key);
   answeredQuestions = {};
   document.querySelectorAll('.round-btn').forEach((b, i) => { if (i === round) b.classList.remove('completed'); });
