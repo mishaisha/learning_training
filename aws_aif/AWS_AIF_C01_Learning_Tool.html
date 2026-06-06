@@ -1944,6 +1944,8 @@ function init() {
   showSection(0);
   loadNotes();
   document.getElementById('notesText').addEventListener('input', saveNotes);
+  const savedMode = localStorage.getItem('aif_mode');
+  if (savedMode === 'quiz') switchMode('quiz');
 }
 function buildNav() {
   const nav = document.getElementById('navList');
@@ -1995,6 +1997,7 @@ function filterContent() {
 }
 function switchMode(mode) {
   currentMode = mode;
+  localStorage.setItem('aif_mode', mode);
   document.getElementById('learnBtn').classList.toggle('active', mode === 'learn');
   document.getElementById('quizBtn').classList.toggle('active', mode === 'quiz');
   document.getElementById('sidebar').classList.toggle('hidden', mode === 'quiz');
