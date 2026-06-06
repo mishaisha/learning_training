@@ -1939,7 +1939,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:34:38 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 3:46:59 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2007,7 +2007,7 @@ function switchMode(mode) {
 }
 function initQuiz() {
   const qc = document.getElementById('quizContent');
-  qc.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:8px"><div class="iteration-selector" id="iterationSelector"></div><div style="display:flex;gap:8px;align-items:center"><button class="quiz-action-btn outline" id="catchUpBtn" style="padding:4px 12px;font-size:.75rem;background:#2563eb;color:#fff" onclick="startCatchUp()">Catch-Up (139 missed)</button><button class="quiz-action-btn outline" id="viewResultsBtn" style="padding:4px 12px;font-size:.75rem" onclick="viewPastResults()">View Past Results</button><span style="font-size:.8rem;color:var(--text2)">Pass: ' + PASS_SCORE + '%</span><button class="quiz-action-btn danger" style="padding:4px 12px;font-size:.75rem" onclick="resetAll()">Reset All</button></div></div>' +
+  qc.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:8px"><div class="iteration-selector" id="iterationSelector"></div><div style="display:flex;gap:8px;align-items:center"><button class="quiz-action-btn outline" id="viewResultsBtn" style="padding:4px 12px;font-size:.75rem" onclick="viewPastResults()">View Past Results</button><span style="font-size:.8rem;color:var(--text2)">Pass: ' + PASS_SCORE + '%</span><button class="quiz-action-btn danger" style="padding:4px 12px;font-size:.75rem" onclick="resetAll()">Reset All</button></div></div>' +
     '<div class="round-selector" id="roundSelector"></div><div id="quizArea"></div>';
   buildIterationSelector();
   buildRoundSelector();
@@ -2054,37 +2054,6 @@ function buildRoundSelector() {
     if (rs.complete) b.classList.add('completed');
     c.appendChild(b);
   }
-}
-function startCatchUp() {
-  const missedIds = [20,25,28,30,32,41,42,45,48,51,54,58,61,62,65,74,81,94,102,105,108,109,111,112,114,120,121,123,126,128,130,131,133,138,141,146,149,153,157,160,161,165,166,175,183,189,190,197,202,205,207,215,219,228,229,231,232,233,235,236,237,240,243,245,250,252,262,263,267,273,281,284,285,287,290,294,309,310,314,315,317,321,324,326,332,338,341,345,348,352,356,357,360,362,381,388,389,390,398,400,404,405,408,417,420,422,426,429,431,434,438,442,447,454,458,460,462,463,466,470,473,477,481,485,492,495,496,498,500,501,504,508,511,512,518,519,521,525,528];
-  const missed = ALL_QUESTIONS.filter(q => missedIds.includes(q.id));
-  _catchUpRounds = [];
-  for (let i = 0; i < missed.length; i += QUESTIONS_PER_ROUND) {
-    _catchUpRounds.push(missed.slice(i, i + QUESTIONS_PER_ROUND));
-  }
-  currentIteration = 999;
-  currentRound = 0;
-  answeredQuestions = {};
-  document.querySelectorAll('.iter-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
-  const rs = document.getElementById('roundSelector');
-  rs.innerHTML = '<span class="iter-label" style="color:#f59e0b">Catch-Up Mode — 139 missed questions</span>';
-  for (let i = 0; i < _catchUpRounds.length; i++) {
-    const b = document.createElement('button');
-    b.className = 'round-btn';
-    b.textContent = i + 1;
-    b.onclick = ((idx) => () => { currentRound = idx; startCatchUpRound(idx); })(i);
-    rs.appendChild(b);
-  }
-  startCatchUpRound(0);
-}
-let _catchUpRounds = [];
-function startCatchUpRound(round) {
-  document.querySelectorAll('.round-btn').forEach((b, i) => b.classList.toggle('active', i === round));
-  const qs = _catchUpRounds[round];
-  answeredQuestions = {};
-  renderQuiz(qs, round, {answers: {}});
-  document.querySelector('.main').scrollTop = 0;
 }
 function startIteration(iter) {
   currentIteration = iter;
@@ -2284,7 +2253,7 @@ function moveOrderItem(qId, pos, dir) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = currentIteration === 999 ? _catchUpRounds[currentRound] : getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   renderQuiz(questions, currentRound, saved);
 }
 function selectOption(qId, optIdx, isMulti) {
@@ -2311,7 +2280,7 @@ function selectOption(qId, optIdx, isMulti) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = currentIteration === 999 ? _catchUpRounds[currentRound] : getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   const btn = document.getElementById('submitBtn');
   if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined);
   const progress = Object.keys(answeredQuestions).length / questions.length * 100;
@@ -2327,14 +2296,14 @@ function selectMatch(qId, leftIdx, rightVal) {
   if (!saved.answers) saved.answers = {};
   saved.answers = answeredQuestions;
   localStorage.setItem(key, JSON.stringify(saved));
-  const questions = currentIteration === 999 ? _catchUpRounds[currentRound] : getQuestionsForRound(currentIteration * ROUNDS + currentRound);
+  const questions = getQuestionsForRound(currentIteration * ROUNDS + currentRound);
   const btn = document.getElementById('submitBtn');
   if (btn) btn.disabled = !questions.every(q => answeredQuestions[q.id] !== undefined && (q.type !== 'match' || !answeredQuestions[q.id].selected.includes(-1)));
 }
 function submitRound(round) {
   const key = 'aif_iter_' + currentIteration + '_round_' + round;
   const saved = JSON.parse(localStorage.getItem(key) || '{}');
-  const questions = currentIteration === 999 ? _catchUpRounds[round] : getQuestionsForRound(currentIteration * ROUNDS + round);
+  const questions = getQuestionsForRound(currentIteration * ROUNDS + round);
   let correctCount = 0;
   questions.forEach(q => {
     const ans = answeredQuestions[q.id];
@@ -2405,7 +2374,6 @@ function renderResultSummary(res) {
     '<div style="font-size:.85rem;margin-top:4px;color:' + (res.pct >= PASS_SCORE ? 'var(--success)' : 'var(--error)') + ';font-weight:600">' + (res.pct >= PASS_SCORE ? 'PASS' : 'FAIL') + '</div></div>';
 }
 function updateIterationProgress() {
-  if (currentIteration === 999) return;
   let total = 0, correct = 0;
   for (let r = 0; r < ROUNDS; r++) {
     const rs = JSON.parse(localStorage.getItem('aif_iter_' + currentIteration + '_round_' + r) || '{}');
