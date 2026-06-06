@@ -2303,7 +2303,8 @@ function submitRound(round) {
   document.querySelectorAll('.round-btn').forEach((b, i) => { if (i === round) b.classList.add('completed'); });
   renderQuiz(questions, round, saved);
   updateIterationProgress();
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
   const allDone = Array.from(document.querySelectorAll('.round-btn')).every(b => b.classList.contains('completed'));
   if (allDone) {
     setTimeout(function() {
