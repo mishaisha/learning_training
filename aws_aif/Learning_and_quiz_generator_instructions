@@ -99,7 +99,8 @@ learning or quiz tool.
 - Scroll-to-top on nav click (`.main` container scroll).
 
 **Quiz Mode features:**
-- Multiple iterations (9), each with 5 rounds of 15 questions = 75 per iteration.
+- Multiple iterations (configurable, default 9), each with 5 rounds of 15
+  questions = 75 per iteration.
 - Coverage-first shuffle: scans localStorage for ALL seen questions across all
   iterations/rounds. Prioritizes unseen questions first. Guarantees every question
   appears at least once across all iterations.
@@ -108,21 +109,48 @@ learning or quiz tool.
 - `_currentQuestions` cache: set once per round, used by all interaction
   functions to prevent `getQuestionsForRound` from returning different questions
   on each click (which broke submit button).
-- Submit button enabled only when all 15 questions in the round have answers
+- Submit button enabled only when all questions in the round have answers
   (including all match options assigned).
-- Immediate feedback with correct answer and explanation.
+- Immediate feedback after each answer showing: correct answer, user's answer,
+  and explanation with source section reference.
+- Every question MUST include an explanation extracted from the source material
+  showing WHY the answer is correct. If source material lacks an explanation,
+  derive one from the relevant content section and tag as
+  "(derived from [section name])". Never fabricate explanations.
 - Question types: "mcq" (single-select), "msq" (multi-select with dynamic
   "Select X" instruction), "order" (ordering/HOTSPOT), "match" (matching).
+- Running score display: "X correct out of Y answered (Z%)".
 - Round results: score, %, PASS/FAIL, plus domain breakdown bar chart.
 - Iteration results: aggregate score across all 5 rounds, domain breakdown,
-  weak domain identification (<70%), "Review Wrong Answers" button, retake button.
+  weak domain identification (<70%), "Review Wrong Answers" button (lists all
+  incorrect answers with explanations), retake button, and topic-level
+  improvement suggestions referencing relevant content sections.
 - After 5th round: "View Iteration Results" button appears automatically.
 - Retake round: backs up old answers to `_seen` key, removes round data,
   regenerates fresh questions.
 - Retake iteration: backs up all 5 rounds to `_seen` keys, removes all data,
   restarts iteration.
-- Overall summary across all 9 iterations once complete.
-- DOMAIN_ALIASES to map service-level domains to official exam domains.
+- Overall summary across all iterations once complete.
+- DOMAIN_ALIASES to map granular domains to official exam domains.
+- Log every answer attempt (question ID, selected answer, correct answer,
+  timestamp) to localStorage for review.
+
+**Grading Rules:**
+- **Single-select (MCQ)**: exact match required for credit.
+- **Multi-select (MSQ)**: all correct options required for full credit. Display
+  "X of Y correct" partial credit feedback showing how many options were right.
+- **Ordering**: exact order required. If too strict for the content, use
+  positional distance (Levenshtein-style) and show mismatch positions.
+- **Matching**: all pairs must match correctly for full credit.
+- **Explanation source**: every answer feedback must include the source section
+  reference so users can study the relevant material.
+
+**Domain/Topic Feedback:**
+- After all rounds in an iteration, analyze performance by domain/topic area.
+- Identify weak domains (score < 70%).
+- Provide specific improvement suggestions for each weak domain, referencing the
+  relevant content section headings so the user can go back and study.
+- Show a bar chart or visual breakdown of domain performance.
 
 **Design:**
 - Professional, clean layout.
@@ -132,7 +160,7 @@ learning or quiz tool.
 - Toggle button between Learning and Quiz modes.
 
 **Technical:**
-- localStorage for all progress, notes, quiz answers.
+- localStorage for all progress, notes, quiz answers, and answer history.
   WARNING: iOS Safari blocks localStorage on file:// — serve via HTTP.
 - No external libraries or CDN.
 - All CSS and JavaScript embedded.
@@ -193,6 +221,9 @@ learning or quiz tool.
 - **Flashcards**: display front/back with flip animation.
 - Always include difficulty tags (EASY / MEDIUM / HARD) if discernible from
   the material.
+- Every extracted question MUST have an explanation. If none exists in the
+  source, derive one from the relevant content section and tag as
+  "(derived from [section name])". Never fabricate explanations.
 
 ### Question sourcing priority
 1. Use exact questions from provided source material.
