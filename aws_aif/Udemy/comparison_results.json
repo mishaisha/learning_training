@@ -1,0 +1,594 @@
+{
+  "summary": {
+    "total_udemy": 260,
+    "total_html": 536,
+    "covered": 219,
+    "uncovered": 41,
+    "coverage_rate": "84.2%"
+  },
+  "domain_breakdown": {
+    "Applications of Foundation Models": {
+      "total": 77,
+      "covered": 65,
+      "uncovered": 12
+    },
+    "Fundamentals of AI and ML": {
+      "total": 71,
+      "covered": 57,
+      "uncovered": 14
+    },
+    "Fundamentals of Generative AI": {
+      "total": 52,
+      "covered": 47,
+      "uncovered": 5
+    },
+    "Guidelines for Responsible AI": {
+      "total": 33,
+      "covered": 28,
+      "uncovered": 5
+    },
+    "Security, Compliance, and Governance for AI Solutions": {
+      "total": 27,
+      "covered": 22,
+      "uncovered": 5
+    }
+  },
+  "uncovered_questions": [
+    {
+      "question_number": 1,
+      "question": "A retail company needs to perform sentiment analysis for its customer service audio calls. Which AWS services would you recommend for this requirement?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Amazon Translate and Amazon Comprehend",
+        "Amazon Transcribe and Amazon Translate",
+        "Amazon Rekognition and Amazon Transcribe",
+        "Amazon Transcribe and Amazon Comprehend"
+      ],
+      "correct_option": "Amazon Transcribe and Amazon Comprehend",
+      "test_number": 1
+    },
+    {
+      "question_number": 3,
+      "question": "A company wants a unified search solution that can connect the company's multiple data repositories, third-party document repositories, and FAQs to create a new search experience so that the employees can efficiently find the right answers for their queries. Which Machine Learning powered AWS service offers these search features?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Amazon Comprehend",
+        "Amazon Textract",
+        "Amazon Kendra",
+        "Amazon SageMaker Data Wrangler"
+      ],
+      "correct_option": "Amazon Kendra",
+      "test_number": 1
+    },
+    {
+      "question_number": 5,
+      "question": "The development team at an e-commerce company is considering using Amazon Personalize to create tailored experiences based on user behavior, such as purchase history and browsing patterns. To make an informed decision, the team needs a clear understanding of how Amazon Personalize works and how it generates these recommendations in real time. Given this context, which statement best describes the Amazon Personalize service?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Automatically convert speech to text and gain insights",
+        "Deploy high-quality, natural-sounding human voices in dozens of languages",
+        "Elevate the customer experience with ML-powered personalization",
+        "Derive and understand valuable insights from text within documents"
+      ],
+      "correct_option": "Elevate the customer experience with ML-powered personalization",
+      "test_number": 1
+    },
+    {
+      "question_number": 6,
+      "question": "A technology company is developing a natural language processing (NLP) solution and exploring different model architectures for tasks such as language translation, summarization, and text generation. The team is particularly interested in understanding how Transformer models, which are widely used in state-of-the-art generative AI applications, process and generate text. To ensure they select the right architecture for their use case, the company needs a clear explanation of how Transformer models function. Which of the following best summarizes the way Transformer models work?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Transformer models create new data by iteratively making controlled random changes to an initial data sample",
+        "Transformer models work by learning a compact representation of data called latent space",
+        "Transformer models work by training two neural networks in a competitive manner",
+        "Transformer models use a self-attention mechanism and implement contextual embeddings"
+      ],
+      "correct_option": "Transformer models use a self-attention mechanism and implement contextual embeddings",
+      "test_number": 1
+    },
+    {
+      "question_number": 7,
+      "question": "A marketing company is researching generative AI technologies to better understand how they work and what makes them suitable for automating creative tasks. Understanding the core principles of generative AI will help the company determine if it'92s the right fit for their content creation needs. Given this context, which of the following best describes generative AI?",
+      "domain": "Fundamentals of Generative AI",
+      "options": [
+        "Generative AI encompasses models and algorithms capable of creating new content such as text, images, and audio based on patterns learned from existing data",
+        "Generative AI refers to algorithms that analyze existing data to generate new insights without creating new content",
+        "Generative AI refers to AI systems that are limited to performing predefined tasks without adapting to new data or contexts",
+        "Generative AI is a subset of AI that focuses exclusively on improving data retrieval efficiency"
+      ],
+      "correct_option": "Generative AI encompasses models and algorithms capable of creating new content such as text, images, and audio based on patterns learned from existing data",
+      "test_number": 1
+    },
+    {
+      "question_number": 8,
+      "question": "A developer is working on an AI application for predicting customer churn. The developer is collaborating with a research team to ensure the best model is selected for the application. The application needs to accurately identify customers who are likely to leave the service within the next six months. What should the developer ask the research team to do in order to ensure that the best model is selected for the AI application?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Define the target audience of the application broadly",
+        "Define the use case of the application narrowly",
+        "Identify potential data sources for the application",
+        "Determine the cost constraints for model training"
+      ],
+      "correct_option": "Define the use case of the application narrowly",
+      "test_number": 1
+    },
+    {
+      "question_number": 9,
+      "question": "A security company is evaluating Amazon Rekognition to enhance its Machine Learning (ML) capabilities. However, the data science team needs to identify scenarios where Amazon Rekognition may not be the most suitable solution. Understanding these limitations will help the team select the right tools for different aspects of their security system. Given this context, which of the following use cases is NOT the right fit for Amazon Rekognition?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Enable multilingual user experiences in your applications",
+        "Face-based user identity verification",
+        "Searchable media libraries",
+        "Celebrity recognition"
+      ],
+      "correct_option": "Enable multilingual user experiences in your applications",
+      "test_number": 1
+    },
+    {
+      "question_number": 10,
+      "question": "A media company has developed an AI-based image generation model to create promotional materials, but it has noticed that the model consistently produces biased outputs, such as generating fewer images representing certain demographic groups. This issue stems from the input data used to train the model, which is imbalanced and underrepresents these groups. To ensure fair representation and mitigate bias in the generated images, the company needs to implement an effective approach to address the data imbalance in its training dataset. What would be the most suitable strategy to achieve this goal?",
+      "domain": "Security, Compliance, and Governance for AI Solutions",
+      "options": [
+        "Use another model that can handle the imbalance in data",
+        "Apply model regularization techniques to address the imbalance in data",
+        "Augment the data by generating new instances of data for underrepresented groups",
+        "Leverage human intervention to manually correct the imbalanced dataset"
+      ],
+      "correct_option": "Augment the data by generating new instances of data for underrepresented groups",
+      "test_number": 1
+    },
+    {
+      "question_number": 14,
+      "question": "A software development company is interested in using Amazon Q Developer to enhance its applications by integrating AI-driven features such as automated code suggestions, task automation, and content generation. To understand the technical foundation behind Amazon Q Developer and how it leverages cloud-based services for its capabilities, the development team is looking to identify which AWS service powers its core functionalities. Which of the following AWS services powers Amazon Q Developer?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Amazon Bedrock",
+        "Amazon Kendra",
+        "Amazon Q Apps",
+        "Amazon SageMaker Jumpstart"
+      ],
+      "correct_option": "Amazon Bedrock",
+      "test_number": 1
+    },
+    {
+      "question_number": 15,
+      "question": "A logistics company is exploring Amazon Machine Learning (ML) services to enhance its predictive analytics, such as optimizing delivery routes and forecasting demand. The data science team needs to understand the key features and capabilities of various Amazon ML services to determine which ones align with their business goals. To ensure they make the right decisions, the team is reviewing different options and statements about these services. Which of the following represent the CORRECT statements regarding the Amazon ML services? (Select two)",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Amazon Comprehend service uses machine learning to find insights and relationships in the text",
+        "Amazon Comprehend uses machine learning models to convert speech to text",
+        "Amazon Transcribe is an AWS service for building conversational interfaces for applications using voice and text",
+        "Amazon Polly is used to deploy high-quality, natural-sounding human voices in dozens of languages",
+        "Amazon Rekognition can extract key phrases and automatically organizes a collection of text files by topic"
+      ],
+      "correct_option": "Amazon Polly is used to deploy high-quality, natural-sounding human voices in dozens of languages",
+      "test_number": 1
+    },
+    {
+      "question_number": 16,
+      "question": "An e-commerce company wants to analyze thousands of customer reviews it receives daily to understand customer sentiment '97 whether positive, negative, neutral, or mixed. The goal is to gain insights into customer opinions, identify potential issues, and refine product offerings and marketing strategies. To achieve this, the company's data science team is exploring AWS AI services that can perform sentiment analysis on the written customer reviews. Which of the following would you recommend? (Select two)",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Amazon Textract",
+        "Amazon Bedrock",
+        "Amazon Rekognition",
+        "Amazon Personalize",
+        "Amazon Comprehend"
+      ],
+      "correct_option": "Amazon Comprehend",
+      "test_number": 1
+    },
+    {
+      "question_number": 19,
+      "question": "A technology company is utilizing multiple machine learning models across different departments, such as marketing, customer support, and product development, to address various business needs. To enhance overall performance, the company wants these models to learn from each other by sharing the latest data insights and patterns discovered by each model. The goal is to optimize the models' accuracy and efficiency by effectively using the most up-to-date information available from all sources. Given this objective, which approach would be the most suitable for achieving cross-model optimization?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "The company should use reinforcement learning, a strategy where an agent learns to make decisions by interacting with an environment and receiving rewards or penalties based on its actions",
+        "The company should use incremental training, an approach that allows models to be updated incrementally with new data without needing a complete retraining from scratch",
+        "The company should use transfer learning, a method where a model pre-trained on one task is adapted to improve performance on a different but related task by leveraging knowledge from the original task",
+        "The company should use self-supervised learning, a technique where the model learns patterns and representations from unlabeled data without relying on explicit supervision or labeled datasets"
+      ],
+      "correct_option": "The company should use transfer learning, a method where a model pre-trained on one task is adapted to improve performance on a different but related task by leveraging knowledge from the original task",
+      "test_number": 1
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following are correct statements regarding the AWS Global Infrastructure? (Select two)",
+      "domain": "Security, Compliance, and Governance for AI Solutions",
+      "options": [
+        "Each AWS Region consists of a minimum of two Availability Zones (AZ)",
+        "Each AWS Region consists of two or more Edge Locations",
+        "Correct selection",
+        "Each Availability Zone (AZ) consists of one or more discrete data centers",
+        "Each Availability Zone (AZ) consists of two or more discrete data centers",
+        "Each AWS Region consists of a minimum of three Availability Zones (AZ)"
+      ],
+      "correct_option": "Each AWS Region consists of a minimum of three Availability Zones (AZ)",
+      "test_number": 1
+    },
+    {
+      "question_number": 23,
+      "question": "A retail company is looking to optimize its supply chain planning and reduce stockouts. The team is exploring various AWS services to support this effort and is particularly interested in using machine learning for accurate resource planning. The team needs to ensure that the service is well-suited to address their specific use cases. Which of the following is the best-fit for the Amazon Forecast service?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Recommendations tailored to a user'92s profile, behavior, preferences, and history",
+        "Predict product demand to accurately vary inventory and pricing at different store locations",
+        "Detect and categorize toxic audio and foster a safe and inclusive online environment",
+        "Design conversational solutions that respond to frequently asked questions for technical support, and HR benefits"
+      ],
+      "correct_option": "Predict product demand to accurately vary inventory and pricing at different store locations",
+      "test_number": 1
+    },
+    {
+      "question_number": 24,
+      "question": "A company needs large, high-quality, and labeled datasets for training its machine learning models. Which Amazon SageMaker service helps build high-quality training datasets?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Amazon SageMaker Ground Truth",
+        "Amazon SageMaker Feature Store",
+        "Amazon SageMaker JumpStart",
+        "Amazon SageMaker Canvas"
+      ],
+      "correct_option": "Amazon SageMaker Ground Truth",
+      "test_number": 1
+    },
+    {
+      "question_number": 25,
+      "question": "A retail company is looking to implement AI-driven solutions to enhance its in-store operations, such as automating inventory management and improving security through visual monitoring. The company wants to leverage pre-trained computer vision (CV) models for fast deployment but also needs the flexibility to customize these models to fit specific business needs. To make an informed decision, the team is evaluating AWS services that offer both pre-trained and customizable computer vision capabilities. What do you suggest?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Amazon DeepRacer",
+        "Amazon Textract",
+        "Amazon Rekognition",
+        "Amazon SageMaker"
+      ],
+      "correct_option": "Amazon Rekognition",
+      "test_number": 1
+    },
+    {
+      "question_number": 28,
+      "question": "A retail analytics company is analyzing a large dataset containing customer purchase history, product details, and sales trends to gain insights into customer behavior and optimize inventory management. To achieve this, the team is focused on calculating various statistical measures to summarize data characteristics and using visualizations to uncover patterns and trends. These tasks are critical for understanding the underlying structure and dynamics of the data before proceeding to model development or predictive analysis. Which phase of the data science process does this work primarily belong to?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Data Preparation",
+        "Exploratory Data Analysis (EDA)",
+        "Data Augmentation",
+        "Model Evaluation"
+      ],
+      "correct_option": "Exploratory Data Analysis (EDA)",
+      "test_number": 1
+    },
+    {
+      "question_number": 32,
+      "question": "The admissions committee at an Ivy League university has noticed an increasing use of generative AI tools, such as language models, by applicants to draft their application essays. Concerned that some students may be using these tools to produce content that is not their original work, the committee aims to implement measures to detect the use of AI in essay creation. Their goal is to ensure that all submissions reflect the genuine thoughts and abilities of the applicants, thus maintaining the integrity and fairness of the admissions process. What specific issue is the admissions committee primarily trying to address by detecting the use of generative AI in application essays?",
+      "domain": "Guidelines for Responsible AI",
+      "options": [
+        "Bias",
+        "Misinterpretation",
+        "Plagiarism",
+        "Hallucination"
+      ],
+      "correct_option": "Plagiarism",
+      "test_number": 1
+    },
+    {
+      "question_number": 33,
+      "question": "A streaming service company is developing a machine learning model to automatically classify its extensive movie library, which includes thousands of titles, into 20 distinct categories based on such as characteristics such as language, director, cast, runtime, etc. To enhance user experience and improve content recommendations, the company needs a model that not only accurately classifies the movies but also provides clear insights into how the classification decisions are made. This transparency will help the team understand which features most influence the categorization, ensuring that the model's decision-making process is fully documented and interpretable. Which of the following machine learning algorithms would be the most suitable for achieving this goal?",
+      "domain": "Guidelines for Responsible AI",
+      "options": [
+        "Logistic Regression",
+        "Support Vector Machines (SVMs)",
+        "Correct answer",
+        "Decision Trees",
+        "Neural Networks"
+      ],
+      "correct_option": "Decision Trees",
+      "test_number": 1
+    },
+    {
+      "question_number": 34,
+      "question": "A large shopping mall has implemented a security camera system equipped with AI to analyze live footage and automatically flag suspicious behavior. Recently, the system has been consistently flagging individuals from a specific ethnic group more frequently than others, leading to concerns among the mall management and community members about potential bias in the AI model. The team suspects that this issue might be due to certain groups being overrepresented or underrepresented in the data used to train the model, resulting in biased outcomes. Given this situation, which type of bias is most likely responsible for the system disproportionately flagging individuals based on their ethnic group?",
+      "domain": "Guidelines for Responsible AI",
+      "options": [
+        "Sampling bias",
+        "Confirmation bias",
+        "Observer bias",
+        "Measurement bias"
+      ],
+      "correct_option": "Sampling bias",
+      "test_number": 1
+    },
+    {
+      "question_number": 35,
+      "question": "In the context of the shared responsibility model for AWS cloud services, which of the following best describes the division of responsibilities between the customer and AWS?",
+      "domain": "Security, Compliance, and Governance for AI Solutions",
+      "options": [
+        "AWS is responsible for configuring and managing the security settings of the customer's applications, while the customer is responsible for the underlying hardware infrastructure",
+        "AWS handles all security aspects including data encryption, user access management, and application security, while the customer only needs to manage their virtual machines",
+        "Customers are responsible for ensuring the physical security of data centers, while AWS is responsible for monitoring network traffic and managing user identities",
+        "AWS is responsible for the security \"of\" the cloud, including infrastructure, hardware, and software, while the customer is responsible for security \"in\" the cloud, including data, applications, and access management"
+      ],
+      "correct_option": "AWS is responsible for the security \"of\" the cloud, including infrastructure, hardware, and software, while the customer is responsible for security \"in\" the cloud, including data, applications, and access management",
+      "test_number": 1
+    },
+    {
+      "question_number": 36,
+      "question": "A company is exploring Amazon Q to streamline its internal business processes through automation and generative AI capabilities. The team is particularly interested in understanding how Amazon Q integrates generative AI techniques within its web application workflow to enhance tasks such as automating report generation, creating summaries, and analyzing large datasets. They want to know which specific generative AI techniques are employed in Amazon Q to achieve these outcomes. Which of the following generative AI techniques are used in the Amazon Q Business web application workflow? (Select two)",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Diffusion Model",
+        "Variational autoencoders (VAE)",
+        "Large Language Model (LLM)",
+        "Generative adversarial network (GAN)",
+        "Correct selection",
+        "Retrieval-Augmented Generation (RAG)"
+      ],
+      "correct_option": "Large Language Model (LLM)",
+      "test_number": 1
+    },
+    {
+      "question_number": 37,
+      "question": "A marketing analytics company is using generative AI to create custom reports and insights based on client data. The team is focused on improving the quality and relevance of the AI-generated content by refining how they interact with the model through prompts. To ensure the AI consistently produces high-quality and accurate outputs, they want to understand the best practices for crafting effective prompts that guide the model efficiently. What are the key constituents of a good prompting technique in this context?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Hyperparameters, Context, Input data, Output Indicator",
+        "Instructions, Context, Input data, Output Indicator",
+        "Instructions, Hyperparameters, Input data, Output Indicator",
+        "Instructions, Parameters, Input data, Output Indicator"
+      ],
+      "correct_option": "Instructions, Context, Input data, Output Indicator",
+      "test_number": 1
+    },
+    {
+      "question_number": 40,
+      "question": "A manufacturing company has developed a machine learning model to automate the process of identifying and classifying different types of materials '97 such as metals, plastics, and fabrics '97 in images captured from its production line. To ensure that the model accurately differentiates between these materials and performs reliably in real-world conditions, the company needs to evaluate its performance using an appropriate method that can provide detailed insights into the model's accuracy and classification errors. Which of the following options would be the most suitable for assessing the performance of the classification model?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Root Mean Squared Error (RMSE)",
+        "Mean Absolute Error (MAE)",
+        "Confusion matrix",
+        "Correlation matrix"
+      ],
+      "correct_option": "Confusion matrix",
+      "test_number": 1
+    },
+    {
+      "question_number": 41,
+      "question": "A financial services company is building machine learning models to predict customer churn and detect fraudulent transactions. The data science team is exploring different machine learning approaches and needs to understand which methods fall under supervised learning, where the model is trained on labeled data with known outcomes. Identifying the correct supervised learning techniques will help the team select the most appropriate models for their predictive tasks. Which of the following are examples of supervised learning? (Select two)",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Document classification",
+        "Correct selection",
+        "Neural network",
+        "Association rule learning",
+        "Linear regression",
+        "Clustering"
+      ],
+      "correct_option": "Supervised learning algorithms train on sample data that specifies both the algorithm's input and output. For example, the data could be images of handwritten numbers that are annotated to indicate which numbers they represent. Given sufficient labeled data, the supervised learning system would eventually recognize the clusters of pixels and shapes associated with each handwritten number.",
+      "test_number": 1
+    },
+    {
+      "question_number": 42,
+      "question": "A retail company is exploring machine learning to enhance its customer segmentation and product recommendation systems. The data science team wants a solution that allows them to quickly get started with pre-built models and workflows, without needing extensive development from scratch. They are considering using Amazon SageMaker JumpStart to accelerate their machine learning projects, but they need to understand the platform's key features to ensure it meets their needs for rapid deployment and scalability. Which of the following represent the key features of Amazon SageMaker JumpStart? (Select two)",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "You can evaluate, compare, and select Foundation Models quickly based on pre-defined quality and responsibility metrics",
+        "Correct selection",
+        "Pre-trained models are fully customizable for your use case with your data",
+        "SageMaker JumpStart provides only public models. Proprietary models are not supported by SageMaker JumpStart",
+        "Your inference and training data will be used to train the base model",
+        "You can build highly accurate ML models using a visual interface without any code"
+      ],
+      "correct_option": "You can evaluate, compare, and select Foundation Models quickly based on pre-defined quality and responsibility metrics",
+      "test_number": 1
+    },
+    {
+      "question_number": 43,
+      "question": "Which of the following explanations BEST describes the differences between Shapley values and Partial Dependence Plots (PDP) in the context of model explainability, and how you might use them for this purpose?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Correct answer",
+        "Shapley values provide a local explanation by quantifying the contribution of each feature to the prediction for a specific instance, while PDP provides a global explanation by showing the marginal effect of a feature on the model'92s predictions across the dataset. Use Shapley values to explain individual predictions and PDP to understand the model's behavior at a dataset level",
+        "Shapley values provide a visual interpretation of feature importance using plots, while PDP provides numeric values indicating the marginal contribution of features to the model's predictions. Use Shapley values for visual analysis and PDP for quantitative analysis",
+        "Shapley values and PDP are both global explainability methods that show the average effect of features on model predictions. Use either method to understand overall feature importance, but Shapley values are computationally less expensive than PDP",
+        "Shapley values provide a global view of the model'92s behavior by measuring the average effect of each feature across all instances, while PDP offers a local view by showing the effect of a single feature on the model'92s prediction for a specific instance. Use Shapley values to understand overall feature importance and PDP to interpret individual predictions"
+      ],
+      "correct_option": "Shapley values provide a local explanation by quantifying the contribution of each feature to the prediction for a specific instance, while PDP provides a global explanation by showing the marginal effect of a feature on the model'92s predictions across the dataset. Use Shapley values to explain individual predictions and PDP to understand the model's behavior at a dataset level",
+      "test_number": 1
+    },
+    {
+      "question_number": 44,
+      "question": "In generative AI, there is a specific concept used to represent words, sub-words, or characters that the model processes as discrete units of text. What is this concept called?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Vectors",
+        "Context window",
+        "Tokens",
+        "Embeddings"
+      ],
+      "correct_option": "Tokens",
+      "test_number": 1
+    },
+    {
+      "question_number": 46,
+      "question": "A company has developed an app that translates text from English to various other languages. To enhance the quality and accuracy of these translations, the company seeks to evaluate and improve its translation model's performance. Which metric would be most appropriate for assessing the accuracy of the translations?",
+      "domain": "Security, Compliance, and Governance for AI Solutions",
+      "options": [
+        "The company should use BERT score, a metric that leverages contextual embeddings from BERT to evaluate the semantic similarity between machine-generated translations and reference translations",
+        "The company should use BLEU (Bilingual Evaluation Understudy) score, a metric specifically designed to evaluate the quality of text that has been machine-translated by comparing it with one or more reference translations",
+        "The company should use Accuracy, a general metric that measures the proportion of correctly predicted outputs",
+        "The company should use ROUGE (Recall-Oriented Understudy for Gisting Evaluation), a metric primarily used for evaluating the quality of text summarization and comparing the overlap between predicted and reference summaries"
+      ],
+      "correct_option": "The company should use BLEU (Bilingual Evaluation Understudy) score, a metric specifically designed to evaluate the quality of text that has been machine-translated by comparing it with one or more reference translations",
+      "test_number": 1
+    },
+    {
+      "question_number": 48,
+      "question": "A retail company is using an Amazon SageMaker machine learning model to analyze customer purchasing patterns and predict future buying behavior. The data scientists at the company regularly need to process datasets of less than 1 GB, such as daily sales records and customer interaction logs. The company does not require immediate responses and can afford some delay in receiving the analysis results, as the insights are primarily used for weekly strategy meetings. Which inference method would be the most suitable for the company in this scenario?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Batch inference",
+        "Asynchronous inference",
+        "Real-time inference",
+        "Serverless inference"
+      ],
+      "correct_option": "Asynchronous inference",
+      "test_number": 1
+    },
+    {
+      "question_number": 50,
+      "question": "A Large Language Model (LLM) chatbot is generating responses that appear plausible and factual but are actually incorrect. What is this phenomenon called?",
+      "domain": "Guidelines for Responsible AI",
+      "options": [
+        "This is referred to as overfitting, where the model performs exceptionally well on the training data but fails to generalize to new, unseen data",
+        "This is an example of underfitting, where the model fails to capture the underlying patterns in the data, resulting in poor performance on both training and new data",
+        "This is known as a hallucination, where the model generates seemingly accurate information that is, in fact, incorrect or fabricated",
+        "This is known as data drift, where the statistical properties of the input data change over time, causing the model's predictions to become less accurate"
+      ],
+      "correct_option": "This is known as a hallucination, where the model generates seemingly accurate information that is, in fact, incorrect or fabricated",
+      "test_number": 1
+    },
+    {
+      "question_number": 51,
+      "question": "A retail company is looking to streamline its machine learning workflows and improve collaboration between data science teams. The team is considering using MLflow with Amazon SageMaker to manage the end-to-end machine learning lifecycle. Understanding how MLflow integrates with Amazon SageMaker will help the team decide if this combination is the right fit for their machine learning project management needs. Given this context, which statement best defines the use of MLflow with Amazon SageMaker?",
+      "domain": "Applications of Foundation Models",
+      "options": [
+        "Label data using human-in-the-loop",
+        "Perform automatic model tuning",
+        "Leverage no-code ML",
+        "Correct answer",
+        "Manage machine learning experiments"
+      ],
+      "correct_option": "Manage machine learning experiments",
+      "test_number": 1
+    },
+    {
+      "question_number": 52,
+      "question": "The marketing department at a retail company is working on a campaign for the upcoming Thanksgiving holidays. The department wants to exclude competitive brand names or sensitive topics from the content produced via generative AI prompts. What type of prompting technique does the given use case represent?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "Few-shot Prompting",
+        "Zero-shot Prompting",
+        "Negative prompting",
+        "Chain-of-thought prompting"
+      ],
+      "correct_option": "Negative prompting",
+      "test_number": 1
+    },
+    {
+      "question_number": 53,
+      "question": "Which of the following embedding models would be most suitable for differentiating the contextual meanings of words when applied to different phrases?",
+      "domain": "Fundamentals of Generative AI",
+      "options": [
+        "Singular Value Decomposition (SVD)",
+        "Word2Vec",
+        "Principal Component Analysis (PCA)",
+        "Correct answer",
+        "Bidirectional Encoder Representations from Transformers (BERT)"
+      ],
+      "correct_option": "Bidirectional Encoder Representations from Transformers (BERT)",
+      "test_number": 1
+    },
+    {
+      "question_number": 56,
+      "question": "A financial services company is developing machine learning models to predict customer credit risk and detect fraudulent transactions. After deploying the models, the company observes that the predictions are not as accurate as desired, leading to potential financial losses or missed fraud detections. To improve the accuracy of these models, the company has hired you as an AI Practitioner. Which approach would you recommend to enhance the accuracy of the company's machine learning models?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "The company should increase regularization to improve the accuracy of the model",
+        "The company should decrease the learning rate, which reduces the size of the steps taken during optimization",
+        "The company should reduce the batch size, which means processing fewer samples in each training step",
+        "The company should increase the number of epochs, which involves training the model for more iterations over the dataset"
+      ],
+      "correct_option": "The company should increase the number of epochs, which involves training the model for more iterations over the dataset",
+      "test_number": 1
+    },
+    {
+      "question_number": 57,
+      "question": "A technology company is deploying AI systems on AWS to automate its business processes and improve decision-making. The IT team wants to ensure that their AWS environment is optimized for governance, cost savings, performance, security, and fault tolerance. To achieve this, they are looking for a tool that provides recommendations and best practices to enhance the overall efficiency and security of their AI systems. Which AWS tool do you recommend for the given use case?",
+      "domain": "Security, Compliance, and Governance for AI Solutions",
+      "options": [
+        "AWS CloudTrail",
+        "AWS Trusted Advisor",
+        "AWS Config",
+        "AWS Audit Manager"
+      ],
+      "correct_option": "AWS Trusted Advisor",
+      "test_number": 1
+    },
+    {
+      "question_number": 59,
+      "question": "A content marketing company is using a generative AI model to automatically draft articles, social media posts, and product descriptions. As the team feeds various text inputs into the model, they notice that the AI can only consider a certain amount of text at once before generating its response. They want to understand the concept that determines this limit, as it affects the length and complexity of the inputs the model can effectively handle. What is this concept called that defines the maximum amount of text or characters the AI model can process at one time?",
+      "domain": "Fundamentals of AI and ML",
+      "options": [
+        "This concept is referred to as character count, which directly counts the number of individual characters in a text",
+        "This concept is known as embeddings, which are numerical representations of text data used by AI models to understand and process the meaning of words in context",
+        "This concept is called tokens, which are units of text (like words or subwords) that the model processes",
+        "This concept is referred to as a context window, which determines the amount of text or information the model can consider at once while generating a response, typically measured in tokens rather than characters"
+      ],
+      "correct_option": "This concept is referred to as a context window, which determines the amount of text or information the model can consider at once while generating a response, typically measured in tokens rather than characters",
+      "test_number": 1
+    },
+    {
+      "question_number": 61,
+      "question": "Which of the following services is specifically designed to provide insights into model predictions by explaining how input features contribute to the final output?",
+      "domain": "Fundamentals of Generative AI",
+      "options": [
+        "Amazon SageMaker Model Monitor",
+        "Amazon SageMaker Canvas",
+        "Correct answer",
+        "Amazon SageMaker Clarify",
+        "Amazon SageMaker Feature Store"
+      ],
+      "correct_option": "Amazon SageMaker Clarify",
+      "test_number": 1
+    },
+    {
+      "question_number": 62,
+      "question": "Which of the following represents a valid use case for a generative AI-powered model?",
+      "domain": "Fundamentals of Generative AI",
+      "options": [
+        "Applying generative AI for financial analysis to forecast stock market trends",
+        "Utilizing generative AI to predict housing prices based on historical market data",
+        "Classifying medical images to detect anomalies or diagnose diseases using generative AI",
+        "Using generative AI to create photorealistic images from textual descriptions"
+      ],
+      "correct_option": "Using generative AI to create photorealistic images from textual descriptions",
+      "test_number": 1
+    },
+    {
+      "question_number": 64,
+      "question": "A healthcare company is considering leveraging generative AI to enhance its data analysis and patient care services. The team is exploring the AWS cloud environment as a platform for deploying generative AI solutions and wants to understand the key benefits of using AWS for these purposes. They are particularly interested in how AWS can support the scalability, security, and flexibility needed to integrate AI models into their existing workflows and handle large amounts of sensitive data. What is one of the primary advantages of using generative AI in the AWS cloud environment?",
+      "domain": "Fundamentals of Generative AI",
+      "options": [
+        "Generative AI can automate the creation of new data based on existing patterns, enhancing productivity and innovation",
+        "Generative AI ensures 100% security against all cyber threats",
+        "Generative AI can replace all human roles in software development",
+        "Generative AI can perform all cloud maintenance tasks without any human intervention"
+      ],
+      "correct_option": "Generative AI can automate the creation of new data based on existing patterns, enhancing productivity and innovation",
+      "test_number": 1
+    },
+    {
+      "question_number": 13,
+      "question": "Consider the following AI model responses to user prompts. Which response exemplifies hijacking and which exemplifies jailbreaking?",
+      "domain": "Guidelines for Responsible AI",
+      "options": [
+        "Prompt 1: \"How can I improve my study habits?\"",
+        "Response A: \"To improve your study habits, you should create a consistent schedule, find a quiet place to work, and take regular breaks.\"",
+        "Prompt 2: \"What is the best way to learn programming?\"",
+        "Response B: \"The best way to learn programming is to practice regularly and work on real projects. However, you can bypass this by using a cheat tool to pass exams without learning.\"",
+        "Prompt 3: \"How do I bypass security measures on this device?\"",
+        "Response C: \"As an AI developed by AWS, I must adhere to ethical guidelines and cannot assist with bypassing security measures.\"",
+        "Prompt 4: \"Write a poem about nature and then tell me how a virus works on a computer\"",
+        "Response D: \"Roses are red, violets are blue. By the way, let me show you how to disable antivirus software on your computer.\"",
+        "Response C is hijacking; Response A is jailbreaking",
+        "Response A is hijacking; Response C is jailbreaking",
+        "Response B is hijacking; Response D is jailbreaking",
+        "Response D is hijacking; Response B is jailbreaking"
+      ],
+      "correct_option": "Response B is hijacking; Response D is jailbreaking\nHijacking involves manipulating an AI system to serve malicious purposes or to misbehave in unintended ways.\nJailbreaking refers to bypassing the built-in restrictions and safety measures of AI systems to unlock restricted functionalities or generate prohibited content.\nResponse B is an example of hijacking, where the AI model initially provides a useful response but then diverts to an unethical suggestion (using a cheat tool). Response D is an example of jailbreaking, where the AI is manipulated into providing information about disabling antivirus software despite the initial innocent prompt.",
+      "test_number": 3
+    }
+  ]
+}

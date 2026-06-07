@@ -1,0 +1,920 @@
+[
+  {
+    "question_number": 1,
+    "question": "A global technology company has deployed several AI systems, including generative AI solutions that range from pre-trained models to fine-tuned, domain-specific models. As part of their commitment to ethical AI practices, the company wants to implement governance strategies to ensure the responsible development, deployment, and usage of these models. The development team is tasked with identifying key governance strategies to address concerns such as data privacy, fairness, and accountability in their AI systems. Which two governance strategies should the team prioritize to meet these objectives? (Select two)",
+    "options": [
+      "Allow unrestricted fine-tuning by all team members",
+      "Use only open-source models without further evaluation",
+      "Implement robust auditing processes for AI outputs",
+      "Rely on user feedback alone to identify issues with the AI system",
+      "Establish ethical AI guidelines for developers to follow"
+    ],
+    "correct_option": "Establish ethical AI guidelines for developers to follow\nEthical AI guidelines help define principles and practices for responsible AI development and deployment, ensuring alignment with company values and regulatory requirements.\nImplement robust auditing processes for AI outputs\nAuditing processes ensure transparency and accountability by regularly evaluating model outputs for issues like bias, misuse, or unintended consequences.",
+    "explanation": "Overall explanation\nCorrect option:\nEstablish ethical AI guidelines for developers to follow\nEthical AI guidelines help define principles and practices for responsible AI development and deployment, ensuring alignment with company values and regulatory requirements.\nImplement robust auditing processes for AI outputs\nAuditing processes ensure transparency and accountability by regularly evaluating model outputs for issues like bias, misuse, or unintended consequences.",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 2,
+    "question": "A software development team is exploring tools to improve their coding efficiency and streamline their workflow. They are particularly interested in leveraging Amazon Q Developer to support their development processes, but they want to understand its specific capabilities. Which of the following accurately describes what Amazon Q Developer can do to enhance the team's development efforts?",
+    "options": [
+      "Amazon Q Developer can create SageMaker models, allowing users to develop, train, and deploy machine learning models within the Amazon SageMaker environment",
+      "Amazon Q Developer can deploy applications, automating the entire process of application deployment from development to production environments",
+      "Amazon Q Developer can create Large Language Model (LLM) chatbots, enabling the design and deployment of large language model-based conversational agents",
+      "Amazon Q Developer can suggest code snippets, providing developers with recommendations for code based on specific tasks or requirements"
+    ],
+    "correct_option": "Amazon Q Developer can suggest code snippets, providing developers with recommendations for code based on specific tasks or requirements\nThis is the correct option because Amazon Q Developer is designed to assist developers by providing code suggestions and recommendations that align with their coding tasks. It leverages machine learning models trained on vast datasets to suggest code snippets, optimize code efficiency, and help developers follow best practices. This functionality helps speed up development processes and enhances productivity.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Q Developer can suggest code snippets, providing developers with recommendations for code based on specific tasks or requirements\nThis is the correct option because Amazon Q Developer is designed to assist developers by providing code suggestions and recommendations that align with their coding tasks. It leverages machine learning models trained on vast datasets to suggest code snippets, optimize code efficiency, and help developers follow best practices. This functionality helps speed up development processes and enhances productivity.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 3,
+    "question": "Which AWS service is specifically designed for converting medical speech to text, ensuring compliance with healthcare regulations such as HIPAA?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Transcribe medical",
+      "Amazon Rekognition",
+      "Amazon Polly"
+    ],
+    "correct_option": "Amazon Transcribe medical\nAmazon Transcribe Medical is an automatic speech recognition (ASR) service that makes it easy for you to add medical speech-to-text capabilities to your voice-enabled applications. Conversations between health care providers and patients provide the foundation of a patient\u2019s diagnosis and treatment plan and clinical documentation workflow. It\u2019s critically important that this information is accurate. However, accurate medical transcriptions such as dictation recorders and scribes are expensive, time-consuming, and disruptive to the patient experience. Some organizations use existing medical transcription software but find them inefficient and low in quality.\nDriven by state-of-the-art machine learning, Amazon Transcribe Medical accurately transcribes medical terminologies such as medicine names, procedures, and even conditions or diseases. Amazon Transcribe Medical can serve a diverse range of use cases such as transcribing physician-patient conversations for clinical documentation, capturing phone calls in pharmacovigilance, or subtitling telehealth consultations.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Transcribe medical\nAmazon Transcribe Medical is an automatic speech recognition (ASR) service that makes it easy for you to add medical speech-to-text capabilities to your voice-enabled applications. Conversations between health care providers and patients provide the foundation of a patient\u2019s diagnosis and treatment plan and clinical documentation workflow. It\u2019s critically important that this information is accurate. However, accurate medical transcriptions such as dictation recorders and scribes are expensive, time-consuming, and disruptive to the patient experience. Some organizations use existing medical transcription software but find them inefficient and low in quality.\nDriven by state-of-the-art machine learning, Amazon Transcribe Medical accurately transcribes medical terminologies such as medicine names, procedures, and even conditions or diseases. Amazon Transcribe Medical can serve a diverse range of use cases such as transcribing physician-patient conversations for clinical documentation, capturing phone calls in pharmacovigilance, or subtitling telehealth consultations.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 4,
+    "question": "A legal firm is digitizing a large volume of contracts and other legal documents to streamline document management and analysis. The firm is looking for AWS machine learning services that can automatically detect and extract text from scanned images and photos of these documents. Understanding which services specialize in text extraction from images will help the firm choose the right solution for automating its document processing workflow. Which AWS ML services will you recommend to the firm? (Select two)",
+    "options": [
+      "Amazon Comprehend",
+      "Amazon Polly",
+      "Amazon Lex",
+      "Amazon Textract",
+      "Amazon Rekognition"
+    ],
+    "correct_option": "Amazon Rekognition\nAmazon Textract\nBoth Rekognition and Textract possess the ability to detect text within images.\nRekognition specializes in identifying text located spatially within an image, for instance, words displayed on street signs, t-shirts, or license plates. Its typical use cases encompass visual search, content filtering, and deriving insights from content, among others. However, it's not the ideal choice for images containing more than 100 words, as this exceeds its limitation.\nOn the other hand, Textract is tailored more towards processing documents and PDFs, offering a comprehensive suite for Optical Character Recognition (OCR). It proves useful in scenarios involving financial reports, medical records, receipts, ID documents, and more.",
+    "explanation": "Overall explanation\nCorrect options:\nAmazon Rekognition\nAmazon Textract\nBoth Rekognition and Textract possess the ability to detect text within images.\nRekognition specializes in identifying text located spatially within an image, for instance, words displayed on street signs, t-shirts, or license plates. Its typical use cases encompass visual search, content filtering, and deriving insights from content, among others. However, it's not the ideal choice for images containing more than 100 words, as this exceeds its limitation.\nOn the other hand, Textract is tailored more towards processing documents and PDFs, offering a comprehensive suite for Optical Character Recognition (OCR). It proves useful in scenarios involving financial reports, medical records, receipts, ID documents, and more.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 5,
+    "question": "A traffic monitoring application needs to detect license plate numbers for the vehicles that pass a certain location from 11 PM to 7 AM every day. Which ML-powered AWS service is the right fit for this requirement?",
+    "options": [
+      "Amazon SageMaker JumpStart",
+      "Amazon SageMaker image classification algorithm",
+      "Amazon Rekognition",
+      "Amazon Textract"
+    ],
+    "correct_option": "Amazon Rekognition\nAmazon Rekognition is a cloud-based image and video analysis service that makes it easy to add advanced computer vision capabilities to your applications. The service is powered by proven deep learning technology and it requires no machine learning expertise to use. Amazon Rekognition includes a simple, easy-to-use API that can quickly analyze any image or video file that\u2019s stored in Amazon S3.\nYou can add features that detect objects, text, and unsafe content, analyze images/videos, and compare faces to your application using Rekognition's APIs. With Amazon Rekognition's face recognition APIs, you can detect, analyze, and compare faces for a wide variety of use cases, including user verification, cataloging, people counting, and public safety.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Rekognition\nAmazon Rekognition is a cloud-based image and video analysis service that makes it easy to add advanced computer vision capabilities to your applications. The service is powered by proven deep learning technology and it requires no machine learning expertise to use. Amazon Rekognition includes a simple, easy-to-use API that can quickly analyze any image or video file that\u2019s stored in Amazon S3.\nYou can add features that detect objects, text, and unsafe content, analyze images/videos, and compare faces to your application using Rekognition's APIs. With Amazon Rekognition's face recognition APIs, you can detect, analyze, and compare faces for a wide variety of use cases, including user verification, cataloging, people counting, and public safety.\n\u00a0via -\u00a0https://docs.aws.amazon.com/rekognition/latest/dg/text-detection.html",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 6,
+    "question": "A healthcare company wants to extract relevant health information from unstructured clinical data such as physician's notes, discharge summaries, and test results from multiple hospitals. Which ML-powered AWS service is the right fit to extract this data?",
+    "options": [
+      "Amazon Comprehend Medical",
+      "Amazon Comprehend",
+      "Amazon SageMaker",
+      "Amazon Rekognition"
+    ],
+    "correct_option": "Amazon Comprehend Medical\nAmazon Comprehend Medical detects and returns useful information in unstructured clinical text such as physician's notes, discharge summaries, test results, and case notes. Amazon Comprehend Medical uses natural language processing (NLP) models to detect entities, which are textual references to medical information such as medical conditions, medications, or Protected Health Information(PHI).\nYou can use the extracted medical information and their relationships to build applications for use cases, like clinical decision support, revenue cycle management (medical coding), and clinical trial management. Because Comprehend Medical is HIPAA-eligible and can quickly identify protected health information (PHI), such as name, age, and medical record number, you can also use it to create applications that securely process, maintain, and transmit PHI.\nAmazon Comprehend Medical also enables users to link these detected entities to standardized medical knowledge bases such as RxNorm and ICD-10-CM through ontology linking operations.\nHow Amazon Comprehend Medical works:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Comprehend Medical\nAmazon Comprehend Medical detects and returns useful information in unstructured clinical text such as physician's notes, discharge summaries, test results, and case notes. Amazon Comprehend Medical uses natural language processing (NLP) models to detect entities, which are textual references to medical information such as medical conditions, medications, or Protected Health Information(PHI).\nYou can use the extracted medical information and their relationships to build applications for use cases, like clinical decision support, revenue cycle management (medical coding), and clinical trial management. Because Comprehend Medical is HIPAA-eligible and can quickly identify protected health information (PHI), such as name, age, and medical record number, you can also use it to create applications that securely process, maintain, and transmit PHI.\nAmazon Comprehend Medical also enables users to link these detected entities to standardized medical knowledge bases such as RxNorm and ICD-10-CM through ontology linking operations.\nHow Amazon Comprehend Medical works:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/comprehend/medical/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 7,
+    "question": "Consider a scenario where a fully-managed AWS service needs to be used for automating the extraction of insights from legal briefs such as contracts and court records. What do you recommend?",
+    "options": [
+      "Amazon Transcribe",
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon Translate"
+    ],
+    "correct_option": "Amazon Comprehend\nAmazon Comprehend is a natural language processing (NLP) service that uses machine learning to find meaning and insights in text. Natural Language Processing (NLP) is a way for computers to analyze, understand, and derive meaning from textual information in a smart and useful way. By utilizing NLP, you can extract important phrases, sentiments, syntax, key entities such as brand, date, location, person, etc., and the language of the text.\nYou can use Amazon Comprehend to identify the language of the text, extract key phrases, places, people, brands, or events, understand sentiment about products or services, and identify the main topics from a library of documents. The source of this text could be web pages, social media feeds, emails, or articles. You can also feed Amazon Comprehend a set of text documents, and it will identify topics (or groups of words) that best represent the information in the collection. The output from Amazon Comprehend can be used to understand customer feedback, provide a better search experience through search filters, and use topics to categorize documents.\nHow Amazon Comprehend works:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Comprehend\nAmazon Comprehend is a natural language processing (NLP) service that uses machine learning to find meaning and insights in text. Natural Language Processing (NLP) is a way for computers to analyze, understand, and derive meaning from textual information in a smart and useful way. By utilizing NLP, you can extract important phrases, sentiments, syntax, key entities such as brand, date, location, person, etc., and the language of the text.\nYou can use Amazon Comprehend to identify the language of the text, extract key phrases, places, people, brands, or events, understand sentiment about products or services, and identify the main topics from a library of documents. The source of this text could be web pages, social media feeds, emails, or articles. You can also feed Amazon Comprehend a set of text documents, and it will identify topics (or groups of words) that best represent the information in the collection. The output from Amazon Comprehend can be used to understand customer feedback, provide a better search experience through search filters, and use topics to categorize documents.\nHow Amazon Comprehend works:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/comprehend/\nComprehend use cases:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/comprehend/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 8,
+    "question": "A large e-commerce company uses a language model (LLM) to assist its customer service agents by generating responses to customer queries. However, the company is concerned about prompt engineering attacks, where malicious users craft inputs to manipulate the LLM into producing incorrect or harmful responses. What is the best approach to mitigate this issue?",
+    "options": [
+      "Disable user-generated inputs and rely solely on internal data for prompts",
+      "Restrict LLM output to a fixed set of predefined responses",
+      "Monitor the length of the prompts to prevent overly long inputs",
+      "Create a prompt template that teaches the LLM to detect attack patterns"
+    ],
+    "correct_option": "Create a prompt template that teaches the LLM to detect attack patterns\nCreating a prompt template that specifically guides the LLM to detect and respond appropriately to potential attack patterns is an effective way to mitigate prompt engineering attacks. This template can include predefined instructions that condition the LLM to recognize malicious patterns and avoid generating unintended or harmful responses. By embedding defense mechanisms within the prompts themselves, the system becomes more robust and resilient to such attacks. Additionally, continuous refinement of these templates, based on known attack techniques, can further strengthen the defense.",
+    "explanation": "Overall explanation\nCorrect option:\nCreate a prompt template that teaches the LLM to detect attack patterns\nCreating a prompt template that specifically guides the LLM to detect and respond appropriately to potential attack patterns is an effective way to mitigate prompt engineering attacks. This template can include predefined instructions that condition the LLM to recognize malicious patterns and avoid generating unintended or harmful responses. By embedding defense mechanisms within the prompts themselves, the system becomes more robust and resilient to such attacks. Additionally, continuous refinement of these templates, based on known attack techniques, can further strengthen the defense.\n\u00a0via -\u00a0https://docs.aws.amazon.com/prescriptive-guidance/latest/llm-prompt-engineering-best-practices/best-practices.html\n\u00a0via -\u00a0https://docs.aws.amazon.com/prescriptive-guidance/latest/llm-prompt-engineering-best-practices/common-attacks.html",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 9,
+    "question": "A software development company is evaluating Amazon Q Developer to enhance its application development process by leveraging AI-driven tools for automation, code generation, and workflow optimization. The company is looking to understand the key features and capabilities of Amazon Q Developer. Gaining clarity on its core functionalities will help the company decide if it aligns with their development needs. What would you suggest to the company regarding the capabilities of Amazon Q Developer?",
+    "options": [
+      "Amazon Q Developer can only be used in the integrated development environments (IDEs)",
+      "Amazon Q Developer can be used in integrated development environments (IDEs) as well as the AWS Management Console",
+      "Amazon Q Developer can only be used in the AWS Management Console",
+      "Amazon Q Developer can neither be used in the integrated development environments (IDEs) nor the AWS Management Console"
+    ],
+    "correct_option": "Amazon Q Developer can be used in integrated development environments (IDEs) as well as the AWS Management Console\nYou can use Amazon Q Developer in the AWS Management Console, AWS Console Mobile Application, AWS Marketing website, AWS Documentation website, and chat channels integrated with AWS Chatbot to ask questions about AWS. You can ask Amazon Q about AWS architecture, best practices, support, and documentation. Amazon Q can also help with code that you're writing with the AWS SDKs and AWS Command Line Interface (AWS CLI).\nYou can also use Amazon Q Developer in integrated development environments (IDEs) to learn about AWS and get assistance with your software development needs. In IDEs, Amazon Q includes capabilities to provide guidance and support across various aspects of software development, such as answering questions about building on AWS, generating and updating code, security scanning, and optimizing and refactoring code.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Q Developer can be used in integrated development environments (IDEs) as well as the AWS Management Console\nYou can use Amazon Q Developer in the AWS Management Console, AWS Console Mobile Application, AWS Marketing website, AWS Documentation website, and chat channels integrated with AWS Chatbot to ask questions about AWS. You can ask Amazon Q about AWS architecture, best practices, support, and documentation. Amazon Q can also help with code that you're writing with the AWS SDKs and AWS Command Line Interface (AWS CLI).\nYou can also use Amazon Q Developer in integrated development environments (IDEs) to learn about AWS and get assistance with your software development needs. In IDEs, Amazon Q includes capabilities to provide guidance and support across various aspects of software development, such as answering questions about building on AWS, generating and updating code, security scanning, and optimizing and refactoring code.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 10,
+    "question": "A company is using a generative AI model to summarize a text based on a given prompt without providing specific examples in the prompt instructions. What type of prompting technique does the given use case represent?",
+    "options": [
+      "Negative prompting",
+      "Zero shot Prompting",
+      "Few shot Prompting",
+      "Chain-of-thought prompting"
+    ],
+    "correct_option": "Zero shot Prompting\nZero-shot prompting is a technique used in generative AI where the model is asked to perform a task or generate content without having seen any examples of that specific task during training. Instead, the model relies on its general understanding and knowledge to provide a response.\nFor example, classifying text into categories (e.g., sentiment analysis, topic detection) without providing specific training examples for those categories.",
+    "explanation": "Overall explanation\nCorrect option:\nZero shot Prompting\nZero-shot prompting is a technique used in generative AI where the model is asked to perform a task or generate content without having seen any examples of that specific task during training. Instead, the model relies on its general understanding and knowledge to provide a response.\nFor example, classifying text into categories (e.g., sentiment analysis, topic detection) without providing specific training examples for those categories.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 11,
+    "question": "A financial services company is building machine learning models on AWS to automate loan approval processes. As an AI Practitioner, you have been tasked to build and maintain data lineage in the context of these machine learning models on AWS. Which of the following would you identify as the key reason to maintain data lineage?",
+    "options": [
+      "It ensures data privacy and compliance by tracking the flow and transformation of data",
+      "It improves the performance of machine learning models by optimizing data processing",
+      "It enhances the visualization capabilities of the data",
+      "It reduces the storage costs by efficiently managing data"
+    ],
+    "correct_option": "It ensures data privacy and compliance by tracking the flow and transformation of data\nMaintaining data lineage involves tracking the flow, transformations, and origins of data throughout its lifecycle. This is crucial for ensuring data privacy, security, and compliance with regulatory standards. By having a clear record of where data comes from and how it has been processed, organizations can ensure that their machine learning models are built on trustworthy and compliant data.",
+    "explanation": "Overall explanation\nCorrect option:\nIt ensures data privacy and compliance by tracking the flow and transformation of data\nMaintaining data lineage involves tracking the flow, transformations, and origins of data throughout its lifecycle. This is crucial for ensuring data privacy, security, and compliance with regulatory standards. By having a clear record of where data comes from and how it has been processed, organizations can ensure that their machine learning models are built on trustworthy and compliant data.",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 12,
+    "question": "Match the following AWS services to the respective use cases: A) Amazon Textract, B) Amazon Forecast, C) Amazon Personalize. 1) A forecasts time-series data, 2) A analyzes documents and extracts data, 3) A recommends items for users",
+    "options": [
+      "A-2, B-1, C-3",
+      "A-2, B-3, C-1",
+      "A-3, B-2, C-1",
+      "A-1, B-2, C-3"
+    ],
+    "correct_option": "A-2, B-3, C-1\nAmazon Textract - Automatically extract printed text, handwriting, layout elements, and data from any document. Amazon Textract is a machine learning (ML) service that automatically extracts text, handwriting, layout elements, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract specific data from documents.\nAmazon Forecast - Forecast business outcomes easily and accurately using machine learning. Amazon Forecast uses machine learning (ML) to generate more accurate demand forecasts with just a few clicks, without requiring any prior ML experience. Amazon Forecast uses ML to learn not only the best algorithm for each item but the best ensemble of algorithms for each item, automatically creating the best model for your data.\nAmazon Kendra - Easy-to-use enterprise search service that\u2019s powered by machine learning. Amazon Kendra is a highly accurate and easy-to-use enterprise search service that\u2019s powered by machine learning (ML). It allows developers to add search capabilities to their applications so their end users can discover information stored within the vast amount of content spread across their company.",
+    "explanation": "Overall explanation\nCorrect option:\nA-2, B-3, C-1\nAmazon Textract - Automatically extract printed text, handwriting, layout elements, and data from any document. Amazon Textract is a machine learning (ML) service that automatically extracts text, handwriting, layout elements, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract specific data from documents.\nAmazon Forecast - Forecast business outcomes easily and accurately using machine learning. Amazon Forecast uses machine learning (ML) to generate more accurate demand forecasts with just a few clicks, without requiring any prior ML experience. Amazon Forecast uses ML to learn not only the best algorithm for each item but the best ensemble of algorithms for each item, automatically creating the best model for your data.\nAmazon Kendra - Easy-to-use enterprise search service that\u2019s powered by machine learning. Amazon Kendra is a highly accurate and easy-to-use enterprise search service that\u2019s powered by machine learning (ML). It allows developers to add search capabilities to their applications so their end users can discover information stored within the vast amount of content spread across their company.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 13,
+    "question": "A tech startup is customizing a Foundation Model using Amazon Bedrock to enhance its machine learning capabilities for analyzing customer behavior and predicting market trends. As part of this customization, the company needs to perform model validation to ensure the model is accurately trained and tuned for its specific use case. To facilitate this, the company must choose an appropriate dataset storage location that is fully supported by Amazon Bedrock for storing and accessing the large datasets required for validation. Which of the following storage options would be the most suitable for this task?",
+    "options": [
+      "The company should use Amazon S3, which is a scalable object storage service fully integrated with Amazon Bedrock",
+      "The company should use Amazon RDS, which is a managed relational database service for structured data",
+      "The company should use Amazon EFS, which is a managed file storage service that allows shared access to file data for Amazon Bedrock",
+      "The company should use Amazon EBS , a block storage service designed to provide persistent storage for Amazon Bedrock"
+    ],
+    "correct_option": "The company should use Amazon S3, which is a scalable object storage service fully integrated with Amazon Bedrock\nAmazon S3 is the recommended storage solution for datasets used in model validation when working with Amazon Bedrock. S3 provides a highly scalable and durable storage platform, and it is natively integrated with Amazon Bedrock, allowing easy access to large datasets required for model customization, training, and validation tasks. It supports a wide range of data formats and allows seamless access from various AWS services.",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should use Amazon S3, which is a scalable object storage service fully integrated with Amazon Bedrock\nAmazon S3 is the recommended storage solution for datasets used in model validation when working with Amazon Bedrock. S3 provides a highly scalable and durable storage platform, and it is natively integrated with Amazon Bedrock, allowing easy access to large datasets required for model customization, training, and validation tasks. It supports a wide range of data formats and allows seamless access from various AWS services.",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 14,
+    "question": "A media company is developing a machine learning model to categorize its vast library of content. The data science team is trying to decide between using multi-class or multi-label classification based on the complexity of the content categories. Understanding the differences between multi-class and multi-label classification will help the team choose the most appropriate approach for organizing their content effectively. What do you recommend to the company?",
+    "options": [
+      "Multi-class classification does not require labeled data, whereas multi-label classification requires labeled data for training",
+      "Multi-class classification allows each instance to belong to multiple classes simultaneously, whereas multi-label classification restricts each instance to one class only",
+      "Multi-class classification assigns each instance to one of several possible classes, while multi-label classification assigns each instance to one or more classes",
+      "Multi-class classification is used exclusively for image data, whereas multi-label classification is used exclusively for text data"
+    ],
+    "correct_option": "Multi-class classification assigns each instance to one of several possible classes, while multi-label classification assigns each instance to one or more classes\nWith multi-label classification, you can train models and classify your documents with more than one label. For example, you can use multi-label classification to categorize customer contact transcripts with one or more labels to identify departments within your company like Payments, Renewals, or Tech Support. These labels can then be mapped to relevant content in your support library or directed towards the appropriate contacts within your company. ML models for multiclass classification problems allow you to generate predictions for multiple classes (predict one of more than two outcomes).\nTherefore, the key difference is that multi-class classification assigns each instance to one of several possible classes (e.g., an image classified as either a cat, dog, or bird), whereas multi-label classification can assign each instance to multiple classes simultaneously (e.g., a document classified as both \"science\" and \"technology\").",
+    "explanation": "Overall explanation\nCorrect option:\nMulti-class classification assigns each instance to one of several possible classes, while multi-label classification assigns each instance to one or more classes\nWith multi-label classification, you can train models and classify your documents with more than one label. For example, you can use multi-label classification to categorize customer contact transcripts with one or more labels to identify departments within your company like Payments, Renewals, or Tech Support. These labels can then be mapped to relevant content in your support library or directed towards the appropriate contacts within your company. ML models for multiclass classification problems allow you to generate predictions for multiple classes (predict one of more than two outcomes).\nTherefore, the key difference is that multi-class classification assigns each instance to one of several possible classes (e.g., an image classified as either a cat, dog, or bird), whereas multi-label classification can assign each instance to multiple classes simultaneously (e.g., a document classified as both \"science\" and \"technology\").",
+    "domain": "Fundamentals of AI and ML",
+    "is_correct": true
+  },
+  {
+    "question_number": 15,
+    "question": "A media company is deploying machine learning models using Amazon SageMaker to generate personalized content recommendations. Since the company has intermittent workloads and it does not want to configure or manage the underlying infrastructure, the development team is evaluating different deployment models that offer cost savings by allowing for cold starts. Understanding which deployment model suits this use case will help them balance cost efficiency with operational needs. What do you suggest?",
+    "options": [
+      "Serverless Inference",
+      "Asynchronous Inference",
+      "Real-time hosting services",
+      "Batch transform"
+    ],
+    "correct_option": "Serverless Inference\nOn-demand Serverless Inference is ideal for workloads that have idle periods between traffic spurts and can tolerate cold starts.\nAmazon SageMaker Serverless Inference is a purpose-built inference option that enables you to deploy and scale ML models without configuring or managing any of the underlying infrastructure.\nServerless endpoints automatically launch compute resources and scale them in and out depending on traffic, eliminating the need to choose instance types or manage scaling policies. This takes away the undifferentiated heavy lifting of selecting and managing servers. Serverless Inference integrates with AWS Lambda to offer you high availability, built-in fault tolerance, and automatic scaling. With Serverless Inference, you can quickly deploy machine learning models for inference without having to configure or manage the underlying infrastructure, and you pay only for the compute capacity used to process inference requests, which is ideal for intermittent workloads. During times when there are no requests, Serverless Inference scales your endpoint down to 0, helping you to minimize your costs.\nServerless Inference:",
+    "explanation": "Overall explanation\nCorrect option:\nServerless Inference\nOn-demand Serverless Inference is ideal for workloads that have idle periods between traffic spurts and can tolerate cold starts.\nAmazon SageMaker Serverless Inference is a purpose-built inference option that enables you to deploy and scale ML models without configuring or managing any of the underlying infrastructure.\nServerless endpoints automatically launch compute resources and scale them in and out depending on traffic, eliminating the need to choose instance types or manage scaling policies. This takes away the undifferentiated heavy lifting of selecting and managing servers. Serverless Inference integrates with AWS Lambda to offer you high availability, built-in fault tolerance, and automatic scaling. With Serverless Inference, you can quickly deploy machine learning models for inference without having to configure or manage the underlying infrastructure, and you pay only for the compute capacity used to process inference requests, which is ideal for intermittent workloads. During times when there are no requests, Serverless Inference scales your endpoint down to 0, helping you to minimize your costs.\nServerless Inference:\u00a0\n\u00a0via -\u00a0https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 16,
+    "question": "A tech startup is developing a new foundation model (FM) for image classification, aiming to deploy it for use in various applications, from identifying product defects to recognizing objects in photos. The team needs to assess the accuracy of the model to ensure it meets performance requirements before deployment. What is the best way to assess the accuracy of the foundation model for image classification?",
+    "options": [
+      "Use a benchmark dataset for evaluation",
+      "Deploy the model in a live production environment and gather user feedback",
+      "Manually test the model by running random images through it",
+      "Evaluate the model using only a small subset of the training data"
+    ],
+    "correct_option": "Use a benchmark dataset for evaluation\nThe most reliable way to assess the accuracy of a foundation model for image classification is by evaluating it on a benchmark dataset. Benchmark datasets consist of standardized sets of labeled images that are widely used in the research community for model comparison and performance evaluation. These datasets, such as ImageNet or CIFAR-10, provide a controlled environment to test the model's accuracy and allow developers to compare their model's performance against other existing models. Using a benchmark dataset ensures the evaluation process is consistent, objective, and provides a clear indication of how the model will perform in real-world scenarios.",
+    "explanation": "Overall explanation\nCorrect option:\nUse a benchmark dataset for evaluation\nThe most reliable way to assess the accuracy of a foundation model for image classification is by evaluating it on a benchmark dataset. Benchmark datasets consist of standardized sets of labeled images that are widely used in the research community for model comparison and performance evaluation. These datasets, such as ImageNet or CIFAR-10, provide a controlled environment to test the model's accuracy and allow developers to compare their model's performance against other existing models. Using a benchmark dataset ensures the evaluation process is consistent, objective, and provides a clear indication of how the model will perform in real-world scenarios.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 17,
+    "question": "Which type of Machine Learning algorithm is used by the models that are trained, evaluated, and tuned on AWS DeepRacer?",
+    "options": [
+      "Reinforcement Learning",
+      "Deep Learning",
+      "Unsupervised Learning",
+      "Semi-supervised Learning"
+    ],
+    "correct_option": "Reinforcement Learning\nAWS DeepRacer is the fastest way to get rolling with reinforcement learning (RL), literally, with a fully autonomous 1/18th scale race car driven by reinforcement learning, a 3D racing simulator, and a global racing league. Developers can train, evaluate, and tune RL models in the online simulator, deploy their models onto AWS DeepRacer for a real-world autonomous experience, and compete in the AWS DeepRacer League for a chance to win the AWS DeepRacer Championship Cup.\nAWS DeepRacer gives developers a simple way to learn RL, experiment with new RL algorithms and simulation-to-real domain transfer methods, and experience RL in the real world.\nWhat is reinforcement learning?:",
+    "explanation": "Overall explanation\nCorrect option:\nReinforcement Learning\nAWS DeepRacer is the fastest way to get rolling with reinforcement learning (RL), literally, with a fully autonomous 1/18th scale race car driven by reinforcement learning, a 3D racing simulator, and a global racing league. Developers can train, evaluate, and tune RL models in the online simulator, deploy their models onto AWS DeepRacer for a real-world autonomous experience, and compete in the AWS DeepRacer League for a chance to win the AWS DeepRacer Championship Cup.\nAWS DeepRacer gives developers a simple way to learn RL, experiment with new RL algorithms and simulation-to-real domain transfer methods, and experience RL in the real world.\nWhat is reinforcement learning?:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/what-is/reinforcement-learning/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 18,
+    "question": "A company needs to support human reviews and audits for its ML model predictions. The solution should be easy to implement and have the facility to add multiple reviewers. Which AWS service do you recommend for this use case?",
+    "options": [
+      "Amazon SageMaker Ground Truth",
+      "AWS DeepRacer",
+      "Amazon Augmented AI (A2I)",
+      "Amazon Forecast"
+    ],
+    "correct_option": "Amazon Augmented AI (A2I)\nAmazon Augmented AI (Amazon A2I) is a service that makes it easy to build the workflows required for human review of ML predictions. Amazon A2I brings human review to all developers, removing the undifferentiated heavy lifting associated with building human review systems or managing large numbers of human reviewers.\nMany machine learning applications require humans to review low-confidence predictions to ensure the results are correct. However building human review systems can be time-consuming and expensive because it involves implementing complex processes or \u201cworkflows\u201d, writing custom software to manage review tasks and results, and in many cases, managing large groups of reviewers.\nAmazon A2I makes it easy to build and manage human reviews for machine learning applications. Amazon A2I provides built-in human review workflows for common machine learning use cases. You can also create your workflows for ML models built on Amazon SageMaker or any other tools. Using Amazon A2I, you can allow human reviewers to step in when a model is unable to make a high-confidence prediction or to audit its predictions on an ongoing basis.\nHow Amazon A2I works:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Augmented AI (A2I)\nAmazon Augmented AI (Amazon A2I) is a service that makes it easy to build the workflows required for human review of ML predictions. Amazon A2I brings human review to all developers, removing the undifferentiated heavy lifting associated with building human review systems or managing large numbers of human reviewers.\nMany machine learning applications require humans to review low-confidence predictions to ensure the results are correct. However building human review systems can be time-consuming and expensive because it involves implementing complex processes or \u201cworkflows\u201d, writing custom software to manage review tasks and results, and in many cases, managing large groups of reviewers.\nAmazon A2I makes it easy to build and manage human reviews for machine learning applications. Amazon A2I provides built-in human review workflows for common machine learning use cases. You can also create your workflows for ML models built on Amazon SageMaker or any other tools. Using Amazon A2I, you can allow human reviewers to step in when a model is unable to make a high-confidence prediction or to audit its predictions on an ongoing basis.\nHow Amazon A2I works:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/augmented-ai/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 19,
+    "question": "A manufacturing company is developing a machine learning model to optimize its supply chain operations. The data science team needs to prepare the dataset by dividing it into train, test, and validation sets to ensure the model is trained effectively and performs well on unseen data. Which of the following is the best fit to create train, test, and validation splits on your data for machine learning?",
+    "options": [
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Ground Truth",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Feature Store"
+    ],
+    "correct_option": "Amazon SageMaker Data Wrangler\nYou can split a machine learning (ML) dataset into train, test, and validation datasets with Amazon SageMaker Data Wrangler.\nData used for ML is typically split into the following datasets:\nTraining \u2013 Used to train an algorithm or ML model. The model iteratively uses the data and learns to provide the desired result.\nValidation \u2013 Introduces new data to the trained model. You can use a validation set to periodically measure model performance as it trains and also tune any hyperparameters of the model. However, validation datasets are optional.\nTest \u2013 Used on the final trained model to assess its performance on unseen data. This helps determine how well the model generalizes.\nData Wrangler is a capability of Amazon SageMaker that helps data scientists and data engineers quickly and easily prepare data for ML applications using a visual interface. It contains over 300 built-in data transformations so you can quickly normalize, transform, and combine features without writing code.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Data Wrangler\nYou can split a machine learning (ML) dataset into train, test, and validation datasets with Amazon SageMaker Data Wrangler.\nData used for ML is typically split into the following datasets:\nTraining \u2013 Used to train an algorithm or ML model. The model iteratively uses the data and learns to provide the desired result.\nValidation \u2013 Introduces new data to the trained model. You can use a validation set to periodically measure model performance as it trains and also tune any hyperparameters of the model. However, validation datasets are optional.\nTest \u2013 Used on the final trained model to assess its performance on unseen data. This helps determine how well the model generalizes.\nData Wrangler is a capability of Amazon SageMaker that helps data scientists and data engineers quickly and easily prepare data for ML applications using a visual interface. It contains over 300 built-in data transformations so you can quickly normalize, transform, and combine features without writing code.",
+    "domain": "Fundamentals of AI and ML",
+    "is_correct": true
+  },
+  {
+    "question_number": 20,
+    "question": "A retail company is seeking to empower its business analysts to create data-driven dashboards without needing technical expertise in coding or data query languages. The company wants a solution that allows analysts to use natural language to generate reports, visualize key metrics, and build Business Intelligence (BI) dashboards to inform decision-making across departments. They are exploring options within AWS that can help streamline this process for non-technical users. Which of the following solutions allows business analysts to use natural language to build BI dashboards?",
+    "options": [
+      "Amazon Q Developer",
+      "Amazon Q in QuickSight",
+      "Amazon Q Business",
+      "Amazon Q in Connect"
+    ],
+    "correct_option": "Amazon Q in QuickSight\nWith Amazon Q in QuickSight, customers get a generative BI assistant that allows business analysts to use natural language to build BI dashboards in minutes and easily create visualizations and complex calculations. These dashboard-authoring capabilities empower business analysts to swiftly build, uncover, and share valuable insights using natural language prompts. You can simplify data understanding for business users through a context-aware Q&A experience, executive summaries, and customizable data stories \u2014 all designed to use insights to inform and drive decisions.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Q in QuickSight\nWith Amazon Q in QuickSight, customers get a generative BI assistant that allows business analysts to use natural language to build BI dashboards in minutes and easily create visualizations and complex calculations. These dashboard-authoring capabilities empower business analysts to swiftly build, uncover, and share valuable insights using natural language prompts. You can simplify data understanding for business users through a context-aware Q&A experience, executive summaries, and customizable data stories \u2014 all designed to use insights to inform and drive decisions.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 21,
+    "question": "Which of the following use cases is addressed by Amazon Personalize?",
+    "options": [
+      "Offers highly accurate and easy-to-use enterprise search service that\u2019s powered by machine learning",
+      "Extract layout elements such as paragraphs, titles, lists, and more from documents",
+      "To offer personalized experiences for mobile subscriber activities such as activating a SIM card, adding a phone line, purchasing prepaid cards, requesting a service change",
+      "Generate recommendations for items that are similar to an item you specify"
+    ],
+    "correct_option": "Generate recommendations for items that are similar to an item you specify\nAmazon Personalize accelerates your digital transformation with ML, making it easier to integrate personalized recommendations into existing websites, applications, email marketing systems, and more.\nImprove the discoverability of your catalog by surfacing similar items to your users. The Similar-Items (aws-similar-items) generates recommendations for items that are similar to an item you specify. Use Similar-Items to help customers discover new items in your catalog based on their previous behavior and item metadata. Recommending similar items can increase user engagement, click-through rate, and conversion rate for your application.",
+    "explanation": "Overall explanation\nCorrect option:\nGenerate recommendations for items that are similar to an item you specify\nAmazon Personalize accelerates your digital transformation with ML, making it easier to integrate personalized recommendations into existing websites, applications, email marketing systems, and more.\nImprove the discoverability of your catalog by surfacing similar items to your users. The Similar-Items (aws-similar-items) generates recommendations for items that are similar to an item you specify. Use Similar-Items to help customers discover new items in your catalog based on their previous behavior and item metadata. Recommending similar items can increase user engagement, click-through rate, and conversion rate for your application.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 22,
+    "question": "A healthcare organization is deploying machine learning models to assist in patient diagnosis and treatment planning. To ensure responsible use and compliance with healthcare regulations, the data science team needs a tool that offers clear guidance on how each model should be used, along with an assessment of the potential risks associated with its deployment. Understanding these factors is critical for maintaining transparency and trust in the AI models used in such sensitive applications. Which AWS tool do you recommend for the given use case?",
+    "options": [
+      "Amazon SageMaker Model Cards",
+      "Amazon SageMaker Model Monitor",
+      "Amazon SageMaker Ground Truth",
+      "Amazon SageMaker Canvas"
+    ],
+    "correct_option": "Amazon SageMaker Model Cards\nUse Amazon SageMaker Model Cards to document critical details about your machine learning (ML) models in a single place for streamlined governance and reporting.\nCatalog details such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional call-outs such as considerations, recommendations, and custom information. By creating model cards, you can do the following:\n1\tProvide guidance on how a model should be used.\n2\tSupport audit activities with detailed descriptions of model training and performance.\n3\tCommunicate how a model is intended to support business goals.\nModel card JSON schema sample file:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Model Cards\nUse Amazon SageMaker Model Cards to document critical details about your machine learning (ML) models in a single place for streamlined governance and reporting.\nCatalog details such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional call-outs such as considerations, recommendations, and custom information. By creating model cards, you can do the following:\n\t1\tProvide guidance on how a model should be used.\n\t2\tSupport audit activities with detailed descriptions of model training and performance.\n\t3\tCommunicate how a model is intended to support business goals.\nModel card JSON schema sample file:\u00a0\n\u00a0via -\u00a0https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 23,
+    "question": "A financial services company is scaling its machine learning operations on AWS to automate loan approvals and detect fraud. To ensure compliance with industry regulations and maintain model transparency, the data science team needs to implement governance tools provided by Amazon SageMaker to ensure models are used responsibly. Which of the following would you recommend as governance tools for the given use case?",
+    "options": [
+      "Amazon SageMaker Model Dashboard, Amazon SageMaker Role Manager, Amazon SageMaker Clarify",
+      "Amazon SageMaker Role Manager, Amazon SageMaker Model Cards, Amazon SageMaker Model Dashboard",
+      "Amazon SageMaker Role Manager, Amazon SageMaker Model Monitor, Amazon SageMaker Studio",
+      "Amazon SageMaker Model Dashboard, Amazon SageMaker Role Manager, Amazon SageMaker Model Monitor"
+    ],
+    "correct_option": "Amazon SageMaker Role Manager, Amazon SageMaker Model Cards, Amazon SageMaker Model Dashboard\nSageMaker provides purpose-built ML governance tools across the ML lifecycle. With Amazon SageMaker Role Manager, administrators can define minimum permissions in minutes. Amazon SageMaker Model Cards make it easier to capture, retrieve, and share essential model information from conception to deployment, and Amazon SageMaker Model Dashboard keeps you informed on production model behavior, all in one place.\nSimplify permissions for ML activities - SageMaker Role Manager provides a baseline set of permissions for ML activities and personas through a catalog of prebuilt AWS Identity and Access Management (IAM) policies.\nCapture model information - SageMaker Model Cards is a repository for model information in the Amazon SageMaker Console and helps you centralize and standardize model documentation so you can implement ML responsibly.\nTrack model behavior - SageMaker Model Dashboard gives you a comprehensive overview of deployed models and endpoints so that you can track resources and model behavior violations in one place. You can monitor model behavior in four dimensions: data quality, model quality, bias drift, and feature attribution drift.\nAmazon SageMaker ML governance tools:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Role Manager, Amazon SageMaker Model Cards, Amazon SageMaker Model Dashboard\nSageMaker provides purpose-built ML governance tools across the ML lifecycle. With Amazon SageMaker Role Manager, administrators can define minimum permissions in minutes. Amazon SageMaker Model Cards make it easier to capture, retrieve, and share essential model information from conception to deployment, and Amazon SageMaker Model Dashboard keeps you informed on production model behavior, all in one place.\nSimplify permissions for ML activities - SageMaker Role Manager provides a baseline set of permissions for ML activities and personas through a catalog of prebuilt AWS Identity and Access Management (IAM) policies.\nCapture model information - SageMaker Model Cards is a repository for model information in the Amazon SageMaker Console and helps you centralize and standardize model documentation so you can implement ML responsibly.\nTrack model behavior - SageMaker Model Dashboard gives you a comprehensive overview of deployed models and endpoints so that you can track resources and model behavior violations in one place. You can monitor model behavior in four dimensions: data quality, model quality, bias drift, and feature attribution drift.\nAmazon SageMaker ML governance tools:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/sagemaker/ml-governance/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 24,
+    "question": "A law firm is handling an increasing volume of legal documents, including contracts, agreements, and case files, and seeks to streamline its document review process by automatically extracting key information such as important clauses, dates, and entities. The firm wants to implement an automated solution that can efficiently handle this task, reducing the time and effort required for manual review while ensuring accuracy in identifying critical details within the documents. Which of the following options would you suggest for achieving this goal? (Select three)",
+    "options": [
+      "Convolutional Neural Network (CNN)",
+      "Amazon Textract",
+      "WaveNet",
+      "Amazon Comprehend",
+      "Generative AI powered summarization chatbot",
+      "Amazon Personalize"
+    ],
+    "correct_option": "AWS intelligent document processing (IDP), with AI services such as Amazon Textract, allows you to take advantage of industry-leading machine learning (ML) technology to quickly and accurately process data from any scanned document or image. Generative artificial intelligence (generative AI) complements Amazon Textract to further automate document processing workflows. Features such as normalizing key fields and summarizing input data support faster cycles for managing document process workflows, while reducing the potential for errors.",
+    "explanation": "Overall explanation\nCorrect option:\nAWS intelligent document processing (IDP), with AI services such as Amazon Textract, allows you to take advantage of industry-leading machine learning (ML) technology to quickly and accurately process data from any scanned document or image. Generative artificial intelligence (generative AI) complements Amazon Textract to further automate document processing workflows. Features such as normalizing key fields and summarizing input data support faster cycles for managing document process workflows, while reducing the potential for errors.\n\u00a0via -\u00a0https://aws.amazon.com/blogs/machine-learning/enhancing-aws-intelligent-document-processing-with-generative-ai/\nGenerative AI powered summarization chatbot\nGenerative AI powered summarization chatbot leverages large language models to generate concise summaries of text. With prompt engineering, the summarization chatbot can be specifically tailored to accurately extract detailed key points, entities, or legal clauses from complex legal documents.\nAmazon Comprehend\nAmazon Comprehend is an effective choice because it is specifically designed to process large volumes of unstructured text data, such as legal documents, and extract key entities, phrases, and insights. It uses machine learning to accurately identify and extract relevant information, like names, dates, and specific legal clauses, making it well-suited for the law firm\u2019s needs. The service can be integrated with other AWS tools to automate and scale the document review process, thereby enhancing efficiency.\nAmazon Textract\nAmazon Textract is also a suitable choice because it is designed to extract structured data from scanned documents, such as PDFs or images, which is common in legal settings. Textract can identify key fields, like dates, names, and amounts, and extract them into a structured format. This makes it particularly useful for handling large volumes of physical or scanned documents where the information is not readily accessible as text. Combined with NLP tools like Amazon Comprehend, Textract can provide a comprehensive solution for extracting both structured and unstructured information from legal documents.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 25,
+    "question": "A retail company needs a solution that can help in forecasting foot traffic, visitor counts, and channel demand to efficiently manage the operating costs. Which AWS ML service is the right fit for this use case?",
+    "options": [
+      "Amazon Forecast",
+      "Amazon Lex",
+      "Amazon Personalize",
+      "Amazon SageMaker Feature Store"
+    ],
+    "correct_option": "Amazon Forecast\nAmazon Forecast is a fully managed service that uses statistical and machine learning algorithms to deliver highly accurate time-series forecasts. Based on the same technology used for time-series forecasting at Amazon.com, Forecast provides state-of-the-art algorithms to predict future time-series data based on historical data and requires no machine learning experience.\nTime-series forecasting is useful in multiple fields, including retail, finance, logistics, and healthcare. You can also use Forecast to predict domain-specific metrics for your inventory, workforce, web traffic, server capacity, and finances.\nHow Amazon Forecast works:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Forecast\nAmazon Forecast is a fully managed service that uses statistical and machine learning algorithms to deliver highly accurate time-series forecasts. Based on the same technology used for time-series forecasting at Amazon.com, Forecast provides state-of-the-art algorithms to predict future time-series data based on historical data and requires no machine learning experience.\nTime-series forecasting is useful in multiple fields, including retail, finance, logistics, and healthcare. You can also use Forecast to predict domain-specific metrics for your inventory, workforce, web traffic, server capacity, and finances.\nHow Amazon Forecast works:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/forecast/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 26,
+    "question": "A financial services company is developing a machine-learning model to classify loan applications as either \"approved\" or \"denied.\" To ensure the model performs effectively, the company wants to evaluate how accurately it predicts these outcomes. Specifically, they are interested in knowing the overall percentage of correct predictions, including both approved and denied applications. The company is considering several metrics to assess the model's performance in terms of the number of correct outcomes. Which metric would be most appropriate for this purpose?",
+    "options": [
+      "The company should use Root Mean Squared Error (RMSE), a metric that calculates the square root of the average of the squared differences between predicted and actual values",
+      "The company should use F1 Score, a metric that considers both precision and recall by calculating their harmonic mean",
+      "The company should use R-squared, a statistical measure that indicates the proportion of variance in the dependent variable explained by the independent variables",
+      "The company should use Accuracy, which measures the proportion of correctly predicted instances (both true positives and true negatives) out of the total number of instances"
+    ],
+    "correct_option": "The company should use Accuracy, which measures the proportion of correctly predicted instances (both true positives and true negatives) out of the total number of instances\nAccuracy is the most appropriate metric when the goal is to understand the proportion of correct outcomes in a binary classification problem. It provides a straightforward measure of how often the model correctly predicts the positive and negative classes. Accuracy is a suitable choice when the dataset is balanced (i.e., the number of positive and negative instances is approximately equal) and when the company wants a simple, overall performance measure of the model's correctness.",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should use Accuracy, which measures the proportion of correctly predicted instances (both true positives and true negatives) out of the total number of instances\nAccuracy is the most appropriate metric when the goal is to understand the proportion of correct outcomes in a binary classification problem. It provides a straightforward measure of how often the model correctly predicts the positive and negative classes. Accuracy is a suitable choice when the dataset is balanced (i.e., the number of positive and negative instances is approximately equal) and when the company wants a simple, overall performance measure of the model's correctness.",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 27,
+    "question": "A business needs an automated solution that can extract text from thousands of receipts and invoices generated across all its stores. Which AWS Machine Learning (ML) service can offer the most optimal solution for this use case ?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon Transcribe",
+      "Amazon Comprehend",
+      "Amazon Textract"
+    ],
+    "correct_option": "Amazon Textract\nAmazon Textract is a machine learning (ML) service that automatically extracts text, handwriting, layout elements, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract specific data from documents. Today, many companies manually extract data from scanned documents such as PDFs, images, tables, and forms, or through simple OCR software that requires manual configuration (which often must be updated when the form changes). To overcome these manual and expensive processes, Textract uses ML to read and process any type of document, accurately extracting text, handwriting, tables, and other data with no manual effort.\nYou can use one of AWS's pre-trained or custom features to quickly automate document processing, whether you\u2019re automating loan processing or extracting information from invoices and receipts. Textract provides you the ability to customize the pre-trained features to meet the document processing needs specific to your business. Textract can extract the data in minutes instead of hours or days.\nTextract use cases:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Textract\nAmazon Textract is a machine learning (ML) service that automatically extracts text, handwriting, layout elements, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract specific data from documents. Today, many companies manually extract data from scanned documents such as PDFs, images, tables, and forms, or through simple OCR software that requires manual configuration (which often must be updated when the form changes). To overcome these manual and expensive processes, Textract uses ML to read and process any type of document, accurately extracting text, handwriting, tables, and other data with no manual effort.\nYou can use one of AWS's pre-trained or custom features to quickly automate document processing, whether you\u2019re automating loan processing or extracting information from invoices and receipts. Textract provides you the ability to customize the pre-trained features to meet the document processing needs specific to your business. Textract can extract the data in minutes instead of hours or days.\nTextract use cases:\u00a0\n\u00a0via -\u00a0https://docs.aws.amazon.com/textract/latest/dg/what-is.html",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 28,
+    "question": "A technology company is exploring AWS DeepRacer to introduce its employees to machine learning through an engaging and hands-on platform. The team wants to understand the key features and capabilities of AWS DeepRacer. Which of the following represents the CORRECT statement about AWS DeepRacer?",
+    "options": [
+      "You need an AWS DeepRacer car to use the AWS DeepRacer simulator",
+      "AWS DeepRacer vehicle is only a virtual vehicle running on AWS DeepRacer simulator",
+      "AWS DeepRacer car is based on a model that uses a supervised learning ML algorithm",
+      "The AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track"
+    ],
+    "correct_option": "The AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track\nThe AWS DeepRacer vehicle is a Wi-Fi-enabled, physical vehicle that can drive itself on a physical track by using a reinforcement learning model.\n1\tYou can manually control the vehicle or deploy a model for the vehicle to drive autonomously.\n2\tThe autonomous mode runs inference on the vehicle's compute module. Inference uses images that are captured from the camera that is mounted on the front.\n3\tA Wi-Fi connection allows the vehicle to download software. The connection also allows the user to access the device console to operate the vehicle by using a computer or mobile device.",
+    "explanation": "Overall explanation\nCorrect option:\nThe AWS DeepRacer vehicle is a Wi-Fi enabled, physical vehicle that can drive itself on a physical track\nThe AWS DeepRacer vehicle is a Wi-Fi-enabled, physical vehicle that can drive itself on a physical track by using a reinforcement learning model.\n\t1\tYou can manually control the vehicle or deploy a model for the vehicle to drive autonomously.\n\t2\tThe autonomous mode runs inference on the vehicle's compute module. Inference uses images that are captured from the camera that is mounted on the front.\n\t3\tA Wi-Fi connection allows the vehicle to download software. The connection also allows the user to access the device console to operate the vehicle by using a computer or mobile device.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 29,
+    "question": "A financial services company is developing machine learning models to improve fraud detection and credit risk assessment. However, given the complexity of these tasks, the team wants to incorporate human input at key stages of the machine learning lifecycle to ensure that the models are accurate and relevant. The company is looking for an AWS service that allows human input and feedback to be integrated into the model development process, improving the overall performance and trustworthiness of the models. What do you suggest?",
+    "options": [
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Feature Store",
+      "Amazon SageMaker Role Manager",
+      "Amazon SageMaker Ground Truth"
+    ],
+    "correct_option": "Amazon SageMaker Ground Truth\nHuman-in-the-loop is the process of harnessing human input across the ML lifecycle to improve the accuracy and relevancy of models. Humans can perform a variety of tasks, from data generation and annotation, to model review and customization. Human intervention is especially important for generative AI applications, where humans are typically both the requester and consumer of the content. It is therefore critical that humans train foundation models (FMs) how to respond accurately, safely, and relevantly to users\u2019 prompts. Human feedback can be applied to help you complete multiple tasks.\nAmazon SageMaker Ground Truth offers the most comprehensive set of human-in-the-loop capabilities. There are two ways to use Amazon SageMaker Ground Truth, a self-service offering and an AWS-managed offering. In the self-service offering, your data annotators, content creators, and prompt engineers (in-house, vendor-managed, or leveraging the public crowd) can use our low-code user interface to accelerate human-in-the-loop tasks, while having the flexibility to build and manage your custom workflows.\nIn the AWS-managed offering (SageMaker Ground Truth Plus), AWS handles the heavy lifting, which includes selecting and managing the right workforce for your use case. SageMaker Ground Truth Plus designs and customizes an end-to-end workflow (including detailed workforce training and quality assurance steps) and provides a skilled AWS-managed team that is trained on the specific tasks and meets your data quality, security, and compliance requirements.\nAWS-Managed Amazon SageMaker Ground Truth:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Ground Truth\nHuman-in-the-loop is the process of harnessing human input across the ML lifecycle to improve the accuracy and relevancy of models. Humans can perform a variety of tasks, from data generation and annotation, to model review and customization. Human intervention is especially important for generative AI applications, where humans are typically both the requester and consumer of the content. It is therefore critical that humans train foundation models (FMs) how to respond accurately, safely, and relevantly to users\u2019 prompts. Human feedback can be applied to help you complete multiple tasks.\nAmazon SageMaker Ground Truth offers the most comprehensive set of human-in-the-loop capabilities. There are two ways to use Amazon SageMaker Ground Truth, a self-service offering and an AWS-managed offering. In the self-service offering, your data annotators, content creators, and prompt engineers (in-house, vendor-managed, or leveraging the public crowd) can use our low-code user interface to accelerate human-in-the-loop tasks, while having the flexibility to build and manage your custom workflows.\nIn the AWS-managed offering (SageMaker Ground Truth Plus), AWS handles the heavy lifting, which includes selecting and managing the right workforce for your use case. SageMaker Ground Truth Plus designs and customizes an end-to-end workflow (including detailed workforce training and quality assurance steps) and provides a skilled AWS-managed team that is trained on the specific tasks and meets your data quality, security, and compliance requirements.\nAWS-Managed Amazon SageMaker Ground Truth:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/sagemaker/groundtruth/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 30,
+    "question": "A tech company is building machine learning models using Amazon SageMaker Studio and wants to streamline its development process. The data science team prefers using familiar Integrated Development Environments (IDEs) to write, test, and debug code more efficiently. To ensure a smooth workflow, the team is exploring which IDEs are supported within SageMaker Studio to maximize productivity and compatibility with their existing tools. Which of the following address the given requirement?",
+    "options": [
+      "JupyterLab",
+      "Code Editor",
+      "RStudio"
+    ],
+    "correct_option": "All\nAmazon SageMaker Studio offers a broad set of fully managed integrated development environments (IDEs) for ML development, including JupyterLab, Code Editor based on Code-OSS (Visual Studio Code \u2013 Open Source), and RStudio.",
+    "explanation": "Overall explanation\nCorrect option:\nAll\nAmazon SageMaker Studio offers a broad set of fully managed integrated development environments (IDEs) for ML development, including JupyterLab, Code Editor based on Code-OSS (Visual Studio Code \u2013 Open Source), and RStudio.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 31,
+    "question": "An ecommerce company is transitioning to AWS Cloud and wants to use Amazon Bedrock for product recommendations. The company wants to provide its own labeled training dataset to improve the selected Foundation Model's (FM) performance. Which of the following represents the best-fit solution for the given use case?",
+    "options": [
+      "Leverage Amazon Bedrock to train the base FM itself using the labeled training dataset",
+      "Leverage Amazon Bedrock to make a public copy of the base FM model and train this public copy of the model using the labeled training dataset",
+      "Leverage Amazon Bedrock to discard the selected FM and create a new model from scratch by using the labeled training dataset",
+      "Leverage Amazon Bedrock to make a separate copy of the base FM model and train this private copy of the model using the labeled training dataset"
+    ],
+    "correct_option": "Leverage Amazon Bedrock to make a separate copy of the base FM model and train this private copy of the model using the labeled training dataset\nAmazon Bedrock is a fully managed service that makes high-performing foundation models (FMs) from leading AI startups and Amazon available for your use through a unified API. Using Amazon Bedrock, you can easily experiment with and evaluate top foundation models for your use cases, privately customize them with your data using techniques such as fine-tuning and Retrieval Augmented Generation (RAG), and build agents that execute tasks using your enterprise systems and data sources.\nWith Amazon Bedrock, you can privately customize FMs, retaining control over how your data is used and encrypted. Amazon Bedrock makes a separate copy of the base FM and trains this private copy of the model. Your data includes prompts, information used to supplement a prompt, and FM responses. Customized FMs remain in the Region where the API call is processed.\nWith Amazon Bedrock, your data, including prompts and customized foundation models, stays within the AWS Region where the API call is processed and encrypted in transit as well as at rest. You can use AWS PrivateLink to ensure private connectivity between your models and on-premises networks without exposing traffic to the internet.",
+    "explanation": "Overall explanation\nCorrect option:\nLeverage Amazon Bedrock to make a separate copy of the base FM model and train this private copy of the model using the labeled training dataset\nAmazon Bedrock is a fully managed service that makes high-performing foundation models (FMs) from leading AI startups and Amazon available for your use through a unified API. Using Amazon Bedrock, you can easily experiment with and evaluate top foundation models for your use cases, privately customize them with your data using techniques such as fine-tuning and Retrieval Augmented Generation (RAG), and build agents that execute tasks using your enterprise systems and data sources.\nWith Amazon Bedrock, you can privately customize FMs, retaining control over how your data is used and encrypted. Amazon Bedrock makes a separate copy of the base FM and trains this private copy of the model. Your data includes prompts, information used to supplement a prompt, and FM responses. Customized FMs remain in the Region where the API call is processed.\nWith Amazon Bedrock, your data, including prompts and customized foundation models, stays within the AWS Region where the API call is processed and encrypted in transit as well as at rest. You can use AWS PrivateLink to ensure private connectivity between your models and on-premises networks without exposing traffic to the internet.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 32,
+    "question": "A healthcare analytics company is using Amazon SageMaker Automatic Model Tuning (AMT) to optimize its machine learning models for predicting patient outcomes. To ensure the models are performing at their best, the data science team is configuring the autotune settings but needs to understand which parameters are mandatory for successful tuning. Properly setting these configurations will allow the team to enhance model accuracy and performance efficiently. Which of the following options is mandatory for the given use case?",
+    "options": [
+      "None",
+      "Tuning strategy",
+      "Hyperparameter ranges",
+      "Number of jobs"
+    ],
+    "correct_option": "None\nChoosing the correct hyperparameters requires experience with machine learning techniques and can drastically affect your model performance. Even with hyperparameter tuning, you still need to specify multiple tuning configurations, such as hyperparameter ranges, search strategy, and number of training jobs to launch. Correcting such a setting is intricate and typically requires multiple experiments, which may incur additional training costs.\nAmazon SageMaker Automatic Model Tuning can automatically choose hyperparameter ranges, search strategy, maximum runtime of a tuning job, early stopping type for training jobs, number of times to retry a training job, and model convergence flag to stop a tuning job, based on the objective metric you provide. This minimizes the time required for you to kickstart your tuning process and increases the chances of finding more accurate models with a lower budget.",
+    "explanation": "Overall explanation\nCorrect option:\nNone\nChoosing the correct hyperparameters requires experience with machine learning techniques and can drastically affect your model performance. Even with hyperparameter tuning, you still need to specify multiple tuning configurations, such as hyperparameter ranges, search strategy, and number of training jobs to launch. Correcting such a setting is intricate and typically requires multiple experiments, which may incur additional training costs.\nAmazon SageMaker Automatic Model Tuning can automatically choose hyperparameter ranges, search strategy, maximum runtime of a tuning job, early stopping type for training jobs, number of times to retry a training job, and model convergence flag to stop a tuning job, based on the objective metric you provide. This minimizes the time required for you to kickstart your tuning process and increases the chances of finding more accurate models with a lower budget.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 33,
+    "question": "A global e-commerce company is utilizing a foundation model through Amazon Bedrock to enhance its customer service chatbot, providing automated support and answering user queries. However, the company is concerned about the potential for the model to generate inappropriate, sensitive, or malicious content that could harm its reputation or negatively impact customer experience. To mitigate these risks, the company seeks to implement safety measures that ensure the model consistently produces safe, relevant, and context-appropriate responses. Given this goal, what would be the most effective approach to control these risks and maintain model safety?",
+    "options": [
+      "The company should instruct the model to stick to the prompt by adding explicit instructions to ignore any unrelated or potentially malicious content",
+      "The company should retrain the underlying foundation model (FM) from scratch to prevent exposure",
+      "The company should adjust the model hyperparameters to safeguard the output",
+      "The company should develop an API that processes all responses from the model and checks for any risks of exposure, which involves creating a custom layer that monitors and filters all model outputs, scanning them for inappropriate or unsafe content before they are delivered to the end-user"
+    ],
+    "correct_option": "The company should instruct the model to stick to the prompt by adding explicit instructions to ignore any unrelated or potentially malicious content\nThis is the correct approach because providing explicit instructions within the prompt helps guide the model's behavior, reducing the likelihood of generating inappropriate or unsafe content. By clarifying what the model should focus on and what it should ignore, the company can enforce boundaries that align with its safety standards. This method is straightforward and leverages prompt engineering to mitigate risks effectively.\nAmazon Bedrock Guardrails:",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should instruct the model to stick to the prompt by adding explicit instructions to ignore any unrelated or potentially malicious content\nThis is the correct approach because providing explicit instructions within the prompt helps guide the model's behavior, reducing the likelihood of generating inappropriate or unsafe content. By clarifying what the model should focus on and what it should ignore, the company can enforce boundaries that align with its safety standards. This method is straightforward and leverages prompt engineering to mitigate risks effectively.\nAmazon Bedrock Guardrails:\n\u00a0via -\u00a0https://aws.amazon.com/bedrock/guardrails/",
+    "domain": "Guidelines for Responsible AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 34,
+    "question": "An e-learning company is developing a Large Language Model (LLM) chatbot using Amazon Bedrock to enhance the personalized learning experience on its platform. The chatbot needs to dynamically tailor its responses based on the user's age group. By leveraging Amazon Bedrock's foundation models, the company aims to create an adaptive learning tool that delivers relevant, engaging, and age-appropriate support to a diverse user base. As an AI Practitioner, which of the following solutions would you recommend?",
+    "options": [
+      "Leverage Retrieval-Augmented Generation (RAG) to customize responses based on user characteristics like age",
+      "Implement dynamic prompt engineering to customize responses based on user characteristics like age",
+      "Perform model re-training for tailoring responses based on user age",
+      "Perform fine-tuning for the model to adjust the style or tone of responses based on user age"
+    ],
+    "correct_option": "Implement dynamic prompt engineering to customize responses based on user characteristics like age\nDynamic prompt engineering involves modifying the input prompts to the Large Language Model (LLM) to customize the chatbot's responses based on the user's age. By altering the prompt dynamically, you can provide specific instructions or context to the LLM to generate age-appropriate responses. For example, if the user is a child, the prompt might include instructions to use simpler language or a friendly tone. This approach does not require changing the model itself and leverages Amazon Bedrock\u2019s ability to interpret context from customized prompts effectively.\nTo provide custom responses via an LLM chatbot built using Amazon Bedrock based on the user's age, you can implement a strategy that dynamically adjusts the chatbot's responses according to the age group of the user. For the given use case, you can leverage Amazon Bedrock to build a custom prompt logic for the LLM that dynamically adjusts the input prompt based on the user's age category, like the following example in Python:\ndef generate_prompt(age_group, user_input):\nif age_group == 'Children':\nprompt = f\"Respond in a friendly and simple manner suitable for children: user_input\"\nelif age_group == 'Teens':\nprompt = f\"Respond in a fun and engaging way suitable for teens, using popular culture references: user_input\"\nelif age_group == 'Adults':",
+    "explanation": "Overall explanation\nCorrect option:\nImplement dynamic prompt engineering to customize responses based on user characteristics like age\nDynamic prompt engineering involves modifying the input prompts to the Large Language Model (LLM) to customize the chatbot's responses based on the user's age. By altering the prompt dynamically, you can provide specific instructions or context to the LLM to generate age-appropriate responses. For example, if the user is a child, the prompt might include instructions to use simpler language or a friendly tone. This approach does not require changing the model itself and leverages Amazon Bedrock\u2019s ability to interpret context from customized prompts effectively.\nTo provide custom responses via an LLM chatbot built using Amazon Bedrock based on the user's age, you can implement a strategy that dynamically adjusts the chatbot's responses according to the age group of the user. For the given use case, you can leverage Amazon Bedrock to build a custom prompt logic for the LLM that dynamically adjusts the input prompt based on the user's age category, like the following example in Python:\ndef generate_prompt(age_group, user_input):\n if age_group == 'Children':\n prompt = f\"Respond in a friendly and simple manner suitable for children: user_input\"\n elif age_group == 'Teens':\n prompt = f\"Respond in a fun and engaging way suitable for teens, using popular culture references: user_input\"\n elif age_group == 'Adults':\n prompt = f\"Provide a concise and informative response suitable for adults: user_input\"\n else: # Seniors\n prompt = f\"Provide a clear and respectful response with detailed explanations suitable for seniors: user_input\"\n return prompt\nThen, use the Amazon Bedrock API to send the customized prompts to the foundation model. The Bedrock service will generate responses based on the context provided in each prompt, adapting the output to fit the desired style and tone for the specific age group.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 35,
+    "question": "A media company is developing generative AI models using Amazon Bedrock for content creation and wants to ensure the responsible use of AI by implementing safeguards to prevent misuse. The data science team is evaluating the use of Guardrails and watermark detection, since understanding the differences between these two approaches will help the company choose the right measures for content security and ethical AI practices. Given this context, which of the following summarizes the differences between Guardrails for Amazon Bedrock and watermark detection for Amazon Bedrock?",
+    "options": [
+      "Both Guardrails and watermark detection help control the interaction between users and FMs by filtering undesirable and harmful content",
+      "Both Guardrails and watermark detection help identify if an image was created by the Amazon Titan Image Generator model on Bedrock",
+      "Watermark detection helps control the interaction between users and FMs by filtering undesirable and harmful content, whereas, Guardrails identifies if an image was created by the Amazon Titan Image Generator model on Bedrock",
+      "Guardrails helps control the interaction between users and FMs by filtering undesirable and harmful content, whereas, watermark detection identifies if an image was created by the Amazon Titan Image Generator model on Bedrock"
+    ],
+    "correct_option": "Guardrails helps control the interaction between users and FMs by filtering undesirable and harmful content, whereas, watermark detection identifies if an image was created by the Amazon Titan Image Generator model on Bedrock\nGuardrails for Amazon Bedrock help you implement safeguards for your generative AI applications based on your use cases and responsible AI policies. Guardrails for Amazon Bedrock helps control the interaction between users and FMs by filtering undesirable and harmful content as well as redacting personally identifiable information (PII), enhancing content safety and privacy in generative AI applications.\nWatermark detection is a security feature in Amazon Bedrock that identifies if an image was created by the Amazon Titan Image Generator model on Bedrock.",
+    "explanation": "Overall explanation\nCorrect option:\nGuardrails helps control the interaction between users and FMs by filtering undesirable and harmful content, whereas, watermark detection identifies if an image was created by the Amazon Titan Image Generator model on Bedrock\nGuardrails for Amazon Bedrock help you implement safeguards for your generative AI applications based on your use cases and responsible AI policies. Guardrails for Amazon Bedrock helps control the interaction between users and FMs by filtering undesirable and harmful content as well as redacting personally identifiable information (PII), enhancing content safety and privacy in generative AI applications.\nWatermark detection is a security feature in Amazon Bedrock that identifies if an image was created by the Amazon Titan Image Generator model on Bedrock.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 36,
+    "question": "A media company is using Amazon Bedrock to generate content such as headlines, articles, and social media posts. The data science team is particularly interested in understanding how adjusting the\u00a0Temperature\u00a0parameter can influence the model\u2019s behavior to meet the company\u2019s content generation goals. What do you recommend to the team regarding the\u00a0Temperature\u00a0parameter?",
+    "options": [
+      "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model\u2019s output",
+      "Influences the percentage of most-likely candidates that the model considers for the next token",
+      "Influences the number of most-likely candidates that the model considers for the next token",
+      "Specifies the sequences of characters that stop the model from generating further tokens"
+    ],
+    "correct_option": "Influences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model\u2019s output\nTemperature is a value between 0 and 1, and it regulates the creativity of the model's responses. Use a lower temperature if you want more deterministic responses, and use a higher temperature if you want more creative or different responses for the same prompt on Amazon Bedrock.",
+    "explanation": "Overall explanation\nCorrect option:\nInfluences the likelihood of the model selecting lower-probability outputs, thereby impacting the creativity of the model\u2019s output\nTemperature is a value between 0 and 1, and it regulates the creativity of the model's responses. Use a lower temperature if you want more deterministic responses, and use a higher temperature if you want more creative or different responses for the same prompt on Amazon Bedrock.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 37,
+    "question": "A retail company wants to simplify how its employees access and analyze sales data stored in a large database. To achieve this, the company aims to implement a solution that automatically converts plain English text commands, such as \"show total sales for the last quarter\" or \"list top-selling products,\" into SQL queries. This would allow employees without technical skills to interact with the database seamlessly, improving efficiency and decision-making. Which of the following solutions would be most suitable for this purpose?",
+    "options": [
+      "Correct answer",
+      "The company should use GPT (Generative Pre-trained Transformer), to interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures",
+      "The company should use WaveNet, which is suitable for understanding or generating text, and therefore can be used to create highly optimized SQL queries from input text",
+      "The company should use Amazon Comprehend, to interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures",
+      "The company should use a Residual Neural Network (ResNet), for generating text-based outputs like SQL queries, as it is specifically tailored for natural language understanding"
+    ],
+    "correct_option": "The company should use GPT (Generative Pre-trained Transformer), to interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures\nThis is the correct option because GPT models are specifically designed to process and generate human-like text based on context and input data. GPT can be fine-tuned to understand specific domain language and generate accurate SQL queries from plain text input. It uses advanced natural language processing (NLP) techniques to parse input text, understand user intent, and generate the appropriate SQL statements, making it highly suitable for the task.",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should use GPT (Generative Pre-trained Transformer), to interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures\nThis is the correct option because GPT models are specifically designed to process and generate human-like text based on context and input data. GPT can be fine-tuned to understand specific domain language and generate accurate SQL queries from plain text input. It uses advanced natural language processing (NLP) techniques to parse input text, understand user intent, and generate the appropriate SQL statements, making it highly suitable for the task.\n\u00a0via -\u00a0https://aws.amazon.com/what-is/gan/",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": false
+  },
+  {
+    "question_number": 38,
+    "question": "A media company is planning to leverage AWS for its AI and machine learning projects, and the development team is evaluating both Amazon Bedrock and Amazon SageMaker JumpStart to accelerate their workflows. The team needs to understand the primary differences between these two services, particularly in how they provide access to pre-trained models and offer customization options. This knowledge will help the company choose the right tool for their content generation and optimization tasks. Which of the following best addresses these requirements?",
+    "options": [
+      "Amazon SageMaker JumpStart provides foundational models for generative AI applications, whereas Amazon Bedrock offers pre-built solutions and one-click deployment for various machine learning models",
+      "Amazon Bedrock is designed for building and scaling machine learning models, whereas Amazon SageMaker JumpStart is used for real-time data analytics",
+      "Amazon Bedrock provides foundational models for generative AI applications, whereas Amazon SageMaker JumpStart offers pre-built solutions and one-click deployment for various machine learning models",
+      "Amazon SageMaker JumpStart is designed for building and scaling machine learning models, whereas Amazon Bedrock is used for real-time data analytics"
+    ],
+    "correct_option": "Amazon Bedrock provides foundational models for generative AI applications, whereas Amazon SageMaker JumpStart offers pre-built solutions and one-click deployment for various machine learning models\nAmazon Bedrock is the easiest way to build and scale generative AI applications with foundation models. Amazon Bedrock is a fully managed service that offers a choice of high-performing foundation models (FMs) from leading AI companies like AI21 Labs, Anthropic, Cohere, Meta, Mistral AI, Stability AI, and Amazon through a single API, along with a broad set of capabilities you need to build generative AI applications with security, privacy, and responsible AI.\nAmazon SageMaker JumpStart is a machine learning (ML) hub that can help you accelerate your ML journey. With SageMaker JumpStart, you can evaluate, compare, and select FMs quickly based on pre-defined quality and responsibility metrics to perform tasks like article summarization and image generation. SageMaker JumpStart provides managed infrastructure and tools to accelerate scalable, reliable, and secure model building, training, and deployment of ML models.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Bedrock provides foundational models for generative AI applications, whereas Amazon SageMaker JumpStart offers pre-built solutions and one-click deployment for various machine learning models\nAmazon Bedrock is the easiest way to build and scale generative AI applications with foundation models. Amazon Bedrock is a fully managed service that offers a choice of high-performing foundation models (FMs) from leading AI companies like AI21 Labs, Anthropic, Cohere, Meta, Mistral AI, Stability AI, and Amazon through a single API, along with a broad set of capabilities you need to build generative AI applications with security, privacy, and responsible AI.\nAmazon SageMaker JumpStart is a machine learning (ML) hub that can help you accelerate your ML journey. With SageMaker JumpStart, you can evaluate, compare, and select FMs quickly based on pre-defined quality and responsibility metrics to perform tasks like article summarization and image generation. SageMaker JumpStart provides managed infrastructure and tools to accelerate scalable, reliable, and secure model building, training, and deployment of ML models.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 39,
+    "question": "A company is creating a custom search solution that will bring together the company's data repositories, FAQs, and support tickets. The support tickets might contain personally identifiable information (PII) that needs to be redacted before the tickets are processed to create the search indexes. Which AWS service will help you redact the PII in support tickets?",
+    "options": [
+      "Amazon Textract",
+      "Correct answer",
+      "Amazon Comprehend",
+      "Amazon Lex",
+      "Amazon Kendra"
+    ],
+    "correct_option": "Amazon Comprehend\nAmazon Comprehend is a natural language processing (NLP) service that uses machine learning to discover insights from text. Amazon Comprehend provides Custom Entity Recognition, Custom Classification, Key Phrase Extraction, Sentiment Analysis, Entity Recognition, and more APIs so you can easily integrate natural language processing into your applications. You simply call the Amazon Comprehend APIs in your application and provide the location of the source document or text. The APIs will output entities, key phrases, sentiment, and language in a JSON format, which you can use in your application.\nAmazon Comprehend ML capabilities can be used to detect and redact personally identifiable information (PII) in customer emails, support tickets, product reviews, social media, and more. No ML experience is required. For example, you can analyze support tickets and knowledge articles to detect PII entities and redact the text before you index the documents in the search solution. After that, search solutions are free of PII entities in documents. Redacting PII entities helps you protect privacy and comply with local laws and regulations.\nHow Comprehend works:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Comprehend\nAmazon Comprehend is a natural language processing (NLP) service that uses machine learning to discover insights from text. Amazon Comprehend provides Custom Entity Recognition, Custom Classification, Key Phrase Extraction, Sentiment Analysis, Entity Recognition, and more APIs so you can easily integrate natural language processing into your applications. You simply call the Amazon Comprehend APIs in your application and provide the location of the source document or text. The APIs will output entities, key phrases, sentiment, and language in a JSON format, which you can use in your application.\nAmazon Comprehend ML capabilities can be used to detect and redact personally identifiable information (PII) in customer emails, support tickets, product reviews, social media, and more. No ML experience is required. For example, you can analyze support tickets and knowledge articles to detect PII entities and redact the text before you index the documents in the search solution. After that, search solutions are free of PII entities in documents. Redacting PII entities helps you protect privacy and comply with local laws and regulations.\nHow Comprehend works:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/comprehend/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": false
+  },
+  {
+    "question_number": 40,
+    "question": "A media production company is looking to enhance its creative workflows by using AI to generate high-quality images from text prompts for marketing materials, storyboards, and content development. The company plans to use Amazon Bedrock for this purpose and wants to identify the most suitable Foundation Model to generate realistic and detailed images based on text descriptions provided by the creative team. Which of the following Foundation Models would you recommend for generating images from text prompts in this use case?",
+    "options": [
+      "Jurassic",
+      "Claude",
+      "Llama",
+      "Stable Diffusion"
+    ],
+    "correct_option": "Stable Diffusion\nStable Diffusion is a generative artificial intelligence (generative AI) model that produces unique photorealistic images from text and image prompts.",
+    "explanation": "Overall explanation\nCorrect option:\nStable Diffusion\nStable Diffusion is a generative artificial intelligence (generative AI) model that produces unique photorealistic images from text and image prompts.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 41,
+    "question": "A large enterprise is looking to implement an AI-powered assistant to help employees across departments streamline their work by answering questions, summarizing reports, generating content, and securely accessing data from internal systems. The company needs a solution that can seamlessly integrate with its enterprise systems while ensuring data privacy and security. The team is exploring various generative AI-powered assistants that can fulfill these requirements. Which of the following is a generative AI\u2013powered assistant that can answer questions, provide summaries, generate content, and securely complete tasks based on data and information in the enterprise systems?",
+    "options": [
+      "Amazon Q Developer",
+      "Amazon Q in QuickSight",
+      "Amazon Q in Connect",
+      "Amazon Q Business"
+    ],
+    "correct_option": "Amazon Q Business\nAmazon Q Business is a fully managed, generative-AI powered assistant that you can configure to answer questions, provide summaries, generate content, and complete tasks based on your enterprise data. It allows end users to receive immediate, permissions-aware responses from enterprise data sources with citations, for use cases such as IT, HR, and benefits help desks.\nAmazon Q Business also helps streamline tasks and accelerate problem-solving. You can use Amazon Q Business to create and share task automation applications or perform routine actions like submitting time-off requests and sending meeting invites.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Q Business\nAmazon Q Business is a fully managed, generative-AI powered assistant that you can configure to answer questions, provide summaries, generate content, and complete tasks based on your enterprise data. It allows end users to receive immediate, permissions-aware responses from enterprise data sources with citations, for use cases such as IT, HR, and benefits help desks.\nAmazon Q Business also helps streamline tasks and accelerate problem-solving. You can use Amazon Q Business to create and share task automation applications or perform routine actions like submitting time-off requests and sending meeting invites.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 42,
+    "question": "A software development company is migrating its operations to the AWS Cloud and is evaluating its security responsibilities under different generative AI use cases as outlined in the Generative AI Security Scoping Matrix. The company wants to identify the scenario where it would have the highest level of security ownership, including managing data protection, overseeing the underlying infrastructure, and ensuring compliance with relevant regulations. Understanding these security implications is critical for the company to implement appropriate controls and safeguard its operations. Which of the following scenarios would require the company to assume the maximum level of security ownership?",
+    "options": [
+      "Building and training a generative AI model from scratch",
+      "Refining an existing third-party generative AI foundation model by fine-tuning it with data specific to the company",
+      "Building its own application using an existing third-party generative AI foundation model",
+      "Consuming a public third-party generative AI service"
+    ],
+    "correct_option": "Building and training a generative AI model from scratch\nThis option involves the company designing, developing, and training a generative AI model entirely from the ground up. It requires the company to take full responsibility for managing the entire machine learning pipeline, including data collection, preprocessing, model design, training, and deployment. Additionally, the company is responsible for securing all the underlying infrastructure, data storage, access controls, and ensuring compliance with relevant security and privacy regulations. This scenario entails the maximum level of security ownership because the company controls all aspects of the AI development lifecycle.",
+    "explanation": "Overall explanation\nCorrect option:\nBuilding and training a generative AI model from scratch\nThis option involves the company designing, developing, and training a generative AI model entirely from the ground up. It requires the company to take full responsibility for managing the entire machine learning pipeline, including data collection, preprocessing, model design, training, and deployment. Additionally, the company is responsible for securing all the underlying infrastructure, data storage, access controls, and ensuring compliance with relevant security and privacy regulations. This scenario entails the maximum level of security ownership because the company controls all aspects of the AI development lifecycle.\n\u00a0via -\u00a0https://aws.amazon.com/blogs/security/securing-generative-ai-an-introduction-to-the-generative-ai-security-scoping-matrix/",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 43,
+    "question": "A customer support system frequently encounters database errors that result in incomplete sentences in the logs. The company wants to implement a machine learning model to automatically suggest missing words in these sentences to help resolve issues faster. Which type of model should be used to suggest the missing words?",
+    "options": [
+      "Bidirectional Encoder Representations from Transformers (BERT) based Model",
+      "Clustering Model",
+      "Prescriptive AI Model",
+      "Rule-based NLP Model"
+    ],
+    "correct_option": "Bidirectional Encoder Representations from Transformers (BERT) based Model\nA BERT-based model (Bidirectional Encoder Representations from Transformers) is specifically designed for understanding the context of words in a sentence. BERT uses deep learning techniques to predict missing words by considering the words before and after the gap. This makes it an ideal choice for suggesting missing words in text due to database errors, as it can understand the context and provide accurate word suggestions.",
+    "explanation": "Overall explanation\nCorrect option:\nBidirectional Encoder Representations from Transformers (BERT) based Model\nA BERT-based model (Bidirectional Encoder Representations from Transformers) is specifically designed for understanding the context of words in a sentence. BERT uses deep learning techniques to predict missing words by considering the words before and after the gap. This makes it an ideal choice for suggesting missing words in text due to database errors, as it can understand the context and provide accurate word suggestions.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 44,
+    "question": "A research-focused AI company is developing a suite of machine learning models for tasks such as classification and content generation. The data science team needs to choose between discriminative and generative models depending on the specific use case. To make the right decision, they need to understand the fundamental differences between these two types of models, particularly in the context of generative AI, and how each model type fits into their project goals. What is the primary distinction between discriminative models and generative models in the context of generative AI?",
+    "options": [
+      "Generative models focus on generating new data from learned patterns, whereas discriminative models classify data by distinguishing between different classes",
+      "Generative models are trained on labeled data, while discriminative models can be trained on both labeled and unlabeled data",
+      "Discriminative models are used to generate new data, while generative models are used only for classification",
+      "Discriminative models are only used for text classification, while generative models are only used for image classification"
+    ],
+    "correct_option": "Generative models focus on generating new data from learned patterns, whereas discriminative models classify data by distinguishing between different classes\nGenerative models learn the underlying patterns of data to create new, similar data, while discriminative models learn to distinguish between different classes of data. Generative models, such as GPT-3, can generate new content, whereas discriminative models are used for classification tasks. The former focuses on understanding and replicating the data distribution, while the latter focuses on decision boundaries to classify inputs.\nFor example, discriminative models look at images - known data like pixel arrangement, line, color, and shape \u2014 and then map them to an outcome \u2014 the unknown factor. Mathematically, these models work by identifying equations that could numerically map unknown and known factors as x and y variables.\nGenerative models take this one step further. Instead of predicting a label given some features, they try to predict features given a certain label. Mathematically, generative modeling calculates the probability of x and y occurring together. It learns the distribution of different data features and their relationships. For example, generative models analyze animal images to record variables like different ear shapes, eye shapes, tail features, and skin patterns. They learn features and their relations to understand what different animals look like in general. They can then recreate new animal images that were not in the training set.",
+    "explanation": "Overall explanation\nCorrect option:\nGenerative models focus on generating new data from learned patterns, whereas discriminative models classify data by distinguishing between different classes\nGenerative models learn the underlying patterns of data to create new, similar data, while discriminative models learn to distinguish between different classes of data. Generative models, such as GPT-3, can generate new content, whereas discriminative models are used for classification tasks. The former focuses on understanding and replicating the data distribution, while the latter focuses on decision boundaries to classify inputs.\nFor example, discriminative models look at images - known data like pixel arrangement, line, color, and shape \u2014 and then map them to an outcome \u2014 the unknown factor. Mathematically, these models work by identifying equations that could numerically map unknown and known factors as x and y variables.\nGenerative models take this one step further. Instead of predicting a label given some features, they try to predict features given a certain label. Mathematically, generative modeling calculates the probability of x and y occurring together. It learns the distribution of different data features and their relationships. For example, generative models analyze animal images to record variables like different ear shapes, eye shapes, tail features, and skin patterns. They learn features and their relations to understand what different animals look like in general. They can then recreate new animal images that were not in the training set.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 45,
+    "question": "A company has recently migrated to AWS Cloud and it wants to optimize the hardware used for its AI workflows. Which of the following would you suggest?",
+    "options": [
+      "Leverage AWS Inferentia for high-performance, cost-effective Deep Learning training. Leverage AWS Trainium for the deep learning (DL) and generative AI inference applications",
+      "Leverage AWS Trainium for high-performance, cost-effective Deep Learning training. Leverage AWS Inferentia for the deep learning (DL) and generative AI inference applications",
+      "Leverage either AWS Trainium or AWS Inferentia for high-performance, cost-effective Deep Learning training",
+      "Leverage either AWS Trainium or AWS Inferentia for the deep learning (DL) and generative AI inference applications"
+    ],
+    "correct_option": "Leverage AWS Trainium for high-performance, cost-effective Deep Learning training. Leverage AWS Inferentia for the deep learning (DL) and generative AI inference applications\nAWS Inferentia accelerators are designed by AWS to deliver high performance at the lowest cost in Amazon EC2 for your deep learning (DL) and generative AI inference applications. The first-generation AWS Inferentia accelerator powers Amazon Elastic Compute Cloud (Amazon EC2) Inf1 instances, which deliver up to 2.3x higher throughput and up to 70% lower cost per inference than comparable Amazon EC2 instances.\nAWS Trainium is the machine learning (ML) chip that AWS purpose-built for deep learning (DL) training of 100B+ parameter models. Each Amazon Elastic Compute Cloud (Amazon EC2) Trn1 instance deploys up to 16 Trainium accelerators to deliver a high-performance, low-cost solution for DL training in the cloud.",
+    "explanation": "Overall explanation\nCorrect option:\nLeverage AWS Trainium for high-performance, cost-effective Deep Learning training. Leverage AWS Inferentia for the deep learning (DL) and generative AI inference applications\nAWS Inferentia accelerators are designed by AWS to deliver high performance at the lowest cost in Amazon EC2 for your deep learning (DL) and generative AI inference applications. The first-generation AWS Inferentia accelerator powers Amazon Elastic Compute Cloud (Amazon EC2) Inf1 instances, which deliver up to 2.3x higher throughput and up to 70% lower cost per inference than comparable Amazon EC2 instances.\nAWS Trainium is the machine learning (ML) chip that AWS purpose-built for deep learning (DL) training of 100B+ parameter models. Each Amazon Elastic Compute Cloud (Amazon EC2) Trn1 instance deploys up to 16 Trainium accelerators to deliver a high-performance, low-cost solution for DL training in the cloud.",
+    "domain": "Fundamentals of AI and ML",
+    "is_correct": true
+  },
+  {
+    "question_number": 46,
+    "question": "A company is building an image recognition model to automate its quality assurance process. High accuracy in image annotation is critical to ensure the model can correctly identify defective products. To minimize the risk of incorrect annotations, the company needs a reliable labeling solution. What is the best approach to achieve high accuracy and reduce the risk of errors in image annotations?",
+    "options": [
+      "Use a simple rule-based algorithm to assign labels based on image characteristics",
+      "Use GroundTruth Plus to label the data",
+      "Allow a small team of internal employees to manually label the images",
+      "Automatically generate labels using an existing pre-trained model"
+    ],
+    "correct_option": "Use GroundTruth Plus to label the data\nAmazon SageMaker GroundTruth Plus provides a fully managed data labeling service that helps deliver high-quality annotations. It uses a combination of human labelers and machine learning-assisted labeling to ensure accuracy and consistency in the labels. GroundTruth Plus also offers the ability to monitor labeling workflows and conduct quality assurance checks, significantly reducing the risk of incorrect annotations. It is an ideal solution for businesses looking to create accurate training datasets at scale while minimizing manual errors.",
+    "explanation": "Overall explanation\nCorrect option:\nUse GroundTruth Plus to label the data\nAmazon SageMaker GroundTruth Plus provides a fully managed data labeling service that helps deliver high-quality annotations. It uses a combination of human labelers and machine learning-assisted labeling to ensure accuracy and consistency in the labels. GroundTruth Plus also offers the ability to monitor labeling workflows and conduct quality assurance checks, significantly reducing the risk of incorrect annotations. It is an ideal solution for businesses looking to create accurate training datasets at scale while minimizing manual errors.\n\u00a0via -\u00a0https://docs.aws.amazon.com/sagemaker/latest/dg/gtp.html",
+    "domain": "Fundamentals of AI and ML",
+    "is_correct": true
+  },
+  {
+    "question_number": 47,
+    "question": "A company needs to extract handwritten words and letters from scanned documents. Which ML-powered AWS service is the right fit for this requirement?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon Kendra",
+      "Amazon Textract",
+      "Amazon Transcribe"
+    ],
+    "correct_option": "Amazon Textract\nAmazon Textract is a machine learning (ML) service that automatically extracts text, handwriting, layout elements, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables. All extracted data is returned with bounding box coordinates\u2014polygon frames that encompass each piece of identified data, such as a word, a line, a table, or individual cells within a table.\nAmazon Textract currently supports PNG, JPEG, TIFF, and PDF formats. For synchronous APIs, you can submit images either as an S3 object or as a byte array. For asynchronous APIs, you can submit S3 objects.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Textract\nAmazon Textract is a machine learning (ML) service that automatically extracts text, handwriting, layout elements, and data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables. All extracted data is returned with bounding box coordinates\u2014polygon frames that encompass each piece of identified data, such as a word, a line, a table, or individual cells within a table.\nAmazon Textract currently supports PNG, JPEG, TIFF, and PDF formats. For synchronous APIs, you can submit images either as an S3 object or as a byte array. For asynchronous APIs, you can submit S3 objects.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 48,
+    "question": "A company needs a solution that can convert text into human speech so that it can offer audio courses in multiple languages. Which AWS service is the best fit for this use case ?",
+    "options": [
+      "Amazon Translate",
+      "Amazon Comprehend",
+      "Amazon Polly",
+      "Amazon Lex"
+    ],
+    "correct_option": "Amazon Polly\nAmazon Polly uses deep learning technologies to synthesize natural-sounding human speech, so you can convert articles to speech. With dozens of lifelike voices across a broad set of languages, use Amazon Polly to build speech-activated applications.\nAmazon Polly is a service that turns text into lifelike speech. Amazon Polly enables existing applications to speak as a first-class feature and creates the opportunity for entirely new categories of speech-enabled products, from mobile apps and cars to devices and appliances. Amazon Polly includes dozens of lifelike voices and support for multiple languages, so you can select the ideal voice and distribute your speech-enabled applications in many geographies. Amazon Polly is easy to use \u2013 you just send the text you want converted into speech to the Amazon Polly API, and Amazon Polly immediately returns the audio stream to your application so you can play it directly or store it in a standard audio file format, such as MP3.\nHow Amazon Polly works:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Polly\nAmazon Polly uses deep learning technologies to synthesize natural-sounding human speech, so you can convert articles to speech. With dozens of lifelike voices across a broad set of languages, use Amazon Polly to build speech-activated applications.\nAmazon Polly is a service that turns text into lifelike speech. Amazon Polly enables existing applications to speak as a first-class feature and creates the opportunity for entirely new categories of speech-enabled products, from mobile apps and cars to devices and appliances. Amazon Polly includes dozens of lifelike voices and support for multiple languages, so you can select the ideal voice and distribute your speech-enabled applications in many geographies. Amazon Polly is easy to use \u2013 you just send the text you want converted into speech to the Amazon Polly API, and Amazon Polly immediately returns the audio stream to your application so you can play it directly or store it in a standard audio file format, such as MP3.\nHow Amazon Polly works:\u00a0\n\u00a0via -\u00a0https://aws.amazon.com/polly/",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 49,
+    "question": "Which AWS service helps you set up a cloud contact center in just a few clicks and onboard agents to help customers?",
+    "options": [
+      "Amazon Connect",
+      "Amazon Personalize",
+      "Amazon SageMaker Clarify",
+      "Amazon Lex"
+    ],
+    "correct_option": "Amazon Connect\nAmazon Connect is an AI-powered cloud contact center. It automatically detects customer issues, and provides agents with contextual customer information and suggested responses and actions for faster resolution of issues.\nYou can set up a contact center in a few steps, add agents who are located anywhere, and start engaging with your customers. Amazon Connect supports the following communication channels:\n1\tVoice (phone)\n2\tChat/SMS\n3\tWeb calling/video\n4\tTasks\nAn agent workspace in Amazon Connect:",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Connect\nAmazon Connect is an AI-powered cloud contact center. It automatically detects customer issues, and provides agents with contextual customer information and suggested responses and actions for faster resolution of issues.\nYou can set up a contact center in a few steps, add agents who are located anywhere, and start engaging with your customers. Amazon Connect supports the following communication channels:\n\t1\tVoice (phone)\n\t2\tChat/SMS\n\t3\tWeb calling/video\n\t4\tTasks\nAn agent workspace in Amazon Connect:\u00a0\n\u00a0via -\u00a0https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 50,
+    "question": "A retail company is exploring the use of generative AI to improve its customer experience by personalizing recommendations and automating product descriptions. The company is interested in leveraging pre-built, high-performing Foundation Models (FMs) to accelerate development but also needs the ability to customize these models with its proprietary data to meet specific business needs. The company is seeking an AWS service that not only provides access to a variety of Foundation Models but also offers the option to privately fine-tune and customize these models for their unique use case. Which AWS service/feature offers a choice of high-performing Foundation Models (FMs) and the ability to privately customize the FMs with your data?",
+    "options": [
+      "AWS Inferentia",
+      "Amazon Q Developer",
+      "Amazon Bedrock",
+      "Amazon Q in QuickSight"
+    ],
+    "correct_option": "Amazon Bedrock\nAmazon Bedrock is a fully managed service that offers a choice of high-performing FMs and a broad set of capabilities. You can easily experiment with various top FMs, privately customize them with your data, and create managed agents that execute complex business tasks.\nAmazon Bedrock is the easiest way to build and scale generative AI applications with foundation models. Amazon Bedrock makes foundation models from Amazon and leading AI startups available through an API, so you can choose from various FMs to find the model that's best suited for your use case. With Amazon Bedrock, you can speed up developing and deploying scalable, reliable, and secure generative AI applications without managing infrastructure.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon Bedrock\nAmazon Bedrock is a fully managed service that offers a choice of high-performing FMs and a broad set of capabilities. You can easily experiment with various top FMs, privately customize them with your data, and create managed agents that execute complex business tasks.\nAmazon Bedrock is the easiest way to build and scale generative AI applications with foundation models. Amazon Bedrock makes foundation models from Amazon and leading AI startups available through an API, so you can choose from various FMs to find the model that's best suited for your use case. With Amazon Bedrock, you can speed up developing and deploying scalable, reliable, and secure generative AI applications without managing infrastructure.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 51,
+    "question": "A healthcare analytics company is developing machine learning models to predict patient outcomes and improve treatment plans. To enhance these models, conduct rigorous testing, and ensure data privacy when sharing with partners, the company needs to generate synthetic data that closely mirrors its existing patient records without compromising sensitive information. The synthetic data must maintain the statistical properties and patterns of the original dataset to be useful for model training and evaluation. Which of the following methods would be most suitable for generating synthetic data?",
+    "options": [
+      "The company should use WaveNet, a deep generative model specifically designed for generating general-purpose synthetic data across various domains",
+      "The company should use Support Vector Machines (SVMs), a type of supervised learning algorithm used for generating synthetic data",
+      "The company should use a Convolutional Neural Network (CNN), a type of deep learning model, best-suited for generating synthetic data",
+      "The company should use a Generative Adversarial Network (GAN) for creating realistic synthetic data while preserving the statistical properties of the original data"
+    ],
+    "correct_option": "The company should use a Generative Adversarial Network (GAN) for creating realistic synthetic data while preserving the statistical properties of the original data\nThis is the correct answer because GANs are specifically designed for generating synthetic data that is statistically similar to real data. They consist of two neural networks\u2014a generator and a discriminator\u2014that work against each other to create highly realistic synthetic data. GANs have been successfully used in various domains, including image generation, text synthesis, and more, to produce data that retains the underlying patterns and structures of the original dataset, making them highly suitable for this purpose.",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should use a Generative Adversarial Network (GAN) for creating realistic synthetic data while preserving the statistical properties of the original data\nThis is the correct answer because GANs are specifically designed for generating synthetic data that is statistically similar to real data. They consist of two neural networks\u2014a generator and a discriminator\u2014that work against each other to create highly realistic synthetic data. GANs have been successfully used in various domains, including image generation, text synthesis, and more, to produce data that retains the underlying patterns and structures of the original dataset, making them highly suitable for this purpose.\n\u00a0via -\u00a0https://aws.amazon.com/what-is/gan/",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 52,
+    "question": "A healthcare analytics company has recently migrated to AWS Cloud and it is preparing to build several Machine Learning (ML) models to predict patient outcomes, optimize treatment plans, and analyze health data trends. The company wants to leverage the capabilities of various tools offered by Amazon SageMaker. Which of the following is a key use case addressed by Amazon SageMaker Data Wrangler?",
+    "options": [
+      "Build ML models with no code",
+      "Monitor the quality of a model",
+      "Fix bias by balancing the dataset",
+      "Store and share the features used for model development"
+    ],
+    "correct_option": "Fix bias by balancing the dataset\nWhen the number of samples in the majority class (bigger) is considerably larger than the number of samples in the minority (smaller) class, the dataset is considered imbalanced. This skew is challenging for ML algorithms and classifiers because the training process tends to be biased towards the majority class. Data Wrangler supports several balancing operators as part of the Balance data transform.",
+    "explanation": "Overall explanation\nCorrect option:\nFix bias by balancing the dataset\nWhen the number of samples in the majority class (bigger) is considerably larger than the number of samples in the minority (smaller) class, the dataset is considered imbalanced. This skew is challenging for ML algorithms and classifiers because the training process tends to be biased towards the majority class. Data Wrangler supports several balancing operators as part of the Balance data transform.\n\u00a0via -\u00a0https://aws.amazon.com/blogs/machine-learning/balance-your-data-for-machine-learning-with-amazon-sagemaker-data-wrangler/",
+    "domain": "Guidelines for Responsible AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 53,
+    "question": "A company needs to process a large inference payload of several gigabytes (GBs) for its machine learning model built using Amazon SageMaker. The company's systems can tolerate some waiting time for the responses. Which inference method would be the most suitable for this scenario?",
+    "options": [
+      "The company should use real-time inference, which is designed for low-latency predictions where responses are needed instantly",
+      "The company should use asynchronous inference, which allows the model to handle large or complex payloads by queuing requests and processing them in the background, making it ideal when systems can wait for responses",
+      "The company should use batch inference, which processes multiple data points at once in large batches, suitable for processing large datasets in a single operation when immediate real-time responses are not required",
+      "The company should use serverless inference, which automatically scales resources based on traffic"
+    ],
+    "correct_option": "The company should use batch inference, which processes multiple data points at once in large batches, suitable for processing large datasets in a single operation when immediate real-time responses are not required\nBatch inference is the most suitable choice for processing a large payload of several gigabytes with Amazon SageMaker when there is no need for immediate responses. This method allows the company to run predictions on large volumes of data in a single batch job, which is more cost-effective and efficient than processing individual requests in real-time. Batch inference can handle large datasets and is ideal for scenarios where waiting for the responses is acceptable, making it the best fit for this use case.\nSageMaker Batch Transform will automatically split your input file of several gigabytes (GBs) into whatever payload size is specified if you use \"SplitType\": \"Line\" and \"BatchStrategy\": \"MultiRecord\".",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should use batch inference, which processes multiple data points at once in large batches, suitable for processing large datasets in a single operation when immediate real-time responses are not required\nBatch inference is the most suitable choice for processing a large payload of several gigabytes with Amazon SageMaker when there is no need for immediate responses. This method allows the company to run predictions on large volumes of data in a single batch job, which is more cost-effective and efficient than processing individual requests in real-time. Batch inference can handle large datasets and is ideal for scenarios where waiting for the responses is acceptable, making it the best fit for this use case.\nSageMaker Batch Transform will automatically split your input file of several gigabytes (GBs) into whatever payload size is specified if you use \"SplitType\": \"Line\" and \"BatchStrategy\": \"MultiRecord\".",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 54,
+    "question": "A financial services company is developing machine learning models using Amazon SageMaker to automate loan approvals and fraud detection. To ensure transparency and compliance with industry regulations, the data science team needs a tool that documents the model\u2019s intended uses, performance metrics, and any assumptions made during development. This documentation is crucial for maintaining accountability and ensuring that the models are used appropriately. Which Amazon SageMaker tool meets these requirements?",
+    "options": [
+      "Amazon SageMaker Model Cards",
+      "Amazon SageMaker Model Monitor",
+      "Amazon SageMaker Canvas",
+      "Amazon SageMaker Clarify"
+    ],
+    "correct_option": "Amazon SageMaker Model Cards\nUse Amazon SageMaker Model Cards to document critical details about your machine learning (ML) models in a single place for streamlined governance and reporting.\nCatalog details such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional call-outs such as considerations, recommendations, and custom information.\nSpecifying the intended uses of a model helps ensure that model developers and users have the information they need to train or deploy the model responsibly. The intended uses of a model go beyond technical details and describe how a model should be used in production, the scenarios in which is appropriate to use a model, and additional considerations such as the type of data to use with the model or any assumptions made during development.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Model Cards\nUse Amazon SageMaker Model Cards to document critical details about your machine learning (ML) models in a single place for streamlined governance and reporting.\nCatalog details such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional call-outs such as considerations, recommendations, and custom information.\nSpecifying the intended uses of a model helps ensure that model developers and users have the information they need to train or deploy the model responsibly. The intended uses of a model go beyond technical details and describe how a model should be used in production, the scenarios in which is appropriate to use a model, and additional considerations such as the type of data to use with the model or any assumptions made during development.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 55,
+    "question": "Which of the following represents the CORRECT statement regarding Amazon SageMaker Model Cards?",
+    "options": [
+      "Correct answer",
+      "Describes how a model should be used in a production environment",
+      "Model Cards can be customized to meet the business needs",
+      "Model cards cannot be created for models not trained on Amazon SageMaker",
+      "The purpose of a Model card is to describe the technical requirements to which an ML model should be deployed"
+    ],
+    "correct_option": "Describes how a model should be used in a production environment\nUse Amazon SageMaker Model Cards to document critical details about your machine learning (ML) models in a single place for streamlined governance and reporting.\nCatalog details such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional call-outs such as considerations, recommendations, and custom information.\nModel cards provide prescriptive guidance on what information to document and include fields for custom information. Specifying the intended uses of a model helps ensure that model developers and users have the information they need to train or deploy the model responsibly.\nThe intended uses of a model go beyond technical details and describe how a model should be used in production, the scenarios in which is appropriate to use a model, and additional considerations such as the type of data to use with the model or any assumptions made during development.",
+    "explanation": "Overall explanation\nCorrect option:\nDescribes how a model should be used in a production environment\nUse Amazon SageMaker Model Cards to document critical details about your machine learning (ML) models in a single place for streamlined governance and reporting.\nCatalog details such as the intended use and risk rating of a model, training details and metrics, evaluation results and observations, and additional call-outs such as considerations, recommendations, and custom information.\nModel cards provide prescriptive guidance on what information to document and include fields for custom information. Specifying the intended uses of a model helps ensure that model developers and users have the information they need to train or deploy the model responsibly.\nThe intended uses of a model go beyond technical details and describe how a model should be used in production, the scenarios in which is appropriate to use a model, and additional considerations such as the type of data to use with the model or any assumptions made during development.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": false
+  },
+  {
+    "question_number": 56,
+    "question": "A retail company is developing a machine learning model to improve its customer segmentation and targeting strategies. The data science team is working with both labeled and unlabeled customer data to train their models but needs to clearly understand the distinction between these two types of data to decide how best to use them. Understanding this difference is critical for selecting the appropriate machine learning techniques, such as supervised or unsupervised learning, for different stages of the project. What is a key difference between labeled data and unlabeled data in the context of machine learning?",
+    "options": [
+      "Labeled data can only be used for unsupervised learning algorithms, whereas, unlabeled data is exclusively for supervised learning algorithms",
+      "Labeled data is annotated with output labels that provide specific information about each data point and is used for supervised learning, whereas, unlabeled data lacks such annotations and is used for unsupervised learning",
+      "Labeled data is inherently more complex to process due to the lack of structure, whereas unlabeled data is easier to handle because it has clear annotations",
+      "Labeled data consists of raw information with no tags or annotations, while unlabeled data includes tags that provide meaning to the data"
+    ],
+    "correct_option": "Labeled data is annotated with output labels that provide specific information about each data point and is used for supervised learning, whereas, unlabeled data lacks such annotations and is used for unsupervised learning\nLabeled data is data that comes with predefined labels or annotations. Each data point has an associated label that provides information about the data. This type of data is crucial for supervised learning, where the model learns to predict the output from the input data.\nExamples: Image classification: Images labeled with the objects they contain. Sentiment analysis: Text labeled with the sentiment it expresses (e.g., positive, negative). Spam detection: Emails labeled as \"spam\" or \"not spam.\"\nUnlabeled data is data that does not come with any labels, annotations, or explicit instructions about what it represents. This type of data is often used in unsupervised learning, where the model attempts to find patterns or structures in the data without predefined labels.\nExamples: Clustering: Grouping similar data points, such as customer segmentation based on purchasing behavior. Dimensionality reduction: Reducing the number of features in a dataset while preserving important information, such as using Principal Component Analysis (PCA).",
+    "explanation": "Overall explanation\nCorrect option:\nLabeled data is annotated with output labels that provide specific information about each data point and is used for supervised learning, whereas, unlabeled data lacks such annotations and is used for unsupervised learning\nLabeled data is data that comes with predefined labels or annotations. Each data point has an associated label that provides information about the data. This type of data is crucial for supervised learning, where the model learns to predict the output from the input data.\nExamples: Image classification: Images labeled with the objects they contain. Sentiment analysis: Text labeled with the sentiment it expresses (e.g., positive, negative). Spam detection: Emails labeled as \"spam\" or \"not spam.\"\nUnlabeled data is data that does not come with any labels, annotations, or explicit instructions about what it represents. This type of data is often used in unsupervised learning, where the model attempts to find patterns or structures in the data without predefined labels.\nExamples: Clustering: Grouping similar data points, such as customer segmentation based on purchasing behavior. Dimensionality reduction: Reducing the number of features in a dataset while preserving important information, such as using Principal Component Analysis (PCA).",
+    "domain": "Fundamentals of AI and ML",
+    "is_correct": true
+  },
+  {
+    "question_number": 57,
+    "question": "A company is using Amazon Personalize to build a recommendations engine for its e-commerce application. As part of the process, the data from ten different sources needs to be processed and imported into Amazon Personalize. Which AWS service will help import, prepare, and transform data before it is fed into Amazon Personalize?",
+    "options": [
+      "Amazon SageMaker Ground Truth",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Feature Store"
+    ],
+    "correct_option": "Amazon SageMaker Data Wrangler\nAmazon SageMaker Data Wrangler reduces the time it takes to aggregate and prepare tabular and image data for ML from weeks to minutes. With SageMaker Data Wrangler, you can simplify the process of data preparation and feature engineering, and complete each step of the data preparation workflow (including data selection, cleansing, exploration, visualization, and processing at scale) from a single visual interface. You can use SQL to select the data that you want from various data sources and import it quickly. Next, you can use the data quality and insights report to automatically verify data quality and detect anomalies, such as duplicate rows and target leakage. SageMaker Data Wrangler contains over 300 built-in data transformations, so you can quickly transform data without writing code.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Data Wrangler\nAmazon SageMaker Data Wrangler reduces the time it takes to aggregate and prepare tabular and image data for ML from weeks to minutes. With SageMaker Data Wrangler, you can simplify the process of data preparation and feature engineering, and complete each step of the data preparation workflow (including data selection, cleansing, exploration, visualization, and processing at scale) from a single visual interface. You can use SQL to select the data that you want from various data sources and import it quickly. Next, you can use the data quality and insights report to automatically verify data quality and detect anomalies, such as duplicate rows and target leakage. SageMaker Data Wrangler contains over 300 built-in data transformations, so you can quickly transform data without writing code.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 58,
+    "question": "A healthcare analytics company is developing a machine learning model to provide patient risk assessments based on incoming medical data. The team needs to deploy the model in a way that supports continuous, low-latency predictions, where each request receives a response immediately, such as during patient check-ins. The team is evaluating deployment options within Amazon SageMaker and needs a solution that offers persistent endpoints to handle these individual prediction requests. What do you recommend?",
+    "options": [
+      "Batch transform",
+      "Real-time hosting services",
+      "Asynchronous Inference",
+      "Serverless Inference"
+    ],
+    "correct_option": "Real-time hosting services\nThe real-time inference is ideal for inference workloads where you have real-time, interactive, low latency requirements. You can deploy your model to SageMaker hosting services and get an endpoint that can be used for inference. These endpoints are fully managed and support autoscaling.",
+    "explanation": "Overall explanation\nCorrect option:\nReal-time hosting services\nThe real-time inference is ideal for inference workloads where you have real-time, interactive, low latency requirements. You can deploy your model to SageMaker hosting services and get an endpoint that can be used for inference. These endpoints are fully managed and support autoscaling.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  },
+  {
+    "question_number": 59,
+    "question": "An AI-driven healthcare company is focused on reducing its carbon footprint while running machine learning models to analyze large datasets for patient outcomes and research. To achieve this, the company needs to select an Amazon EC2 instance type that offers the highest energy efficiency for its computational workloads, minimizing environmental impact while still delivering the required performance for training complex machine learning models. Which of the following EC2 instance types would be the most suitable choice for achieving this goal?",
+    "options": [
+      "Accelerated Computing P type instances",
+      "Accelerated Computing G type instances",
+      "Compute Optimized C type instances",
+      "AWS Trainium instances"
+    ],
+    "correct_option": "AWS Trainium instances\nAWS Trainium instances are designed with energy efficiency in mind, providing optimal performance per watt for machine learning workloads. Trainium, AWS's custom-designed machine learning chip, is specifically engineered to offer the best performance at the lowest power consumption, reducing the carbon footprint of training large-scale models. This makes Trainium instances the most environmentally friendly choice among the options listed. Trn1 instances powered by Trainium are up to 25% more energy efficient for DL training than comparable accelerated computing EC2 instances.",
+    "explanation": "Overall explanation\nCorrect option:\nAWS Trainium instances\nAWS Trainium instances are designed with energy efficiency in mind, providing optimal performance per watt for machine learning workloads. Trainium, AWS's custom-designed machine learning chip, is specifically engineered to offer the best performance at the lowest power consumption, reducing the carbon footprint of training large-scale models. This makes Trainium instances the most environmentally friendly choice among the options listed. Trn1 instances powered by Trainium are up to 25% more energy efficient for DL training than comparable accelerated computing EC2 instances.\n\u00a0via -\u00a0https://aws.amazon.com/machine-learning/trainium/",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 60,
+    "question": "A technology company is considering using Large Language Models (LLMs) to enhance its AI-driven customer support system. The development team is particularly interested in understanding the nature of LLMs, as this knowledge will help the team make decisions on how to manage the variability of responses and how best to apply the models in customer-facing applications. Which of the following is correct regarding Large Language Models (LLMs)?",
+    "options": [
+      "The Large Language Models (LLMs) are non-deterministic",
+      "The Large Language Models (LLMs) are discriminative",
+      "The Large Language Models (LLMs) are deterministic",
+      "Foundation Models (FMs) are a class of Large Language Models (LLMs)"
+    ],
+    "correct_option": "The Large Language Models (LLMs) are non-deterministic\nLarge Language Models (LLMs) are non-deterministic, which implies that the generated text may be different for every user that uses the same prompt.\nYou can use the inference parameter\u00a0Temperature\u00a0(having a value between 0 and 1), which regulates the creativity of LLMs\u2019 responses. Use a lower temperature if you want more deterministic responses, and use a higher temperature if you want creative or different responses for the same prompt from LLMs on Amazon Bedrock.",
+    "explanation": "Overall explanation\nCorrect option:\nThe Large Language Models (LLMs) are non-deterministic\nLarge Language Models (LLMs) are non-deterministic, which implies that the generated text may be different for every user that uses the same prompt.\nYou can use the inference parameter\u00a0Temperature\u00a0(having a value between 0 and 1), which regulates the creativity of LLMs\u2019 responses. Use a lower temperature if you want more deterministic responses, and use a higher temperature if you want creative or different responses for the same prompt from LLMs on Amazon Bedrock.",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 61,
+    "question": "A call center has introduced a chatbot to help employees respond to customer inquiries more efficiently during calls. The goal is to improve overall efficiency and reduce time spent on calls. Which of the following metrics should be monitored to evaluate the success of this initiative?",
+    "options": [
+      "First-Call Resolution Rate",
+      "Average Call Duration",
+      "Chat API Calls per Day",
+      "Average Chat Sessions per Day"
+    ],
+    "correct_option": "Average Call Duration\nThe purpose of introducing a chatbot is to assist employees in handling customer inquiries more efficiently. By monitoring Average Call Duration, the company can track whether the chatbot is helping reduce the amount of time agents spend on each call. A decrease in average call duration would indicate that the chatbot is enabling quicker resolution of customer issues, thus improving overall efficiency.",
+    "explanation": "Overall explanation\nCorrect option:\nAverage Call Duration\nThe purpose of introducing a chatbot is to assist employees in handling customer inquiries more efficiently. By monitoring Average Call Duration, the company can track whether the chatbot is helping reduce the amount of time agents spend on each call. A decrease in average call duration would indicate that the chatbot is enabling quicker resolution of customer issues, thus improving overall efficiency.\n\u00a0via -\u00a0https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+    "domain": "Fundamentals of Generative AI",
+    "is_correct": true
+  },
+  {
+    "question_number": 62,
+    "question": "A wildlife research organization has gathered thousands of images from camera traps in natural reserves worldwide, capturing various animal species. To support their research and conservation efforts, the organization wants to build a system that can automatically identify and categorize each animal in these images accurately and efficiently. The organization is evaluating different AI and machine learning techniques to achieve this goal. Which approach would you suggest to effectively recognize and categorize the various animal species in their image dataset?",
+    "options": [
+      "Correct answer",
+      "The company should use object detection, which involves identifying and locating specific objects within an image",
+      "The company should use thermal imaging, a technique that detects heat patterns and variations, which can identify living beings in low-visibility conditions",
+      "The company should use named entity recognition, a technique for identifying entities like names, places, or dates",
+      "The company should use face recognition, a computer vision technique specifically designed to identify faces in images or videos"
+    ],
+    "correct_option": "The company should use object detection, which involves identifying and locating specific objects within an image\nObject detection is the correct concept for this use case. It is a computer vision technique that identifies instances of objects within images and videos, such as detecting and classifying different types of animals. Object detection models, such as those based on Convolutional Neural Networks (CNNs) like YOLO (You Only Look Once) or Faster R-CNN, can analyze visual data to accurately locate and identify various animal species within an image, making it the most appropriate choice for this task.",
+    "explanation": "Overall explanation\nCorrect option:\nThe company should use object detection, which involves identifying and locating specific objects within an image\nObject detection is the correct concept for this use case. It is a computer vision technique that identifies instances of objects within images and videos, such as detecting and classifying different types of animals. Object detection models, such as those based on Convolutional Neural Networks (CNNs) like YOLO (You Only Look Once) or Faster R-CNN, can analyze visual data to accurately locate and identify various animal species within an image, making it the most appropriate choice for this task.",
+    "domain": "Fundamentals of AI and ML",
+    "is_correct": false
+  },
+  {
+    "question_number": 63,
+    "question": "A financial services company is developing several machine learning models to handle fraud detection, credit scoring, and customer segmentation. To ensure consistent use of data and foster collaboration among its data scientists, the company needs an efficient way to share and manage the variables used in these models across different teams and projects. The goal is to create a centralized repository where these variables can be accessed and reused to maintain uniformity, reduce redundancy, and improve productivity. Which of the following AWS tools would be the most suitable for achieving this objective?",
+    "options": [
+      "SageMaker Clarify",
+      "SageMaker Model Monitor",
+      "SageMaker Feature Store",
+      "SageMaker Data Wrangler"
+    ],
+    "correct_option": "SageMaker Feature Store\nSageMaker Feature Store is specifically designed to store and manage machine learning features. It allows data scientists and engineers to create a centralized, consistent, and standardized set of features that can be easily accessed and reused across different teams and projects, making it the ideal choice for sharing variables during model development. SageMaker Feature Store also supports feature versioning and governance, which helps maintain the integrity and accuracy of the data used in model development.",
+    "explanation": "Overall explanation\nCorrect option:\nSageMaker Feature Store\nSageMaker Feature Store is specifically designed to store and manage machine learning features. It allows data scientists and engineers to create a centralized, consistent, and standardized set of features that can be easily accessed and reused across different teams and projects, making it the ideal choice for sharing variables during model development. SageMaker Feature Store also supports feature versioning and governance, which helps maintain the integrity and accuracy of the data used in model development.",
+    "domain": "Security, Compliance, and Governance for AI Solutions",
+    "is_correct": true
+  },
+  {
+    "question_number": 64,
+    "question": "A healthcare company is using machine learning models in Amazon SageMaker to predict patient outcomes based on various health indicators. To comply with regulatory requirements and build trust with medical professionals, the company needs to understand and explain how different input features, such as age, blood pressure, and medical history, contribute to the model\u2019s predictions. The company is exploring which Amazon SageMaker service can provide this level of transparency and interpretability for their machine learning models. Which Amazon SageMaker service will help the company understand how an input feature contributes to the predictions of a machine learning model?",
+    "options": [
+      "Correct answer",
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Ground Truth",
+      "Amazon SageMaker Canvas",
+      "Amazon SageMaker JumpStart"
+    ],
+    "correct_option": "Amazon SageMaker Clarify\nSageMaker Clarify automatically evaluates foundation models for your generative AI use case with metrics such as accuracy, robustness, and toxicity to support your responsible AI initiative. SageMaker Clarify explains how input features contribute to your model predictions during model development and inference. Evaluate your FM during customization using automatic and human-based evaluations.\nSageMaker Clarify is integrated with SageMaker Experiments to provide a feature importance graph detailing the importance of each input for your model\u2019s overall decision-making process after the model has been trained. These details can help determine if a particular model input has more influence than it should on overall model behavior. SageMaker Clarify also makes explanations for individual predictions available through an API.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Clarify\nSageMaker Clarify automatically evaluates foundation models for your generative AI use case with metrics such as accuracy, robustness, and toxicity to support your responsible AI initiative. SageMaker Clarify explains how input features contribute to your model predictions during model development and inference. Evaluate your FM during customization using automatic and human-based evaluations.\nSageMaker Clarify is integrated with SageMaker Experiments to provide a feature importance graph detailing the importance of each input for your model\u2019s overall decision-making process after the model has been trained. These details can help determine if a particular model input has more influence than it should on overall model behavior. SageMaker Clarify also makes explanations for individual predictions available through an API.",
+    "domain": "Guidelines for Responsible AI",
+    "is_correct": false
+  },
+  {
+    "question_number": 65,
+    "question": "Which Amazon SageMaker service aggregates and displays data from Amazon SageMaker Model Cards, SageMaker Model Monitor and SageMaker Endpoint services?",
+    "options": [
+      "Amazon SageMaker Feature Store",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Model Dashboard",
+      "Amazon SageMaker JumpStart"
+    ],
+    "correct_option": "Amazon SageMaker Model Dashboard\nAmazon SageMaker Model Dashboard is a centralized repository of all models created in your account. The models are generally the outputs of SageMaker training jobs, but you can also import models trained elsewhere and host them on SageMaker. Model Dashboard provides a single interface for IT administrators, model risk managers, and business leaders to track all deployed models and aggregate data from multiple AWS services to provide indicators about how your models are performing.\nModel risk managers, ML practitioners, data scientists, and business leaders can get a comprehensive overview of models using the Model Dashboard. The dashboard aggregates and displays data from Amazon SageMaker Model Cards, Endpoints, and Model Monitor services to display valuable information such as model metadata from the model card and model registry, endpoints where the models are deployed, and insights from model monitoring.",
+    "explanation": "Overall explanation\nCorrect option:\nAmazon SageMaker Model Dashboard\nAmazon SageMaker Model Dashboard is a centralized repository of all models created in your account. The models are generally the outputs of SageMaker training jobs, but you can also import models trained elsewhere and host them on SageMaker. Model Dashboard provides a single interface for IT administrators, model risk managers, and business leaders to track all deployed models and aggregate data from multiple AWS services to provide indicators about how your models are performing.\nModel risk managers, ML practitioners, data scientists, and business leaders can get a comprehensive overview of models using the Model Dashboard. The dashboard aggregates and displays data from Amazon SageMaker Model Cards, Endpoints, and Model Monitor services to display valuable information such as model metadata from the model card and model registry, endpoints where the models are deployed, and insights from model monitoring.",
+    "domain": "Applications of Foundation Models",
+    "is_correct": true
+  }
+]
