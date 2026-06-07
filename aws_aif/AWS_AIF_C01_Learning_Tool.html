@@ -1930,6 +1930,8 @@ const ROUNDS = 5;
 const QUESTIONS_PER_ROUND = 15;
 const ITERATIONS = 9;
 const PASS_SCORE = 70;
+const NUM_WORDS = ['','ONE','TWO','THREE','FOUR','FIVE','SIX','SEVEN','EIGHT','NINE','TEN'];
+function numToWords(n) { return NUM_WORDS[n] || n; }
 
 let currentMode = 'learn';
 let currentSection = 0;
@@ -1939,7 +1941,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 4:11:02 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/6/2026, 5:54:56 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2139,7 +2141,7 @@ function renderQuiz(questions, round, saved) {
       '<div class="q-domain">' + q.domain + '</div>' +
       '<div class="q-num">Question ' + (qi + 1) + ' of ' + questions.length + ' <span class="q-difficulty ' + diffClass + '">' + q.difficulty + '</span></div>' +
       '<div class="q-text">' + q.question.replace(/\n/g, '<br>') + '</div>' +
-      (q.type === 'match' ? '<div class="q-instruction">(Match each item on the left with the best option on the right.)</div>' : (isMulti ? '<div class="q-instruction">(Select TWO.)</div>' : '')) +
+      (q.type === 'match' ? '<div class="q-instruction">(Match each item on the left with the best option on the right.)</div>' : (isMulti ? '<div class="q-instruction">(Select ' + numToWords(q.answer.length) + '.)</div>' : '')) +
       (q.type === 'order' ? '<div class="q-instruction">(Order the steps. Use arrows to reorder.)</div>' : '') +
       (q.type === 'match' ? '' : '');
     if (q.type === 'order') {
