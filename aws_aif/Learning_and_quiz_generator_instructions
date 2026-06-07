@@ -99,21 +99,30 @@ learning or quiz tool.
 - Scroll-to-top on nav click (`.main` container scroll).
 
 **Quiz Mode features:**
-- Match real exam question count (e.g., 65 questions per iteration for AIF-C01).
-- Divide each iteration into 5 rounds (e.g., 13 questions per round to total 65).
-- Allow multiple full iterations (e.g., 5 iterations of 5 rounds each).
-- Use seeded deterministic shuffling (LCG: `seed * 1103515245 + 12345`) once
-  per iteration, then divide into contiguous round slices with wrap-around
-  (minimizes question repetition vs per-round re-shuffle).
-- Question counter and score tracker.
+- Multiple iterations (9), each with 5 rounds of 15 questions = 75 per iteration.
+- Coverage-first shuffle: scans localStorage for ALL seen questions across all
+  iterations/rounds. Prioritizes unseen questions first. Guarantees every question
+  appears at least once across all iterations.
+- Seeded deterministic shuffling (xorshift PRNG: `xorshift(seed * 2654435761)`).
+  Zero-safe: seed=0 becomes 1.
+- `_currentQuestions` cache: set once per round, used by all interaction
+  functions to prevent `getQuestionsForRound` from returning different questions
+  on each click (which broke submit button).
+- Submit button enabled only when all 15 questions in the round have answers
+  (including all match options assigned).
 - Immediate feedback with correct answer and explanation.
-- Mix of multiple choice, true/false, multi-select ("Select TWO").
-- Retake round option.
-- Final results per iteration with domain/module-level breakdown.
-- DOMAIN_ALIASES to map service-level domains (e.g. "Amazon SageMaker") to
-  official exam domains for accurate breakdown.
-- Identify weak domains where score < 70%.
-- Overall summary across all iterations.
+- Question types: "mcq" (single-select), "msq" (multi-select with dynamic
+  "Select X" instruction), "order" (ordering/HOTSPOT), "match" (matching).
+- Round results: score, %, PASS/FAIL, plus domain breakdown bar chart.
+- Iteration results: aggregate score across all 5 rounds, domain breakdown,
+  weak domain identification (<70%), "Review Wrong Answers" button, retake button.
+- After 5th round: "View Iteration Results" button appears automatically.
+- Retake round: backs up old answers to `_seen` key, removes round data,
+  regenerates fresh questions.
+- Retake iteration: backs up all 5 rounds to `_seen` keys, removes all data,
+  restarts iteration.
+- Overall summary across all 9 iterations once complete.
+- DOMAIN_ALIASES to map service-level domains to official exam domains.
 
 **Design:**
 - Professional, clean layout.
@@ -154,6 +163,26 @@ learning or quiz tool.
    `"` inside `"question:...",options` double-quoted fields, escape with
    `\"`, e.g. `question:"... \\"approved\\" ..."`. Run `node --check` to
    catch unescaped quotes.
+8. **xorshift(0) degenerates** — `xorshift(seed)` with seed=0 produces all
+   zeros, breaking shuffle. Fix: `let s = seed || 1`.
+9. **getQuestionsForRound can return different questions on each call** —
+   it reads localStorage which changes as answers are saved. Fix: cache
+   results in `_currentQuestions` global. All interaction functions
+   (`selectOption`, `selectMatch`, `moveOrderItem`, `submitRound`) use the
+   cache instead of calling `getQuestionsForRound` again.
+10. **retakeRound destroys coverage** — removing a round's localStorage key
+    makes those questions "unseen" again. Fix: back up answers to
+    `_seen` key before removal. `getQuestionsForRound` reads both regular
+    keys and `_seen` keys.
+11. **"View Iteration Results" button never appears** — code checked for
+    `.results-summary` class which didn't exist. Fix: add `class="results-summary"`
+    to the round results div.
+12. **Hardcoded "(Select TWO.)" instruction** — 4 MSQ questions have 3-4
+    correct answers. Fix: use `numToWords(q.answer.length)` for dynamic
+    instruction text.
+13. **submitRound regenerates different questions** — used `getQuestionsForRound`
+    instead of cached `_currentQuestions`. Fix: use `_currentQuestions` in
+    `submitRound`.
 
 ### Source material handling
 - **Exam questions**: preserve exact wording, options (A/B/C/D), correct
@@ -185,14 +214,16 @@ learning or quiz tool.
 `~/Documents/AWS_Learning/aws_aif/AWS_AIF_C01_Learning_Tool.html`
 
 ### Specs
-- **378 questions**: 356 MCQ, 14 multi-select, 8 true/false (as of Round 2)
-- **Difficulty**: 96 Easy, 272 Medium, 10 Hard
-- **Size**: ~253 KB, ~1593 lines
-- **6 iterations × 5 rounds × 15 questions** = 75 per iteration (covers all 378 questions at least once)
+- **535 questions**: mix of mcq, msq, order, match types
+- **9 iterations × 5 rounds × 15 questions** = 75 per iteration (675 total slots, covers all 535≥1x)
 - **Pass score**: 70%
-- **Header badge**: shows "378 Q" (total question count)
-- **Question types**: "mcq" (single-select), "msq" (multi-select), "order" (ordering/HOTSPOT with up/down reorder arrows)
-- **Review Wrong Answers**: Button in iteration results shows all wrong Qs with user answer, correct answer, and detailed "why wrong" explanation
+- **Seeded shuffle**: xorshift PRNG (`seed * 2654435761`), NOT LCG. Zero-safe (seed=0→1).
+- **Coverage algorithm** (`getQuestionsForRound`): scans ALL localStorage `aif_iter_X_round_Y` keys and `_seen` backup keys, builds seen set. If unseen ≥ 15, picks 15 from unseen (shuffled). If unseen < 15, includes ALL unseen + fills from seen shuffled. **Guarantees 100% coverage** — every question appears at least once across all 9 iterations.
+- **Question cache** (`_currentQuestions`): set once in `startRound`, used by `selectOption`, `selectMatch`, `moveOrderItem`, `submitRound` — prevents `getQuestionsForRound` from returning different questions on each answer click. Fixes submit button staying disabled.
+- **Dynamic Select instruction**: MSQ instruction shows correct count via `numToWords(q.answer.length)` — supports ONE through TEN.
+- **Round results**: include domain breakdown (same bar-style as iteration results)
+- **Iteration results**: "View Iteration Results" button appears after 5th round submit (uses `.results-summary` class)
+- **Retake**: `retakeRound` backs up old answers to `_seen` key before removing. `retakeIteration` also backs up each round. Coverage preserved across retakes.
 
 ### Learning Mode sections (15 total across 5 domains)
 | Domain | Sections |
@@ -212,14 +243,9 @@ Questions use service-level domain names. Map to official exam domains:
 - `AWS Security Services` → `Security, Compliance, and Governance for AI`
 
 ### Question sources
-1. masteryexamprep.com (original 60 questions — URLs now 404)
-2. Ditectrev/AIF-C01 GitHub repo (~35 additional questions)
-3. techexamlexicon.com, study4exam.com (supplementary)
-4. open-exam-prep.com (8 questions — SageMaker, RAG, Bedrock, FM concepts)
-5. javainuse.com (41 questions reviewed, 0 added — already covered by existing)
-6. devpath.com (22 questions — ML lifecycle, GenAI, prompt eng, responsible AI, security)
-7. free-braindumps.com (56 questions extracted from pages 1-8 of 43; 22 unique added — PDPs, Amazon Q, SageMaker Serverless, Bedrock pricing, GenAI Security Scoping Matrix, Guardrails, GAN, plagiarism, model evaluation)
-8. Udemy practice tests (Test2.txt, test3.txt, test4.txt — 65 Qs each, 193 unique added after dedup; see Parsing section below)
+1. Udemy practice tests (test2.txt, test3.txt, test4.txt — 65 Qs each, ~193 unique added after dedup)
+2. Various web practice sites (masteryexamprep.com, ditectrev, techexamlexicon, study4exam, etc.)
+3. open-exam-prep.com, javainuse.com, devpath.com, free-braindumps.com (56 Qs, 22 unique added)
 
 ### Udemy text file parsing (Test2.txt / test3.txt / test4.txt)
 - **Location**: `~/Desktop/Test2.txt`, `~/Desktop/test3.txt`, `~/Desktop/test4.txt`
@@ -241,37 +267,30 @@ Questions use service-level domain names. Map to official exam domains:
   - Also detect internal duplicates within the 195 candidate pool: removed Test3 Q13 (dup of Test2 Q6), Test3 Q42 (dup of Test3 Q10)
 - **Result**: 193 new questions inserted as IDs 186-378; badge updated 185→378
 
-### Domain breakdown (IDs 1-378)
+### Domain breakdown (IDs 1-535)
 | Domain | Count |
 |--------|-------|
-| Applications of Foundation Models | 55 |
-| Fundamentals of AI and ML | 49 |
-| Fundamentals of Generative AI | 39 |
-| Guidelines for Responsible AI | 28 |
-| Security, Compliance, and Governance for AI Solutions | 19 |
+| Applications of Foundation Models | ~165 |
+| Fundamentals of AI and ML | ~105 |
+| Fundamentals of Generative AI | ~115 |
+| Guidelines for Responsible AI | ~70 |
+| Security, Compliance, and Governance for AI Solutions | ~80 |
 
 ### Key decisions
-- Shuffle once per iteration (LCG PRNG), contiguous round slices + wrap-around
-- Iterations: 6 (covers all 378 Qs ≥1x); QuestionsPerRound: 15 (75/iteration, 450 total slots)
-- No comma separation for "Select TWO" multi-select in UI
+- Coverage-first shuffle: scan all localStorage for seen questions, prioritize unseen. Repeat selections only after all questions seen at least once.
+- Iterations: 9 (covers all 535 Qs ≥1x); QuestionsPerRound: 15 (75/iteration, 675 total slots)
 - Domain aliases to normalize non-standard domain names in results
 - Pass score 70% (exam standard)
-- Clean up scraped/ temp files after adding questions (don't commit to git)
-- Udemy text parsing: use `?`-presence heuristic (robust across all 3 files); extract correct answers from explanations, not from answer markers (marker order inconsistent between tests)
 
-### Adding new questions (process for future rounds)
-1. **Sources**: User may provide new Udemy .txt files (Desktop/), URLs to web practice tests, or inline pasted content
+### Adding new questions
+1. **Sources**: User may provide Udemy .txt files, URLs to practice tests, or inline pasted content
 2. **Parse strategy** (for Udemy .txt):
    - Encoding: Latin-1 (`encoding='latin-1'`), NOT UTF-8
    - Split on blank lines + digit pattern to isolate questions
-   - Use `?` heuristic: last `?`-containing line marks end of question text; rest are options
+   - Last `?`-containing line marks end of question text; rest are options
    - Extract correct answers from `Correct options:` / `Correct option:` in explanation block
    - Normalize unicode for dedup matching
-3. **Deduplication**:
-   - Compare normalized question text against existing `ALL_QUESTIONS` array
-   - Check both existing (IDs 1–185) and previously added Udemy questions (IDs 186–378)
-   - Also check for internal duplicates within new pool
-   - Use fuzzy similarity check (85%+ threshold) to flag near-duplicates for manual review
+3. **Deduplication**: Compare normalized question text against existing `ALL_QUESTIONS`. Use fuzzy similarity for near-duplicate detection.
 4. **Insertion**: Add new questions at end of `ALL_QUESTIONS` array with sequential IDs. Update badge count in header.
 5. **Commit**: Update both the HTML tool AND this instructions file. Then `git add`, `commit`, `push`.
 
