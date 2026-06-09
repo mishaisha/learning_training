@@ -774,6 +774,45 @@ No <code>any</code> types allowed.</pre>
     <button class="quiz-action-btn primary" onclick="labToolsCheck()">Check Design</button>
     <div id="lab-tools-feedback" style="margin-top:12px;padding:12px;border-radius:8px;display:none;"></div>
 </div>`},
+{id:'lab-agent',domain:6,title:'Lab: Build Your Agent',content:`
+<div class="domain-card">
+<h3>Build a Tool-Using Agent</h3>
+<p>Configure an agent step by step. See how system prompt + tools + loop = agent.</p>
+<div id="lab-agent-area" class="lab-area" style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div><label style="font-size:.85rem;font-weight:500;color:var(--text2)">Agent Name</label>
+        <input type="text" id="lab-agent-name" value="ResearchBot" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:.9rem"></div>
+        <div><label style="font-size:.85rem;font-weight:500;color:var(--text2)">Max Turns</label>
+        <input type="number" id="lab-agent-turns" value="5" min="1" max="20" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:.9rem"></div>
+    </div>
+    <div><label style="font-size:.85rem;font-weight:500;color:var(--text2)">Agent Persona</label>
+    <select id="lab-agent-role" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:.9rem;background:white">
+        <option value="research">Research Assistant — finds and synthesizes information</option>
+        <option value="support">Support Agent — resolves customer issues with knowledge base</option>
+        <option value="code">Code Reviewer — analyzes code and suggests improvements</option>
+    </select></div>
+    <div><label style="font-size:.85rem;font-weight:500;color:var(--text2);display:block;margin-bottom:6px">Tools to Equip</label>
+    <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
+        <input type="checkbox" id="lab-agent-t1" checked> <code>search_web(query: string)</code> — Search the web for information</label>
+    <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
+        <input type="checkbox" id="lab-agent-t2" checked> <code>fetch_page(url: string)</code> — Retrieve content from a URL</label>
+    <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
+        <input type="checkbox" id="lab-agent-t3"> <code>write_file(path: string, content: string)</code> — Save results to file</label>
+    <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
+        <input type="checkbox" id="lab-agent-t4"> <code>send_email(to: string, subject: string, body: string)</code> — Send email notification</label></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="quiz-action-btn primary" onclick="labAgentBuild()">Generate Agent Config</button>
+        <button class="quiz-action-btn outline" onclick="labAgentSimulate()">Simulate Agent Run</button>
+        <button class="quiz-action-btn outline" onclick="labAgentReset()">Reset</button>
+    </div>
+    <div id="lab-agent-output" style="display:none">
+        <div id="lab-agent-config-section"><h4 style="margin-bottom:6px">Agent Configuration</h4>
+        <pre id="lab-agent-config" style="background:#1e1e2e;color:#cdd6f4;padding:16px;border-radius:8px;font-size:.82rem;overflow-x:auto;white-space:pre-wrap">Click Generate Config to build</pre></div>
+        <div id="lab-agent-sim-section" style="margin-top:14px"><h4 style="margin-bottom:6px">Simulation — Agentic Loop in Action</h4>
+        <div id="lab-agent-sim" style="background:#f0f2f5;padding:16px;border-radius:8px;font-size:.88rem;max-height:400px;overflow-y:auto"></div></div>
+    </div>
+</div>
+</div>`},
 {id:'d6-scenarios',domain:0,title:'Exam Scenarios Overview',content:`<div class="domain-card">
 <h3>6 Exam Scenarios (4 per exam)</h3>
 <p>The CCA-F exam presents 4 scenario-based questions from a pool of 6 scenarios. Each scenario tests your ability to apply CCA-F concepts to real-world situations.</p>
@@ -1808,6 +1847,73 @@ function labMcpCopy() {
   });
 }
 
+// --- Hands-on Lab: Build Your Agent ---
+var AGENT_ROLES = {
+  research:{prompt:'You are a research assistant. Your job is to find accurate information, verify sources, and present clear summaries. Use your tools to search and fetch content before answering. Always cite sources.',task:'Find and summarize the latest developments in AI agents from 2026.'},
+  support:{prompt:'You are a customer support agent. You resolve issues professionally using your knowledge base tools. Follow policy: verify identity first, then investigate, then resolve. Escalate if needed.',task:'A customer reports they cannot access their account after a password reset. Investigate and resolve.'},
+  code:{prompt:'You are a senior code reviewer. Analyze code for bugs, security issues, performance problems, and style violations. Provide specific, actionable feedback with code snippets.',task:'Review the following Python function for issues:\n\ndef process_data(items):\n    results = []\n    for i in range(len(items)):\n        if items[i] != None:\n            r = items[i] * 2\n            results.append(r)\n    return results'}
+};
+function labAgentBuild() {
+  var name = document.getElementById('lab-agent-name').value.trim() || 'MyAgent';
+  var role = document.getElementById('lab-agent-role').value;
+  var turns = document.getElementById('lab-agent-turns').value || 5;
+  var tools = [];
+  var toolDefs = [];
+  if (document.getElementById('lab-agent-t1').checked) { tools.push('search_web'); toolDefs.push('  { name: "search_web", description: "Search the web for information", input_schema: { type: "object", properties: { query: { type: "string", description: "Search query" } }, required: ["query"] } }'); }
+  if (document.getElementById('lab-agent-t2').checked) { tools.push('fetch_page'); toolDefs.push('  { name: "fetch_page", description: "Retrieve content from a URL", input_schema: { type: "object", properties: { url: { type: "string", description: "Page URL" } }, required: ["url"] } }'); }
+  if (document.getElementById('lab-agent-t3').checked) { tools.push('write_file'); toolDefs.push('  { name: "write_file", description: "Save content to a file", input_schema: { type: "object", properties: { path: { type: "string" }, content: { type: "string" } }, required: ["path","content"] } }'); }
+  if (document.getElementById('lab-agent-t4').checked) { tools.push('send_email'); toolDefs.push('  { name: "send_email", description: "Send an email notification", input_schema: { type: "object", properties: { to: { type: "string" }, subject: { type: "string" }, body: { type: "string" } }, required: ["to","subject","body"] } }'); }
+  var roleData = AGENT_ROLES[role];
+  var config = '{\n  "model": "claude-sonnet-4-20250514",\n  "max_turns": ' + turns + ',\n  "system": "' + roleData.prompt + '",\n  "tools": [\n' + toolDefs.join(',\n') + '\n  ],\n  "temperature": 0.3\n}';
+  document.getElementById('lab-agent-config').textContent = config;
+  document.getElementById('lab-agent-output').style.display = 'block';
+  document.getElementById('lab-agent-sim-section').style.display = 'none';
+}
+function labAgentSimulate() {
+  var name = document.getElementById('lab-agent-name').value.trim() || 'MyAgent';
+  var role = document.getElementById('lab-agent-role').value;
+  var roleData = AGENT_ROLES[role];
+  var tools = [];
+  if (document.getElementById('lab-agent-t1').checked) tools.push('search_web');
+  if (document.getElementById('lab-agent-t2').checked) tools.push('fetch_page');
+  if (document.getElementById('lab-agent-t3').checked) tools.push('write_file');
+  if (document.getElementById('lab-agent-t4').checked) tools.push('send_email');
+  if (tools.length === 0) { alert('Select at least one tool first.'); return; }
+  document.getElementById('lab-agent-output').style.display = 'block';
+  document.getElementById('lab-agent-sim-section').style.display = 'block';
+  var simDiv = document.getElementById('lab-agent-sim');
+  simDiv.innerHTML = '';
+  var steps = [
+    {type:'user',label:'User Input',icon:'&#128172;',content:'"' + roleData.task + '"'},
+    {type:'model',label:'Model: tool_use',icon:'&#129302;',content:'Claude decides to use <b>' + tools[0] + '</b> to gather information.'},
+    {type:'tool',label:'Tool Exec: ' + tools[0],icon:'&#128295;',content:'Running <code>' + tools[0] + '</code> with the query parameters. Tool returns results.'},
+    {type:'model',label:'Model: reasoning',icon:'&#129302;',content:'Claude analyzes tool results. Synthesizing findings into a coherent answer.' + (tools.length > 1 ? ' Needs more data — calling <b>' + tools[1] + '</b> next.' : '')},
+    {type:'model',label:'Model: response',icon:'&#9989;',content:'Claude produces final answer with citations and structured output.'},
+    {type:'end',label:'Agent Complete',icon:'&#127881;',content:'Turn budget: 2 used / ' + document.getElementById('lab-agent-turns').value + ' max. Final output delivered to user.'}
+  ];
+  if (tools.length > 1) {
+    steps.splice(4, 0, {type:'tool',label:'Tool Exec: ' + tools[1],icon:'&#128295;',content:'Running <code>' + tools[1] + '</code> with extracted parameters. Processing returned data.'});
+  }
+  var colors = {user:'var(--accent2)',model:'var(--accent)',tool:'#8b5cf6',end:'var(--success)'};
+  steps.forEach(function(s, i) {
+    var div = document.createElement('div');
+    div.style.cssText = 'display:flex;gap:10px;padding:10px 12px;margin-bottom:8px;background:white;border-radius:8px;border-left:3px solid ' + (colors[s.type] || '#999') + ';opacity:0;transition:opacity .3s';
+    div.innerHTML = '<span style="font-size:1.1rem;flex-shrink:0">' + s.icon + '</span><div><div style="font-weight:600;font-size:.82rem;color:' + (colors[s.type] || '#999') + ';margin-bottom:2px">' + s.label + '</div><div style="font-size:.85rem;line-height:1.5">' + s.content + '</div></div>';
+    simDiv.appendChild(div);
+    setTimeout(function(d) { d.style.opacity = '1'; }, 200 * (i + 1), div);
+  });
+}
+function labAgentReset() {
+  document.getElementById('lab-agent-name').value = 'ResearchBot';
+  document.getElementById('lab-agent-role').value = 'research';
+  document.getElementById('lab-agent-turns').value = 5;
+  document.getElementById('lab-agent-t1').checked = true;
+  document.getElementById('lab-agent-t2').checked = true;
+  document.getElementById('lab-agent-t3').checked = false;
+  document.getElementById('lab-agent-t4').checked = false;
+  document.getElementById('lab-agent-output').style.display = 'none';
+}
+
 // --- Hands-on Lab: Tool Definition Designer ---
 function labToolsCheck() {
   var fb = document.getElementById('lab-tools-feedback');
@@ -1834,6 +1940,7 @@ showSection = function(idx) {
   origShowSection(idx);
   var c = CONTENT[idx];
   if (c && c.id === 'lab-loop') setTimeout(labLoopInit, 50);
+  if (c && c.id === 'lab-agent') labAgentReset();
 };
 </script>
 </body>

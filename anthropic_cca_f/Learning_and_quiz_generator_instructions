@@ -206,12 +206,13 @@ learning or quiz tool.
 | Reasoning & Chain of Thought | CoT patterns, assistant prefill, confidence calibration |
 | Context Caching & Optimization | Ephemeral vs persistent caching, token budget planning |
 
-**Hands-on Labs (3):**
+**Hands-on Labs (4):**
 | Lab | Description |
 |-----|-------------|
 | Agentic Loop Simulator | Drag-and-drop ordering of the 5 agentic loop steps |
 | MCP Config Builder | Form generates valid .mcp.json config |
 | Tool Definition Designer | Select correct tool params, avoid anti-patterns |
+| Build Your Agent | Configure persona, tools, turns → generates Claude API config → simulates agentic loop run |
 
 ### DOMAIN_ALIASES (for results breakdown)
 Map all domain variations to official domains:
@@ -243,6 +244,7 @@ showSection = function(idx) {
   origShowSection(idx);
   var c = CONTENT[idx];
   if (c && c.id === 'lab-loop') setTimeout(labLoopInit, 50);
+  if (c && c.id === 'lab-agent') labAgentReset();
 };
 ```
 
