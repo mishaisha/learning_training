@@ -1498,7 +1498,7 @@ function buildNav() {
     hdr.className = 'section-header';
     hdr.textContent = d.name + ' (' + d.weight + ')';
     nav.appendChild(hdr);
-    CONTENT.filter(c => c.domain === di).forEach(c => {
+    CONTENT.filter(c => c.domain === di && c.id !== 'd6-scenarios').forEach(c => {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.textContent = c.title;
