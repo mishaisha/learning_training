@@ -1040,16 +1040,16 @@ def test_search_tool_validation():
     <p style="margin-bottom:8px"><strong>Tool:</strong> search_docs — Search documentation</p>
     <div style="margin-bottom:16px">
         <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
-            <input type="checkbox" id="lab-tool-p1" checked> <code>query</code> (string) — Search query text
+            <input type="checkbox" id="lab-tool-p1"> <code>query</code> (string) — Search query text
         </label>
         <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
-            <input type="checkbox" id="lab-tool-p2" checked> <code>max_results</code> (integer) — Max results (default: 10)
+            <input type="checkbox" id="lab-tool-p2"> <code>max_results</code> (integer) — Max results (default: 10)
         </label>
         <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
             <input type="checkbox" id="lab-tool-p3"> <code>api_key</code> (string) — BAD: credentials in config, not params
         </label>
         <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
-            <input type="checkbox" id="lab-tool-p4" checked> <code>category</code> (string, enum) — ["api","guide","tutorial"]
+            <input type="checkbox" id="lab-tool-p4"> <code>category</code> (string, enum) — ["api","guide","tutorial"]
         </label>
         <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
             <input type="checkbox" id="lab-tool-p5"> <code>session_token</code> (string) — BAD: tools should be stateless
