@@ -746,6 +746,41 @@ const CONTENT = [
 <li><strong>C7g (Graviton3):</strong> General compute — NOT specialized for ML</li>
 </ul>
 </div>`},
+{id:'d3-nova',domain:2,title:'Amazon Nova Models',content:`<div class="domain-card">
+<h3>Amazon Nova — AWS-Native Model Family</h3>
+<p>Amazon Nova is a family of <strong>AWS-native foundation models</strong> announced at re:Invent December 2024, available exclusively through Amazon Bedrock. <em>Exam: "newest AWS-native multimodal model" = Amazon Nova (not Titan).</em></p>
+
+<h3>Nova Model Family — Capabilities & Use Cases</h3>
+<div class="key-service"><h4>Nova Micro</h4><p>Text-only, fastest, cheapest. 128K context window. Ideal for classification, routing, and summarization — tasks that don't need image understanding. <em>Exam: "fastest response time / lowest cost" = Nova Micro.</em></p></div>
+<div class="key-service"><h4>Nova Lite</h4><p>Multimodal (text+image+video to text). 300K context. Low-cost document analysis, visual QA, and lightweight multimodal tasks. <em>Exam: "cost-optimized multimodal AWS model" = Nova Lite.</em></p></div>
+<div class="key-service"><h4>Nova Pro</h4><p>Multimodal, best accuracy-speed-cost balance. 300K context. Complex reasoning, agentic workflows, financial document analysis. <em>Exam: "best balance of accuracy, speed, and cost for complex multimodal tasks" = Nova Pro.</em></p></div>
+<div class="key-service"><h4>Nova Premier</h4><p>Most capable multimodal model in the Nova family. Designed as a teacher model for distillation. <em>Exam: "most capable AWS-native model" or "teacher model for distillation" = Nova Premier.</em></p></div>
+
+<h3>Specialized Nova Models</h3>
+<div class="key-service"><h4>Nova Canvas</h4><p>Image generation model (text/image to image). Supports inpainting, outpainting, style transfer, and image editing. <em>Exam: "AWS-native image generation model" = Nova Canvas (not Stable Diffusion).</em></p></div>
+<div class="key-service"><h4>Nova Reel</h4><p>Video generation model (text to video). Creates short videos from text prompts for marketing and advertising. <em>Exam: "AWS-native video generation" = Nova Reel.</em></p></div>
+<div class="key-service"><h4>Nova Sonic</h4><p>Speech-to-speech conversational AI model. Enables real-time voice interactions with natural speech rhythm and pacing. <em>Exam: "real-time voice / speech-to-speech AWS model" = Nova Sonic.</em></p></div>
+
+<h3>Common Exam Trap — Nova Micro vs Nova Lite</h3>
+<p>A frequent exam trap asks you to choose between Nova Micro and Nova Lite for a cost-sensitive task. The key distinction:</p>
+<ul>
+<li><strong>Nova Micro</strong> is <strong>text-only</strong> — CANNOT process images, documents (PDFs), or video. Cheapest option only when the task is text-only.</li>
+<li><strong>Nova Lite</strong> is <strong>multimodal</strong> — processes text, images, documents, and video. The cheapest Nova model when ANY visual input is required.</li>
+</ul>
+<p><em>Exam: If the question mentions documents, images, PDFs, charts, or any visual input, Nova Micro is automatically eliminated — it cannot handle those inputs regardless of cost. The cheapest viable option for visual tasks is Nova Lite.</em></p>
+
+<h3>Exam Patterns — When to Choose Nova</h3>
+<ul>
+<li><strong>"AWS-native" or "built by AWS"</strong> = Amazon Nova (not Anthropic, Meta, Cohere)</li>
+<li><strong>"Compliance with AWS-only providers"</strong> = Amazon Nova (other providers are third-party)</li>
+<li><strong>"Text-only, cheapest, fastest"</strong> = Nova Micro</li>
+<li><strong>"Multimodal but cost-sensitive"</strong> = Nova Lite</li>
+<li><strong>"Image generation / AWS"</strong> = Nova Canvas (over Titan Image Generator)</li>
+<li><strong>"Video generation"</strong> = Nova Reel</li>
+<li><strong>"Real-time conversational voice"</strong> = Nova Sonic</li>
+</ul>
+<p><em>Exam trap: Titan is older AWS model family (primarily text and embeddings). For questions about newest AWS models or multimodal AWS-native models, the answer is Nova, not Titan. Nova 2 Lite and Nova 2 Pro (2025 update) add 1M context windows and reasoning capabilities.</em></p>
+</div>`},
 {id:'d4-responsible',domain:3,title:'Responsible AI Principles',content:`<div class="domain-card">
 <h3>The Six Pillars of Responsible AI</h3>
 <p>These are the core principles AWS uses for responsible AI. The exam tests your ability to match a scenario to the correct principle.</p>
@@ -925,6 +960,33 @@ const CONTENT = [
 <li><strong>RAG:</strong> Use when data changes frequently, need citations, or have large knowledge bases</li>
 <li><strong>Fine-tuning:</strong> Use when you need to change model behavior/persona, not add knowledge</li>
 <li><strong>Prompt engineering:</strong> Use for simple tasks, quick iteration, no additional data needed</li>
+</ul>
+</div>`},
+{id:'d3-mcp',domain:2,title:'Model Context Protocol (MCP)',content:`<div class="domain-card">
+<h3>Model Context Protocol (MCP) — Overview</h3>
+<p><strong>Model Context Protocol (MCP)</strong> is an open protocol developed by Anthropic that standardizes how AI applications connect to external tools, data sources, and resources. It enables secure, controlled access between AI models and the systems they interact with.</p>
+
+<h3>MCP Architecture — Three Components</h3>
+<div class="key-service"><h4>MCP Host</h4><p>The <strong>application</strong> that initiates the connection — e.g., Claude Desktop, an IDE plugin, or a custom AI application. The host is the user-facing application that requests AI capabilities and manages connections to one or more MCP Servers. <em>Exam: "the AI application that connects to tools" = MCP Host.</em></p></div>
+<div class="key-service"><h4>MCP Client</h4><p>The <strong>protocol client</strong> within the Host that manages the connection to a specific MCP Server. Each server connection has its own client instance. The client sends requests, receives responses, and handles the protocol handshake. <em>Exam: "the component that manages the connection to a specific server" = MCP Client.</em></p></div>
+<div class="key-service"><h4>MCP Server</h4><p>The <strong>server</strong> that provides specific capabilities — tools, data sources, or resources. Examples: file system server, database query server, API integration server. Each server exposes its own functionality that the Host can use through the Client. <em>Exam: "the external tool or data source provider" = MCP Server.</em></p></div>
+
+<h3>How It Works</h3>
+<ol>
+<li>Host starts and discovers available MCP Servers</li>
+<li>Host creates a Client for each Server connection</li>
+<li>Client establishes protocol connection with Server</li>
+<li>Server advertises its capabilities (tools, resources, prompts)</li>
+<li>Host routes AI requests through Clients to appropriate Servers</li>
+<li>Server executes the requested tool or returns the requested resource</li>
+</ol>
+
+<h3>Exam Tips</h3>
+<ul>
+<li><strong>MCP Host</strong> = the AI application (the one the user interacts with)</li>
+<li><strong>MCP Client</strong> = the protocol connection manager (internal to Host)</li>
+<li><strong>MCP Server</strong> = the tool or data provider (file system, database, API)</li>
+<li>MCP is <strong>not AWS-specific</strong> — it is an open protocol, but AWS supports it through Bedrock Agents and custom integrations</li>
 </ul>
 </div>`},
 {id:'d2-multimodal',domain:1,title:'Multi-modal AI',content:`<div class="domain-card">
@@ -1991,7 +2053,12 @@ const ALL_QUESTIONS = [
 {id:600,domain:"Fundamentals of AI and ML",difficulty:"MEDIUM",type:"mcq",question:"A company is using Amazon Bedrock and it wants to regulate the number of most-likely candidates considered for the next word in the model's output. Which of the following inference parameters would you recommend for the given use case?",options:["Temperature","Top K","Stop sequences","Top P"],answer:1,explanation:"Top K limits the number of most-likely candidates considered for the next token. Top P considers cumulative probability percentage. Temperature affects randomness/distribution sharpness. Stop sequences end generation."},
 {id:601,domain:"Fundamentals of Generative AI",difficulty:"MEDIUM",type:"mcq",question:"A financial services company is exploring the use of generative AI to automate report generation and enhance customer insights. As part of this effort, the team is evaluating different AI models and technologies, including Foundation Models (FMs), to understand their capabilities and how they can be applied to improve efficiency. The team needs to clarify key characteristics and features of Foundation Models to determine if they align with the company's objectives. Which of the following statements is correct regarding Foundation Models (FMs) in the context of generative AI?",options:["FMs use supervised learning to create labels from input data, however, fine-tuning an FM is a self-supervised learning process","FMs use self-supervised learning to create labels from input data and fine-tuning an FM is a self-supervised learning process as well","FMs use self-supervised learning to create labels from input data, however, fine-tuning an FM is a supervised learning process","FMs use supervised learning to create labels from input data and fine-tuning an FM is a supervised learning process as well"],answer:2,explanation:"FMs are pre-trained using self-supervised learning (no labels needed — the data itself provides supervision, e.g., next-token prediction). Fine-tuning uses labeled data for specific tasks, making it a supervised learning process."},
 {id:602,domain:"Security, Compliance, and Governance for AI",difficulty:"MEDIUM",type:"mcq",question:"A company has deployed several machine learning models on Amazon Bedrock to provide real-time predictions and analytics for its clients. To maintain operational transparency and ensure compliance with regulatory requirements, the company needs to monitor the input data sent to these models and the output responses generated. This monitoring is crucial for tracking usage, auditing access patterns, and troubleshooting any issues that may arise during model execution. The company is looking for a solution that provides detailed visibility into all model invocations to maintain effective oversight. Which of the following solutions would be the most suitable for achieving this goal?",options:["The company should use AWS Config to monitor changes in resource configurations initiated by Amazon Bedrock","The company should use AWS CloudTrail logs for tracking Amazon Bedrock API calls, which records API activities and calls made to various AWS services, including Amazon Bedrock","The company should enable model invocation logging, which allows for detailed logging of all requests and responses during model invocations in Amazon Bedrock","The company should analyze Amazon Bedrock model invocation events in Amazon EventBridge"],answer:2,explanation:"Model invocation logging captures input data and output responses for each model invocation, providing detailed visibility for monitoring, auditing, and troubleshooting. CloudTrail logs API calls but not the content of invocations."},
-{id:603,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"A healthcare analytics company aims to enhance its AI capabilities by fine-tuning a foundation model (FM) in Amazon Bedrock to specialize in medical text analysis. To achieve this, the company plans to use its own task-specific labeled dataset, consisting of annotated clinical notes and medical records, to fine-tune the model for greater accuracy in extracting relevant information. Given these requirements, which approach would be most suitable?",options:["The company should leverage Amazon Bedrock playground to facilitate fine-tuning of the model","The company should use On-Demand mode, which provides flexibility by charging only for the resources consumed","The company should leverage batch inference to facilitate fine-tuning of the model","The company should use Provisioned Throughput mode, which allows the company to reserve a specific amount of capacity in advance"],answer:3,explanation:"Provisioned Throughput mode reserves capacity for fine-tuning and inference, ensuring consistent performance for the specialized model. On-Demand mode is for pay-per-use inference, not fine-tuning. Playground is for experimentation, not production fine-tuning."}
+{id:603,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"A healthcare analytics company aims to enhance its AI capabilities by fine-tuning a foundation model (FM) in Amazon Bedrock to specialize in medical text analysis. To achieve this, the company plans to use its own task-specific labeled dataset, consisting of annotated clinical notes and medical records, to fine-tune the model for greater accuracy in extracting relevant information. Given these requirements, which approach would be most suitable?",options:["The company should leverage Amazon Bedrock playground to facilitate fine-tuning of the model","The company should use On-Demand mode, which provides flexibility by charging only for the resources consumed","The company should leverage batch inference to facilitate fine-tuning of the model","The company should use Provisioned Throughput mode, which allows the company to reserve a specific amount of capacity in advance"],answer:3,explanation:"Provisioned Throughput mode reserves capacity for fine-tuning and inference, ensuring consistent performance for the specialized model. On-Demand mode is for pay-per-use inference, not fine-tuning. Playground is for experimentation, not production fine-tuning."},
+{id:604,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"A company wants to build a GenAI application on Amazon Bedrock and needs to use an AWS-native foundation model that can process both text and image inputs. The application requires strong multimodal reasoning capabilities at a balanced cost.\n\nWhich Amazon Nova model meets these requirements?",options:["Nova Micro — text-only model for low-latency classification tasks","Nova Canvas — image generation model for creating visual content","Nova Pro — multimodal model with the best balance of accuracy, speed, and cost","Nova Premier — most capable multimodal model designed as a teacher for distillation"],answer:2,explanation:"Nova Pro is a multimodal model (text+image+video to text) that offers the best balance of accuracy, speed, and cost for complex multimodal reasoning tasks. Nova Micro is text-only and cannot process images. Nova Canvas generates images but does not perform multimodal reasoning. Nova Premier is the most capable but is designed primarily as a teacher model for distillation."},
+{id:605,domain:"Applications of Foundation Models",difficulty:"EASY",type:"mcq",question:"A medtech startup is building a real-time patient triage assistant that processes text-only symptom descriptions and must return responses in under 200ms. The solution needs to minimize inference cost while maintaining acceptable response quality.\n\nWhich Amazon Nova model is the MOST cost-effective choice for this use case?",options:["Nova Pro — multimodal model with complex reasoning capabilities","Nova Canvas — image generation model for creating visual content","Nova Micro — text-only model with the lowest latency and cost","Nova Reel — video generation model for creating short videos"],answer:2,explanation:"Nova Micro is text-only, fastest, and cheapest in the Nova family — ideal for classification, routing, and summarization tasks that do not require image understanding. The use case is text-only with strict latency requirements, making Nova Micro the optimal choice. Nova Pro is multimodal but more expensive and slower. Canvas and Reel are specialized generation models, not suited for text analysis."},
+{id:606,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"A marketing agency wants to use Amazon Bedrock to generate product images from text descriptions and short promotional videos from text prompts. The agency prefers AWS-native models to simplify compliance.\n\nWhich combination of Amazon Nova models should the agency use?",options:["Nova Micro for images and Nova Pro for videos","Nova Canvas for image generation and Nova Reel for video generation","Nova Lite for images and Nova Sonic for videos","Nova Premier for both images and videos"],answer:1,explanation:"Nova Canvas is purpose-built for image generation (text/image to image) and Nova Reel is purpose-built for video generation (text to video). Both are AWS-native specialized models available on Bedrock. Nova Micro and Pro are language/multimodal models, not generation models. Nova Sonic is a speech-to-speech model."},
+{id:607,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"A media streaming company is selecting an Amazon Nova foundation model to process documents and images. The company is comparing Nova Micro and Nova Lite and wants to minimize cost.\n\nWhich Amazon Nova model should the company choose?",options:["Nova Micro — text-only model with the lowest latency and cost","Nova Lite — multimodal model supporting text, images, and documents","Nova Canvas — image generation model","Nova Reel — video generation model"],answer:1,explanation:"Nova Lite is the cheapest multimodal Amazon Nova model that can process documents and images. Nova Micro is text-only and cannot process images or documents — it is eliminated regardless of cost. Nova Canvas generates images but does not analyze documents. Nova Reel generates video."},
+{id:608,domain:"Applications of Foundation Models",difficulty:"MEDIUM",type:"mcq",question:"An AI startup is building a custom code review assistant that uses the Model Context Protocol (MCP) to connect to a file system server for accessing source code and a Git repository server for analyzing commit history.\n\nIn this MCP architecture, which component is the custom code review assistant application?",options:["MCP Host — the application that initiates connections to MCP Servers","MCP Client — the protocol component that manages individual server connections","MCP Server — the component that provides tools and data","MCP Router — the component that load-balances between servers"],answer:0,explanation:"The MCP Host is the application (such as a custom AI assistant, Claude Desktop, or IDE) that initiates connections to MCP Servers. The MCP Client is the protocol component within the Host that manages individual server connections. MCP Servers provide specific tools and data sources (file system, Git repository). There is no 'MCP Router' component in the standard MCP architecture."}
 ];
 const ROUNDS = 5;
 const QUESTIONS_PER_ROUND = 15;
@@ -2008,7 +2075,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/7/2026, 4:48:00 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/10/2026, 12:30:08 PM';
   buildNav();
   showSection(0);
   loadNotes();
