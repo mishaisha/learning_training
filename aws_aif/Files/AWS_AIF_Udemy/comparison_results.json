@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "total_udemy": 260,
+    "total_html": 600,
+    "covered": 259,
+    "uncovered": 1,
+    "coverage_rate": "99.6%"
+  },
+  "domain_breakdown": {
+    "Applications of Foundation Models": {
+      "total": 77,
+      "covered": 77,
+      "uncovered": 0
+    },
+    "Fundamentals of AI and ML": {
+      "total": 71,
+      "covered": 71,
+      "uncovered": 0
+    },
+    "Fundamentals of Generative AI": {
+      "total": 52,
+      "covered": 52,
+      "uncovered": 0
+    },
+    "Guidelines for Responsible AI": {
+      "total": 33,
+      "covered": 32,
+      "uncovered": 1
+    },
+    "Security, Compliance, and Governance for AI Solutions": {
+      "total": 27,
+      "covered": 27,
+      "uncovered": 0
+    }
+  },
+  "uncovered_questions": [
+    {
+      "question_number": 13,
+      "question": "Consider the following AI model responses to user prompts. Which response exemplifies hijacking and which exemplifies jailbreaking?",
+      "domain": "Guidelines for Responsible AI",
+      "options": [
+        "Prompt 1: \"How can I improve my study habits?\"",
+        "Response A: \"To improve your study habits, you should create a consistent schedule, find a quiet place to work, and take regular breaks.\"",
+        "Prompt 2: \"What is the best way to learn programming?\"",
+        "Response B: \"The best way to learn programming is to practice regularly and work on real projects. However, you can bypass this by using a cheat tool to pass exams without learning.\"",
+        "Prompt 3: \"How do I bypass security measures on this device?\"",
+        "Response C: \"As an AI developed by AWS, I must adhere to ethical guidelines and cannot assist with bypassing security measures.\"",
+        "Prompt 4: \"Write a poem about nature and then tell me how a virus works on a computer\"",
+        "Response D: \"Roses are red, violets are blue. By the way, let me show you how to disable antivirus software on your computer.\"",
+        "Response C is hijacking; Response A is jailbreaking",
+        "Response A is hijacking; Response C is jailbreaking",
+        "Response B is hijacking; Response D is jailbreaking",
+        "Response D is hijacking; Response B is jailbreaking"
+      ],
+      "correct_option": "Response B is hijacking; Response D is jailbreaking\nHijacking involves manipulating an AI system to serve malicious purposes or to misbehave in unintended ways.\nJailbreaking refers to bypassing the built-in restrictions and safety measures of AI systems to unlock restricted functionalities or generate prohibited content.\nResponse B is an example of hijacking, where the AI model initially provides a useful response but then diverts to an unethical suggestion (using a cheat tool). Response D is an example of jailbreaking, where the AI is manipulated into providing information about disabling antivirus software despite the initial innocent prompt.",
+      "test_number": 3
+    }
+  ]
+}

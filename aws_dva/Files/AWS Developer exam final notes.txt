@@ -1,0 +1,413 @@
+Topics to Watch:
+- ECS
+
+- IAM Role can be used only for AWS services, not on-prem servers
+
+IAM policy variables
+- These are used to create a single policy that applies to multiple users (a group policy)
+- Example: ["${aws:username}
+
+MFA is available only for IAM users, you cannot use this type of MFA with the AWS account root user.
+
+IAM Access Analyzer - used to idenitfy unintended access
+Access Advisor feature on IAM console - used to idenitfy unused roles
+
+Security Groups are stateful, so allowing inbound traffic to the necessary ports enables the connection. 
+Network ACLs are stateless, so you must allow both inbound and outbound traffic 
+
+AWS Organizations Service Control Policy (SCP) – Use an AWS Organizations Service Control Policy (SCP) to define the maximum permissions for account members of an organization 
+or organizational unit (OU). 
+
+SCPs limit permissions that identity-based policies or resource-based policies grant to entities (users or roles) within the account, but do not grant permissions.
+
+Permissions boundary - Permissions boundary is a managed policy that is used for an IAM entity (user or role). 
+The policy defines the maximum permissions that the identity-based policies can grant to an entity, but does not grant permissions.
+
+Resource-based policy - The most common examples of resource-based policies are Amazon S3 bucket policies and IAM role trust policies.
+
+Auto Scaling groups cannot span across multiple Regions.
+
+NAT gateway is used to enable instances in a private subnet to connect to the internet or other AWS services, 
+but prevent the internet from initiating a connection with those instances.
+
+HTTP 503 - The target groups for the load balancer have no registered targets.
+
+Route 53:
+A - maps hostname to IPv4
+AAAA - maps hostname to IPv6
+PTR - maps IP address to hostname (opposite of A)
+CNAME - maps hostname to another hostname
+Alias:
+- points a hostname to an AWS Resource (ELB, CloudFront, API Gateway, Beanstalk, S3)
+
+For session state data a key/value store such as DynamoDB or ElastiCache will provide better performance.
+For Lowest latency, use ElastiCache
+
+Amazon S3 static websites use the HTTP protocol only and you cannot enable HTTPS.
+
+To enable HTTPS connections to the S3 static website, use an Amazon CloudFront distribution that is configured with an SSL/TLS certificate.
+
+EC2 metadata:
+http://169.254.169.254/latest/meta-data
+
+Cognito User Pools - Sign up and sign-in. A webUI to sign-in users (Authenticate)
+Cognito Identity Pools 
+- Users can obtain temporary AWS credentials to access AWS services (Authorization)
+- Support Anonymous guest users
+
+You can use Cognito Authetication only with ALB, not with CloudFront
+
+By default, CloudTrail event log files are encrypted using Amazon S3 server-side encryption (SSE).
+
+The alias for a Lambda function can only point to a Lambda function version. It cannot point to another alias.
+
+CloudFormation
+- For each AWS account, Export names must be unique within a region.
+- You can't create cross-stack references across regions. 
+- To export a stack's output value use the Export output field in the Output section. 
+- Use the function Fn::ImportValue to import only values that have been exported within the same region.
+
+Template
+Resources (Mandatory), Mappings, Parameters, Conditions, Outputs (RMPCO)
+
+Parameters doesn't allow conditions
+
+ChangeSets: (Think this as Dry-Run)
+- This helps to preview the upcoming changes on a CloudFormation stack update without actually executing them
+
+StackSets:
+- Create, update or delete stacks across multiple accounts and regions
+
+CloudFormation Drift
+- it finds out manual config changes done outside of CF template
+
+AWS KMS, Lambda Environment variables - 4 KB maximum size
+SQS - Maximum message size 256 KB, Default retention - 4 days, max: 14 days
+Kinesis Data Streams: Retention between 1 to 365 days. Default is 24 hours
+DynamoDB - maximum item size is 400KB
+Lambda Concurrency limit: upto 1000
+Lambda /tmp limit - 512 MB
+
+CloudWatch Monitoring
+default: 5 min
+detailed: 1 min
+High resolution: 1 second, 5, 10 or 30 seconds
+Standard resolution: 60 seconds (1 minute)
+
+For anything over 4KB, use envelope encryption
+
+ElastiCache strategies:
+Lazy Loading: Lazy Loading would load data into the cache only when necessary. Cache can be out of date
+Write-Through : Data in cache is never stale
+
+Differences between ElastiCache Memcached and ElastiCache Redis
+- To support both encryption and high availability we must use ElastiCache Redis with cluster mode enabled.
+- ElastiCache Memcached doesnt support encryption
+
+RCU:
+One RCU represents one Strongly Consistent Read per second or two Eventually Consitent Reads per second for an item upto 4 KB in size
+
+WCU:
+one write per second for an item up to 1 KB size
+
+There is no direct Export and Import option for migrating Elastic Beanstalk configurations. 
+You must use saved configurations to migrate an Elastic Beanstalk environment between AWS accounts.
+
+Kinesis Data Firehose is used to load streaming data into the data stores (S3, Redshift, Elasticsearch and Splunk) 
+whereas Kinesis Data Streams provides support for real-time processing of streaming data. 
+It provides ordering of records, as well as the ability to read and/or replay records in the same order to multiple downstream Amazon Kinesis Applications.
+
+Use DAX for read-heavy traffic
+
+TransactWriteItems is a synchronous and idempotent write operation that groups up to 25 write actions in a single all-or-nothing operation.
+BatchWriteItem - only some of the actions in the batch succeed while the others do not.
+
+Lambda & ALB:
+- The Lambda function must be registered in a target group
+
+DynamoDB Streams:
+- Ordered stream of item-level modifications (create/update/delete) in a table
+
+Elastic Beanstalk
+- Consists of a single ZIP file or WAR file (you can include multiple WAR files inside your ZIP file)
+- Not exceed 512 MB
+- Not include a parent folder or top-level directory (subdirectories are fine)
+
+ECS Task Placement Strategies:
+Binpack, Random, Spread
+
+Binpack - is used to minimize the no.of instances, effecient, low cost
+Spread: Places the task evenly based on the specified value
+
+No port conflicts on the host instance: specify port 0 for the host port
+
+AppSync (GraphQL)
+- Retrieve data in real-time with WebSocket or MQTT on WebSocket ( example: Chat app)
+- Real-time dashboards, Offline Sync
+- Minimizes number of API end points
+
+Lambda - Event Source Mapping: (Services that Lambda reads events from)
+- Applies to Kinesis Data Streams, DynamoDB and SQS
+- Lambda function is invoked synchronously and records need to be polled from the service
+- An event source mapping uses permissions in the function's execution role to read and manage items in the event source
+- The configuration of the event source mapping for stream-based services (DynamoDB, Kinesis and Amazon SQS) is made on the Lambda side.
+
+Note: For other services, such as Amazon S3, SNS, CloudWatch, Lambda function is invoked asynchronously and the configuration is made on the source (S3/SNS) rather than Lambda.
+
+API Gateway concetps 
+- Mapping template ( Transform JSON to SOAP)
+- Lambda Authorizer
+- Usage Plans
+- There are two types of API logging in CloudWatch: execution logging and access logging.
+- Route selection expression : $request.body.action
+- We need to use Amazon Cognito user pool to control who can access your API in Amazon API Gateway. ( This is different as generally Cognito Identity Pools are used)
+
+CodeDeploy - Deploy code 
+- it uses appspec.yml to deploy. It contains files and hooks section
+
+Hooks:
+Lambda: BeforeAllowTraffic > AfterAllowTraffic
+EC2: BeforeInstall > AfterInstall > ApplicationStart > ValidateService
+ECS: BeforeInstall > AfterInstall > AfterAllowTestTraffic > BeforeAllowTraffic > AfterAllowTraffic
+  
+IAM supports CodeCommit with three types of credential types:
+Git credentials and AWS Access keys - HTTPS
+SSH Keys - SSH
+
+To invalidate Cache: Include Cache-Control: max-age=0 in the header
+
+CloudWatch alarm Metrics
+High resolution: 1 second, 5, 10 or 30 seconds
+Standard resolution: 60 seconds (1 minute)
+
+CloudWatch Events is used to respond to changes in the state of specific AWS services. It does not support DynamoDB.
+
+CodeDeploy provides two deployment type options – in-place and blue/green. Note that AWS Lambda and Amazon ECS deployments cannot use an in-place deployment type.
+
+DynamoDB Streams captures a time-ordered sequence of item-level modifications in any DynamoDB table and stores this information in a log for up to 24 hours
+
+Kinesis Data Firehose
+- Takes data from Producers and writes into destinations in batches
+- Near Real Time (60 seconds latency)
+AWS Destinations:
+- S3, Redshift (Copy through S3), ElasticSearch, Custom HTTP endpoint, 3rd Party (DataDog, Dynatrace, Splunk)
+
+CloudFormation
+!FindInMap [MapName, TopLevelKey, SecondLevelKey ]
+
+SQS API
+CreateQueue, DeleteQueue, PurgeQueue
+
+Requirements for Elastic Beanstalk config files:
+- must be in .ebextensions directory
+- YAML / JSON format
+- the config file must have .config extension
+
+STS (Security Token Service) - Allows to gain temporary access to AWS resources
+AssumeRole (sts assume-role)
+
+DynamoDB Encryption Client is used to enable end-to-end protection using client-side encryption
+
+Envelope Encryption
+- If more than 4KB data needs to be encrypted, use Envelope Encryption
+- The API used is GenerateDataKey API - used to generate DEK to be used right away (It generates both plaintext datakey and encrypted datakey)
+
+- GenerateDataKeyWithoutPlianText API is used to generate DEK that can be used later (It only generates an encrypted datakey)
+- AWS Encryption SDK is used for Envelope Encryption
+
+AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
+
+ChangeSets: (Think this as Dry-Run)
+- This helps to preview the upcoming changes on a CloudFormation stack update without actually executing them
+
+StackSets:
+- Create, update or delete stacks across multiple accounts and regions
+
+CloudFormation Drift
+- it finds out manual config changes done outside of CF template
+
+Backup DynamoDB table to S3: Glue, Data Pipeline and Hive with EMR
+
+IAM database authentication works with MySQL, MariaDB and PostgreSQL
+
+sam build - fetch dependencies and create local deployment artifacts
+sam package - package and upload to S3, generate CF template
+sam deploy - deploy to CF
+
+Local Secondary Index ( LSI):
+- Alternate Sort Key
+- Must be defined at the table creation time
+- No special throttling considerations
+
+Global Secondary Index ( GSI):
+- Alternate Primary Key from the base table
+- can be modified after table creation
+
+Lambda reserved concurrency" is used to enable more invocations to run in parallel
+
+DynamoDB Encryption Client is used to encrypt data before it's added to DynamoDB
+
+CodeStar
+- An integrated solution that groups: GitHub, CodeCommit, CodeBuild, CodeDeploy
+- one-stop dashboard for CI/CD
+
+AWS Cloud9 is a cloud-based IDE that lets you write, run, and debug your code with just a browser.
+
+DynamoDB:
+The Query operation finds items based on primary key values.
+
+Kinesis Data Streams:
+- Retention between 1 to 365 days. Default is 24 hours
+- The order is guaranteed within a shard but not across shards.
+
+
+Kinesis Data Firehose Destinations: S3, Redshift, Elasticsearch, Splunk
+
+Lambda asynchronous invocation: use --invocation-type Event in AWS CLI command
+Lambda synchronous invocation: use --invocation-type RequestResponse in AWS CLI command
+
+X-Ray:
+Annotations: Key value pairs used to index traces and use with filters
+Metadata: Key value pairs not indexed, not used for searching
+
+Lambda - Event Source Mapping - Applies to Kinesis Data Streams, DynamoDB and SQS
+
+To add a role to an Amazon EC2 instance using the AWS CLI, 
+a) first create an instance profile. 
+b) add the role to the instance profile 
+c) assign the instance profile to the Amazon EC2 instance.
+
+
+CloudWatch Metrics
+In custom metrics, the --dimensions parameter adds furher context to the metric
+--namespace parameter :  is a container
+
+ECS:
+Containers are launched througn Tasks
+Persistent mulit-AZ shared storage for containers: Fargate + EFS
+
+Task Definitions are metadata in JSON to tell ECS how to run a Docker container
+We get a Dynamic Host Port Mappong if we define only the container port in the task definition
+IAM Task Roles Roles are assigned at Task Definition level, not at Service Level
+
+Amazon ECS supports the following task placement strategies:
+• Binpack
+	- Place tasks based on the least available amount of CPU or memory. This minimizes the number of instances in use. (Cost savings)
+• Random
+• Spread
+	- Place tasks based on the specified value (InstanceId, AZ)
+
+Task Placement Constraints
+distinctInstance - place each task on a different container instance
+memberOf - uses ClusterQueryLanguage
+
+ECR - storing Docker Images
+
+To enable random host port, set host port = 0 (or empty) in the task definition
+
+The BatchGetItem operation returns the attributes of one or more items from a DynamoDB table. It has less latency
+
+aws:SecureTransport  - is used on S3 bucket policy for Encryption in transit
+
+Lambda Destinations are used to forward execution results: Another Lambda, SNS, SQS and EventBridge
+
+Amazon DynamoDB supports identity-based policies only. The best practice method to assign permissions to a table is to create a permissions policy 
+
+For API MFA calls, use GetSessionToken
+
+The AWS STS decode-authorization-message API decodes additional information about the authorization status of a request from an encoded message returned in response to an AWS request. 
+
+Lambda concurrency limit exceed error - status code 429
+
+AWS CLI Credentials Provider Chain:
+Order: 
+1) Command line options
+2) Environemnt variables
+3) CLI credentials file
+4) CLI configuration file
+5) Container credentials
+6) Instance profile credentials
+
+VPC Endpoint Gateway: Used for S3 and DynamoDB
+VPC Endpoint Interface: all other services
+
+S3 Encryption:
+SSE-S3: 
+- encrypts objects using keys handled & managed by S3
+- Must set header x-amz-server-side-encryption:aws-256
+
+SSE-KMS:
+- leverages AWS KMS
+- Must set header x-amz-server-side-encryption":"aws-kms"
+- With SSE-KMS, the encryption happens in AWS, and the encryption keys are managed by AWS, but you have full control over the rotation policy of the encryption key. 
+
+SSE-C: 
+- Encryption using data keys fully managed by the customer outside of AWS
+- HTTPS must be used
+
+Client Side Encryption:
+- Clients must encryot data before sending to S3
+- Customer fully manages the keys and encryption cycle
+
+AWS CLI with MFA:
+- For this, STS GetSessionToken API call is used
+
+CloudFront
+S3 as on Origin:
+- Origin Access Identity (OAI) + S3 bucket policy
+- S3 web sites dont support HTTPS
+
+ECS Task Role is the IAM Role used by the ECS task itself. Use when your container wants to call other AWS services like S3, SQS, etc.
+
+Beanstlak with Docker:
+- Dockerrun.aws.json is used to generate ECS task definitions
+
+CodeArtifact - similar to JFrog
+
+Annotations: Key value pairs used to index traces and use with filters
+
+Metadata: Key value pairs not indexed, not used for searching
+
+Lambda - Event Source Mapping:
+- Applies to Kinesis Data Streams, SQS, DynamoDB
+- For Event source mapping, Lambda uses execution role to read event data	
+
+Lambda Destinations:
+- Can send results ( success / failure) of an event mapper to a destination ( SQS, SNS, Lambda, EventBridge)
+
+Lambda in VPC:
+- Lambda will create an ENI to access private VPC
+- To access internet, private VPC Lambda will need NAT gateway
+- To access Other AWS resources, private VPC Lambda will need VPC Endpoint
+
+Lambda Layers:
+- Allows us to use custom languages
+
+DynamoDB CLI:
+--projection-expression: one or more attributes to retrieve
+--filter-expression: filter items (rows)
+--page-size: will use more API calls to get data
+
+WebSocket API:
+- Two way interactice communication between a user's browser and a server
+- Used in Chats, multiplayer games, trading
+
+SQS message size limit is 256 KB, but if you want to send messages of 1 MB, then SQS Extended Client Library need to be used
+SQS Message retention period : 1min to 14 days. default is 4 days
+
+Kinesis Data Streams:
+- Retention between 1 to 365 days. Default is 1 day
+
+Shared (Classic) Fan-out Consumer
+- 2 MB/sec per shard across all consumers
+- Pull model, High latency, less cost
+
+Enhanced Fan-out Consumer
+- 2 MB/sec per shard per consumer
+- push method, Low latency, high cost
+
+$LATEST - points to new verison of Lambda code
+
+By Default, All DynamoDB tables are encrypted at rest using AWS Owned CMK.
+
+AWS Elastic Beanstalk will handle all capacity provisioning, load balancing, and auto-scaling
