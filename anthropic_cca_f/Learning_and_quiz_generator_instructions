@@ -188,14 +188,14 @@ learning or quiz tool.
 
 ### Learning Mode sections (24 total)
 
-**Domain sections (15):**
+**Domain sections (15+3):**
 | Domain | Sections |
 |--------|----------|
-| Agentic Architecture & Orchestration (27%) | Agentic Loop Lifecycle, Multi-Agent Orchestration, Hooks & Task Decomposition |
+| Agentic Architecture & Orchestration (27%) | Agentic Loop Lifecycle, Multi-Agent Orchestration, Hooks & Task Decomposition, Prompt Injection Defense |
 | Tool Design & MCP Integration (18%) | Tool Interface Design, MCP Architecture, Error Handling in Tools |
 | Claude Code Configuration & Workflows (20%) | CLAUDE.md & Rules, Custom Commands/Skills/Modes, CI/CD Integration |
 | Prompt Engineering & Structured Output (20%) | Prompt Design Patterns, Structured Output via tool_use, Validation/Retry/Batch |
-| Context Management & Reliability (15%) | Context Window Management, Reliability Patterns, Human Review/Evaluation |
+| Context Management & Reliability (15%) | Context Window Management, Reliability Patterns, Human Review/Evaluation, Testing Agent Systems, Monitoring & Observability |
 
 **Deep Dive sections (5):**
 | Topic | Coverage |
