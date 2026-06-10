@@ -2075,7 +2075,7 @@ let answeredQuestions = {};
 
 function init() {
   document.getElementById('questionCount').textContent = ALL_QUESTIONS.length + ' Q';
-  document.getElementById('lastUpdated').textContent = 'Updated: 6/10/2026, 12:30:08 PM';
+  document.getElementById('lastUpdated').textContent = 'Updated: 6/10/2026, 12:34:07 PM';
   buildNav();
   showSection(0);
   loadNotes();
@@ -2086,21 +2086,20 @@ function init() {
 function buildNav() {
   const nav = document.getElementById('navList');
   nav.innerHTML = '';
-  let idx = 0;
   DOMAINS.forEach((d, di) => {
     const hdr = document.createElement('li');
     hdr.className = 'section-header';
     hdr.textContent = d.name + ' (' + d.weight + ')';
     nav.appendChild(hdr);
-    CONTENT.filter(c => c.domain === di).forEach(c => {
+    CONTENT.forEach((c, i) => {
+      if (c.domain !== di) return;
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.textContent = c.title;
-      a.dataset.index = idx;
-      a.onclick = ((i) => () => showSection(i))(idx);
+      a.dataset.index = i;
+      a.onclick = ((i) => () => showSection(i))(i);
       li.appendChild(a);
       nav.appendChild(li);
-      idx++;
     });
   });
 }
@@ -2110,7 +2109,7 @@ function showSection(idx) {
   const area = document.getElementById('learnContent');
   area.innerHTML = '<h2>' + c.title + '</h2>' + c.content;
   document.querySelector('.main').scrollTop = 0;
-  document.querySelectorAll('.nav-list a').forEach((a, i) => a.classList.toggle('active', i === idx));
+  document.querySelectorAll('.nav-list a').forEach(a => a.classList.toggle('active', parseInt(a.dataset.index) === idx));
   const total = CONTENT.length;
   document.getElementById('progressText').textContent = 'Section ' + (idx + 1) + ' of ' + total;
   document.getElementById('progressFill').style.width = ((idx + 1) / total * 100) + '%';
