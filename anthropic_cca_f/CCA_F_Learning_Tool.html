@@ -1077,9 +1077,9 @@ def test_search_tool_validation():
     </select></div>
     <div><label style="font-size:.85rem;font-weight:500;color:var(--text2);display:block;margin-bottom:6px">Tools to Equip</label>
     <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
-        <input type="checkbox" id="lab-agent-t1" checked> <code>search_web(query: string)</code> — Search the web for information</label>
+        <input type="checkbox" id="lab-agent-t1"> <code>search_web(query: string)</code> — Search the web for information</label>
     <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
-        <input type="checkbox" id="lab-agent-t2" checked> <code>fetch_page(url: string)</code> — Retrieve content from a URL</label>
+        <input type="checkbox" id="lab-agent-t2"> <code>fetch_page(url: string)</code> — Retrieve content from a URL</label>
     <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
         <input type="checkbox" id="lab-agent-t3"> <code>write_file(path: string, content: string)</code> — Save results to file</label>
     <label class="lab-option" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;cursor:pointer">
@@ -2191,8 +2191,8 @@ function labAgentReset() {
   document.getElementById('lab-agent-name').value = 'ResearchBot';
   document.getElementById('lab-agent-role').value = 'research';
   document.getElementById('lab-agent-turns').value = 5;
-  document.getElementById('lab-agent-t1').checked = true;
-  document.getElementById('lab-agent-t2').checked = true;
+  document.getElementById('lab-agent-t1').checked = false;
+  document.getElementById('lab-agent-t2').checked = false;
   document.getElementById('lab-agent-t3').checked = false;
   document.getElementById('lab-agent-t4').checked = false;
   document.getElementById('lab-agent-output').style.display = 'none';
