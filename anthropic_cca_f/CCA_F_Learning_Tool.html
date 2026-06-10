@@ -155,7 +155,7 @@ header .exam-badge{font-size:.7rem;background:var(--accent);color:var(--primary)
 <body>
 <header>
   <h1>Claude Certified Architect <span>CCA-F</span> Foundations <span class="exam-badge">330 Q</span></h1>
-  <span style="font-size:.7rem;color:rgba(255,255,255,.5);white-space:nowrap">Updated Jun 10, 2026 1:52 PM IST</span>
+  <span id="updatedTs" style="font-size:.7rem;color:rgba(255,255,255,.5);white-space:nowrap"></span>
   <div class="mode-toggle">
     <button class="mode-btn active" onclick="switchMode('learn')" id="learnBtn">Learning</button>
     <button class="mode-btn" onclick="switchMode('quiz')" id="quizBtn">Quiz</button>
@@ -2226,6 +2226,12 @@ showSection = function(idx) {
   if (c && c.id === 'lab-loop') setTimeout(labLoopInit, 50);
   if (c && c.id === 'lab-agent') labAgentReset();
 };
+</script>
+<script>
+var ts = document.getElementById('updatedTs');
+var now = new Date();
+var opts = {year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'};
+ts.textContent = 'Updated ' + now.toLocaleDateString('en-US',opts);
 </script>
 </body>
 </html>
